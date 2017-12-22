@@ -1,0 +1,44 @@
+
+
+
+
+The following is a summary of these unchanging relations between fundamental accounting concepts:
+BS1 (Equity_Foots): Equity = Equity Attributable to Parent + Equity Attributable to Noncontrolling Interest
+BS2 (BalanceSheet_Balances): Assets = Liabilities and Equity
+BS3 (Assets_Foot): Assets = Current Assets + Noncurrent Assets (classified balance sheet)
+BS4 (Liabilities_Foot): Liabilities = Current Liabilities + Noncurrent Liabilities (classified balance sheet)
+BS5 (LiabilitiesAndEquity_Foots): Liabilities and Equity = Liabilities + Commitments and Contingencies + Temporary Equity + Redeemable Noncontrolling Interest + Equity
+BS6: Assets = Liabilities + Commitments and Contingencies + Temporary Equity + Redeemable Noncontrolling Interest + Equity
+BS7: Liabilities = Liabilities and Equity - (Commitments and Contingencies + Temporary Equity + Redeemable Noncontrolling Interest+ Equity)
+BS8: Current Assets = Assets - Noncurrent Assets (classified balance sheet)
+BS9: Noncurrent Assets = Assets - Current Assets (classified balance sheet)
+BS10: Noncurrent Liabilities = Liabilities - Current Liabilities (classified balance sheet)
+IS1: Gross Profit = Revenues - Cost Of Revenue (Multi-step approach)
+IS2: Operating Income (Loss) = Gross Profit - Operating Expenses + Other Operating Income (Expenses) (Multi-step approach)
+Operating Expenses Plus Other Operating Income (Loss) = Operating Expenses + Other Operating Income (Expenses)
+Nonoperating Income (Loss) Plus Interest and Debt Expense = Nonoperating Income (Loss) + Interest and Debt Expense
+Nonoperating Income (Loss) Plus Interest and Debt Expense Plus Income (Loss) from Equity Method Investments = Nonoperating Income (Loss) + Interest and Debt Expense + Income (Loss) from Equity Method Investments
+IS3: Income (Loss) from Continuing Operations Before Equity Method Investments = Operating Income (Loss) + Nonoperating Income (Loss) - Interest And Debt Expense
+IS4: Income (Loss) from Continuing Operations Before Tax = Income (Loss) from Continuing Operations Before Equity Method Investments + Income (Loss) from Equity Method Investments
+IS4A: Income (Loss) from Continuing Operations Before Tax (Excluding Income (Loss) = Income (Loss) from Continuing Operations Before Equity Method Investments (NOTE: This is an issue with the accounting of this in US GAAP. Income (Loss) from Equity Method Investments is NOT articulated in the US GAAP XBRL taxonomy "net of tax", but some accountants argue that it should be. Equity method income is after tax and we think should be after tax. However many companies put it before tax even though tax is excluded. By putting it before tax companies can manipulate the tax rate they report. Effectively they can make the tax rate lower. This can make the tax rate in some cases change by 20%. This can have the opposite effect if a company has a loss. For example, Amazon puts it below tax but since it is loss it also makes there tax rate lower as it increases the denominator.)
+IS5: Income (Loss) from Continuing Operations after Tax = Income (Loss) from Continuing Operations Before Tax - Income Tax Expense (Benefit)
+IS6: Net Income (Loss) = Income (Loss) from Continuing Operations After Tax + Income (Loss) from Discontinued Operations, Net of Tax + Extraordinary Items, Gain (Loss)
+IS7: Net Income (Loss) = Net Income (Loss) Attributable to Parent + Net Income (Loss) Attributable to Noncontrolling Interest
+IS8: Net Income (Loss) Available to Common Stockholders, Basic = Net Income (Loss) Attributable to Parent - Preferred Stock Dividends and Other Adjustments
+IS9: Comprehensive Income (Loss) = Comprehensive Income (Loss) Attributable to Parent + Comprehensive Income (Loss) Attributable to Noncontrolling Interest
+IS10: Comprehensive Income (Loss) = Net Income (Loss) + Other Comprehensive Income (Loss)
+IS11: Operating Income (Loss) = Revenues - Costs And Expenses + Other Operating Income (Single-step approach)
+IS12: Costs And Expenses = Cost Of Revenue + Operating Expenses (Single-step approach)
+IS13: Net Income (Loss) Attributable to Redeemable Noncontrolling Interest = Noncontrolling Interest in Net Income (Loss) Joint Venture Partners, Redeemable + Noncontrolling Interest in Net Income (Loss) Limited Partnerships, Redeemable + Noncontrolling Interest in Net Income (Loss) Operating Partnerships, Redeemable + Noncontrolling Interest in Net Income (Loss) Other Noncontrolling Interests, Redeemable + Noncontrolling Interest in Net Income (Loss) Preferred Unit Holders, Redeemable
+CF1: Net Cash Flow = Net Cash Flows, Operating + Net Cash Flows, Investing + Net Cash Flows, Financing + Exchange Gains (Losses)
+CF2: Net Cash Flows, Continuing = Net Cash Flows, Operating, Continuing + Net Cash Flows, Investing, Continuing + Net Cash Flows, Financing, Continuing
+CF3: Net Cash Flows, Discontinued = Net Cash Flows, Operating, Discontinued + Net Cash Flows, Investing, Discontinued + Net Cash Flows, Financing, Discontinued
+CF4: Net Cash Flows, Operating = Net Cash Flows, Operating, Continuing + Net Cash Flows, Operating, Discontinued
+CF5: Net Cash Flows, Investing = Net Cash Flows, Investing, Continuing + Net Cash Flows, Investing, Discontinued
+CF6: Net Cash Flows, Financing = Net Cash Flows, Financing, Continuing + Net Cash Flows, Financing, Discontinued
+KEY1: Return on Assets = (Net Income (Loss) / Assets)
+KEY2: Return on Equity = (Net Income (Loss) / Equity)
+KEY3: Return on Sales = (Net Income (Loss) / Revenues)
+KEY4: Sustainable Growth Rate = ((Net Income (Loss) / Revenues) * (1+((Assets - Equity) / Equity))) / ((1 / (Revenues / Assets))-(((Net Income (Loss) / Revenues) * (1+(((Assets - Equity) / Equity))))))
+
+

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+(c) XBRL US, Inc. 2007-2010; Financial Accounting Foundation, Inc. 2010-2017.  All Rights Reserved.
+Notice: Authorized Uses are Set Forth at http://xbrl.fasb.org/terms/TaxonomiesTermsConditions.html
+  -->
+<link:linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrldt="http://xbrl.org/2005/xbrldt">
+  <link:roleRef roleURI="http://fasb.org/us-gaap/role/disclosure/RevenueFromContractWithCustomerTemp01" xlink:type="simple" xlink:href="../elts/us-roles-2017-01-31.xsd#rcctmp01"/>
+  <link:roleRef roleURI="http://fasb.org/us-gaap/role/disclosure/RevenueFromContractWithCustomerTemp02" xlink:type="simple" xlink:href="../elts/us-roles-2017-01-31.xsd#rcctmp02"/>
+  <link:roleRef roleURI="http://fasb.org/us-gaap/role/disclosure/RevenueFromContractWithCustomerTemp03" xlink:type="simple" xlink:href="../elts/us-roles-2017-01-31.xsd#rcctmp03"/>
+  <link:roleRef roleURI="http://fasb.org/us-gaap/role/disclosure/RevenueFromContractWithCustomerTemp04" xlink:type="simple" xlink:href="../elts/us-roles-2017-01-31.xsd#rcctmp04"/>
+  <link:roleRef roleURI="http://fasb.org/us-gaap/role/disclosure/RevenueFromContractWithCustomerTemp05" xlink:type="simple" xlink:href="../elts/us-roles-2017-01-31.xsd#rcctmp05"/>
+  <link:presentationLink xlink:type="extended" xlink:role="http://fasb.org/us-gaap/role/disclosure/RevenueFromContractWithCustomerTemp01">
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_RevenueFromContractWithCustomerAbstract" xlink:label="loc_RevenueFromContractWithCustomerAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_DisaggregationOfRevenueTable" xlink:label="loc_DisaggregationOfRevenueTable"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_RevenueFromContractWithCustomerAbstract" xlink:to="loc_DisaggregationOfRevenueTable" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_StatementBusinessSegmentsAxis" xlink:label="loc_StatementBusinessSegmentsAxis"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_DisaggregationOfRevenueTable" xlink:to="loc_StatementBusinessSegmentsAxis" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_SegmentDomain" xlink:label="loc_SegmentDomain"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_StatementBusinessSegmentsAxis" xlink:to="loc_SegmentDomain" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_StatementGeographicalAxis" xlink:label="loc_StatementGeographicalAxis"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_DisaggregationOfRevenueTable" xlink:to="loc_StatementGeographicalAxis" order="20.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_SegmentGeographicalDomain" xlink:label="loc_SegmentGeographicalDomain"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_StatementGeographicalAxis" xlink:to="loc_SegmentGeographicalDomain" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_NorthAmericaMember" xlink:label="loc_NorthAmericaMember"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_SegmentGeographicalDomain" xlink:to="loc_NorthAmericaMember" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_EuropeMember" xlink:label="loc_EuropeMember"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_SegmentGeographicalDomain" xlink:to="loc_EuropeMember" order="20.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_AsiaMember" xlink:label="loc_AsiaMember"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_SegmentGeographicalDomain" xlink:to="loc_AsiaMember" order="30.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_ProductOrServiceAxis" xlink:label="loc_ProductOrServiceAxis"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_DisaggregationOfRevenueTable" xlink:to="loc_ProductOrServiceAxis" order="30.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_ProductsAndServicesDomain" xlink:label="loc_ProductsAndServicesDomain"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_ProductOrServiceAxis" xlink:to="loc_ProductsAndServicesDomain" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_TimingOfTransferOfGoodOrServiceAxis" xlink:label="loc_TimingOfTransferOfGoodOrServiceAxis"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_DisaggregationOfRevenueTable" xlink:to="loc_TimingOfTransferOfGoodOrServiceAxis" order="40.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_TimingOfTransferOfGoodOrServiceDomain" xlink:label="loc_TimingOfTransferOfGoodOrServiceDomain"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_TimingOfTransferOfGoodOrServiceAxis" xlink:to="loc_TimingOfTransferOfGoodOrServiceDomain" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_TransferredAtPointInTimeMember" xlink:label="loc_TransferredAtPointInTimeMember"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_TimingOfTransferOfGoodOrServiceDomain" xlink:to="loc_TransferredAtPointInTimeMember" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_TransferredOverTimeMember" xlink:label="loc_TransferredOverTimeMember"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_TimingOfTransferOfGoodOrServiceDomain" xlink:to="loc_TransferredOverTimeMember" order="20.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_DisaggregationOfRevenueLineItems" xlink:label="loc_DisaggregationOfRevenueLineItems"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_DisaggregationOfRevenueTable" xlink:to="loc_DisaggregationOfRevenueLineItems" order="50.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_RevenueFromContractWithCustomerExcludingAssessedTax" xlink:label="loc_RevenueFromContractWithCustomerExcludingAssessedTax"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_DisaggregationOfRevenueLineItems" xlink:to="loc_RevenueFromContractWithCustomerExcludingAssessedTax" order="10.0"/>
+  </link:presentationLink>
+  <link:presentationLink xlink:type="extended" xlink:role="http://fasb.org/us-gaap/role/disclosure/RevenueFromContractWithCustomerTemp02">
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_ContractWithCustomerAssetAndLiabilityAbstract" xlink:label="loc_ContractWithCustomerAssetAndLiabilityAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_AccountsReceivableNet" xlink:label="loc_AccountsReceivableNet"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_ContractWithCustomerAssetAndLiabilityAbstract" xlink:to="loc_AccountsReceivableNet" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_ContractWithCustomerAssetNet" xlink:label="loc_ContractWithCustomerAssetNet"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_ContractWithCustomerAssetAndLiabilityAbstract" xlink:to="loc_ContractWithCustomerAssetNet" order="20.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_ContractWithCustomerLiability" xlink:label="loc_ContractWithCustomerLiability"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_ContractWithCustomerAssetAndLiabilityAbstract" xlink:to="loc_ContractWithCustomerLiability" order="30.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_ContractWithCustomerLiabilityRevenueRecognized" xlink:label="loc_ContractWithCustomerLiabilityRevenueRecognized"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_ContractWithCustomerAssetAndLiabilityAbstract" xlink:to="loc_ContractWithCustomerLiabilityRevenueRecognized" order="40.0"/>
+  </link:presentationLink>
+  <link:presentationLink xlink:type="extended" xlink:role="http://fasb.org/us-gaap/role/disclosure/RevenueFromContractWithCustomerTemp03">
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_RevenuePerformanceObligationAbstract" xlink:label="loc_RevenuePerformanceObligationAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_RevenueRemainingPerformanceObligationExpectedTimingOfSatisfactionTable" xlink:label="loc_RevenueRemainingPerformanceObligationExpectedTimingOfSatisfactionTable"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_RevenuePerformanceObligationAbstract" xlink:to="loc_RevenueRemainingPerformanceObligationExpectedTimingOfSatisfactionTable" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_RevenueRemainingPerformanceObligationExpectedTimingOfSatisfactionStartDateAxis" xlink:label="loc_RevenueRemainingPerformanceObligationExpectedTimingOfSatisfactionStartDateAxis"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_RevenueRemainingPerformanceObligationExpectedTimingOfSatisfactionTable" xlink:to="loc_RevenueRemainingPerformanceObligationExpectedTimingOfSatisfactionStartDateAxis" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_RevenueRemainingPerformanceObligationExpectedTimingOfSatisfactionLineItems" xlink:label="loc_RevenueRemainingPerformanceObligationExpectedTimingOfSatisfactionLineItems"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_RevenueRemainingPerformanceObligationExpectedTimingOfSatisfactionTable" xlink:to="loc_RevenueRemainingPerformanceObligationExpectedTimingOfSatisfactionLineItems" order="20.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_RevenueRemainingPerformanceObligationExpectedTimingOfSatisfactionPeriod" xlink:label="loc_RevenueRemainingPerformanceObligationExpectedTimingOfSatisfactionPeriod"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_RevenueRemainingPerformanceObligationExpectedTimingOfSatisfactionLineItems" xlink:to="loc_RevenueRemainingPerformanceObligationExpectedTimingOfSatisfactionPeriod" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_RevenueRemainingPerformanceObligation" xlink:label="loc_RevenueRemainingPerformanceObligation"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_RevenueRemainingPerformanceObligationExpectedTimingOfSatisfactionLineItems" xlink:to="loc_RevenueRemainingPerformanceObligation" order="20.0"/>
+  </link:presentationLink>
+  <link:presentationLink xlink:type="extended" xlink:role="http://fasb.org/us-gaap/role/disclosure/RevenueFromContractWithCustomerTemp04">
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_CapitalizedContractCostAbstract" xlink:label="loc_CapitalizedContractCostAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_CapitalizedContractCostTable" xlink:label="loc_CapitalizedContractCostTable"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_CapitalizedContractCostAbstract" xlink:to="loc_CapitalizedContractCostTable" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_CapitalizedContractCostAxis" xlink:label="loc_CapitalizedContractCostAxis"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_CapitalizedContractCostTable" xlink:to="loc_CapitalizedContractCostAxis" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_CapitalizedContractCostDomain" xlink:label="loc_CapitalizedContractCostDomain"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_CapitalizedContractCostAxis" xlink:to="loc_CapitalizedContractCostDomain" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_SoftwareAndSoftwareDevelopmentCostsMember" xlink:label="loc_SoftwareAndSoftwareDevelopmentCostsMember"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_CapitalizedContractCostDomain" xlink:to="loc_SoftwareAndSoftwareDevelopmentCostsMember" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_CapitalizedContractCostLineItems" xlink:label="loc_CapitalizedContractCostLineItems"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_CapitalizedContractCostTable" xlink:to="loc_CapitalizedContractCostLineItems" order="20.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_CapitalizedContractCostNetAbstract" xlink:label="loc_CapitalizedContractCostNetAbstract"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_CapitalizedContractCostLineItems" xlink:to="loc_CapitalizedContractCostNetAbstract" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_CapitalizedContractCostGross" xlink:label="loc_CapitalizedContractCostGross"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_CapitalizedContractCostNetAbstract" xlink:to="loc_CapitalizedContractCostGross" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_CapitalizedContractCostAccumulatedAmortization" xlink:label="loc_CapitalizedContractCostAccumulatedAmortization"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_CapitalizedContractCostNetAbstract" xlink:to="loc_CapitalizedContractCostAccumulatedAmortization" order="20.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_CapitalizedContractCostNet" xlink:label="loc_CapitalizedContractCostNet"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_CapitalizedContractCostNetAbstract" xlink:to="loc_CapitalizedContractCostNet" order="30.0" preferredLabel="http://www.xbrl.org/2003/role/totalLabel"/>
+  </link:presentationLink>
+  <link:presentationLink xlink:type="extended" xlink:role="http://fasb.org/us-gaap/role/disclosure/RevenueFromContractWithCustomerTemp05">
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_RevenueInitialApplicationPeriodCumulativeEffectTransitionAbstract" xlink:label="loc_RevenueInitialApplicationPeriodCumulativeEffectTransitionAbstract"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_RevenueInitialApplicationPeriodCumulativeEffectTransitionTable" xlink:label="loc_RevenueInitialApplicationPeriodCumulativeEffectTransitionTable"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_RevenueInitialApplicationPeriodCumulativeEffectTransitionAbstract" xlink:to="loc_RevenueInitialApplicationPeriodCumulativeEffectTransitionTable" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_InitialApplicationPeriodCumulativeEffectTransitionAxis" xlink:label="loc_InitialApplicationPeriodCumulativeEffectTransitionAxis"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_RevenueInitialApplicationPeriodCumulativeEffectTransitionTable" xlink:to="loc_InitialApplicationPeriodCumulativeEffectTransitionAxis" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_InitialApplicationPeriodCumulativeEffectTransitionDomain" xlink:label="loc_InitialApplicationPeriodCumulativeEffectTransitionDomain"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_InitialApplicationPeriodCumulativeEffectTransitionAxis" xlink:to="loc_InitialApplicationPeriodCumulativeEffectTransitionDomain" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_DifferenceBetweenRevenueGuidanceInEffectBeforeAndAfterTopic606Member" xlink:label="loc_DifferenceBetweenRevenueGuidanceInEffectBeforeAndAfterTopic606Member"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_InitialApplicationPeriodCumulativeEffectTransitionDomain" xlink:to="loc_DifferenceBetweenRevenueGuidanceInEffectBeforeAndAfterTopic606Member" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_AdjustmentsForNewAccountingPronouncementsAxis" xlink:label="loc_AdjustmentsForNewAccountingPronouncementsAxis"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_RevenueInitialApplicationPeriodCumulativeEffectTransitionTable" xlink:to="loc_AdjustmentsForNewAccountingPronouncementsAxis" order="20.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_TypeOfAdoptionMember" xlink:label="loc_TypeOfAdoptionMember"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_AdjustmentsForNewAccountingPronouncementsAxis" xlink:to="loc_TypeOfAdoptionMember" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_AccountingStandardsUpdate201409Member" xlink:label="loc_AccountingStandardsUpdate201409Member"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_TypeOfAdoptionMember" xlink:to="loc_AccountingStandardsUpdate201409Member" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_RevenueInitialApplicationPeriodCumulativeEffectTransitionLineItems" xlink:label="loc_RevenueInitialApplicationPeriodCumulativeEffectTransitionLineItems"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_RevenueInitialApplicationPeriodCumulativeEffectTransitionTable" xlink:to="loc_RevenueInitialApplicationPeriodCumulativeEffectTransitionLineItems" order="30.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_RevenueFromContractWithCustomerExcludingAssessedTax" xlink:label="loc_RevenueFromContractWithCustomerExcludingAssessedTax"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_RevenueInitialApplicationPeriodCumulativeEffectTransitionLineItems" xlink:to="loc_RevenueFromContractWithCustomerExcludingAssessedTax" order="10.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_CostOfGoodsAndServicesSold" xlink:label="loc_CostOfGoodsAndServicesSold"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_RevenueInitialApplicationPeriodCumulativeEffectTransitionLineItems" xlink:to="loc_CostOfGoodsAndServicesSold" order="20.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_CapitalizedContractCostNet" xlink:label="loc_CapitalizedContractCostNet"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_RevenueInitialApplicationPeriodCumulativeEffectTransitionLineItems" xlink:to="loc_CapitalizedContractCostNet" order="30.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_OtherLiabilities" xlink:label="loc_OtherLiabilities"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_RevenueInitialApplicationPeriodCumulativeEffectTransitionLineItems" xlink:to="loc_OtherLiabilities" order="40.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_ContractWithCustomerLiability" xlink:label="loc_ContractWithCustomerLiability"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_RevenueInitialApplicationPeriodCumulativeEffectTransitionLineItems" xlink:to="loc_ContractWithCustomerLiability" order="50.0"/>
+    <link:loc xlink:type="locator" xlink:href="../elts/us-gaap-2017-01-31.xsd#us-gaap_RetainedEarningsAccumulatedDeficit" xlink:label="loc_RetainedEarningsAccumulatedDeficit"/>
+    <link:presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="loc_RevenueInitialApplicationPeriodCumulativeEffectTransitionLineItems" xlink:to="loc_RetainedEarningsAccumulatedDeficit" order="60.0"/>
+  </link:presentationLink>
+</link:linkbase>

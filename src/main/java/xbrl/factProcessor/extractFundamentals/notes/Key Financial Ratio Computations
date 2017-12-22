@@ -1,0 +1,133 @@
+Key Financial Ratio  Edit 0 2…
+Key Financial Ratio: A key financial ratio is defined as a common relation between financial concepts.
+
+For example, "working capital" is a key ratio and is defined as "us-gaap: Assets, Current" / "us-gaap: Liabilities, Current".
+
+The following is a summary of key ratios:
+
+Key Ratios
+    Operating Performance
+        Operating Profit
+            Operating Revenue - (CostOfGoodsAndServices + Operating Expenses + Depreciation and Amortization)
+        Return on Equity (ROE)
+            NetIncomeLoss / Equity
+        Return on Sales (ROS)
+            NetIncomeLoss / Revenues
+        Return on Assets (ROA)
+            NetIncomeLoss / Assets
+        Sustainable Growth Rate (SGR)
+            [(NetIncomeLoss / Revenues) * (1+((Assets - Equity) / Equity))] / [(1 / (Revenues / Assets))-(((NetIncomeLoss / Revenues) * (1+(((Assets - Equity) / Equity)))))]
+        Inventory Days
+            Inventory / (CostOfGoods(sold)/365)
+
+    Corporate Liquidity
+        Current Ratio
+            current assets / current liabilities
+        Quick Ratio
+            (current assets - inventory) / current liabilities
+        Cash Ratio
+            cash / current liabilities
+        Working Capital to Sales
+            (current assets - current liabilities) / sales
+
+    Corporate Value
+        Price to Earnings Ratio (PE)
+            share price / earnings per share
+        Debt to Asset Ratio
+            liabilities / assets
+        Dividend Payout Ratio
+            dividends paid / earnings
+    Investment Ratios
+        Operation Profit Margin
+            operating income / sales
+        Net Profit Margin
+            net income / sales
+
+
+
+
+
+
+
+
+List of Key Ratios needing formulas:
+(note: there are other random things included too)
+    Operating Performance
+        Corporate Liquidity
+        Corporate Value
+        Management Decision Making
+        Investment Ratios
+        Shareholder Value Added (SVA)
+        Capital Asset Pricing Model (CAPM)
+        Return on Investment
+        Return on Total Assets (ROTA)
+        Operating Profit
+        Sales to Accounts Receivable
+        Sales to Inventories
+        Sales to Fixed Assets
+        Debtor Days
+
+    Corporate Liquidity
+        Working Capital (WC)
+        Interest Cover
+        Debt to Equity Ratio (D/E)
+
+    Corporate Value
+        Market Capitalization
+        Dividends Per Share (DPS)
+
+        Earnings Yield
+        Dividends Yield
+
+        Market to Book Ratio
+        Management Decision Making
+        Cost, Volume, Price Relationships
+        Fixed Costs
+        Variable Costs
+        Total Contribution
+        Contribution Margin Per Unit (CPU)
+        Units
+        Break Even Point Units (B/E)
+        Contribution to Sales Precentage (CPS)
+
+    Investment Ratios
+        Discount Factor
+        Investment
+        Present Value
+        Return
+        Net Present Value (NPV)
+        Internal Rate of Return (IRR)
+        Weighted Average Cost of Capital (WACC)
+        Shareholder Value Added (SVA)
+        Terminal Value
+        Total Present Value
+        Capital Asset Pricing Model (CAPM)
+        Risk Free Rate
+        Average Return to Equity Shares Across Total Market
+        Riskiness of Specific Share (BETA)
+        Market Premium
+        Market Return
+        Risk Free Rate
+        Average Return to Equity Shares Across Total Market
+        Riskiness of Specific Share (BETA)
+        Operating Assets
+        Capital Employed
+        Working Capital Days
+        Profit Before Interest and Taxes (PBIT)
+        Assets Employed
+        Profit Margin
+        Asset Turn
+        Sales Margin
+        Sales Turn
+        Operating Cash Flows
+        Non Operating Cash Out Flows
+        Non Operating Cash In Flows
+        New Equity Capital
+        New Long Term Loans
+        Sale of Fixed Assets
+        Market Value
+        Total Ordinary Funds
+        Book Value Per Share
+        Average Interest Cost
+        Tax Rate
+        Non Equity Funds
