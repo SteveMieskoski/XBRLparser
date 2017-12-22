@@ -11,7 +11,6 @@ public class ResultSet {
   String cik;
   String periodFocus;
   String name;
-  Map<String, String> companyDetails;
   Map<String, Double> balanceSheet;
   Map<String, Double> cashFlow;
   Map<String, Double> incomeStatement;
@@ -38,7 +37,6 @@ public class ResultSet {
     this.cashFlow = cashFlow;
     this.incomeStatement = incomeStatement;
     if(details != null){
-      this.companyDetails = details;
         for(String s: details.keySet()){
             System.out.println(details.get(s));
             switch (s){
@@ -77,14 +75,6 @@ public class ResultSet {
             Map<String, Double> incomeStatement) {
         return new ResultSet(period, details, balanceSheet, cashFlow, incomeStatement);
     }
-
-  public Map<String, String> getCompanyDetails() {
-    return companyDetails;
-  }
-
-  public void setCompanyDetails(Map<String, String> companyDetails) {
-    this.companyDetails = companyDetails;
-  }
 
   public Period getPeriod() {
     return period;

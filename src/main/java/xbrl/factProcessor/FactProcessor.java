@@ -5,9 +5,8 @@ import xbrl.elementTypes.FactElement;
 import xbrl.elementTypes.subTypes.Period;
 import xbrl.export.ToExcel;
 import xbrl.factProcessor.extractFundamentals.FundamentalAccountingConcepts;
-import xbrl.factProcessor.extractFundamentals.ReportContent;
 import xbrl.parsers.SchemaCache;
-import xbrl.elementTypes.SchemaContent;
+import xbrl.schemaElementTypes.SchemaContent;
 import xbrl.util.CommLine;
 import xbrl.util.UniversalNamespaceCache;
 
@@ -24,7 +23,6 @@ public class FactProcessor implements CommLine {
   private SchemaCache schemaCache;
   private ContextContent contextContent;
   private List<ResultSet> resultSets;
-  private ReportContent reportContent;
 
   private FactProcessor() {}
 
@@ -57,9 +55,6 @@ public class FactProcessor implements CommLine {
   }
 
   private void startProcessor(String xsdFile, String[] additionalSchemas) {
-    if(this.reportContent == null){
-      this.reportContent = new ReportContent();
-    }
     String defaultPrefix = "us-gaap";
     String customPrefix = defaultPrefix;
     System.out.println(xsdFile);
@@ -106,9 +101,6 @@ public class FactProcessor implements CommLine {
   // todo: configure to accept custom mappings
   public FundamentalAccountingFacts processAdditional(
       String additionalXsdFile, String[] additionalSchemas) {
-    if(this.reportContent == null){
-      this.reportContent = new ReportContent();
-    }
     String xsdFile = SetupProcessor.checkFilePresence(additionalXsdFile);
     if (xsdFile != null) {
       String defaultPrefix = "us-gaap";
@@ -222,13 +214,13 @@ public class FactProcessor implements CommLine {
     }
     System.out.println(resultSet);
     System.out.println("====================================================");
-    this.reportContent.addProcessedResults(resultSet);
+
     this.resultSets.add(resultSet);
   }
 
   public void createExcel() {
     if (this.resultSets != null) {
-      ToExcel.createWorkbook(this.reportContent);
+      ToExcel.createWorkbook(this.resultSets);
     }
   }
 

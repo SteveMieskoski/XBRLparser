@@ -1,4 +1,4 @@
-package xbrl.elementTypes;
+package xbrl.schemaElementTypes;
 
 public interface Concept {
 

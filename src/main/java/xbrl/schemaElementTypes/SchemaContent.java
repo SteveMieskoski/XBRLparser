@@ -1,4 +1,4 @@
-package xbrl.elementTypes;
+package xbrl.schemaElementTypes;
 
 import java.util.*;
 

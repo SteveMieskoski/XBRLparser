@@ -13,8 +13,8 @@ import xbrl.parsers.SchemaParser;
 import xbrl.parsers.concepts.ContextParser;
 import xbrl.parsers.concepts.FactParser;
 import xbrl.parsers.concepts.OrganizationParser;
-import xbrl.elementTypes.SchemaContent;
-import xbrl.elementTypes.SchemaElement;
+import xbrl.schemaElementTypes.SchemaContent;
+import xbrl.schemaElementTypes.SchemaElement;
 import xbrl.util.CoreFileTreeWalker;
 import xbrl.util.UniversalNamespaceCache;
 

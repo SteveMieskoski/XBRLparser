@@ -1,4 +1,4 @@
-package xbrl.elementTypes;
+package xbrl.schemaElementTypes;
 
 public class RoleTypeUsGaap extends SchemaRole implements UsGaapRoleDef {
 

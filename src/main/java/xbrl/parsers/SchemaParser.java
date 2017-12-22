@@ -2,9 +2,9 @@ package xbrl.parsers;
 
 import org.dom4j.*;
 import org.dom4j.io.SAXReader;
-import xbrl.elementTypes.RoleTypeUsGaap;
-import xbrl.elementTypes.SchemaContent;
-import xbrl.elementTypes.SchemaElement;
+import xbrl.schemaElementTypes.RoleTypeUsGaap;
+import xbrl.schemaElementTypes.SchemaContent;
+import xbrl.schemaElementTypes.SchemaElement;
 
 import java.util.Iterator;
 

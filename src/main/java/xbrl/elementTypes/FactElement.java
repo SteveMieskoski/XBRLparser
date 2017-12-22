@@ -2,6 +2,7 @@ package xbrl.elementTypes;
 
 import org.apache.commons.lang3.NotImplementedException;
 import xbrl.exceptions.AttributeFormatException;
+import xbrl.schemaElementTypes.SchemaElement;
 
 import java.util.ArrayList;
 import java.util.HashMap;

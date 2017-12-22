@@ -1,5 +1,7 @@
 package xbrl.elementTypes;
 
+import xbrl.schemaElementTypes.SchemaElement;
+
 import java.util.HashMap;
 import java.util.List;
 
