@@ -1,21 +1,20 @@
 group 'XBRLparser'
 version '1.0-SNAPSHOT'
 
-buildscript {
-    repositories {
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-    }
-    dependencies {
-        classpath "gradle.plugin.org.openrepose:gradle-jaxb-plugin:2.4.1"
-    }
-}
+//buildscript {
+//    repositories {
+//        maven {
+//            url "https://plugins.gradle.org/m2/"
+//        }
+//    }
+//    dependencies {
+//        classpath "gradle.plugin.org.openrepose:gradle-jaxb-plugin:2.4.1"
+//    }
+//}
 
 apply plugin: 'idea'
-apply plugin:'application'
+apply plugin: 'application'
 apply plugin: 'java'
-apply plugin: "org.openrepose.gradle.plugins.jaxb"
 
 sourceCompatibility = 1.8
 mainClassName = "Main"
@@ -23,57 +22,34 @@ mainClassName = "Main"
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
+    // EveryThing & EveryThing Else
     compile fileTree(dir: './libs', include: '*.jar')
     compile 'jaxen:jaxen:1.1.6'
     compile 'org.apache.ws.xmlschema:xmlschema-core:2.2.2'
     compile 'com.github.alexheretic:dynamics:4.0'
-   // compile 'com.goldmansachs.xsd2bean:xsd2beangen:1.5.0'
 
-    compile 'javax.xml.bind:jaxb-api:2.3.0'
     compile 'com.google.guava:guava:23.5-jre'
     compile 'org.apache.commons:commons-lang3:3.7'
     compile 'org.apache.commons:commons-collections4:4.1'
     compile 'org.apache.poi:poi-ooxml:3.16'
     compile 'org.apache.poi:poi:3.17'
-//    compile 'org.apache.tinkerpop:tinkerpop:3.3.0'
-//
-//    compile 'org.apache.tinkerpop:tinkergraph-gremlin:3.3.0'
-//    compile 'org.apache.tinkerpop:gremlin-core:3.3.0'
-//    compile 'com.esotericsoftware:kryo:4.0.1'
-//    compile 'com.syncleus.ferma:ferma:3.2.1'
-    compile 'net.sf.jung:jung-graph-impl:2.1.1'
-    compile 'net.sf.jung:jung-api:2.1.1'
 
-    jaxb "org.jvnet.jaxb2_commons:jaxb2-basics-ant:0.6.5"
-    jaxb "org.jvnet.jaxb2_commons:jaxb2-basics:0.6.4"
-    jaxb "org.jvnet.jaxb2_commons:jaxb2-basics-annotate:0.6.4"
-
-
+    // Logging
     compile 'org.slf4j:slf4j-simple:1.7.25'
+    compile 'org.slf4j:slf4j-api:1.7.25'
+//    compile 'ch.qos.logback:logback-classic:1.2.3'
+
+    // Testing
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile "org.mockito:mockito-core:2.+"
+    compile 'com.spotify:hamcrest-pojo:1.1.1'
 }
 
 
 jar {
     manifest.attributes("Main-Class": mainClassName)
-}
-
-jaxb {
-    System.setProperty('javax.xml.accessExternalSchema', 'all')
-    xsdDir = "/media/sysadmin/projects/Fin/demoData/schemas_no_inlineXbrl/us-gaap"
-    bindingsDir = "${project.buildDir}/src/main/java/xbrl/versionTwo/xbrl.versionTwo.generatedFiles"
-
-    xjc {
-        //taskClassname = "com.sun.tools.xjc.XJCTask"
-        destinationDir = "${project.buildDir}/src/main/java/xbrl/versionTwo/xbrl.versionTwo.generatedFiles"
-        generateEpisodeFiles = false
-        taskClassname        = "org.jvnet.jaxb2_commons.xjc.XJC2Task"
-        generatePackage      = "xbrl.versionTwo.generatedFiles"
-        args                 = ["-Xinheritance", "-Xannotate"]
-        //generatePackage = "${project.buildDir}/src/main/java/xbrl/versionTwo/xbrl.versionTwo.generatedFiles"
-       // args = ["-npa", "-no-header"]
-    }
 }

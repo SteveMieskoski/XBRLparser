@@ -1,0 +1,1206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by Charles Hoffman, CPA: 2013-05-15 -->
+<!-- US GAAP -->
+<!-- Reportability Rules, Version 2013.4, Financial Report Semantics and Dynamics Theory -->
+
+<link:linkbase
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xbrli="http://www.xbrl.org/2003/instance" 
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:link="http://www.xbrl.org/2003/linkbase"
+	xmlns:xfi='http://www.xbrl.org/2008/function/instance'
+	xmlns:num="http://www.xbrl.org/dtr/type/numeric"
+	xmlns:generic="http://xbrl.org/2008/generic"
+	xmlns:formula="http://xbrl.org/2008/formula"
+	xmlns:validation="http://xbrl.org/2008/validation"
+	xmlns:ca="http://xbrl.org/2008/assertion/consistency"
+   xmlns:ea="http://xbrl.org/2008/assertion/existence"
+   xmlns:va="http://xbrl.org/2008/assertion/value"
+	xmlns:variable="http://xbrl.org/2008/variable"
+	xmlns:pf="http://xbrl.org/2008/filter/period"
+	xmlns:cf="http://xbrl.org/2008/filter/concept"
+	xmlns:df="http://xbrl.org/2008/filter/dimension"
+	xmlns:gf="http://xbrl.org/2008/filter/general"
+	xmlns:label="http://xbrl.org/2008/label"
+   xmlns:uf="http://xbrl.org/2008/filter/unit"
+   xmlns:ef="http://xbrl.org/2008/filter/entity"
+   xmlns:msg="http://xbrl.org/2010/message"
+
+	xmlns:dei="http://xbrl.sec.gov/dei/2014-01-31" 
+	xmlns:us-gaap="http://fasb.org/us-gaap/2016-01-31" 
+
+	xsi:schemaLocation="
+		http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd
+		http://www.xbrl.org/dtr/type/numeric http://www.xbrl.org/dtr/type/numeric-2009-12-16.xsd
+		http://xbrl.org/2008/generic http://www.xbrl.org/2008/generic-link.xsd
+		http://xbrl.org/2008/formula http://www.xbrl.org/2008/formula.xsd
+		http://xbrl.org/2008/label http://www.xbrl.org/2008/generic-label.xsd
+		http://xbrl.org/2008/assertion/consistency http://www.xbrl.org/2008/consistency-assertion.xsd
+      http://xbrl.org/2008/assertion/existence http://www.xbrl.org/2008/existence-assertion.xsd
+      http://xbrl.org/2008/assertion/value http://www.xbrl.org/2008/value-assertion.xsd
+		http://xbrl.org/2008/filter/period http://www.xbrl.org/2008/period-filter.xsd
+		http://xbrl.org/2008/filter/concept http://www.xbrl.org/2008/concept-filter.xsd
+		http://xbrl.org/2008/filter/dimension http://www.xbrl.org/2008/dimension-filter.xsd
+		http://xbrl.org/2008/filter/general http://www.xbrl.org/2008/general-filter.xsd
+		http://xbrl.org/2008/filter/unit http://www.xbrl.org/2008/unit-filter.xsd
+		http://xbrl.org/2008/filter/entity http://www.xbrl.org/2008/entity-filter.xsd
+		http://xbrl.org/2008/variable http://www.xbrl.org/2008/variable.xsd
+		http://xbrl.org/2008/validation http://www.xbrl.org/2008/validation.xsd
+      http://xbrl.org/2010/message http://www.xbrl.org/2010/generic-message.xsd
+  ">
+  
+
+	<!-- ArcroleRef declarations.  All these are declared by XBRL Formulas. -->
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/element-label" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#element-label" xlink:type="simple"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set" xlink:type="simple"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-filter" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-filter" xlink:type="simple"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/variable-set-precondition" xlink:href="http://www.xbrl.org/2008/variable.xsd#variable-set-precondition" xlink:type="simple"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2008/consistency-assertion-formula" xlink:href="http://www.xbrl.org/2008/consistency-assertion.xsd#consistency-assertion-formula" xlink:type="simple"/>
+
+	<link:roleRef roleURI="http://www.xbrl.org/2008/role/link" xlink:href="http://www.xbrl.org/2008/generic-link.xsd#standard-link-role" xlink:type="simple"/>
+	<link:roleRef roleURI="http://www.xbrl.org/2008/role/label" xlink:href="http://www.xbrl.org/2008/generic-label.xsd#standard-label" xlink:type="simple"/>
+	<link:roleRef roleURI="http://www.xbrl.org/2010/role/message" xlink:href="http://www.xbrl.org/2010/generic-message.xsd#standard-message" xlink:type="simple"/>
+
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-satisfied-message" xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-satisfied-message" xlink:type="simple"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" xlink:href="http://www.xbrl.org/2010/validation-message.xsd#assertion-unsatisfied-message" xlink:type="simple"/>
+
+	<link:documentation> 
+		US GAAP; Reportability Rules, Version 2012.04
+	</link:documentation>
+
+	<!-- Required concepts -->
+	
+	<generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		
+		<!-- EXISTS: Tests to determine if a reported fact exists which has a specific concept characteristic. For example, 'Assets' is required to be reported. -->
+	
+		<!-- Assertion -->
+		<va:valueAssertion xlink:type="resource" xlink:label="ASSERTION"
+			id="REPORTABILITY_Exists_EntityRegistrantName"
+			aspectModel="dimensional" 
+			implicitFiltering="true" 
+			test="exists($VARIABLE_Concept)" />
+		
+		<!-- Label -->
+		<generic:arc xlink:type='arc' xlink:arcrole='http://xbrl.org/arcrole/2008/element-label'
+			xlink:from='ASSERTION' 
+			xlink:to='LABEL'
+			order='1.0'/>
+		
+		<label:label xlink:type='resource' xlink:label='LABEL' xlink:role='http://www.xbrl.org/2008/role/label' 
+			xml:lang='en'>Entity regiatrant name is required per the EFM.</label:label>
+
+		<!-- Messages -->
+		<generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-satisfied-message" 
+			xlink:from="ASSERTION" 
+			xlink:to="MESSAGE_satisfied" 
+			order="1.0"/>
+		<generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" 
+			xlink:from="ASSERTION" 
+			xlink:to="MESSAGE_unsatisfied" 
+			order="1.0"/>
+
+		 <msg:message xlink:type="resource" 
+		 	xlink:label="MESSAGE_satisfied" 
+		 	xlink:role="http://www.xbrl.org/2010/role/message" 
+		 	xml:lang="en">
+				SATISFIED: (OK) The reported fact for {node-name($VARIABLE_Concept)} which is expected was found.
+		 	</msg:message>
+		
+		 <msg:message xlink:type="resource" 
+		 	xlink:label="MESSAGE_unsatisfied" 
+		 	xlink:role="http://www.xbrl.org/2010/role/message" 
+		 	xml:lang="en">
+				UNSATISFIED: (ERROR) The reported fact for {node-name($VARIABLE_Concept)} which is expected was *NOT FOUND*.
+		 	</msg:message>
+
+		<!-- Fact variable -->
+		<variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" 
+			xlink:from="ASSERTION" 
+			xlink:to="VARIABLE_Concept" 
+			order="2.0"
+			name="VARIABLE_Concept"
+			/>
+
+		<variable:factVariable xlink:type="resource" xlink:label="VARIABLE_Concept"
+		   bindAsSequence="false"/>
+		
+		<!-- Concept filter -->
+		<variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+		  xlink:from="VARIABLE_Concept" 
+		  xlink:to="FILTER_Concept" 
+		  complement="false" 
+		  cover="true" 
+		  order="1.0"/>
+	
+		<cf:conceptName xlink:type="resource" xlink:label="FILTER_Concept">
+			<cf:concept>
+				<cf:qname>dei:EntityRegistrantName</cf:qname>
+			</cf:concept>
+		</cf:conceptName>
+
+	</generic:link>   
+
+
+	<generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		
+		<!-- EXISTS: Tests to determine if a reported fact exists which has a specific concept characteristic. For example, 'Assets' is required to be reported. -->
+	
+		<!-- Assertion -->
+		<va:valueAssertion xlink:type="resource" xlink:label="ASSERTION"
+			id="REPORTABILITY_Exists_EntityCentralIndexKey"
+			aspectModel="dimensional" 
+			implicitFiltering="true" 
+			test="exists($VARIABLE_Concept)" />
+		
+		<!-- Label -->
+		<generic:arc xlink:type='arc' xlink:arcrole='http://xbrl.org/arcrole/2008/element-label'
+			xlink:from='ASSERTION' 
+			xlink:to='LABEL'
+			order='1.0'/>
+		
+		<label:label xlink:type='resource' xlink:label='LABEL' xlink:role='http://www.xbrl.org/2008/role/label' 
+			xml:lang='en'>Entity Central Index Key is required per the EFM.</label:label>
+
+		<!-- Messages -->
+		<generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-satisfied-message" 
+			xlink:from="ASSERTION" 
+			xlink:to="MESSAGE_satisfied" 
+			order="1.0"/>
+		<generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" 
+			xlink:from="ASSERTION" 
+			xlink:to="MESSAGE_unsatisfied" 
+			order="1.0"/>
+
+		 <msg:message xlink:type="resource" 
+		 	xlink:label="MESSAGE_satisfied" 
+		 	xlink:role="http://www.xbrl.org/2010/role/message" 
+		 	xml:lang="en">
+				SATISFIED: (OK) The reported fact for {node-name($VARIABLE_Concept)} which is expected was found.
+		 	</msg:message>
+		
+		 <msg:message xlink:type="resource" 
+		 	xlink:label="MESSAGE_unsatisfied" 
+		 	xlink:role="http://www.xbrl.org/2010/role/message" 
+		 	xml:lang="en">
+				UNSATISFIED: (ERROR) The reported fact for {node-name($VARIABLE_Concept)} which is expected was *NOT FOUND*.
+		 	</msg:message>
+
+		<!-- Fact variable -->
+		<variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" 
+			xlink:from="ASSERTION" 
+			xlink:to="VARIABLE_Concept" 
+			order="2.0"
+			name="VARIABLE_Concept"
+			/>
+
+		<variable:factVariable xlink:type="resource" xlink:label="VARIABLE_Concept"
+		   bindAsSequence="false"/>
+		
+		<!-- Concept filter -->
+		<variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+		  xlink:from="VARIABLE_Concept" 
+		  xlink:to="FILTER_Concept" 
+		  complement="false" 
+		  cover="true" 
+		  order="1.0"/>
+	
+		<cf:conceptName xlink:type="resource" xlink:label="FILTER_Concept">
+			<cf:concept>
+				<cf:qname>dei:EntityCentralIndexKey</cf:qname>
+			</cf:concept>
+		</cf:conceptName>
+
+	</generic:link>   
+
+	<generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		
+		<!-- EXISTS: Tests to determine if a reported fact exists which has a specific concept characteristic. For example, 'Assets' is required to be reported. -->
+	
+		<!-- Assertion -->
+		<va:valueAssertion xlink:type="resource" xlink:label="ASSERTION"
+			id="REPORTABILITY_Exists_EntityFilerCategory"
+			aspectModel="dimensional" 
+			implicitFiltering="true" 
+			test="exists($VARIABLE_Concept)" />
+		
+		<!-- Label -->
+		<generic:arc xlink:type='arc' xlink:arcrole='http://xbrl.org/arcrole/2008/element-label'
+			xlink:from='ASSERTION' 
+			xlink:to='LABEL'
+			order='1.0'/>
+		
+		<label:label xlink:type='resource' xlink:label='LABEL' xlink:role='http://www.xbrl.org/2008/role/label' 
+			xml:lang='en'>Entity Filer Category is required per the EFM.</label:label>
+
+		<!-- Messages -->
+		<generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-satisfied-message" 
+			xlink:from="ASSERTION" 
+			xlink:to="MESSAGE_satisfied" 
+			order="1.0"/>
+		<generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" 
+			xlink:from="ASSERTION" 
+			xlink:to="MESSAGE_unsatisfied" 
+			order="1.0"/>
+
+		 <msg:message xlink:type="resource" 
+		 	xlink:label="MESSAGE_satisfied" 
+		 	xlink:role="http://www.xbrl.org/2010/role/message" 
+		 	xml:lang="en">
+				SATISFIED: (OK) The reported fact for {node-name($VARIABLE_Concept)} which is expected was found.
+		 	</msg:message>
+		
+		 <msg:message xlink:type="resource" 
+		 	xlink:label="MESSAGE_unsatisfied" 
+		 	xlink:role="http://www.xbrl.org/2010/role/message" 
+		 	xml:lang="en">
+				UNSATISFIED: (ERROR) The reported fact for {node-name($VARIABLE_Concept)} which is expected was *NOT FOUND*.
+		 	</msg:message>
+
+		<!-- Fact variable -->
+		<variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" 
+			xlink:from="ASSERTION" 
+			xlink:to="VARIABLE_Concept" 
+			order="2.0"
+			name="VARIABLE_Concept"
+			/>
+
+		<variable:factVariable xlink:type="resource" xlink:label="VARIABLE_Concept"
+		   bindAsSequence="false"/>
+		
+		<!-- Concept filter -->
+		<variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+		  xlink:from="VARIABLE_Concept" 
+		  xlink:to="FILTER_Concept" 
+		  complement="false" 
+		  cover="true" 
+		  order="1.0"/>
+	
+		<cf:conceptName xlink:type="resource" xlink:label="FILTER_Concept">
+			<cf:concept>
+				<cf:qname>dei:EntityFilerCategory</cf:qname>
+			</cf:concept>
+		</cf:conceptName>
+
+	</generic:link>   
+
+
+	<generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		
+		<!-- EXISTS: Tests to determine if a reported fact exists which has a specific concept characteristic. For example, 'Assets' is required to be reported. -->
+	
+		<!-- Assertion -->
+		<va:valueAssertion xlink:type="resource" xlink:label="ASSERTION"
+			id="REPORTABILITY_Exists_EntityCurrentReportingStatus"
+			aspectModel="dimensional" 
+			implicitFiltering="true" 
+			test="exists($VARIABLE_Concept)" />
+		
+		<!-- Label -->
+		<generic:arc xlink:type='arc' xlink:arcrole='http://xbrl.org/arcrole/2008/element-label'
+			xlink:from='ASSERTION' 
+			xlink:to='LABEL'
+			order='1.0'/>
+		
+		<label:label xlink:type='resource' xlink:label='LABEL' xlink:role='http://www.xbrl.org/2008/role/label' 
+			xml:lang='en'>Entity Current Reporting Status is required per the EFM.</label:label>
+
+		<!-- Messages -->
+		<generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-satisfied-message" 
+			xlink:from="ASSERTION" 
+			xlink:to="MESSAGE_satisfied" 
+			order="1.0"/>
+		<generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" 
+			xlink:from="ASSERTION" 
+			xlink:to="MESSAGE_unsatisfied" 
+			order="1.0"/>
+
+		 <msg:message xlink:type="resource" 
+		 	xlink:label="MESSAGE_satisfied" 
+		 	xlink:role="http://www.xbrl.org/2010/role/message" 
+		 	xml:lang="en">
+				SATISFIED: (OK) The reported fact for {node-name($VARIABLE_Concept)} which is expected was found.
+		 	</msg:message>
+		
+		 <msg:message xlink:type="resource" 
+		 	xlink:label="MESSAGE_unsatisfied" 
+		 	xlink:role="http://www.xbrl.org/2010/role/message" 
+		 	xml:lang="en">
+				UNSATISFIED: (ERROR) The reported fact for {node-name($VARIABLE_Concept)} which is expected was *NOT FOUND*.
+		 	</msg:message>
+
+		<!-- Fact variable -->
+		<variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" 
+			xlink:from="ASSERTION" 
+			xlink:to="VARIABLE_Concept" 
+			order="2.0"
+			name="VARIABLE_Concept"
+			/>
+
+		<variable:factVariable xlink:type="resource" xlink:label="VARIABLE_Concept"
+		   bindAsSequence="false"/>
+		
+		<!-- Concept filter -->
+		<variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+		  xlink:from="VARIABLE_Concept" 
+		  xlink:to="FILTER_Concept" 
+		  complement="false" 
+		  cover="true" 
+		  order="1.0"/>
+	
+		<cf:conceptName xlink:type="resource" xlink:label="FILTER_Concept">
+			<cf:concept>
+				<cf:qname>dei:EntityCurrentReportingStatus</cf:qname>
+			</cf:concept>
+		</cf:conceptName>
+
+	</generic:link>   
+
+	<generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		
+		<!-- EXISTS: Tests to determine if a reported fact exists which has a specific concept characteristic. For example, 'Assets' is required to be reported. -->
+	
+		<!-- Assertion -->
+		<va:valueAssertion xlink:type="resource" xlink:label="ASSERTION"
+			id="REPORTABILITY_Exists_EntityVoluntaryFilers"
+			aspectModel="dimensional" 
+			implicitFiltering="true" 
+			test="exists($VARIABLE_Concept)" />
+		
+		<!-- Label -->
+		<generic:arc xlink:type='arc' xlink:arcrole='http://xbrl.org/arcrole/2008/element-label'
+			xlink:from='ASSERTION' 
+			xlink:to='LABEL'
+			order='1.0'/>
+		
+		<label:label xlink:type='resource' xlink:label='LABEL' xlink:role='http://www.xbrl.org/2008/role/label' 
+			xml:lang='en'>Entity Voluntary Filers is required per the EFM.</label:label>
+
+		<!-- Messages -->
+		<generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-satisfied-message" 
+			xlink:from="ASSERTION" 
+			xlink:to="MESSAGE_satisfied" 
+			order="1.0"/>
+		<generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" 
+			xlink:from="ASSERTION" 
+			xlink:to="MESSAGE_unsatisfied" 
+			order="1.0"/>
+
+		 <msg:message xlink:type="resource" 
+		 	xlink:label="MESSAGE_satisfied" 
+		 	xlink:role="http://www.xbrl.org/2010/role/message" 
+		 	xml:lang="en">
+				SATISFIED: (OK) The reported fact for {node-name($VARIABLE_Concept)} which is expected was found.
+		 	</msg:message>
+		
+		 <msg:message xlink:type="resource" 
+		 	xlink:label="MESSAGE_unsatisfied" 
+		 	xlink:role="http://www.xbrl.org/2010/role/message" 
+		 	xml:lang="en">
+				UNSATISFIED: (ERROR) The reported fact for {node-name($VARIABLE_Concept)} which is expected was *NOT FOUND*.
+		 	</msg:message>
+
+		<!-- Fact variable -->
+		<variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" 
+			xlink:from="ASSERTION" 
+			xlink:to="VARIABLE_Concept" 
+			order="2.0"
+			name="VARIABLE_Concept"
+			/>
+
+		<variable:factVariable xlink:type="resource" xlink:label="VARIABLE_Concept"
+		   bindAsSequence="false"/>
+		
+		<!-- Concept filter -->
+		<variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+		  xlink:from="VARIABLE_Concept" 
+		  xlink:to="FILTER_Concept" 
+		  complement="false" 
+		  cover="true" 
+		  order="1.0"/>
+	
+		<cf:conceptName xlink:type="resource" xlink:label="FILTER_Concept">
+			<cf:concept>
+				<cf:qname>dei:EntityVoluntaryFilers</cf:qname>
+			</cf:concept>
+		</cf:conceptName>
+
+	</generic:link>   
+
+
+	<generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		
+		<!-- EXISTS: Tests to determine if a reported fact exists which has a specific concept characteristic. For example, 'Assets' is required to be reported. -->
+	
+		<!-- Assertion -->
+		<va:valueAssertion xlink:type="resource" xlink:label="ASSERTION"
+			id="REPORTABILITY_Exists_EntityWellKnownSeasonedIssuer"
+			aspectModel="dimensional" 
+			implicitFiltering="true" 
+			test="exists($VARIABLE_Concept)" />
+		
+		<!-- Label -->
+		<generic:arc xlink:type='arc' xlink:arcrole='http://xbrl.org/arcrole/2008/element-label'
+			xlink:from='ASSERTION' 
+			xlink:to='LABEL'
+			order='1.0'/>
+		
+		<label:label xlink:type='resource' xlink:label='LABEL' xlink:role='http://www.xbrl.org/2008/role/label' 
+			xml:lang='en'>Entity Well Known Seasoned Issuer is required per the EFM.</label:label>
+
+		<!-- Messages -->
+		<generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-satisfied-message" 
+			xlink:from="ASSERTION" 
+			xlink:to="MESSAGE_satisfied" 
+			order="1.0"/>
+		<generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" 
+			xlink:from="ASSERTION" 
+			xlink:to="MESSAGE_unsatisfied" 
+			order="1.0"/>
+
+		 <msg:message xlink:type="resource" 
+		 	xlink:label="MESSAGE_satisfied" 
+		 	xlink:role="http://www.xbrl.org/2010/role/message" 
+		 	xml:lang="en">
+				SATISFIED: (OK) The reported fact for {node-name($VARIABLE_Concept)} which is expected was found.
+		 	</msg:message>
+		
+		 <msg:message xlink:type="resource" 
+		 	xlink:label="MESSAGE_unsatisfied" 
+		 	xlink:role="http://www.xbrl.org/2010/role/message" 
+		 	xml:lang="en">
+				UNSATISFIED: (ERROR) The reported fact for {node-name($VARIABLE_Concept)} which is expected was *NOT FOUND*.
+		 	</msg:message>
+
+		<!-- Fact variable -->
+		<variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" 
+			xlink:from="ASSERTION" 
+			xlink:to="VARIABLE_Concept" 
+			order="2.0"
+			name="VARIABLE_Concept"
+			/>
+
+		<variable:factVariable xlink:type="resource" xlink:label="VARIABLE_Concept"
+		   bindAsSequence="false"/>
+		
+		<!-- Concept filter -->
+		<variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+		  xlink:from="VARIABLE_Concept" 
+		  xlink:to="FILTER_Concept" 
+		  complement="false" 
+		  cover="true" 
+		  order="1.0"/>
+	
+		<cf:conceptName xlink:type="resource" xlink:label="FILTER_Concept">
+			<cf:concept>
+				<cf:qname>dei:EntityWellKnownSeasonedIssuer</cf:qname>
+			</cf:concept>
+		</cf:conceptName>
+
+	</generic:link>   
+
+
+
+	<generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		
+		<!-- EXISTS: Tests to determine if a reported fact exists which has a specific concept characteristic. For example, 'Assets' is required to be reported. -->
+	
+		<!-- Assertion -->
+		<va:valueAssertion xlink:type="resource" xlink:label="ASSERTION"
+			id="REPORTABILITY_Exists_DocumentPeriodEndDate"
+			aspectModel="dimensional" 
+			implicitFiltering="true" 
+			test="exists($VARIABLE_Concept)" />
+		
+		<!-- Label -->
+		<generic:arc xlink:type='arc' xlink:arcrole='http://xbrl.org/arcrole/2008/element-label'
+			xlink:from='ASSERTION' 
+			xlink:to='LABEL'
+			order='1.0'/>
+		
+		<label:label xlink:type='resource' xlink:label='LABEL' xlink:role='http://www.xbrl.org/2008/role/label' 
+			xml:lang='en'>Document Period End Date is required per the EFM.</label:label>
+
+		<!-- Messages -->
+		<generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-satisfied-message" 
+			xlink:from="ASSERTION" 
+			xlink:to="MESSAGE_satisfied" 
+			order="1.0"/>
+		<generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" 
+			xlink:from="ASSERTION" 
+			xlink:to="MESSAGE_unsatisfied" 
+			order="1.0"/>
+
+		 <msg:message xlink:type="resource" 
+		 	xlink:label="MESSAGE_satisfied" 
+		 	xlink:role="http://www.xbrl.org/2010/role/message" 
+		 	xml:lang="en">
+				SATISFIED: (OK) The reported fact for {node-name($VARIABLE_Concept)} which is expected was found.
+		 	</msg:message>
+		
+		 <msg:message xlink:type="resource" 
+		 	xlink:label="MESSAGE_unsatisfied" 
+		 	xlink:role="http://www.xbrl.org/2010/role/message" 
+		 	xml:lang="en">
+				UNSATISFIED: (ERROR) The reported fact for {node-name($VARIABLE_Concept)} which is expected was *NOT FOUND*.
+		 	</msg:message>
+
+		<!-- Fact variable -->
+		<variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" 
+			xlink:from="ASSERTION" 
+			xlink:to="VARIABLE_Concept" 
+			order="2.0"
+			name="VARIABLE_Concept"
+			/>
+
+		<variable:factVariable xlink:type="resource" xlink:label="VARIABLE_Concept"
+		   bindAsSequence="false"/>
+		
+		<!-- Concept filter -->
+		<variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+		  xlink:from="VARIABLE_Concept" 
+		  xlink:to="FILTER_Concept" 
+		  complement="false" 
+		  cover="true" 
+		  order="1.0"/>
+	
+		<cf:conceptName xlink:type="resource" xlink:label="FILTER_Concept">
+			<cf:concept>
+				<cf:qname>dei:DocumentPeriodEndDate</cf:qname>
+			</cf:concept>
+		</cf:conceptName>
+
+	</generic:link>   
+
+
+
+
+	<generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+	
+		<!-- Proper Date: Document period end date is within the expected range -->
+
+		<va:valueAssertion xlink:type="resource" xlink:label="ASSERTION" 
+			id="REPORTABILITY_ProperDate_DocumentPeriodEndDate" 
+			aspectModel="dimensional" 
+			implicitFiltering="false" 
+			test="$VARIABLE_Fact eq $VARIABLE_General"/>
+
+		<!-- Label -->
+		<generic:arc xlink:type='arc' xlink:arcrole='http://xbrl.org/arcrole/2008/element-label'
+			xlink:from='ASSERTION' 
+			xlink:to='LABEL'
+			order='1.0'/>
+		
+		<label:label xlink:type='resource' xlink:label='LABEL' xlink:role='http://www.xbrl.org/2008/role/label' 
+			xml:lang='en'>Document Period End Date is required to be within a certain range.</label:label>
+
+
+		<!-- FOR SOME REASON I CANNOT GET THE MESSAGES TO WORK CORRECLY -->
+
+
+
+
+		<!-- General Variables -->
+		<variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" 
+			xlink:from="ASSERTION" 
+			xlink:to="VARIABLE_General" 
+			order="1.0" 
+			name="VARIABLE_General"
+			/>
+
+		<variable:generalVariable xlink:type="resource" xlink:label="VARIABLE_General" 
+			bindAsSequence="false" 
+			select="max(distinct-values(/xbrli:xbrl/xbrli:context/xbrli:period/xbrli:instant))"
+			/>
+
+		<variable:factVariable xlink:type="resource" 
+			xlink:label="VARIABLE_Fact" 
+			bindAsSequence="false"
+			/>
+
+		<variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" 
+			xlink:from="ASSERTION" 
+			xlink:to="VARIABLE_Fact" 
+			order="2.0" 
+			name="VARIABLE_Fact"/>
+
+
+		<variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" 
+			xlink:from="VARIABLE_Fact" 
+			xlink:to="FILTER_Concept" 
+			complement="false" 
+			cover="true" 
+			order="1.0"
+			/>
+		
+		<cf:conceptName xlink:type="resource" xlink:label="FILTER_Concept">
+			<cf:concept>
+				<cf:qname>dei:DocumentPeriodEndDate</cf:qname>
+			</cf:concept>
+		</cf:conceptName>
+
+	
+	</generic:link>   
+
+
+
+
+
+
+
+	<!-- BALANCE SHEET -->
+	<generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+	
+		<!-- Assertion -->
+		<va:valueAssertion xlink:type="resource" xlink:label="ASSERTION"
+			id="REPORTABILITY_MustCoexist_PreferredStockSharesAuthorized_PreferredStockSharesIssued"
+			aspectModel="dimensional" 
+			implicitFiltering="true" 
+			test="if (exists($VARIABLE_ConceptExists)) then exists($VARIABLE_ConceptWhichMustAlsoExist) else true()" />
+		
+		<!-- Label -->
+		<generic:arc xlink:type='arc' xlink:arcrole='http://xbrl.org/arcrole/2008/element-label'
+			xlink:from='ASSERTION' 
+			xlink:to='ASSERTION_Label'
+			order='1.0'/>
+		
+		<label:label xlink:type='resource' xlink:label='ASSERTION_Label' xlink:role='http://www.xbrl.org/2008/role/label' 
+			xml:lang='en'>If shares authorized is reported; then shares issued must also be reported.</label:label>
+		
+		<!-- Fact Variables -->
+		<variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" 
+			xlink:from="ASSERTION" 
+			xlink:to="VARIABLE_ConceptExists" 
+			order="1.0" 
+			name="VARIABLE_ConceptExists" 
+			/>
+
+		<variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" 
+			xlink:from="ASSERTION" 
+			xlink:to="VARIABLE_ConceptWhichMustAlsoExist" 
+			order="1.0" 
+			name="VARIABLE_ConceptWhichMustAlsoExist" 
+			/>
+
+		
+		<variable:factVariable xlink:type="resource" xlink:label="VARIABLE_ConceptExists" 
+		  bindAsSequence="false"
+		  fallbackValue="()"
+		  />
+		
+		<variable:factVariable xlink:type="resource" xlink:label="VARIABLE_ConceptWhichMustAlsoExist" 
+		  bindAsSequence="false"
+		  fallbackValue="()"
+		  />
+		
+
+		<!-- Concept Filters -->
+		<variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" 
+		  xlink:from="VARIABLE_ConceptExists" 
+		  xlink:to="FILTER_ConceptExists" 
+		  order="1.0"
+		  complement="false" 
+		  cover="true" 
+		  />
+
+		<variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" 
+		  xlink:from="VARIABLE_ConceptWhichMustAlsoExist" 
+		  xlink:to="FILTER_ConceptWhichMustAlsoExist" 
+		  order="1.0"
+		  complement="false" 
+		  cover="true" 
+		  />
+
+
+		<cf:conceptName xlink:type="resource" xlink:label="FILTER_ConceptExists">
+			<cf:concept>
+				<cf:qname>us-gaap:PreferredStockSharesAuthorized</cf:qname>
+			</cf:concept>
+		</cf:conceptName>
+
+		<cf:conceptName xlink:type="resource" xlink:label="FILTER_ConceptWhichMustAlsoExist">
+			<cf:concept>
+				<cf:qname>us-gaap:PreferredStockSharesIssued</cf:qname>
+			</cf:concept>
+		</cf:conceptName>
+	
+	</generic:link>   
+
+
+	<generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+	
+		<!-- Assertion -->
+		<va:valueAssertion xlink:type="resource" xlink:label="ASSERTION"
+			id="REPORTABILITY_MustCoexist_PreferredStockSharesAuthorized_PreferredStockSharesOutstanding"
+			aspectModel="dimensional" 
+			implicitFiltering="true" 
+			test="if (exists($VARIABLE_ConceptExists)) then exists($VARIABLE_ConceptWhichMustAlsoExist) else true()" />
+		
+		<!-- Label -->
+		<generic:arc xlink:type='arc' xlink:arcrole='http://xbrl.org/arcrole/2008/element-label'
+			xlink:from='ASSERTION' 
+			xlink:to='ASSERTION_Label'
+			order='1.0'/>
+		
+		<label:label xlink:type='resource' xlink:label='ASSERTION_Label' xlink:role='http://www.xbrl.org/2008/role/label' 
+			xml:lang='en'>If shares authorized is reported; then shares outstanding must also be reported.</label:label>
+		
+		<!-- Fact Variables -->
+		<variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" 
+			xlink:from="ASSERTION" 
+			xlink:to="VARIABLE_ConceptExists" 
+			name="VARIABLE_ConceptExists" 
+			order="1.0"/>
+
+		<variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" 
+			xlink:from="ASSERTION" 
+			xlink:to="VARIABLE_ConceptWhichMustAlsoExist" 
+			name="VARIABLE_ConceptWhichMustAlsoExist" 
+			order="1.0"/>
+
+
+		<variable:factVariable xlink:type="resource" xlink:label="VARIABLE_ConceptExists" 
+		  bindAsSequence="false"
+		  fallbackValue="()"
+		  />
+		
+		<variable:factVariable xlink:type="resource" xlink:label="VARIABLE_ConceptWhichMustAlsoExist" 
+		  bindAsSequence="false"
+		  fallbackValue="()"
+		  />
+		
+
+		<!-- Concept Filters -->
+		<variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" 
+		  xlink:from="VARIABLE_ConceptExists" 
+		  xlink:to="FILTER_ConceptExists" 
+		  complement="false" 
+		  cover="true" 
+		  order="1.0"/>
+
+		<variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" 
+		  xlink:from="VARIABLE_ConceptWhichMustAlsoExist" 
+		  xlink:to="FILTER_ConceptWhichMustAlsoExist" 
+		  complement="false" 
+		  cover="true" 
+		  order="1.0"/>
+
+
+		<cf:conceptName xlink:type="resource" xlink:label="FILTER_ConceptExists">
+			<cf:concept>
+				<cf:qname>us-gaap:PreferredStockSharesAuthorized</cf:qname>
+			</cf:concept>
+		</cf:conceptName>
+
+		<cf:conceptName xlink:type="resource" xlink:label="FILTER_ConceptWhichMustAlsoExist">
+			<cf:concept>
+				<cf:qname>us-gaap:PreferredStockSharesOutstanding</cf:qname>
+			</cf:concept>
+		</cf:conceptName>
+	
+	</generic:link>   
+
+
+
+
+	<generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+	
+		<!-- Assertion -->
+		<va:valueAssertion xlink:type="resource" xlink:label="ASSERTION"
+			id="REPORTABILITY_MustCoExist_Assets_LiabilitiesAndEquity"
+			aspectModel="dimensional" 
+			implicitFiltering="true" 
+			test="exists(/xbrli:xbrl/us-gaap:Assets) and exists(/xbrli:xbrl/us-gaap:LiabilitiesAndStockholdersEquity | /xbrli:xbrl/us-gaap:LiabilitiesAndPartnersCapital)" />
+		
+		<!-- Label -->
+		<generic:arc xlink:type='arc' xlink:arcrole='http://xbrl.org/arcrole/2008/element-label'
+			xlink:from='ASSERTION' 
+			xlink:to='ASSERTION_Label'
+			order='1.0'/>
+		
+		<label:label xlink:type='resource' xlink:label='ASSERTION_Label' xlink:role='http://www.xbrl.org/2008/role/label' 
+			xml:lang='en'>Assets and liabilities and equity MUST exist.</label:label>
+		
+	
+	</generic:link>   
+
+
+
+	<generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+	
+		<!-- Assertion -->
+		<va:valueAssertion xlink:type="resource" xlink:label="ASSERTION"
+			id="REPORTABILITY_NotCoexist_LiabilitiesAndStockholdersEquity_LiabilitiesAndPartnersCapital"
+			aspectModel="dimensional" 
+			implicitFiltering="true" 
+			test="
+				if (exists(/xbrli:xbrl/us-gaap:LiabilitiesAndStockholdersEquity)) 
+				
+				then not (exists(
+					/xbrli:xbrl/us-gaap:LiabilitiesAndPartnersCapital
+					)) 
+					
+				else true()" />
+		
+		<!-- Label -->
+		<generic:arc xlink:type='arc' xlink:arcrole='http://xbrl.org/arcrole/2008/element-label'
+			xlink:from='ASSERTION' 
+			xlink:to='ASSERTION_Label'
+			order='1.0'/>
+		
+		<label:label xlink:type='resource' xlink:label='ASSERTION_Label' xlink:role='http://www.xbrl.org/2008/role/label' 
+			xml:lang='en'>If liabilities and stockholder equity exists on the balance sheet, then an liabilities and partner capital must exist.</label:label>
+		
+	
+	</generic:link>   
+
+
+	<generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+	
+		<!-- Assertion -->
+		<va:valueAssertion xlink:type="resource" xlink:label="ASSERTION"
+			id="REPORTABILITY_MustCoexist_NoncontrollingInterest_EquityAttributableToParent"
+			aspectModel="dimensional" 
+			implicitFiltering="true" 
+			test="
+				if (exists(/xbrli:xbrl/us-gaap:MinorityInterest)) 
+				
+				then exists(
+					/xbrli:xbrl/us-gaap:StockholdersEquity
+					)
+					
+				else true()" />
+		
+		<!-- Label -->
+		<generic:arc xlink:type='arc' xlink:arcrole='http://xbrl.org/arcrole/2008/element-label'
+			xlink:from='ASSERTION' 
+			xlink:to='ASSERTION_Label'
+			order='1.0'/>
+		
+		<label:label xlink:type='resource' xlink:label='ASSERTION_Label' xlink:role='http://www.xbrl.org/2008/role/label' 
+			xml:lang='en'>If noncontrolling interest exists on the balance sheet, then equity attributable to parent must exist on the balance sheet.</label:label>
+		
+	
+	</generic:link>   
+
+
+
+	<generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+	
+		<!-- Assertion -->
+		<va:valueAssertion xlink:type="resource" xlink:label="ASSERTION"
+			id="REPORTABILITY_PercentProperlyReported"
+			aspectModel="dimensional" 
+			implicitFiltering="true" 
+			test="abs($percentage) le 1" />
+		
+		<!-- Label -->
+		<generic:arc xlink:type='arc' xlink:arcrole='http://xbrl.org/arcrole/2008/element-label'
+			xlink:from='ASSERTION' 
+			xlink:to='ASSERTION_Label'
+			order='1.0'/>
+		
+		<label:label xlink:type='resource' xlink:label='ASSERTION_Label' xlink:role='http://www.xbrl.org/2008/role/label' 
+			xml:lang='en'>Testing</label:label>
+
+		<variable:factVariable xlink:type="resource" xlink:label="FACT_VARIABLE_ThisConcept" id="FACT_VARIABLE_ThisConcept" bindAsSequence="false"/>
+
+		<variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" xlink:from="ASSERTION" xlink:to="FACT_VARIABLE_ThisConcept" priority="0" order="1.0" name="percentage"/>
+
+		<cf:conceptDataType xlink:type="resource" xlink:label="DATATYPE" id="DATATYPE" strict="false">
+			<cf:type>
+			  <cf:qname>num:percentItemType</cf:qname>
+			</cf:type>
+		</cf:conceptDataType>
+
+		<variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" xlink:from="FACT_VARIABLE_ThisConcept" xlink:to="DATATYPE" priority="0" order="1.0" cover="true" complement="false"/>
+		
+	
+	</generic:link>   
+
+
+
+	<generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+
+		<!-- Assertion -->
+		<va:valueAssertion xlink:type="resource" xlink:label="ASSERTION_Consistency"
+			id="REPORTABILITY_EqualToOrGreaterThan_CommonStockSharesAuthorized_GreaterThan_CommonStockSharesIssued"
+			aspectModel="dimensional" 
+			implicitFiltering="true" 
+			test="($VARIABLE_SharesIssued le $VARIABLE_SharesAuthorized)" />
+
+		<!-- Assertion -->
+		<generic:arc xlink:type='arc' xlink:arcrole='http://xbrl.org/arcrole/2008/element-label'
+		    xlink:from='ASSERTION_Consistency' 
+		    xlink:to='ASSERTION_Label'
+		    order='1.0'/>
+		
+		<label:label xlink:type='resource' xlink:label='ASSERTION_Label' xlink:role='http://www.xbrl.org/2008/role/label' 
+		    xml:lang='en'>Authorized common shares greater than issued common shares.</label:label>
+
+	    <!-- Fact variables) -->
+	    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" 
+	             xlink:from="ASSERTION_Consistency" 
+	             xlink:to="VARIABLE_SharesIssued" 
+	             order="1.0" 
+	             name="VARIABLE_SharesIssued" 
+	             />
+	    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" 
+	             xlink:from="ASSERTION_Consistency" 
+	             xlink:to="VARIABLE_SharesAuthorized" 
+	             order="1.0" 
+	             name="VARIABLE_SharesAuthorized" 
+	             />
+		
+		
+	    <variable:factVariable xlink:type="resource" xlink:label="VARIABLE_SharesIssued" 
+	             bindAsSequence="false" 
+	             />
+	    <variable:factVariable xlink:type="resource" xlink:label="VARIABLE_SharesAuthorized" 
+	             bindAsSequence="false" 
+	             />
+
+	
+	    <!--  Concept filters) -->
+	    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" 
+	             xlink:from="VARIABLE_SharesIssued" 
+	             xlink:to="FILTER_SharesIssued" 
+	             complement="false" 
+	             cover="true" 
+	             order="1.0"/>
+	    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" 
+	             xlink:from="VARIABLE_SharesAuthorized" 
+	             xlink:to="FILTER_SharesAuthorized" 
+	             complement="false" 
+	             cover="true" 
+	             order="1.0"/>
+
+	    <cf:conceptName xlink:type="resource" xlink:label="FILTER_SharesIssued">
+	      <cf:concept>
+	        <cf:qname>us-gaap:CommonStockSharesIssued</cf:qname>
+	      </cf:concept>
+	    </cf:conceptName>
+	    <cf:conceptName xlink:type="resource" xlink:label="FILTER_SharesAuthorized">
+	      <cf:concept>
+	        <cf:qname>us-gaap:CommonStockSharesAuthorized</cf:qname>
+	      </cf:concept>
+	    </cf:conceptName>
+	
+
+	</generic:link>   
+	
+	
+	<generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+
+		<!-- Assertion -->
+		<va:valueAssertion xlink:type="resource" xlink:label="ASSERTION_Consistency"
+			id="REPORTABILITY_EqualToOrGreaterThan_PreferredStockSharesAuthorized_PreferredStockSharesIssued"
+			aspectModel="dimensional" 
+			implicitFiltering="true" 
+			test="($VARIABLE_SharesIssued le $VARIABLE_SharesAuthorized)" />
+		
+		<!-- Label -->
+		<generic:arc xlink:type='arc' xlink:arcrole='http://xbrl.org/arcrole/2008/element-label'
+		    xlink:from='ASSERTION_Consistency' 
+		    xlink:to='ASSERTION_Label'
+		    order='1.0'/>
+		
+		<label:label xlink:type='resource' xlink:label='ASSERTION_Label' xlink:role='http://www.xbrl.org/2008/role/label' 
+		    xml:lang='en'>Authorized preferred shares greater than issued common shares.</label:label>
+
+	    <!-- Fact variables) -->
+	    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" 
+	             xlink:from="ASSERTION_Consistency" 
+	             xlink:to="VARIABLE_SharesIssued" 
+	             name="VARIABLE_SharesIssued" 
+	             order="1.0"/>
+	    <variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" 
+	             xlink:from="ASSERTION_Consistency" 
+	             xlink:to="VARIABLE_SharesAuthorized" 
+	             name="VARIABLE_SharesAuthorized" 
+	             order="1.0"/>
+		
+	    <variable:factVariable xlink:type="resource" xlink:label="VARIABLE_SharesIssued" 
+	             bindAsSequence="false" 
+	             />
+	    <variable:factVariable xlink:type="resource" xlink:label="VARIABLE_SharesAuthorized" 
+	             bindAsSequence="false" 
+	             />
+
+	
+	    <!--  Concept filters -->
+	    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" 
+	             xlink:from="VARIABLE_SharesIssued" 
+	             xlink:to="FILTER_SharesIssued" 
+	             complement="false" 
+	             cover="true" 
+	             order="1.0"/>
+	    <variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter" 
+	             xlink:from="VARIABLE_SharesAuthorized" 
+	             xlink:to="FILTER_SharesAuthorized" 
+	             complement="false" 
+	             cover="true" 
+	             order="1.0"/>
+
+	    <cf:conceptName xlink:type="resource" xlink:label="FILTER_SharesIssued">
+	      <cf:concept>
+	        <cf:qname>us-gaap:PreferredStockSharesIssued</cf:qname>
+	      </cf:concept>
+	    </cf:conceptName>
+	    <cf:conceptName xlink:type="resource" xlink:label="FILTER_SharesAuthorized">
+	      <cf:concept>
+	        <cf:qname>us-gaap:PreferredStockSharesAuthorized</cf:qname>
+	      </cf:concept>
+	    </cf:conceptName>
+	
+
+	</generic:link>   
+	
+	
+	<generic:link xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+	
+		<!-- Assertion -->
+		<va:valueAssertion xlink:type="resource" xlink:label="ASSERTION"
+			id="REPORTABILITY_ReportedFactMustBePositive"
+			aspectModel="dimensional" 
+			implicitFiltering="true" 
+			test="not($VARIABLE_ReportedFact lt 0)" />
+	
+		<!-- Labels -->
+		<generic:arc xlink:type='arc' xlink:arcrole='http://xbrl.org/arcrole/2008/element-label'
+		    xlink:from='ASSERTION' 
+		    xlink:to='ASSERTION_Label'
+		    order='1.0'/>
+		
+		<label:label xlink:type='resource' xlink:label='ASSERTION_Label' xlink:role='http://www.xbrl.org/2008/role/label' 
+		    xml:lang='en'>This fact should never be less than zero.</label:label>
+	
+		<!-- Messages -->
+		<generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-satisfied-message" 
+			xlink:from="ASSERTION" 
+			xlink:to="MESSAGE_satisfied" 
+			order="1.0"/>
+		<generic:arc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2010/assertion-unsatisfied-message" 
+			xlink:from="ASSERTION" 
+			xlink:to="MESSAGE_unsatisfied" 
+			order="1.0"/>
+
+		 <msg:message xlink:type="resource" 
+		 	xlink:label="MESSAGE_satisfied" 
+		 	xlink:role="http://www.xbrl.org/2010/role/message" 
+		 	xml:lang="en">
+				SATISFIED: (OK) The reported fact for {node-name($VARIABLE_ReportedFact)} was {$VARIABLE_ReportedFact} which is, as expected, greater than or equal to 0 (i.e. not less than 0).
+		 	</msg:message>
+		
+		 <msg:message xlink:type="resource" 
+		 	xlink:label="MESSAGE_unsatisfied" 
+		 	xlink:role="http://www.xbrl.org/2010/role/message" 
+		 	xml:lang="en">
+				UNSATISFIED: (ERROR) The reported fact for {node-name($VARIABLE_ReportedFact)} was {$VARIABLE_ReportedFact} but is expected to be greater than 0.
+		 	</msg:message>
+
+		<!-- Fact variables -->
+		<variable:variableArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-set" 
+			xlink:from="ASSERTION" 
+			xlink:to="VARIABLE_ReportedFact" 
+			name="VARIABLE_ReportedFact"
+			order="1.0"/>
+	
+		<variable:factVariable xlink:type="resource" xlink:label="VARIABLE_ReportedFact"
+		   bindAsSequence="false"/>
+		
+		<!-- Concept filters -->
+		<variable:variableFilterArc xlink:type="arc" xlink:arcrole="http://xbrl.org/arcrole/2008/variable-filter"
+			xlink:from="VARIABLE_ReportedFact" 
+			xlink:to="FILTER_Concept" 
+			complement="false" 
+			cover="true" 
+			order="1.0"/>
+	
+	    <cf:conceptName xlink:type="resource" xlink:label="FILTER_Concept">
+			<cf:concept>
+				<cf:qname>us-gaap:PaymentsToAcquirePropertyPlantAndEquipment</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:PaymentsOfDividendsCommonStock</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:ProceedsFromIssuanceOfLongTermDebt</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:ProceedsFromPaymentsForOtherFinancingActivities</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:ProceedsFromSaleOfPropertyPlantAndEquipment</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:RepaymentsOfLongTermDebt</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:InterestPaid</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>dei:EntityCommonStockSharesOutstanding</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:TreasuryStockValue</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:AllowanceForDoubtfulAccountsReceivableCurrent</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:PreferredStockSharesAuthorized</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:PreferredStockSharesIssued</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:PreferredStockSharesOutstanding</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:PreferredStockValueOutstanding</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:CommonStockSharesAuthorized</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:CommonStockSharesIssued</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:CommonStockSharesOutstanding</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:CommonStockValueOutstanding</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:TreasuryStockShares</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:IncomeTaxesPaid</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:Dividends</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:ProductWarrantyAccrualWarrantiesIssued</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:ProductWarrantyAccrualPayments</cf:qname>
+			</cf:concept>
+			<cf:concept>
+				<cf:qname>us-gaap:NonmonetaryTransactionAmountOfBarterTransaction</cf:qname>
+			</cf:concept>
+
+	      <cf:concept>
+	        <cf:qname>us-gaap:LossContingencyAccrualCarryingValueProvision</cf:qname>
+	      </cf:concept>
+	      <cf:concept>
+	        <cf:qname>us-gaap:LossContingencyAccrualCarryingValuePayments</cf:qname>
+	      </cf:concept>
+	    </cf:conceptName>
+
+	</generic:link>
+
+
+</link:linkbase>

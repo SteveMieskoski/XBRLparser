@@ -12,7 +12,7 @@ public class IncomeStatementCollect {
           String[] check,
           String add,
           Map<String, Double> values) {
-
+    if(factByName == null) return null;
     for (String s : check) {
       if (factByName.get(s) != null) {
         String value = factByName.get(s).getValue();

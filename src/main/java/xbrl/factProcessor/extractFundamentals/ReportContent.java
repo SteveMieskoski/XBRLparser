@@ -85,6 +85,7 @@ public class ReportContent {
   private void addValues(
       Map<String, Map<Integer, Double>> component, Integer key, Map<String, Double> valueMap) {
     // no updates to concepts not included
+    if(valueMap == null) return;
     for (String s : valueMap.keySet()) {
       if (valueMap.get(s) > 0d) {
         if (component.containsKey(s)) {

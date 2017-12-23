@@ -50,6 +50,7 @@ public class IncomeStatementFundamentals implements IFundamentals {
       }
     }
     Map<String, Double> bsValues = IncomeStatementCollect.findAndExtractValues(rawData, mappings);
+    if(bsValues == null) return null;
     return applyAdjustments(bsValues);
   }
 

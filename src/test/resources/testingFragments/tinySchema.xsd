@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<!--
+Taxonomy based on XBRL standard Version 2.1.
+Created by UBmatrix Taxonomy Designer 3.0.3.2436 (2009-06-02 13:18).  
+Contact www.ubmatrix.com
+Copyright (c) 2002-2016 UBmatrix inc., All Rights Reserved
+Produced on 2016-04-24 08:01:50
+-->
+<schema
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:abc="http://www.abc.com/20161231"
+  xmlns:generic="http://xbrl.org/2008/generic"
+  xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric"
+  xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+  targetNamespace="http://www.abc.com/20161231"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+  <annotation>
+    <appinfo>
+      <link:roleType
+        roleURI="http://www.abc.com/role/EntityInformation"
+        id="EntityInformationDocument">
+        <link:definition>1200 - Document - Entity Information</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/DocumentInformation"
+        id="DocumentInformationDocument">
+        <link:definition>1100 - Document - Document Information</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/EntityListingsInformation"
+        id="EntityListingsInformationDocument">
+        <link:definition>1300 - Document - Entity Listings Information</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/BalanceSheet"
+        id="BalanceSheet">
+        <link:definition>2001 - Statement - Balance Sheet</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/BalanceSheetParentheticalCommonStock"
+        id="BalanceSheetParentheticalCommonStock">
+        <link:definition>2004 - Statement - Balance Sheet Parenthetical, Common Stock</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/BalanceSheetParentheticalGeneral"
+        id="BalanceSheetParentheticalGeneralParentheticals">
+        <link:definition>2002 - Statement - Balance Sheet Parenthetical, General</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/BalanceSheetParentheticalPreferredStock"
+        id="BalanceSheetParentheticalPreferredStock">
+        <link:definition>2003 - Statement - Balance Sheet Parenthetical, Preferred Stock</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/BalanceSheetParentheticalTreasuryStock"
+        id="BalanceSheetParentheticalTreasuryStock">
+        <link:definition>2005 - Statement - Balance Sheet Parenthetical, Treasury Stock</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/IncomeStatement"
+        id="IncomeStatement">
+        <link:definition>2006 - Statement - Income Statement</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/ComprehensiveIncome"
+        id="ComprehensiveIncome">
+        <link:definition>2007 - Statement - Comprehensive Income</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/CashFlowStatement"
+        id="CashFlowStatement">
+        <link:definition>2008 - Statement - Cash Flow Statement</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/PriorPeriodAdjustment"
+        id="PriorPeriodAdjustment">
+        <link:definition>2009 - Statement - Prior Period Adjustment</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/ChangesInTotalStockholdersEquity"
+        id="ChangesInTotalStockholdersEquity">
+        <link:definition>2010 - Statement - Changes in Total Stockholders' Equity</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/NatureOfBusiness"
+        id="NatureOfBusinessDetails">
+        <link:definition>4010 - Disclosure - Nature of Business</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/SignificantAccountingPolicies"
+        id="SignificantAccountingPoliciesPolicies">
+        <link:definition>4020 - Disclosure - Significant Accounting Policies</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/PropertyPlantAndEquipmentPolicies"
+        id="PropertyPlantAndEquipmentPoliciesDetails">
+        <link:definition>4030 - Disclosure - Property, Plant and Equipment Policies</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/CashCashEquivalentsAndMarketableSecurities"
+        id="CashCashEquivalentsAndMarketableSecuritiesRollUp">
+        <link:definition>5010 - Disclosure - Cash, Cash Equivalents, and Marketable Securities</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/CashAndCashEquivalentsComponents"
+        id="CashAndCashEquivalentsComponentsDetails">
+        <link:definition>5020 - Disclosure - Cash and Cash Equivalents Components</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/MarketableSecuritiesComponents"
+        id="MarketableSecuritiesComponentsDetails">
+        <link:definition>5030 - Disclosure - Marketable Securities Components</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/InventoryComponents"
+        id="InventoryComponentsDetails">
+        <link:definition>5040 - Disclosure - Inventory Components</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/PropertyPlantAndEquipmentComponents"
+        id="PropertyPlantAndEquipmentComponentsDetails">
+        <link:definition>5050 - Disclosure - Property, Plant and Equipment Components</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/DeferredCosts"
+        id="DeferredCostsDetails">
+        <link:definition>5060 - Disclosure - Deferred Costs</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/ProductWarrantyAccrual"
+        id="ProductWarrantyAccrualDetails">
+        <link:definition>5070 - Disclosure - Product Warranty Accrual</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/LongTermDebtInstruments"
+        id="LongTermDebtInstrumentsDetails">
+        <link:definition>5080 - Disclosure - Long-term Debt Instruments</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/MaturitiesOfLongTermDebt"
+        id="MaturitiesOfLongTermDebtDetails">
+        <link:definition>5090 - Disclosure - Maturities of Long-term Debt</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/OtherNoncurrentLiabilities"
+        id="OtherNoncurrentLiabilitiesDetails">
+        <link:definition>5110 - Disclosure - Other Noncurrent Liabilities</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/BusinessSegments"
+        id="BusinessSegmentsDetails">
+        <link:definition>5120 - Disclosure - Business Segments</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/GeographicAreas"
+        id="GeographicAreasDetails">
+        <link:definition>5130 - Disclosure - Geographic Areas</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/NonmonetaryTransactions"
+        id="NonmonetaryTransactionsDetails">
+        <link:definition>5140 - Disclosure - Nonmonetary Transactions</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/SelectFinancialInformation"
+        id="OtherMattersDetails">
+        <link:definition>5150 - Disclosure - Select Financial Information</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/SubsequentEvents"
+        id="SubsequentEventsDetails">
+        <link:definition>5160 - Disclosure - Subsequent Events</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/RawMaterialDetails"
+        id="RawMaterialDetails">
+        <link:definition>9101 - Disclosure - Raw Materials Details (Supplemental Information)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/MappingsOfExtensionsToUSGAAPTaxonomy"
+        id="MappingsOfExtensionsToUSGAAPTaxonomy">
+        <link:definition>9999 - Disclosure - Mappings of extensions created to the US GAAP XBRL Taxonomy</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>generic:link</link:usedOn>
+      </link:roleType>
+      <link:linkbaseRef xlink:type="simple"
+        xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef"
+        xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+        xlink:href="abc-20161231_cal.xml"
+        xlink:title="Calculation Links, all" />
+      <link:linkbaseRef xlink:type="simple"
+        xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef"
+        xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+        xlink:href="abc-20161231_def.xml"
+        xlink:title="Definition Links, all" />
+      <link:linkbaseRef xlink:type="simple"
+        xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"
+        xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+        xlink:href="abc-20161231_pre.xml"
+        xlink:title="Presentation Links, all" />
+      <link:linkbaseRef xlink:type="simple"
+        xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"
+        xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+        xlink:href="abc-20161231_lab.xml"
+        xlink:title="Label Links, all" />
+      <link:linkbaseRef xlink:type="simple"
+        xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"
+        xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+        xlink:href="commentary_us-gaap_2016_lab.xml"
+        xlink:title="Label Links, all" />
+
+      <link:linkbaseRef xlink:type="simple"
+        xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef"
+        xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+        xlink:href="extensions_map_def.xml"
+        xlink:title="Summary of mappings from extensions created to US GAAP XBRL Taxonomy" />
+
+
+    </appinfo>
+  </annotation>
+  <import
+    namespace="http://www.xbrl.org/2003/instance"
+    schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" />
+  <import
+    namespace="http://www.xbrl.org/dtr/type/non-numeric"
+    schemaLocation="http://www.xbrl.org/dtr/type/nonNumeric-2009-12-16.xsd" />
+  <import
+    namespace="http://xbrl.org/2005/xbrldt"
+    schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd" />
+  <import
+    namespace="http://fasb.org/us-gaap/2016-01-31"
+    schemaLocation="http://xbrl.fasb.org/us-gaap/2016/elts/us-gaap-2016-01-31.xsd" />
+  <import
+    namespace="http://fasb.org/us-roles/2016-01-31"
+    schemaLocation="http://xbrl.fasb.org/us-gaap/2016/elts/us-roles-2016-01-31.xsd" />
+  <import
+    namespace="http://fasb.org/us-types/2016-01-31"
+    schemaLocation="http://xbrl.fasb.org/us-gaap/2016/elts/us-types-2016-01-31.xsd" />
+  <import
+    namespace="http://www.xbrl.org/2009/arcrole/fact-explanatoryFact"
+    schemaLocation="http://www.xbrl.org/lrr/arcrole/factExplanatory-2009-12-16.xsd" />
+  <import
+    namespace="http://www.xbrl.org/2009/role/negated"
+    schemaLocation="http://www.xbrl.org/lrr/role/negated-2009-12-16.xsd" />
+  <import
+    namespace="http://www.xbrl.org/2009/role/net"
+    schemaLocation="http://www.xbrl.org/lrr/role/net-2009-12-16.xsd" />
+  <import
+    namespace="http://www.xbrl.org/dtr/type/numeric"
+    schemaLocation="http://www.xbrl.org/dtr/type/numeric-2009-12-16.xsd" />
+  <import
+    namespace="http://xbrl.sec.gov/country/2016-01-31"
+    schemaLocation="http://xbrl.sec.gov/country/2016/country-2016-01-31.xsd" />
+  <import
+    namespace="http://xbrl.sec.gov/dei/2014-01-31"
+    schemaLocation="http://xbrl.sec.gov/dei/2014/dei-2014-01-31.xsd" />
+  <import
+    namespace="http://xbrl.sec.gov/exch/2016-01-31"
+    schemaLocation="http://xbrl.sec.gov/exch/2016/exch-2016-01-31.xsd" />
+  <import
+    namespace="http://xbrl.sec.gov/invest/2013-01-31"
+    schemaLocation="http://xbrl.sec.gov/invest/2013/invest-2013-01-31.xsd" />
+  <import
+    namespace="http://xbrl.sec.gov/currency/2016-01-31"
+    schemaLocation="http://xbrl.sec.gov/currency/2016/currency-2016-01-31.xsd" />
+  <import
+    namespace="http://xbrl.sec.gov/naics/2011-01-31"
+    schemaLocation="http://xbrl.sec.gov/naics/2011/naics-2011-01-31.xsd" />
+  <import
+    namespace="http://xbrl.sec.gov/sic/2011-01-31"
+    schemaLocation="http://xbrl.sec.gov/sic/2011/sic-2011-01-31.xsd" />
+  <import
+    namespace="http://xbrl.sec.gov/stpr/2011-01-31"
+    schemaLocation="http://xbrl.sec.gov/stpr/2011/stpr-2011-01-31.xsd" />
+  <xsd:import
+    namespace="http://www.xbrl.org/2003/linkbase"
+    schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+  <element
+    id="abc_Copper"
+    name="Copper"
+    type="xbrli:monetaryItemType"
+    substitutionGroup="xbrli:item"
+    xbrli:periodType="instant"
+    xbrli:balance="debit"
+    nillable="true" />
+  <element
+    id="abc_Lead"
+    name="Lead"
+    type="xbrli:monetaryItemType"
+    substitutionGroup="xbrli:item"
+    xbrli:periodType="instant"
+    xbrli:balance="debit"
+    nillable="true" />
+  <element
+    id="abc_Steel"
+    name="Steel"
+    type="xbrli:monetaryItemType"
+    substitutionGroup="xbrli:item"
+    xbrli:periodType="instant"
+    xbrli:balance="debit"
+    nillable="true" />
+
+</schema>

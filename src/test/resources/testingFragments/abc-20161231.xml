@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!-- Created by Charles Hoffman, CPA: 2016-04-15 -->
+<xbrl
+        xmlns="http://www.xbrl.org/2003/instance"
+        xmlns:link="http://www.xbrl.org/2003/linkbase"
+        xmlns:xbrldi="http://xbrl.org/2006/xbrldi"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+
+        xmlns:us-gaap="http://fasb.org/us-gaap/2016-01-31"
+        xmlns:dei="http://xbrl.sec.gov/dei/2014-01-31"
+        xmlns:country="http://xbrl.sec.gov/country/2016-01-31"
+        xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
+
+        xmlns:abc="http://www.abc.com/20161231"
+
+>
+
+    <link:schemaRef xlink:href="abc-20161231.xsd" xlink:type="simple"/>
+
+    <link:linkbaseRef xlink:type='simple' xlink:title="FILER Reporting entity specific business rules"
+                      xlink:href='abc-20161231_formulas.xml'
+                      xlink:arcrole='http://www.w3.org/1999/xlink/properties/linkbase'/>
+    <link:linkbaseRef xlink:type='simple' xlink:title="US GAAP Domain level business rules"
+                      xlink:href='US-GAAP-CoreFinancialReportSemantics-V2016.1.xml'
+                      xlink:arcrole='http://www.w3.org/1999/xlink/properties/linkbase'/>
+    <link:linkbaseRef xlink:type='simple' xlink:title="US GAAP Industry/activity level business rules"
+                      xlink:href='US-GAAP-IndustrySemantics-CommercialAndIndustrial-V2016.1.xml'
+                      xlink:arcrole='http://www.w3.org/1999/xlink/properties/linkbase'/>
+    <link:linkbaseRef xlink:type='simple' xlink:title="US GAAP Reportability business rules"
+                      xlink:href='US-GAAP-ReportabilitySemantics-V2016.1.xml'
+                      xlink:arcrole='http://www.w3.org/1999/xlink/properties/linkbase'/>
+    <link:linkbaseRef xlink:type='simple' xlink:title="US GAAP Consistency check business rules"
+                      xlink:href='US-GAAP-ConsistencyChecks-V2016.1.xml'
+                      xlink:arcrole='http://www.w3.org/1999/xlink/properties/linkbase'/>
+
+    <context id="I-2016">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+        </entity>
+        <period>
+            <instant>2016-12-31</instant>
+        </period>
+    </context>
+    <context id="D-2015">
+        <entity>
+            <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+        </entity>
+        <period>
+            <startDate>2015-01-01</startDate>
+            <endDate>2015-12-31</endDate>
+        </period>
+    </context>
+
+
+    <unit id="U-Shares">
+        <measure>shares</measure>
+    </unit>
+    <unit id="U-Monetary">
+        <measure>iso4217:USD</measure>
+    </unit>
+    <unit id="U-PerShare">
+        <divide>
+            <unitNumerator>
+                <measure>iso4217:USD</measure>
+            </unitNumerator>
+            <unitDenominator>
+                <measure>shares</measure>
+            </unitDenominator>
+        </divide>
+    </unit>
+
+    <!-- Balance sheet -->
+    <us-gaap:AccountsPayableCurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">3000000
+    </us-gaap:AccountsPayableCurrent>
+
+
+    <us-gaap:AccountsReceivableNetCurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">29000000
+    </us-gaap:AccountsReceivableNetCurrent>
+
+    <us-gaap:AccruedLiabilitiesCurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">4000000
+    </us-gaap:AccruedLiabilitiesCurrent>
+    <us-gaap:Assets contextRef="I-2016" decimals="-3" unitRef="U-Monetary">147000000</us-gaap:Assets>
+
+    <us-gaap:AdditionalPaidInCapital contextRef="I-2016" decimals="-3" unitRef="U-Monetary">1000000
+    </us-gaap:AdditionalPaidInCapital>
+
+
+    <us-gaap:AssetsCurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">56000000</us-gaap:AssetsCurrent>
+    <us-gaap:AssetsNoncurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">91000000</us-gaap:AssetsNoncurrent>
+
+    <us-gaap:AvailableForSaleSecuritiesCurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">9000000
+    </us-gaap:AvailableForSaleSecuritiesCurrent>
+
+
+    <us-gaap:CashAndCashEquivalentsAtCarryingValue contextRef="I-2016" decimals="-3" unitRef="U-Monetary">11000000
+    </us-gaap:CashAndCashEquivalentsAtCarryingValue>
+
+
+    <us-gaap:CashCashEquivalentsAndShortTermInvestments contextRef="I-2016" decimals="-3" unitRef="U-Monetary">
+        20000000
+    </us-gaap:CashCashEquivalentsAndShortTermInvestments>
+
+    <us-gaap:CommitmentsAndContingencies contextRef="I-2016" decimals="-3" unitRef="U-Monetary">0
+    </us-gaap:CommitmentsAndContingencies>
+
+    <us-gaap:CommonStockValueOutstanding contextRef="I-2016" decimals="-3" unitRef="U-Monetary">20000000
+    </us-gaap:CommonStockValueOutstanding>
+
+
+    <us-gaap:DeferredCosts contextRef="I-2016" decimals="-3" unitRef="U-Monetary">9000000</us-gaap:DeferredCosts>
+
+    <us-gaap:LiabilitiesAndStockholdersEquity contextRef="I-2016" decimals="-3" unitRef="U-Monetary">147000000
+    </us-gaap:LiabilitiesAndStockholdersEquity>
+
+    <us-gaap:LiabilitiesCurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">55000000
+    </us-gaap:LiabilitiesCurrent>
+
+    <us-gaap:LiabilitiesNoncurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">52000000
+    </us-gaap:LiabilitiesNoncurrent>
+    <us-gaap:LongTermDebt contextRef="I-2016" decimals="-3" unitRef="U-Monetary">41000000</us-gaap:LongTermDebt>
+
+    <us-gaap:LongTermDebtCurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">22000000
+    </us-gaap:LongTermDebtCurrent>
+
+    <us-gaap:LongTermDebtNoncurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">19000000
+    </us-gaap:LongTermDebtNoncurrent>
+
+    <us-gaap:MinorityInterest contextRef="I-2016" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:MinorityInterest>
+
+    <us-gaap:OtherLiabilitiesNoncurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">1000000
+    </us-gaap:OtherLiabilitiesNoncurrent>
+
+
+    <us-gaap:PreferredStockValueOutstanding contextRef="I-2016" decimals="-3" unitRef="U-Monetary">10000000
+    </us-gaap:PreferredStockValueOutstanding>
+
+    <us-gaap:PrepaidExpenseCurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">3000000
+    </us-gaap:PrepaidExpenseCurrent>
+    <us-gaap:ProductWarrantyAccrual contextRef="I-2016" decimals="-3" unitRef="U-Monetary">58000000
+    </us-gaap:ProductWarrantyAccrual>
+
+
+    <us-gaap:ProductWarrantyAccrualClassifiedCurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">26000000
+    </us-gaap:ProductWarrantyAccrualClassifiedCurrent>
+
+    <us-gaap:ProductWarrantyAccrualNoncurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">32000000
+    </us-gaap:ProductWarrantyAccrualNoncurrent>
+
+
+    <us-gaap:PropertyPlantAndEquipmentNet contextRef="I-2016" decimals="-3" unitRef="U-Monetary">82000000
+    </us-gaap:PropertyPlantAndEquipmentNet>
+
+    <us-gaap:RetainedEarningsAccumulatedDeficit contextRef="I-2016" decimals="-3" unitRef="U-Monetary">6000000
+    </us-gaap:RetainedEarningsAccumulatedDeficit>
+    <us-gaap:StockholdersEquity contextRef="I-2016" decimals="-3" unitRef="U-Monetary">36000000
+    </us-gaap:StockholdersEquity>
+
+
+    <us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest contextRef="I-2016" decimals="-3"
+                                                                                    unitRef="U-Monetary">40000000
+    </us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest>
+
+
+    <!-- Balance sheet parenthetical, general -->
+    <us-gaap:AllowanceForDoubtfulAccountsReceivableCurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">
+        1000000
+    </us-gaap:AllowanceForDoubtfulAccountsReceivableCurrent>
+
+
+    <!-- Balance sheet parenthetical, treasury stock -->
+
+
+    <us-gaap:TreasuryStockValue contextRef="I-2016" decimals="-3" unitRef="U-Monetary">2000000
+    </us-gaap:TreasuryStockValue>
+
+
+    <!-- Income statement -->
+
+    <us-gaap:CostOfRevenue contextRef="D-2015" decimals="0" unitRef="U-Monetary">4000000</us-gaap:CostOfRevenue>
+
+
+    <us-gaap:GrossProfit contextRef="D-2015" decimals="-3" unitRef="U-Monetary">6000000</us-gaap:GrossProfit>
+
+    <us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments
+            contextRef="D-2015" decimals="-3" unitRef="U-Monetary">9950000
+    </us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments>
+
+
+    <us-gaap:IncomeTaxExpenseBenefit contextRef="D-2015" decimals="-3" unitRef="U-Monetary">2500000
+    </us-gaap:IncomeTaxExpenseBenefit>
+
+
+    <us-gaap:NonoperatingIncomeExpense contextRef="D-2015" decimals="-3" unitRef="U-Monetary">7800000
+    </us-gaap:NonoperatingIncomeExpense>
+
+    <us-gaap:InterestAndDebtExpense contextRef="D-2015" decimals="-3" unitRef="U-Monetary">2000000
+    </us-gaap:InterestAndDebtExpense>
+
+
+    <us-gaap:MarketingExpense contextRef="D-2015" decimals="-3" unitRef="U-Monetary">250000</us-gaap:MarketingExpense>
+
+
+    <us-gaap:NetIncomeLoss contextRef="D-2015" decimals="-3" unitRef="U-Monetary">6705000</us-gaap:NetIncomeLoss>
+
+    <us-gaap:NetIncomeLossAttributableToNoncontrollingInterest contextRef="D-2015" decimals="-3" unitRef="U-Monetary">
+        745000
+    </us-gaap:NetIncomeLossAttributableToNoncontrollingInterest>
+
+    <us-gaap:OperatingExpenses contextRef="D-2015" decimals="-3" unitRef="U-Monetary">1850000
+    </us-gaap:OperatingExpenses>
+
+    <us-gaap:OperatingIncomeLoss contextRef="D-2015" decimals="-3" unitRef="U-Monetary">4150000
+    </us-gaap:OperatingIncomeLoss>
+
+
+    <us-gaap:OtherCostAndExpenseOperating contextRef="D-2015" decimals="-3" unitRef="U-Monetary">100000
+    </us-gaap:OtherCostAndExpenseOperating>
+
+
+    <us-gaap:ProfitLoss contextRef="D-2015" decimals="-3" unitRef="U-Monetary">7450000</us-gaap:ProfitLoss>
+
+
+    <us-gaap:ResearchAndDevelopmentExpense contextRef="D-2015" decimals="-3" unitRef="U-Monetary">500000
+    </us-gaap:ResearchAndDevelopmentExpense>
+
+    <us-gaap:Revenues contextRef="D-2015" decimals="0" unitRef="U-Monetary">10000000</us-gaap:Revenues>
+
+
+    <us-gaap:SellingGeneralAndAdministrativeExpense contextRef="D-2015" decimals="-3" unitRef="U-Monetary">1000000
+    </us-gaap:SellingGeneralAndAdministrativeExpense>
+
+    <us-gaap:EarningsPerShareBasic contextRef="D-2015" decimals="2" unitRef="U-PerShare">134.10
+    </us-gaap:EarningsPerShareBasic>
+
+    <us-gaap:EarningsPerShareDiluted contextRef="D-2015" decimals="2" unitRef="U-PerShare">74.50
+    </us-gaap:EarningsPerShareDiluted>
+
+
+    <us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding contextRef="D-2015" decimals="0" unitRef="U-Shares">90000
+    </us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+
+    <us-gaap:WeightedAverageNumberOfSharesOutstandingBasic contextRef="D-2015" decimals="0" unitRef="U-Shares">50000
+    </us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+
+
+    <!-- Statement of comprehensive income -->
+
+    <us-gaap:AccumulatedOtherComprehensiveIncomeLossNetOfTax contextRef="I-2016" decimals="-3" unitRef="U-Monetary">
+        1000000
+    </us-gaap:AccumulatedOtherComprehensiveIncomeLossNetOfTax>
+
+    <us-gaap:ComprehensiveIncomeNetOfTax contextRef="D-2015" decimals="-3" unitRef="U-Monetary">4000000
+    </us-gaap:ComprehensiveIncomeNetOfTax>
+    <us-gaap:ComprehensiveIncomeNetOfTaxAttributableToNoncontrollingInterest contextRef="D-2015" decimals="-3"
+                                                                             unitRef="U-Monetary">5000000
+    </us-gaap:ComprehensiveIncomeNetOfTaxAttributableToNoncontrollingInterest>
+
+
+    <us-gaap:ComprehensiveIncomeNetOfTaxIncludingPortionAttributableToNoncontrollingInterest contextRef="D-2015"
+                                                                                             decimals="-3"
+                                                                                             unitRef="U-Monetary">
+        9000000
+    </us-gaap:ComprehensiveIncomeNetOfTaxIncludingPortionAttributableToNoncontrollingInterest>
+
+
+    <us-gaap:OtherComprehensiveIncomeForeignCurrencyTransactionAndTranslationGainLossArisingDuringPeriodNetOfTax
+            contextRef="D-2015" decimals="-3" unitRef="U-Monetary">1550000
+    </us-gaap:OtherComprehensiveIncomeForeignCurrencyTransactionAndTranslationGainLossArisingDuringPeriodNetOfTax>
+
+    <us-gaap:OtherComprehensiveIncomeLossNetOfTax contextRef="D-2015" decimals="-3" unitRef="U-Monetary">1550000
+    </us-gaap:OtherComprehensiveIncomeLossNetOfTax>
+
+    <us-gaap:AdjustmentsToReconcileNetIncomeLossToCashProvidedByUsedInOperatingActivities contextRef="D-2015"
+                                                                                          decimals="-3"
+                                                                                          unitRef="U-Monetary">570000
+    </us-gaap:AdjustmentsToReconcileNetIncomeLossToCashProvidedByUsedInOperatingActivities>
+
+    <us-gaap:CashAndCashEquivalentsPeriodIncreaseDecrease contextRef="D-2015" decimals="-3" unitRef="U-Monetary">
+        1000000
+    </us-gaap:CashAndCashEquivalentsPeriodIncreaseDecrease>
+
+    <us-gaap:DeferredIncomeTaxExpenseBenefit contextRef="D-2015" decimals="-3" unitRef="U-Monetary">80000
+    </us-gaap:DeferredIncomeTaxExpenseBenefit>
+
+
+    <us-gaap:Depreciation contextRef="D-2015" decimals="-3" unitRef="U-Monetary">500000</us-gaap:Depreciation>
+
+
+    <us-gaap:Dividends contextRef="D-2015" decimals="-3" unitRef="U-Monetary">9000000</us-gaap:Dividends>
+    <us-gaap:EffectOfExchangeRateOnCashAndCashEquivalents contextRef="D-2015" decimals="-3" unitRef="U-Monetary">
+        980000
+    </us-gaap:EffectOfExchangeRateOnCashAndCashEquivalents>
+
+    <us-gaap:IncomeTaxesPaid contextRef="D-2015" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:IncomeTaxesPaid>
+
+    <us-gaap:IncreaseDecreaseInAccountsPayable contextRef="D-2015" decimals="-3" unitRef="U-Monetary">0
+    </us-gaap:IncreaseDecreaseInAccountsPayable>
+
+    <us-gaap:IncreaseDecreaseInAccountsReceivable contextRef="D-2015" decimals="-3" unitRef="U-Monetary">0
+    </us-gaap:IncreaseDecreaseInAccountsReceivable>
+
+    <us-gaap:IncreaseDecreaseInAccruedLiabilities contextRef="D-2015" decimals="-3" unitRef="U-Monetary">0
+    </us-gaap:IncreaseDecreaseInAccruedLiabilities>
+    <us-gaap:IncreaseDecreaseInInventories contextRef="D-2015" decimals="-3" unitRef="U-Monetary">0
+    </us-gaap:IncreaseDecreaseInInventories>
+
+    <us-gaap:IncreaseDecreaseInOtherDeferredLiability contextRef="D-2015" decimals="-3" unitRef="U-Monetary">0
+    </us-gaap:IncreaseDecreaseInOtherDeferredLiability>
+
+    <us-gaap:NetCashProvidedByUsedInFinancingActivitiesContinuingOperations contextRef="D-2015" decimals="-3"
+                                                                            unitRef="U-Monetary">-20000000
+    </us-gaap:NetCashProvidedByUsedInFinancingActivitiesContinuingOperations>
+    <us-gaap:NetCashProvidedByUsedInInvestingActivitiesContinuingOperations contextRef="D-2015" decimals="-3"
+                                                                            unitRef="U-Monetary">12000000
+    </us-gaap:NetCashProvidedByUsedInInvestingActivitiesContinuingOperations>
+    <us-gaap:NetCashProvidedByUsedInOperatingActivitiesContinuingOperations contextRef="D-2015" decimals="-3"
+                                                                            unitRef="U-Monetary">8020000
+    </us-gaap:NetCashProvidedByUsedInOperatingActivitiesContinuingOperations>
+
+    <us-gaap:OtherNoncashIncomeExpense contextRef="D-2015" decimals="-3" unitRef="U-Monetary">10000
+    </us-gaap:OtherNoncashIncomeExpense>
+
+    <us-gaap:PaymentsForProceedsFromOtherInvestingActivities contextRef="D-2015" decimals="-3" unitRef="U-Monetary">
+        -2000000
+    </us-gaap:PaymentsForProceedsFromOtherInvestingActivities>
+    <us-gaap:PaymentsOfDividendsCommonStock contextRef="D-2015" decimals="-3" unitRef="U-Monetary">9000000
+    </us-gaap:PaymentsOfDividendsCommonStock>
+
+    <us-gaap:PaymentsToAcquirePropertyPlantAndEquipment contextRef="D-2015" decimals="-3" unitRef="U-Monetary">
+        10000000
+    </us-gaap:PaymentsToAcquirePropertyPlantAndEquipment>
+
+    <us-gaap:ProceedsFromIssuanceOfLongTermDebt contextRef="D-2015" decimals="-3" unitRef="U-Monetary">20000000
+    </us-gaap:ProceedsFromIssuanceOfLongTermDebt>
+
+    <us-gaap:ProceedsFromPaymentsForOtherFinancingActivities contextRef="D-2015" decimals="-3" unitRef="U-Monetary">
+        1000000
+    </us-gaap:ProceedsFromPaymentsForOtherFinancingActivities>
+
+    <us-gaap:ProceedsFromSaleOfPropertyPlantAndEquipment contextRef="D-2015" decimals="-3" unitRef="U-Monetary">
+        20000000
+    </us-gaap:ProceedsFromSaleOfPropertyPlantAndEquipment>
+
+    <us-gaap:RepaymentsOfLongTermDebt contextRef="D-2015" decimals="-3" unitRef="U-Monetary">32000000
+    </us-gaap:RepaymentsOfLongTermDebt>
+
+
+    <us-gaap:InterestPaid contextRef="D-2015" decimals="-3" unitRef="U-Monetary">500000</us-gaap:InterestPaid>
+
+
+    <!-- Inventories components -->
+    <us-gaap:InventoryFinishedGoods contextRef="I-2016" decimals="-3" unitRef="U-Monetary">1000000
+    </us-gaap:InventoryFinishedGoods>
+
+    <us-gaap:InventoryNet contextRef="I-2016" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:InventoryNet>
+
+    <us-gaap:InventoryRawMaterials contextRef="I-2016" decimals="-3" unitRef="U-Monetary">1000000
+    </us-gaap:InventoryRawMaterials>
+
+
+    <us-gaap:InventoryWorkInProcess contextRef="I-2016" decimals="-3" unitRef="U-Monetary">1000000
+    </us-gaap:InventoryWorkInProcess>
+
+    <us-gaap:OtherInventorySupplies contextRef="I-2016" decimals="-3" unitRef="U-Monetary">1000000
+    </us-gaap:OtherInventorySupplies>
+
+
+    <us-gaap:PropertyPlantAndEquipmentGross contextRef="I-2016" decimals="-3" unitRef="U-Monetary">97000000
+    </us-gaap:PropertyPlantAndEquipmentGross>
+
+
+    <us-gaap:AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment contextRef="I-2016" decimals="-3"
+                                                                                      unitRef="U-Monetary">15000000
+    </us-gaap:AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment>
+
+
+    <!-- Deferred costs components -->
+
+    <us-gaap:DeferredAdvertisingCosts contextRef="I-2016" decimals="-3" unitRef="U-Monetary">2000000
+    </us-gaap:DeferredAdvertisingCosts>
+
+    <us-gaap:DeferredSalesCommission contextRef="I-2016" decimals="-3" unitRef="U-Monetary">5000000
+    </us-gaap:DeferredSalesCommission>
+
+    <us-gaap:DeferredSetUpCostsNoncurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">2000000
+    </us-gaap:DeferredSetUpCostsNoncurrent>
+    <us-gaap:DeferredTaxAndOtherLiabilitiesNoncurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">750000
+    </us-gaap:DeferredTaxAndOtherLiabilitiesNoncurrent>
+
+
+    <us-gaap:ProductWarrantyAccrualCurrencyTranslationIncreaseDecrease contextRef="D-2015" decimals="-3"
+                                                                       unitRef="U-Monetary">-1000000
+    </us-gaap:ProductWarrantyAccrualCurrencyTranslationIncreaseDecrease>
+    <us-gaap:ProductWarrantyAccrualPayments contextRef="D-2015" decimals="-3" unitRef="U-Monetary">6000000
+    </us-gaap:ProductWarrantyAccrualPayments>
+
+    <us-gaap:ProductWarrantyAccrualWarrantiesIssued contextRef="D-2015" decimals="-3" unitRef="U-Monetary">7000000
+    </us-gaap:ProductWarrantyAccrualWarrantiesIssued>
+
+
+    <!-- Long-term debt maturities -->
+    <us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalAfterYearFive contextRef="I-2016" decimals="-3"
+                                                                      unitRef="U-Monetary">15000000
+    </us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalAfterYearFive>
+    <us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInNextTwelveMonths contextRef="I-2016" decimals="-3"
+                                                                           unitRef="U-Monetary">22000000
+    </us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInNextTwelveMonths>
+    <us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFive contextRef="I-2016" decimals="-3"
+                                                                   unitRef="U-Monetary">1000000
+    </us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFive>
+    <us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFour contextRef="I-2016" decimals="-3"
+                                                                   unitRef="U-Monetary">1000000
+    </us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFour>
+    <us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearThree contextRef="I-2016" decimals="-3"
+                                                                    unitRef="U-Monetary">1000000
+    </us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearThree>
+    <us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearTwo contextRef="I-2016" decimals="-3"
+                                                                  unitRef="U-Monetary">1000000
+    </us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearTwo>
+
+
+    <!-- Other noncurrent liabilities components -->
+    <us-gaap:OtherSundryLiabilitiesNoncurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">250000
+    </us-gaap:OtherSundryLiabilitiesNoncurrent>
+
+    <!-- Nonmonetary transactions components -->
+
+
+    <abc:Steel contextRef="I-2016" decimals="-3" unitRef="U-Monetary">800000</abc:Steel>
+
+
+    <abc:Copper contextRef="I-2016" decimals="-3" unitRef="U-Monetary">100000</abc:Copper>
+
+
+    <abc:Lead contextRef="I-2016" decimals="-3" unitRef="U-Monetary">100000</abc:Lead>
+
+
+    <!-- Parenthetical explanations -->
+
+    <link:footnoteLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+        <link:loc xlink:type="locator" xlink:href="#Fact-2001" xlink:label="Fact-2001"/>
+        <link:loc xlink:type="locator" xlink:href="#Fact-2002" xlink:label="Fact-2002"/>
+        <link:footnoteArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/fact-footnote"
+                          xlink:from="Fact-2001" xlink:to="Footnote-01" order="1"/>
+        <link:footnoteArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/fact-footnote"
+                          xlink:from="Fact-2002" xlink:to="Footnote-01" order="2"/>
+        <link:footnote xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/footnote"
+                       xlink:label="Footnote-01" xml:lang="en-US">Sed eu nibh. Fusce vitae mi. Sed dapibus venenatis
+            ipsum. Sed in purus.
+        </link:footnote>
+    </link:footnoteLink>
+
+    <link:footnoteLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+        <link:loc xlink:type="locator" xlink:href="#Fact-2000" xlink:label="Fact-2000"/>
+        <link:footnoteArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/fact-footnote"
+                          xlink:from="Fact-2000" xlink:to="Footnote-02" order="1"/>
+        <link:footnote xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/footnote"
+                       xlink:label="Footnote-02" xml:lang="en-US">
+            Proin elit sem, ornare non, ullamcorper vel, sollicitudin a, lacus. Mauris tincidunt cursus est. Nulla sit
+            amet nibh.
+            Sed elementum feugiat augue. Nam non tortor non leo porta bibendum. Morbi eu pede. In eu erat et est feugiat
+            fermentum.
+            Praesent accumsan. Nulla convallis, lorem nec aliquet dapibus, libero felis sagittis augue, ut adipiscing
+            nisl eros in quam.
+            Fusce eleifend. Sed justo nibh, placerat a, malesuada nec, condimentum ac, magna.
+        </link:footnote>
+    </link:footnoteLink>
+
+
+</xbrl>

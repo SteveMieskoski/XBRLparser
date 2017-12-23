@@ -1,0 +1,1801 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!-- Created by Charles Hoffman, CPA: 2016-04-15 -->
+<xbrl 
+	xmlns="http://www.xbrl.org/2003/instance" 
+	xmlns:link="http://www.xbrl.org/2003/linkbase" 
+	xmlns:xbrldi="http://xbrl.org/2006/xbrldi" 
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	
+	xmlns:us-gaap="http://fasb.org/us-gaap/2016-01-31" 
+	xmlns:dei="http://xbrl.sec.gov/dei/2014-01-31" 
+	xmlns:country="http://xbrl.sec.gov/country/2016-01-31" 
+	xmlns:iso4217="http://www.xbrl.org/2003/iso4217" 
+
+	xmlns:abc="http://www.abc.com/20161231" 
+
+	  >
+	
+	  <link:schemaRef xlink:href="abc-20161231.xsd" xlink:type="simple" />
+
+  	  <link:linkbaseRef xlink:type='simple' xlink:title="FILER Reporting entity specific business rules" xlink:href='abc-20161231_formulas.xml' xlink:arcrole='http://www.w3.org/1999/xlink/properties/linkbase'/>
+  	  <link:linkbaseRef xlink:type='simple' xlink:title="US GAAP Domain level business rules" xlink:href='US-GAAP-CoreFinancialReportSemantics-V2016.1.xml' xlink:arcrole='http://www.w3.org/1999/xlink/properties/linkbase'/>
+  	  <link:linkbaseRef xlink:type='simple' xlink:title="US GAAP Industry/activity level business rules" xlink:href='US-GAAP-IndustrySemantics-CommercialAndIndustrial-V2016.1.xml' xlink:arcrole='http://www.w3.org/1999/xlink/properties/linkbase'/>
+  	  <link:linkbaseRef xlink:type='simple' xlink:title="US GAAP Reportability business rules" xlink:href='US-GAAP-ReportabilitySemantics-V2016.1.xml' xlink:arcrole='http://www.w3.org/1999/xlink/properties/linkbase'/>
+  	  <link:linkbaseRef xlink:type='simple' xlink:title="US GAAP Consistency check business rules" xlink:href='US-GAAP-ConsistencyChecks-V2016.1.xml' xlink:arcrole='http://www.w3.org/1999/xlink/properties/linkbase'/>
+
+	  <context id="I-2013">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	    </entity>
+	    <period>
+	      <instant>2013-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2014">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	    </entity>
+	    <period>
+	      <instant>2014-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	
+	  <context id="D-2014">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	    </entity>
+	    <period>
+	      <startDate>2014-01-01</startDate>
+	      <endDate>2014-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2015">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	    </entity>
+	    <period>
+	      <startDate>2015-01-01</startDate>
+	      <endDate>2015-12-31</endDate>
+	    </period>
+	  </context>
+	
+	
+	  <context id="I-2015_us-gaap_CashAndCashEquivalentsAxis_us-gaap_BankTimeDepositsMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:CashAndCashEquivalentsAxis">us-gaap:BankTimeDepositsMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_CashAndCashEquivalentsAxis_us-gaap_CashMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:CashAndCashEquivalentsAxis">us-gaap:CashMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_CashAndCashEquivalentsAxis_us-gaap_CorporateDebtSecuritiesMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:CashAndCashEquivalentsAxis">us-gaap:CorporateDebtSecuritiesMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_CashAndCashEquivalentsAxis_us-gaap_ForeignGovernmentDebtMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:CashAndCashEquivalentsAxis">us-gaap:ForeignGovernmentDebtMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_CashAndCashEquivalentsAxis_us-gaap_MoneyMarketFundsMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:CashAndCashEquivalentsAxis">us-gaap:MoneyMarketFundsMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_CashAndCashEquivalentsAxis_us-gaap_USGovernmentCorporationsAndAgenciesSecuritiesMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:CashAndCashEquivalentsAxis">us-gaap:USGovernmentCorporationsAndAgenciesSecuritiesMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_CreationDateAxis_abc_OrigionallyStatedReportDateMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:CreationDateAxis">abc:OrigionallyStatedReportDateMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_DebtInstrumentAxis_abc_DebtInstrumentAaMember_us-gaap_LongtermDebtTypeAxis_us-gaap_LoansPayableMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:DebtInstrumentAxis">abc:DebtInstrumentAaMember</xbrldi:explicitMember>
+	        <xbrldi:explicitMember dimension="us-gaap:LongtermDebtTypeAxis">us-gaap:LoansPayableMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_DebtInstrumentAxis_abc_DebtInstrumentBbMember_us-gaap_LongtermDebtTypeAxis_us-gaap_LoansPayableMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:DebtInstrumentAxis">abc:DebtInstrumentBbMember</xbrldi:explicitMember>
+	        <xbrldi:explicitMember dimension="us-gaap:LongtermDebtTypeAxis">us-gaap:LoansPayableMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_InstrumentAxis_us-gaap_BankTimeDepositsMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:MajorTypesOfDebtAndEquitySecuritiesAxis">us-gaap:BankTimeDepositsMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_InstrumentAxis_us-gaap_EquitySecuritiesMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:MajorTypesOfDebtAndEquitySecuritiesAxis">us-gaap:EquitySecuritiesMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_InstrumentAxis_us-gaap_ForeignGovernmentDebtMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:MajorTypesOfDebtAndEquitySecuritiesAxis">us-gaap:ForeignGovernmentDebtMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_InstrumentAxis_us-gaap_MunicipalNotesMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:MajorTypesOfDebtAndEquitySecuritiesAxis">us-gaap:MunicipalNotesMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_InstrumentAxis_us-gaap_USGovernmentCorporationsAndAgenciesSecuritiesMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:MajorTypesOfDebtAndEquitySecuritiesAxis">us-gaap:USGovernmentCorporationsAndAgenciesSecuritiesMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_FurnitureAndFixturesMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:PropertyPlantAndEquipmentByTypeAxis">us-gaap:FurnitureAndFixturesMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_LandMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:PropertyPlantAndEquipmentByTypeAxis">us-gaap:LandMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_MachineryAndEquipmentMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:PropertyPlantAndEquipmentByTypeAxis">us-gaap:MachineryAndEquipmentMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentAlphaMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">abc:BusinessSegmentAlphaMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentBravoMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">abc:BusinessSegmentBravoMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentCharlieMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">abc:BusinessSegmentCharlieMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentDeltaMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">abc:BusinessSegmentDeltaMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassAMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassAMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassBMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassBMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_StatementClassOfStockAxis_us-gaap_PreferredClassAMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:PreferredClassAMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_StatementGeographicalAxis_abc_EuropeMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">us-gaap:EuropeMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_StatementGeographicalAxis_abc_NorthAmericaMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">us-gaap:NorthAmericaMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_StatementGeographicalAxis_country_CA">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">country:CA</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_StatementGeographicalAxis_country_DE">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">country:DE</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_StatementGeographicalAxis_country_GB">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">country:GB</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2015_us-gaap_StatementGeographicalAxis_country_US">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">country:US</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2015-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_CashAndCashEquivalentsAxis_us-gaap_BankTimeDepositsMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:CashAndCashEquivalentsAxis">us-gaap:BankTimeDepositsMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_CashAndCashEquivalentsAxis_us-gaap_CashMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:CashAndCashEquivalentsAxis">us-gaap:CashMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_CashAndCashEquivalentsAxis_us-gaap_CorporateDebtSecuritiesMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:CashAndCashEquivalentsAxis">us-gaap:CorporateDebtSecuritiesMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_CashAndCashEquivalentsAxis_us-gaap_ForeignGovernmentDebtMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:CashAndCashEquivalentsAxis">us-gaap:ForeignGovernmentDebtMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_CashAndCashEquivalentsAxis_us-gaap_MoneyMarketFundsMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:CashAndCashEquivalentsAxis">us-gaap:MoneyMarketFundsMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_CashAndCashEquivalentsAxis_us-gaap_USGovernmentCorporationsAndAgenciesSecuritiesMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:CashAndCashEquivalentsAxis">us-gaap:USGovernmentCorporationsAndAgenciesSecuritiesMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_DebtInstrumentAxis_abc_DebtInstrumentAaMember_us-gaap_LongtermDebtTypeAxis_us-gaap_LoansPayableMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:DebtInstrumentAxis">abc:DebtInstrumentAaMember</xbrldi:explicitMember>
+	        <xbrldi:explicitMember dimension="us-gaap:LongtermDebtTypeAxis">us-gaap:LoansPayableMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_DebtInstrumentAxis_abc_DebtInstrumentBbMember_us-gaap_LongtermDebtTypeAxis_us-gaap_LoansPayableMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:DebtInstrumentAxis">abc:DebtInstrumentBbMember</xbrldi:explicitMember>
+	        <xbrldi:explicitMember dimension="us-gaap:LongtermDebtTypeAxis">us-gaap:LoansPayableMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_InstrumentAxis_us-gaap_BankTimeDepositsMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:MajorTypesOfDebtAndEquitySecuritiesAxis">us-gaap:BankTimeDepositsMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_InstrumentAxis_us-gaap_EquitySecuritiesMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:MajorTypesOfDebtAndEquitySecuritiesAxis">us-gaap:EquitySecuritiesMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_InstrumentAxis_us-gaap_ForeignGovernmentDebtMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:MajorTypesOfDebtAndEquitySecuritiesAxis">us-gaap:ForeignGovernmentDebtMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_InstrumentAxis_us-gaap_MunicipalNotesMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:MajorTypesOfDebtAndEquitySecuritiesAxis">us-gaap:MunicipalNotesMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_InstrumentAxis_us-gaap_USGovernmentCorporationsAndAgenciesSecuritiesMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:MajorTypesOfDebtAndEquitySecuritiesAxis">us-gaap:USGovernmentCorporationsAndAgenciesSecuritiesMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_FurnitureAndFixturesMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:PropertyPlantAndEquipmentByTypeAxis">us-gaap:FurnitureAndFixturesMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_LandMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:PropertyPlantAndEquipmentByTypeAxis">us-gaap:LandMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_MachineryAndEquipmentMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:PropertyPlantAndEquipmentByTypeAxis">us-gaap:MachineryAndEquipmentMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentAlphaMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">abc:BusinessSegmentAlphaMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentBravoMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">abc:BusinessSegmentBravoMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentCharlieMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">abc:BusinessSegmentCharlieMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentDeltaMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">abc:BusinessSegmentDeltaMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassAMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassAMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassBMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassBMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_PreferredClassAMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:PreferredClassAMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_StatementGeographicalAxis_abc_EuropeMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">us-gaap:EuropeMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_StatementGeographicalAxis_abc_NorthAmericaMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">us-gaap:NorthAmericaMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_StatementGeographicalAxis_country_CA">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">country:CA</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_StatementGeographicalAxis_country_DE">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">country:DE</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_StatementGeographicalAxis_country_GB">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">country:GB</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	  <context id="I-2016_us-gaap_StatementGeographicalAxis_country_US">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">country:US</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <instant>2016-12-31</instant>
+	    </period>
+	  </context>
+	
+	
+	  <context id="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentAlphaMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">abc:BusinessSegmentAlphaMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2015-01-01</startDate>
+	      <endDate>2015-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentBravoMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">abc:BusinessSegmentBravoMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2015-01-01</startDate>
+	      <endDate>2015-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentCharlieMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">abc:BusinessSegmentCharlieMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2015-01-01</startDate>
+	      <endDate>2015-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentDeltaMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">abc:BusinessSegmentDeltaMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2015-01-01</startDate>
+	      <endDate>2015-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2015_us-gaap_StatementGeographicalAxis_abc_EuropeMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">us-gaap:EuropeMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2015-01-01</startDate>
+	      <endDate>2015-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2015_us-gaap_StatementGeographicalAxis_abc_NorthAmericaMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">us-gaap:NorthAmericaMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2015-01-01</startDate>
+	      <endDate>2015-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2015_us-gaap_StatementGeographicalAxis_country_CA">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">country:CA</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2015-01-01</startDate>
+	      <endDate>2015-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2015_us-gaap_StatementGeographicalAxis_country_DE">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">country:DE</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2015-01-01</startDate>
+	      <endDate>2015-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2015_us-gaap_StatementGeographicalAxis_country_GB">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">country:GB</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2015-01-01</startDate>
+	      <endDate>2015-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2015_us-gaap_StatementGeographicalAxis_country_US">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">country:US</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2015-01-01</startDate>
+	      <endDate>2015-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_DebtInstrumentAxis_abc_DebtInstrumentAaMember_us-gaap_LongtermDebtTypeAxis_us-gaap_LoansPayableMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:DebtInstrumentAxis">abc:DebtInstrumentAaMember</xbrldi:explicitMember>
+	        <xbrldi:explicitMember dimension="us-gaap:LongtermDebtTypeAxis">us-gaap:LoansPayableMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_DebtInstrumentAxis_abc_DebtInstrumentBbMember_us-gaap_LongtermDebtTypeAxis_us-gaap_LoansPayableMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:DebtInstrumentAxis">abc:DebtInstrumentBbMember</xbrldi:explicitMember>
+	        <xbrldi:explicitMember dimension="us-gaap:LongtermDebtTypeAxis">us-gaap:LoansPayableMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_NonmonetaryTransactionTypeAxis_us-gaap_AdvertisingBarterTransactionsMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:NonmonetaryTransactionTypeAxis">us-gaap:AdvertisingBarterTransactionsMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_NonmonetaryTransactionTypeAxis_us-gaap_InventoryExchangesMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:NonmonetaryTransactionTypeAxis">us-gaap:InventoryExchangesMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_NonmonetaryTransactionTypeAxis_us-gaap_ReceiptOfAssetsInSatisfactionOfDebtMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:NonmonetaryTransactionTypeAxis">us-gaap:ReceiptOfAssetsInSatisfactionOfDebtMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_FurnitureAndFixturesMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:PropertyPlantAndEquipmentByTypeAxis">us-gaap:FurnitureAndFixturesMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_LandMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:PropertyPlantAndEquipmentByTypeAxis">us-gaap:LandMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_MachineryAndEquipmentMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:PropertyPlantAndEquipmentByTypeAxis">us-gaap:MachineryAndEquipmentMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentAlphaMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">abc:BusinessSegmentAlphaMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentBravoMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">abc:BusinessSegmentBravoMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentCharlieMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">abc:BusinessSegmentCharlieMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentDeltaMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">abc:BusinessSegmentDeltaMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassAMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassAMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassBMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementClassOfStockAxis">us-gaap:CommonClassBMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_StatementGeographicalAxis_abc_EuropeMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">us-gaap:EuropeMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_StatementGeographicalAxis_abc_NorthAmericaMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">us-gaap:NorthAmericaMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_StatementGeographicalAxis_country_CA">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">country:CA</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_StatementGeographicalAxis_country_DE">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">country:DE</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_StatementGeographicalAxis_country_GB">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">country:GB</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_StatementGeographicalAxis_country_US">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementGeographicalAxis">country:US</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_StatementScenarioAxis_us-gaap_ScenarioUnspecifiedDomain">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementScenarioAxis">us-gaap:ScenarioUnspecifiedDomain</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_StatementScenarioAxis_us-gaap_ScenarioForecastMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:StatementScenarioAxis">us-gaap:ScenarioForecastMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_SubsequentEventTypeAxis_us-gaap_DividendDeclaredMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:SubsequentEventTypeAxis">us-gaap:DividendDeclaredMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	  <context id="D-2016_us-gaap_SubsequentEventTypeAxis_us-gaap_ThreatenedLitigationMember">
+	    <entity>
+	      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+	      <segment>
+	        <xbrldi:explicitMember dimension="us-gaap:SubsequentEventTypeAxis">us-gaap:ThreatenedLitigationMember</xbrldi:explicitMember>
+	      </segment>
+	    </entity>
+	    <period>
+	      <startDate>2016-01-01</startDate>
+	      <endDate>2016-12-31</endDate>
+	    </period>
+	  </context>
+	
+	
+	
+	  <unit id="U-Shares">
+	    <measure>shares</measure>
+	  </unit>
+	  <unit id="U-Monetary">
+	    <measure>iso4217:USD</measure>
+	  </unit>
+	  <unit id="U-PerShare">
+	    <divide>
+	      <unitNumerator>
+	        <measure>iso4217:USD</measure>
+	      </unitNumerator>
+	      <unitDenominator>
+	        <measure>shares</measure>
+	      </unitDenominator>
+	    </divide>
+	  </unit>
+
+  <!-- Document information -->
+  <dei:AmendmentFlag contextRef="D-2016">false</dei:AmendmentFlag>
+  <dei:DocumentFiscalPeriodFocus contextRef="D-2016">FY</dei:DocumentFiscalPeriodFocus>
+  <dei:DocumentFiscalYearFocus contextRef="D-2016">2016</dei:DocumentFiscalYearFocus>
+  <dei:DocumentPeriodEndDate contextRef="D-2016">2016-12-31</dei:DocumentPeriodEndDate>
+  <dei:DocumentType id="Fact-2000" contextRef="D-2016">10-K</dei:DocumentType>
+
+
+  <!-- Entity information -->
+  <dei:EntityCentralIndexKey contextRef="D-2016">0000000001</dei:EntityCentralIndexKey>
+  <dei:EntityRegistrantName contextRef="D-2016">ABC Company, Inc.</dei:EntityRegistrantName>
+  <dei:EntityVoluntaryFilers contextRef="D-2016">No</dei:EntityVoluntaryFilers>
+  <dei:EntityWellKnownSeasonedIssuer contextRef="D-2016">No</dei:EntityWellKnownSeasonedIssuer>
+  <dei:EntityCurrentReportingStatus id="Fact-2001" contextRef="D-2016">Yes</dei:EntityCurrentReportingStatus>
+  <dei:CurrentFiscalYearEndDate contextRef="D-2016">--12-31</dei:CurrentFiscalYearEndDate>
+  <dei:EntityFilerCategory id="Fact-2002" contextRef="D-2016">Large Accelerated Filer</dei:EntityFilerCategory>
+  <dei:EntityPublicFloat contextRef="I-2016" decimals="-2" unitRef="U-Monetary">114824600</dei:EntityPublicFloat>
+
+
+  <!-- Entity listing information -->
+  <dei:TradingSymbol contextRef="D-2016_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassAMember">abc</dei:TradingSymbol>
+  <dei:TradingSymbol contextRef="D-2016_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassBMember">abc</dei:TradingSymbol>
+  <dei:EntityCommonStockSharesOutstanding contextRef="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassAMember" decimals="-2" unitRef="U-Shares">50000</dei:EntityCommonStockSharesOutstanding>
+  <dei:EntityCommonStockSharesOutstanding contextRef="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassBMember" decimals="-2" unitRef="U-Shares">40000</dei:EntityCommonStockSharesOutstanding>
+
+
+  <!-- Balance sheet -->
+  <us-gaap:AccountsPayableCurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">3000000</us-gaap:AccountsPayableCurrent>
+  <us-gaap:AccountsPayableCurrent contextRef="I-2015" decimals="-3" unitRef="U-Monetary">3000000</us-gaap:AccountsPayableCurrent>
+  <us-gaap:AccountsReceivableNetCurrent contextRef="I-2015" decimals="-3" unitRef="U-Monetary">29000000</us-gaap:AccountsReceivableNetCurrent>
+  <us-gaap:AccountsReceivableNetCurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">29000000</us-gaap:AccountsReceivableNetCurrent>
+  <us-gaap:AccruedLiabilitiesCurrent contextRef="I-2015" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:AccruedLiabilitiesCurrent>
+  <us-gaap:AccruedLiabilitiesCurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:AccruedLiabilitiesCurrent>
+  <us-gaap:Assets contextRef="I-2016" decimals="-3" unitRef="U-Monetary">147000000</us-gaap:Assets>
+  <us-gaap:Assets contextRef="I-2015" decimals="-3" unitRef="U-Monetary">147000000</us-gaap:Assets>
+  <us-gaap:AdditionalPaidInCapital contextRef="I-2016" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:AdditionalPaidInCapital>
+  <us-gaap:AdditionalPaidInCapital contextRef="I-2015" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:AdditionalPaidInCapital>
+  <us-gaap:AssetsCurrent contextRef="I-2015" decimals="-3" unitRef="U-Monetary">56000000</us-gaap:AssetsCurrent>
+  <us-gaap:AssetsCurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">56000000</us-gaap:AssetsCurrent>
+  <us-gaap:AssetsNoncurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">91000000</us-gaap:AssetsNoncurrent>
+  <us-gaap:AssetsNoncurrent contextRef="I-2015" decimals="-3" unitRef="U-Monetary">91000000</us-gaap:AssetsNoncurrent>
+  <us-gaap:AvailableForSaleSecuritiesCurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">9000000</us-gaap:AvailableForSaleSecuritiesCurrent>
+  <us-gaap:AvailableForSaleSecuritiesCurrent contextRef="I-2015" decimals="-3" unitRef="U-Monetary">10000000</us-gaap:AvailableForSaleSecuritiesCurrent>
+  <us-gaap:CashAndCashEquivalentsAtCarryingValue contextRef="I-2015" decimals="-3" unitRef="U-Monetary">10000000</us-gaap:CashAndCashEquivalentsAtCarryingValue>
+  <us-gaap:CashAndCashEquivalentsAtCarryingValue contextRef="I-2016" decimals="-3" unitRef="U-Monetary">11000000</us-gaap:CashAndCashEquivalentsAtCarryingValue>
+  <us-gaap:CashAndCashEquivalentsAtCarryingValue contextRef="I-2013" decimals="-3" unitRef="U-Monetary">8000000</us-gaap:CashAndCashEquivalentsAtCarryingValue>
+  <us-gaap:CashAndCashEquivalentsAtCarryingValue contextRef="I-2014" decimals="-3" unitRef="U-Monetary">9000000</us-gaap:CashAndCashEquivalentsAtCarryingValue>
+  <us-gaap:CashCashEquivalentsAndShortTermInvestments contextRef="I-2016" decimals="-3" unitRef="U-Monetary">20000000</us-gaap:CashCashEquivalentsAndShortTermInvestments>
+  <us-gaap:CashCashEquivalentsAndShortTermInvestments contextRef="I-2015" decimals="-3" unitRef="U-Monetary">20000000</us-gaap:CashCashEquivalentsAndShortTermInvestments>
+  <us-gaap:CommitmentsAndContingencies contextRef="I-2016" decimals="-3" unitRef="U-Monetary">0</us-gaap:CommitmentsAndContingencies>
+  <us-gaap:CommitmentsAndContingencies contextRef="I-2015" decimals="-3" unitRef="U-Monetary">0</us-gaap:CommitmentsAndContingencies>
+  <us-gaap:CommonStockValueOutstanding contextRef="I-2016" decimals="-3" unitRef="U-Monetary">20000000</us-gaap:CommonStockValueOutstanding>
+  <us-gaap:CommonStockValueOutstanding contextRef="I-2015" decimals="-3" unitRef="U-Monetary">20000000</us-gaap:CommonStockValueOutstanding>
+  <us-gaap:DeferredCosts contextRef="I-2015" decimals="-3" unitRef="U-Monetary">9000000</us-gaap:DeferredCosts>
+  <us-gaap:DeferredCosts contextRef="I-2016" decimals="-3" unitRef="U-Monetary">9000000</us-gaap:DeferredCosts>
+  <us-gaap:LiabilitiesAndStockholdersEquity contextRef="I-2015" decimals="-3" unitRef="U-Monetary">147000000</us-gaap:LiabilitiesAndStockholdersEquity>
+  <us-gaap:LiabilitiesAndStockholdersEquity contextRef="I-2016" decimals="-3" unitRef="U-Monetary">147000000</us-gaap:LiabilitiesAndStockholdersEquity>
+  <us-gaap:LiabilitiesCurrent contextRef="I-2015" decimals="-3" unitRef="U-Monetary">55000000</us-gaap:LiabilitiesCurrent>
+  <us-gaap:LiabilitiesCurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">55000000</us-gaap:LiabilitiesCurrent>
+  <us-gaap:LiabilitiesNoncurrent contextRef="I-2015" decimals="-3" unitRef="U-Monetary">52000000</us-gaap:LiabilitiesNoncurrent>
+  <us-gaap:LiabilitiesNoncurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">52000000</us-gaap:LiabilitiesNoncurrent>
+  <us-gaap:LongTermDebt contextRef="I-2016" decimals="-3" unitRef="U-Monetary">41000000</us-gaap:LongTermDebt>
+  <us-gaap:LongTermDebt contextRef="I-2015" decimals="-3" unitRef="U-Monetary">41000000</us-gaap:LongTermDebt>
+  <us-gaap:LongTermDebtCurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">22000000</us-gaap:LongTermDebtCurrent>
+  <us-gaap:LongTermDebtCurrent contextRef="I-2015" decimals="-3" unitRef="U-Monetary">22000000</us-gaap:LongTermDebtCurrent>
+  <us-gaap:LongTermDebtNoncurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">19000000</us-gaap:LongTermDebtNoncurrent>
+  <us-gaap:LongTermDebtNoncurrent contextRef="I-2015" decimals="-3" unitRef="U-Monetary">19000000</us-gaap:LongTermDebtNoncurrent>
+  <us-gaap:MinorityInterest contextRef="I-2016" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:MinorityInterest>
+  <us-gaap:MinorityInterest contextRef="I-2015" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:MinorityInterest>
+  <us-gaap:OtherLiabilitiesNoncurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:OtherLiabilitiesNoncurrent>
+  <us-gaap:OtherLiabilitiesNoncurrent contextRef="I-2015" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:OtherLiabilitiesNoncurrent>
+  <us-gaap:PreferredStockValueOutstanding contextRef="I-2015" decimals="-3" unitRef="U-Monetary">10000000</us-gaap:PreferredStockValueOutstanding>
+  <us-gaap:PreferredStockValueOutstanding contextRef="I-2016" decimals="-3" unitRef="U-Monetary">10000000</us-gaap:PreferredStockValueOutstanding>
+  <us-gaap:PrepaidExpenseCurrent contextRef="I-2015" decimals="-3" unitRef="U-Monetary">3000000</us-gaap:PrepaidExpenseCurrent>
+  <us-gaap:PrepaidExpenseCurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">3000000</us-gaap:PrepaidExpenseCurrent>
+  <us-gaap:ProductWarrantyAccrual contextRef="I-2016" decimals="-3" unitRef="U-Monetary">58000000</us-gaap:ProductWarrantyAccrual>
+  <us-gaap:ProductWarrantyAccrual contextRef="I-2014" decimals="-3" unitRef="U-Monetary">58000000</us-gaap:ProductWarrantyAccrual>
+  <us-gaap:ProductWarrantyAccrual contextRef="I-2015" decimals="-3" unitRef="U-Monetary">58000000</us-gaap:ProductWarrantyAccrual>
+  <us-gaap:ProductWarrantyAccrualClassifiedCurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">26000000</us-gaap:ProductWarrantyAccrualClassifiedCurrent>
+  <us-gaap:ProductWarrantyAccrualClassifiedCurrent contextRef="I-2015" decimals="-3" unitRef="U-Monetary">26000000</us-gaap:ProductWarrantyAccrualClassifiedCurrent>
+  <us-gaap:ProductWarrantyAccrualNoncurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">32000000</us-gaap:ProductWarrantyAccrualNoncurrent>
+  <us-gaap:ProductWarrantyAccrualNoncurrent contextRef="I-2015" decimals="-3" unitRef="U-Monetary">32000000</us-gaap:ProductWarrantyAccrualNoncurrent>
+  <us-gaap:PropertyPlantAndEquipmentNet contextRef="I-2015" decimals="-3" unitRef="U-Monetary">82000000</us-gaap:PropertyPlantAndEquipmentNet>
+  <us-gaap:PropertyPlantAndEquipmentNet contextRef="I-2016" decimals="-3" unitRef="U-Monetary">82000000</us-gaap:PropertyPlantAndEquipmentNet>
+  <us-gaap:RetainedEarningsAccumulatedDeficit contextRef="I-2015" decimals="-3" unitRef="U-Monetary">6000000</us-gaap:RetainedEarningsAccumulatedDeficit>
+  <us-gaap:RetainedEarningsAccumulatedDeficit contextRef="I-2016" decimals="-3" unitRef="U-Monetary">6000000</us-gaap:RetainedEarningsAccumulatedDeficit>
+  <us-gaap:StockholdersEquity contextRef="I-2016" decimals="-3" unitRef="U-Monetary">36000000</us-gaap:StockholdersEquity>
+  <us-gaap:StockholdersEquity contextRef="I-2015" decimals="-3" unitRef="U-Monetary">36000000</us-gaap:StockholdersEquity>
+  <us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest contextRef="I-2015" decimals="-3" unitRef="U-Monetary">40000000</us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest>
+  <us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest contextRef="I-2016" decimals="-3" unitRef="U-Monetary">40000000</us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest>
+  <us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest contextRef="I-2013" decimals="-3" unitRef="U-Monetary">40000000</us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest>
+  <us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest contextRef="I-2014" decimals="-3" unitRef="U-Monetary">40000000</us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest>
+
+
+
+  <!-- Balance sheet parenthetical, general -->
+  <us-gaap:AllowanceForDoubtfulAccountsReceivableCurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:AllowanceForDoubtfulAccountsReceivableCurrent>
+  <us-gaap:AllowanceForDoubtfulAccountsReceivableCurrent contextRef="I-2015" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:AllowanceForDoubtfulAccountsReceivableCurrent>
+
+
+
+  <!-- Balance sheet parenthetical, preferred stock -->
+  <us-gaap:PreferredStockParOrStatedValuePerShare contextRef="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_PreferredClassAMember" decimals="2" unitRef="U-PerShare">1.00</us-gaap:PreferredStockParOrStatedValuePerShare>
+  <us-gaap:PreferredStockSharesAuthorized contextRef="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_PreferredClassAMember" decimals="0" unitRef="U-Shares">10000</us-gaap:PreferredStockSharesAuthorized>
+  <us-gaap:PreferredStockSharesIssued contextRef="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_PreferredClassAMember" decimals="0" unitRef="U-Shares">10000</us-gaap:PreferredStockSharesIssued>
+  <us-gaap:PreferredStockSharesOutstanding contextRef="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_PreferredClassAMember" decimals="0" unitRef="U-Shares">10000</us-gaap:PreferredStockSharesOutstanding>
+  <us-gaap:PreferredStockValueOutstanding contextRef="I-2015_us-gaap_StatementClassOfStockAxis_us-gaap_PreferredClassAMember" decimals="-3" unitRef="U-Monetary">10000000</us-gaap:PreferredStockValueOutstanding>
+  <us-gaap:PreferredStockValueOutstanding contextRef="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_PreferredClassAMember" decimals="-3" unitRef="U-Monetary">10000000</us-gaap:PreferredStockValueOutstanding>
+
+
+
+  <!-- Balance sheet parenthetical, common stock -->
+  <us-gaap:CommonStockParOrStatedValuePerShare contextRef="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassBMember" decimals="2" unitRef="U-PerShare">1.00</us-gaap:CommonStockParOrStatedValuePerShare>
+  <us-gaap:CommonStockParOrStatedValuePerShare contextRef="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassAMember" decimals="2" unitRef="U-PerShare">1.00</us-gaap:CommonStockParOrStatedValuePerShare>
+  <us-gaap:CommonStockSharesAuthorized contextRef="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassAMember" decimals="0" unitRef="U-Shares">60000</us-gaap:CommonStockSharesAuthorized>
+  <us-gaap:CommonStockSharesAuthorized contextRef="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassBMember" decimals="0" unitRef="U-Shares">50000</us-gaap:CommonStockSharesAuthorized>
+  <us-gaap:CommonStockSharesIssued contextRef="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassBMember" decimals="0" unitRef="U-Shares">40000</us-gaap:CommonStockSharesIssued>
+  <us-gaap:CommonStockSharesIssued contextRef="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassAMember" decimals="0" unitRef="U-Shares">50000</us-gaap:CommonStockSharesIssued>
+  <us-gaap:CommonStockSharesOutstanding contextRef="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassAMember" decimals="0" unitRef="U-Shares">50000</us-gaap:CommonStockSharesOutstanding>
+  <us-gaap:CommonStockSharesOutstanding contextRef="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassBMember" decimals="0" unitRef="U-Shares">40000</us-gaap:CommonStockSharesOutstanding>
+  <us-gaap:CommonStockValueOutstanding contextRef="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassAMember" decimals="-3" unitRef="U-Monetary">10000000</us-gaap:CommonStockValueOutstanding>
+  <us-gaap:CommonStockValueOutstanding contextRef="I-2015_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassAMember" decimals="-3" unitRef="U-Monetary">10000000</us-gaap:CommonStockValueOutstanding>
+  <us-gaap:CommonStockValueOutstanding contextRef="I-2015_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassBMember" decimals="-3" unitRef="U-Monetary">10000000</us-gaap:CommonStockValueOutstanding>
+  <us-gaap:CommonStockValueOutstanding contextRef="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassBMember" decimals="-3" unitRef="U-Monetary">10000000</us-gaap:CommonStockValueOutstanding>
+
+
+
+  <!-- Balance sheet parenthetical, treasury stock -->
+  <us-gaap:TreasuryStockShares contextRef="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassAMember" decimals="0" unitRef="U-Shares">10000</us-gaap:TreasuryStockShares>
+  <us-gaap:TreasuryStockValue contextRef="I-2015" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:TreasuryStockValue>
+  <us-gaap:TreasuryStockValue contextRef="I-2016" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:TreasuryStockValue>
+  <us-gaap:TreasuryStockValue contextRef="I-2015_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassAMember" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:TreasuryStockValue>
+  <us-gaap:TreasuryStockValue contextRef="I-2016_us-gaap_StatementClassOfStockAxis_us-gaap_CommonClassAMember" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:TreasuryStockValue>
+
+
+
+  <!-- Income statement -->
+  <us-gaap:CostOfRevenue contextRef="D-2014" decimals="0" unitRef="U-Monetary">4000000</us-gaap:CostOfRevenue>
+  <us-gaap:CostOfRevenue contextRef="D-2015" decimals="0" unitRef="U-Monetary">4000000</us-gaap:CostOfRevenue>
+  <us-gaap:CostOfRevenue contextRef="D-2016" decimals="0" unitRef="U-Monetary">4000000</us-gaap:CostOfRevenue>
+  <us-gaap:GrossProfit contextRef="D-2016" decimals="-3" unitRef="U-Monetary">6000000</us-gaap:GrossProfit>
+  <us-gaap:GrossProfit contextRef="D-2015" decimals="-3" unitRef="U-Monetary">6000000</us-gaap:GrossProfit>
+  <us-gaap:GrossProfit contextRef="D-2014" decimals="-3" unitRef="U-Monetary">6000000</us-gaap:GrossProfit>
+  <us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments contextRef="D-2015" decimals="-3" unitRef="U-Monetary">9950000</us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments>
+  <us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments contextRef="D-2016" decimals="-3" unitRef="U-Monetary">7350000</us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments>
+  <us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments contextRef="D-2014" decimals="-3" unitRef="U-Monetary">4350000</us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments>
+  <us-gaap:IncomeTaxExpenseBenefit contextRef="D-2015" decimals="-3" unitRef="U-Monetary">2500000</us-gaap:IncomeTaxExpenseBenefit>
+  <us-gaap:IncomeTaxExpenseBenefit contextRef="D-2014" decimals="-3" unitRef="U-Monetary">3000000</us-gaap:IncomeTaxExpenseBenefit>
+  <us-gaap:IncomeTaxExpenseBenefit contextRef="D-2016" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:IncomeTaxExpenseBenefit>
+
+
+
+  <us-gaap:NonoperatingIncomeExpense contextRef="D-2016" decimals="-3" unitRef="U-Monetary">6200000</us-gaap:NonoperatingIncomeExpense>
+  <us-gaap:NonoperatingIncomeExpense contextRef="D-2015" decimals="-3" unitRef="U-Monetary">7800000</us-gaap:NonoperatingIncomeExpense>
+  <us-gaap:NonoperatingIncomeExpense contextRef="D-2014" decimals="-3" unitRef="U-Monetary">4200000</us-gaap:NonoperatingIncomeExpense>
+
+  <us-gaap:InterestAndDebtExpense contextRef="D-2016" decimals="-3" unitRef="U-Monetary">3000000</us-gaap:InterestAndDebtExpense>
+  <us-gaap:InterestAndDebtExpense contextRef="D-2015" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:InterestAndDebtExpense>
+  <us-gaap:InterestAndDebtExpense contextRef="D-2014" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:InterestAndDebtExpense>
+
+
+
+
+
+
+  <us-gaap:MarketingExpense contextRef="D-2014" decimals="-3" unitRef="U-Monetary">250000</us-gaap:MarketingExpense>
+  <us-gaap:MarketingExpense contextRef="D-2015" decimals="-3" unitRef="U-Monetary">250000</us-gaap:MarketingExpense>
+  <us-gaap:MarketingExpense contextRef="D-2016" decimals="-3" unitRef="U-Monetary">250000</us-gaap:MarketingExpense>
+  <us-gaap:NetIncomeLoss contextRef="D-2014" decimals="-3" unitRef="U-Monetary">1215000</us-gaap:NetIncomeLoss>
+  <us-gaap:NetIncomeLoss contextRef="D-2015" decimals="-3" unitRef="U-Monetary">6705000</us-gaap:NetIncomeLoss>
+  <us-gaap:NetIncomeLoss contextRef="D-2016" decimals="-3" unitRef="U-Monetary">4815000</us-gaap:NetIncomeLoss>
+  <us-gaap:NetIncomeLossAttributableToNoncontrollingInterest contextRef="D-2016" decimals="-3" unitRef="U-Monetary">535000</us-gaap:NetIncomeLossAttributableToNoncontrollingInterest>
+  <us-gaap:NetIncomeLossAttributableToNoncontrollingInterest contextRef="D-2014" decimals="-3" unitRef="U-Monetary">135000</us-gaap:NetIncomeLossAttributableToNoncontrollingInterest>
+  <us-gaap:NetIncomeLossAttributableToNoncontrollingInterest contextRef="D-2015" decimals="-3" unitRef="U-Monetary">745000</us-gaap:NetIncomeLossAttributableToNoncontrollingInterest>
+  <us-gaap:OperatingExpenses contextRef="D-2016" decimals="-3" unitRef="U-Monetary">1850000</us-gaap:OperatingExpenses>
+  <us-gaap:OperatingExpenses contextRef="D-2015" decimals="-3" unitRef="U-Monetary">1850000</us-gaap:OperatingExpenses>
+  <us-gaap:OperatingExpenses contextRef="D-2014" decimals="-3" unitRef="U-Monetary">1850000</us-gaap:OperatingExpenses>
+  <us-gaap:OperatingIncomeLoss contextRef="D-2014" decimals="-3" unitRef="U-Monetary">4150000</us-gaap:OperatingIncomeLoss>
+  <us-gaap:OperatingIncomeLoss contextRef="D-2015" decimals="-3" unitRef="U-Monetary">4150000</us-gaap:OperatingIncomeLoss>
+  <us-gaap:OperatingIncomeLoss contextRef="D-2016" decimals="-3" unitRef="U-Monetary">4150000</us-gaap:OperatingIncomeLoss>
+
+  <us-gaap:OtherCostAndExpenseOperating contextRef="D-2015" decimals="-3" unitRef="U-Monetary">100000</us-gaap:OtherCostAndExpenseOperating>
+  <us-gaap:OtherCostAndExpenseOperating contextRef="D-2014" decimals="-3" unitRef="U-Monetary">100000</us-gaap:OtherCostAndExpenseOperating>
+  <us-gaap:OtherCostAndExpenseOperating contextRef="D-2016" decimals="-3" unitRef="U-Monetary">100000</us-gaap:OtherCostAndExpenseOperating>
+
+  <us-gaap:ProfitLoss contextRef="D-2015" decimals="-3" unitRef="U-Monetary">7450000</us-gaap:ProfitLoss>
+  <us-gaap:ProfitLoss contextRef="D-2014" decimals="-3" unitRef="U-Monetary">1350000</us-gaap:ProfitLoss>
+  <us-gaap:ProfitLoss contextRef="D-2016" decimals="-3" unitRef="U-Monetary">5350000</us-gaap:ProfitLoss>
+  <us-gaap:ResearchAndDevelopmentExpense contextRef="D-2015" decimals="-3" unitRef="U-Monetary">500000</us-gaap:ResearchAndDevelopmentExpense>
+  <us-gaap:ResearchAndDevelopmentExpense contextRef="D-2014" decimals="-3" unitRef="U-Monetary">500000</us-gaap:ResearchAndDevelopmentExpense>
+  <us-gaap:ResearchAndDevelopmentExpense contextRef="D-2016" decimals="-3" unitRef="U-Monetary">500000</us-gaap:ResearchAndDevelopmentExpense>
+  <us-gaap:Revenues contextRef="D-2016" decimals="0" unitRef="U-Monetary">10000000</us-gaap:Revenues>
+  <us-gaap:Revenues contextRef="D-2015" decimals="0" unitRef="U-Monetary">10000000</us-gaap:Revenues>
+  <us-gaap:Revenues contextRef="D-2014" decimals="0" unitRef="U-Monetary">10000000</us-gaap:Revenues>
+  <us-gaap:SellingGeneralAndAdministrativeExpense contextRef="D-2016" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:SellingGeneralAndAdministrativeExpense>
+  <us-gaap:SellingGeneralAndAdministrativeExpense contextRef="D-2015" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:SellingGeneralAndAdministrativeExpense>
+  <us-gaap:SellingGeneralAndAdministrativeExpense contextRef="D-2014" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:SellingGeneralAndAdministrativeExpense>
+
+  <us-gaap:EarningsPerShareBasic contextRef="D-2014" decimals="2" unitRef="U-PerShare">24.30</us-gaap:EarningsPerShareBasic>
+  <us-gaap:EarningsPerShareBasic contextRef="D-2015" decimals="2" unitRef="U-PerShare">134.10</us-gaap:EarningsPerShareBasic>
+  <us-gaap:EarningsPerShareBasic contextRef="D-2016" decimals="2" unitRef="U-PerShare">96.30</us-gaap:EarningsPerShareBasic>
+  <us-gaap:EarningsPerShareDiluted contextRef="D-2015" decimals="2" unitRef="U-PerShare">74.50</us-gaap:EarningsPerShareDiluted>
+  <us-gaap:EarningsPerShareDiluted contextRef="D-2016" decimals="2" unitRef="U-PerShare">53.50</us-gaap:EarningsPerShareDiluted>
+  <us-gaap:EarningsPerShareDiluted contextRef="D-2014" decimals="2" unitRef="U-PerShare">13.50</us-gaap:EarningsPerShareDiluted>
+
+  <us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding contextRef="D-2015" decimals="0" unitRef="U-Shares">90000</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+  <us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding contextRef="D-2014" decimals="0" unitRef="U-Shares">90000</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+  <us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding contextRef="D-2016" decimals="0" unitRef="U-Shares">90000</us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding>
+  <us-gaap:WeightedAverageNumberOfSharesOutstandingBasic contextRef="D-2016" decimals="0" unitRef="U-Shares">50000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+  <us-gaap:WeightedAverageNumberOfSharesOutstandingBasic contextRef="D-2014" decimals="0" unitRef="U-Shares">50000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+  <us-gaap:WeightedAverageNumberOfSharesOutstandingBasic contextRef="D-2015" decimals="0" unitRef="U-Shares">50000</us-gaap:WeightedAverageNumberOfSharesOutstandingBasic>
+
+
+  <!-- Statement of comprehensive income -->
+  <us-gaap:AccumulatedOtherComprehensiveIncomeLossNetOfTax contextRef="I-2015" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:AccumulatedOtherComprehensiveIncomeLossNetOfTax>
+  <us-gaap:AccumulatedOtherComprehensiveIncomeLossNetOfTax contextRef="I-2016" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:AccumulatedOtherComprehensiveIncomeLossNetOfTax>
+  <us-gaap:ComprehensiveIncomeNetOfTax contextRef="D-2016" decimals="-3" unitRef="U-Monetary">7000000</us-gaap:ComprehensiveIncomeNetOfTax>
+  <us-gaap:ComprehensiveIncomeNetOfTax contextRef="D-2014" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:ComprehensiveIncomeNetOfTax>
+  <us-gaap:ComprehensiveIncomeNetOfTax contextRef="D-2015" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:ComprehensiveIncomeNetOfTax>
+  <us-gaap:ComprehensiveIncomeNetOfTaxAttributableToNoncontrollingInterest contextRef="D-2015" decimals="-3" unitRef="U-Monetary">5000000</us-gaap:ComprehensiveIncomeNetOfTaxAttributableToNoncontrollingInterest>
+  <us-gaap:ComprehensiveIncomeNetOfTaxAttributableToNoncontrollingInterest contextRef="D-2014" decimals="-3" unitRef="U-Monetary">5000000</us-gaap:ComprehensiveIncomeNetOfTaxAttributableToNoncontrollingInterest>
+  <us-gaap:ComprehensiveIncomeNetOfTaxAttributableToNoncontrollingInterest contextRef="D-2016" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:ComprehensiveIncomeNetOfTaxAttributableToNoncontrollingInterest>
+  <us-gaap:ComprehensiveIncomeNetOfTaxIncludingPortionAttributableToNoncontrollingInterest contextRef="D-2016" decimals="-3" unitRef="U-Monetary">9000000</us-gaap:ComprehensiveIncomeNetOfTaxIncludingPortionAttributableToNoncontrollingInterest>
+  <us-gaap:ComprehensiveIncomeNetOfTaxIncludingPortionAttributableToNoncontrollingInterest contextRef="D-2015" decimals="-3" unitRef="U-Monetary">9000000</us-gaap:ComprehensiveIncomeNetOfTaxIncludingPortionAttributableToNoncontrollingInterest>
+  <us-gaap:ComprehensiveIncomeNetOfTaxIncludingPortionAttributableToNoncontrollingInterest contextRef="D-2014" decimals="-3" unitRef="U-Monetary">9000000</us-gaap:ComprehensiveIncomeNetOfTaxIncludingPortionAttributableToNoncontrollingInterest>
+
+  <us-gaap:OtherComprehensiveIncomeForeignCurrencyTransactionAndTranslationGainLossArisingDuringPeriodNetOfTax contextRef="D-2016" decimals="-3" unitRef="U-Monetary">3650000</us-gaap:OtherComprehensiveIncomeForeignCurrencyTransactionAndTranslationGainLossArisingDuringPeriodNetOfTax>
+  <us-gaap:OtherComprehensiveIncomeForeignCurrencyTransactionAndTranslationGainLossArisingDuringPeriodNetOfTax contextRef="D-2015" decimals="-3" unitRef="U-Monetary">1550000</us-gaap:OtherComprehensiveIncomeForeignCurrencyTransactionAndTranslationGainLossArisingDuringPeriodNetOfTax>
+  <us-gaap:OtherComprehensiveIncomeForeignCurrencyTransactionAndTranslationGainLossArisingDuringPeriodNetOfTax contextRef="D-2014" decimals="-3" unitRef="U-Monetary">7650000</us-gaap:OtherComprehensiveIncomeForeignCurrencyTransactionAndTranslationGainLossArisingDuringPeriodNetOfTax>
+  <us-gaap:OtherComprehensiveIncomeLossNetOfTax contextRef="D-2015" decimals="-3" unitRef="U-Monetary">1550000</us-gaap:OtherComprehensiveIncomeLossNetOfTax>
+  <us-gaap:OtherComprehensiveIncomeLossNetOfTax contextRef="D-2016" decimals="-3" unitRef="U-Monetary">3650000</us-gaap:OtherComprehensiveIncomeLossNetOfTax>
+  <us-gaap:OtherComprehensiveIncomeLossNetOfTax contextRef="D-2014" decimals="-3" unitRef="U-Monetary">7650000</us-gaap:OtherComprehensiveIncomeLossNetOfTax>
+
+
+
+  <!-- Cash flow statement -->
+  <us-gaap:AdjustmentsToReconcileNetIncomeLossToCashProvidedByUsedInOperatingActivities contextRef="D-2016" decimals="-3" unitRef="U-Monetary">570000</us-gaap:AdjustmentsToReconcileNetIncomeLossToCashProvidedByUsedInOperatingActivities>
+  <us-gaap:AdjustmentsToReconcileNetIncomeLossToCashProvidedByUsedInOperatingActivities contextRef="D-2015" decimals="-3" unitRef="U-Monetary">570000</us-gaap:AdjustmentsToReconcileNetIncomeLossToCashProvidedByUsedInOperatingActivities>
+  <us-gaap:AdjustmentsToReconcileNetIncomeLossToCashProvidedByUsedInOperatingActivities contextRef="D-2014" decimals="-3" unitRef="U-Monetary">570000</us-gaap:AdjustmentsToReconcileNetIncomeLossToCashProvidedByUsedInOperatingActivities>
+  <us-gaap:CashAndCashEquivalentsPeriodIncreaseDecrease contextRef="D-2016" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:CashAndCashEquivalentsPeriodIncreaseDecrease>
+  <us-gaap:CashAndCashEquivalentsPeriodIncreaseDecrease contextRef="D-2015" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:CashAndCashEquivalentsPeriodIncreaseDecrease>
+  <us-gaap:CashAndCashEquivalentsPeriodIncreaseDecrease contextRef="D-2014" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:CashAndCashEquivalentsPeriodIncreaseDecrease>
+  <us-gaap:DeferredIncomeTaxExpenseBenefit contextRef="D-2016" decimals="-3" unitRef="U-Monetary">80000</us-gaap:DeferredIncomeTaxExpenseBenefit>
+  <us-gaap:DeferredIncomeTaxExpenseBenefit contextRef="D-2015" decimals="-3" unitRef="U-Monetary">80000</us-gaap:DeferredIncomeTaxExpenseBenefit>
+  <us-gaap:DeferredIncomeTaxExpenseBenefit contextRef="D-2014" decimals="-3" unitRef="U-Monetary">80000</us-gaap:DeferredIncomeTaxExpenseBenefit>
+  <us-gaap:Depreciation contextRef="D-2014" decimals="-3" unitRef="U-Monetary">500000</us-gaap:Depreciation>
+  <us-gaap:Depreciation contextRef="D-2016" decimals="-3" unitRef="U-Monetary">500000</us-gaap:Depreciation>
+  <us-gaap:Depreciation contextRef="D-2015" decimals="-3" unitRef="U-Monetary">500000</us-gaap:Depreciation>
+  <us-gaap:Dividends contextRef="D-2014" decimals="-3" unitRef="U-Monetary">9000000</us-gaap:Dividends>
+  <us-gaap:Dividends contextRef="D-2016" decimals="-3" unitRef="U-Monetary">9000000</us-gaap:Dividends>
+  <us-gaap:Dividends contextRef="D-2015" decimals="-3" unitRef="U-Monetary">9000000</us-gaap:Dividends>
+  <us-gaap:EffectOfExchangeRateOnCashAndCashEquivalents contextRef="D-2015" decimals="-3" unitRef="U-Monetary">980000</us-gaap:EffectOfExchangeRateOnCashAndCashEquivalents>
+  <us-gaap:EffectOfExchangeRateOnCashAndCashEquivalents contextRef="D-2014" decimals="-3" unitRef="U-Monetary">-80000</us-gaap:EffectOfExchangeRateOnCashAndCashEquivalents>
+  <us-gaap:EffectOfExchangeRateOnCashAndCashEquivalents contextRef="D-2016" decimals="-3" unitRef="U-Monetary">80000</us-gaap:EffectOfExchangeRateOnCashAndCashEquivalents>
+  <us-gaap:IncomeTaxesPaid contextRef="D-2015" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:IncomeTaxesPaid>
+  <us-gaap:IncomeTaxesPaid contextRef="D-2016" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:IncomeTaxesPaid>
+  <us-gaap:IncomeTaxesPaid contextRef="D-2014" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:IncomeTaxesPaid>
+  <us-gaap:IncreaseDecreaseInAccountsPayable contextRef="D-2016" decimals="-3" unitRef="U-Monetary">0</us-gaap:IncreaseDecreaseInAccountsPayable>
+  <us-gaap:IncreaseDecreaseInAccountsPayable contextRef="D-2015" decimals="-3" unitRef="U-Monetary">0</us-gaap:IncreaseDecreaseInAccountsPayable>
+  <us-gaap:IncreaseDecreaseInAccountsPayable contextRef="D-2014" decimals="-3" unitRef="U-Monetary">0</us-gaap:IncreaseDecreaseInAccountsPayable>
+  <us-gaap:IncreaseDecreaseInAccountsReceivable contextRef="D-2015" decimals="-3" unitRef="U-Monetary">0</us-gaap:IncreaseDecreaseInAccountsReceivable>
+  <us-gaap:IncreaseDecreaseInAccountsReceivable contextRef="D-2014" decimals="-3" unitRef="U-Monetary">0</us-gaap:IncreaseDecreaseInAccountsReceivable>
+  <us-gaap:IncreaseDecreaseInAccountsReceivable contextRef="D-2016" decimals="-3" unitRef="U-Monetary">0</us-gaap:IncreaseDecreaseInAccountsReceivable>
+  <us-gaap:IncreaseDecreaseInAccruedLiabilities contextRef="D-2016" decimals="-3" unitRef="U-Monetary">0</us-gaap:IncreaseDecreaseInAccruedLiabilities>
+  <us-gaap:IncreaseDecreaseInAccruedLiabilities contextRef="D-2014" decimals="-3" unitRef="U-Monetary">0</us-gaap:IncreaseDecreaseInAccruedLiabilities>
+  <us-gaap:IncreaseDecreaseInAccruedLiabilities contextRef="D-2015" decimals="-3" unitRef="U-Monetary">0</us-gaap:IncreaseDecreaseInAccruedLiabilities>
+  <us-gaap:IncreaseDecreaseInInventories contextRef="D-2015" decimals="-3" unitRef="U-Monetary">0</us-gaap:IncreaseDecreaseInInventories>
+  <us-gaap:IncreaseDecreaseInInventories contextRef="D-2016" decimals="-3" unitRef="U-Monetary">0</us-gaap:IncreaseDecreaseInInventories>
+  <us-gaap:IncreaseDecreaseInInventories contextRef="D-2014" decimals="-3" unitRef="U-Monetary">0</us-gaap:IncreaseDecreaseInInventories>
+  <us-gaap:IncreaseDecreaseInOtherDeferredLiability contextRef="D-2015" decimals="-3" unitRef="U-Monetary">0</us-gaap:IncreaseDecreaseInOtherDeferredLiability>
+  <us-gaap:IncreaseDecreaseInOtherDeferredLiability contextRef="D-2014" decimals="-3" unitRef="U-Monetary">0</us-gaap:IncreaseDecreaseInOtherDeferredLiability>
+  <us-gaap:IncreaseDecreaseInOtherDeferredLiability contextRef="D-2016" decimals="-3" unitRef="U-Monetary">0</us-gaap:IncreaseDecreaseInOtherDeferredLiability>
+  <us-gaap:NetCashProvidedByUsedInFinancingActivitiesContinuingOperations contextRef="D-2015" decimals="-3" unitRef="U-Monetary">-20000000</us-gaap:NetCashProvidedByUsedInFinancingActivitiesContinuingOperations>
+  <us-gaap:NetCashProvidedByUsedInFinancingActivitiesContinuingOperations contextRef="D-2014" decimals="-3" unitRef="U-Monetary">-20000000</us-gaap:NetCashProvidedByUsedInFinancingActivitiesContinuingOperations>
+  <us-gaap:NetCashProvidedByUsedInFinancingActivitiesContinuingOperations contextRef="D-2016" decimals="-3" unitRef="U-Monetary">-20000000</us-gaap:NetCashProvidedByUsedInFinancingActivitiesContinuingOperations>
+  <us-gaap:NetCashProvidedByUsedInInvestingActivitiesContinuingOperations contextRef="D-2016" decimals="-3" unitRef="U-Monetary">15000000</us-gaap:NetCashProvidedByUsedInInvestingActivitiesContinuingOperations>
+  <us-gaap:NetCashProvidedByUsedInInvestingActivitiesContinuingOperations contextRef="D-2014" decimals="-3" unitRef="U-Monetary">19160000</us-gaap:NetCashProvidedByUsedInInvestingActivitiesContinuingOperations>
+  <us-gaap:NetCashProvidedByUsedInInvestingActivitiesContinuingOperations contextRef="D-2015" decimals="-3" unitRef="U-Monetary">12000000</us-gaap:NetCashProvidedByUsedInInvestingActivitiesContinuingOperations>
+  <us-gaap:NetCashProvidedByUsedInOperatingActivitiesContinuingOperations contextRef="D-2015" decimals="-3" unitRef="U-Monetary">8020000</us-gaap:NetCashProvidedByUsedInOperatingActivitiesContinuingOperations>
+  <us-gaap:NetCashProvidedByUsedInOperatingActivitiesContinuingOperations contextRef="D-2016" decimals="-3" unitRef="U-Monetary">5920000</us-gaap:NetCashProvidedByUsedInOperatingActivitiesContinuingOperations>
+  <us-gaap:NetCashProvidedByUsedInOperatingActivitiesContinuingOperations contextRef="D-2014" decimals="-3" unitRef="U-Monetary">1920000</us-gaap:NetCashProvidedByUsedInOperatingActivitiesContinuingOperations>
+  <us-gaap:OtherNoncashIncomeExpense contextRef="D-2015" decimals="-3" unitRef="U-Monetary">10000</us-gaap:OtherNoncashIncomeExpense>
+  <us-gaap:OtherNoncashIncomeExpense contextRef="D-2016" decimals="-3" unitRef="U-Monetary">10000</us-gaap:OtherNoncashIncomeExpense>
+  <us-gaap:OtherNoncashIncomeExpense contextRef="D-2014" decimals="-3" unitRef="U-Monetary">10000</us-gaap:OtherNoncashIncomeExpense>
+  <us-gaap:PaymentsForProceedsFromOtherInvestingActivities contextRef="D-2014" decimals="-3" unitRef="U-Monetary">-2000000</us-gaap:PaymentsForProceedsFromOtherInvestingActivities>
+  <us-gaap:PaymentsForProceedsFromOtherInvestingActivities contextRef="D-2016" decimals="-3" unitRef="U-Monetary">-2000000</us-gaap:PaymentsForProceedsFromOtherInvestingActivities>
+  <us-gaap:PaymentsForProceedsFromOtherInvestingActivities contextRef="D-2015" decimals="-3" unitRef="U-Monetary">-2000000</us-gaap:PaymentsForProceedsFromOtherInvestingActivities>
+  <us-gaap:PaymentsOfDividendsCommonStock contextRef="D-2015" decimals="-3" unitRef="U-Monetary">9000000</us-gaap:PaymentsOfDividendsCommonStock>
+  <us-gaap:PaymentsOfDividendsCommonStock contextRef="D-2016" decimals="-3" unitRef="U-Monetary">9000000</us-gaap:PaymentsOfDividendsCommonStock>
+  <us-gaap:PaymentsOfDividendsCommonStock contextRef="D-2014" decimals="-3" unitRef="U-Monetary">9000000</us-gaap:PaymentsOfDividendsCommonStock>
+  <us-gaap:PaymentsToAcquirePropertyPlantAndEquipment contextRef="D-2016" decimals="-3" unitRef="U-Monetary">10000000</us-gaap:PaymentsToAcquirePropertyPlantAndEquipment>
+  <us-gaap:PaymentsToAcquirePropertyPlantAndEquipment contextRef="D-2015" decimals="-3" unitRef="U-Monetary">10000000</us-gaap:PaymentsToAcquirePropertyPlantAndEquipment>
+  <us-gaap:PaymentsToAcquirePropertyPlantAndEquipment contextRef="D-2014" decimals="-3" unitRef="U-Monetary">10000000</us-gaap:PaymentsToAcquirePropertyPlantAndEquipment>
+  <us-gaap:ProceedsFromIssuanceOfLongTermDebt contextRef="D-2015" decimals="-3" unitRef="U-Monetary">20000000</us-gaap:ProceedsFromIssuanceOfLongTermDebt>
+  <us-gaap:ProceedsFromIssuanceOfLongTermDebt contextRef="D-2016" decimals="-3" unitRef="U-Monetary">20000000</us-gaap:ProceedsFromIssuanceOfLongTermDebt>
+  <us-gaap:ProceedsFromIssuanceOfLongTermDebt contextRef="D-2014" decimals="-3" unitRef="U-Monetary">20000000</us-gaap:ProceedsFromIssuanceOfLongTermDebt>
+  <us-gaap:ProceedsFromPaymentsForOtherFinancingActivities contextRef="D-2015" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:ProceedsFromPaymentsForOtherFinancingActivities>
+  <us-gaap:ProceedsFromPaymentsForOtherFinancingActivities contextRef="D-2016" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:ProceedsFromPaymentsForOtherFinancingActivities>
+  <us-gaap:ProceedsFromPaymentsForOtherFinancingActivities contextRef="D-2014" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:ProceedsFromPaymentsForOtherFinancingActivities>
+  <us-gaap:ProceedsFromSaleOfPropertyPlantAndEquipment contextRef="D-2014" decimals="-3" unitRef="U-Monetary">27160000</us-gaap:ProceedsFromSaleOfPropertyPlantAndEquipment>
+  <us-gaap:ProceedsFromSaleOfPropertyPlantAndEquipment contextRef="D-2016" decimals="-3" unitRef="U-Monetary">23000000</us-gaap:ProceedsFromSaleOfPropertyPlantAndEquipment>
+  <us-gaap:ProceedsFromSaleOfPropertyPlantAndEquipment contextRef="D-2015" decimals="-3" unitRef="U-Monetary">20000000</us-gaap:ProceedsFromSaleOfPropertyPlantAndEquipment>
+  <us-gaap:RepaymentsOfLongTermDebt contextRef="D-2014" decimals="-3" unitRef="U-Monetary">32000000</us-gaap:RepaymentsOfLongTermDebt>
+  <us-gaap:RepaymentsOfLongTermDebt contextRef="D-2016" decimals="-3" unitRef="U-Monetary">32000000</us-gaap:RepaymentsOfLongTermDebt>
+  <us-gaap:RepaymentsOfLongTermDebt contextRef="D-2015" decimals="-3" unitRef="U-Monetary">32000000</us-gaap:RepaymentsOfLongTermDebt>
+
+
+  <us-gaap:InterestPaid contextRef="D-2015" decimals="-3" unitRef="U-Monetary">500000</us-gaap:InterestPaid>
+  <us-gaap:InterestPaid contextRef="D-2016" decimals="-3" unitRef="U-Monetary">500000</us-gaap:InterestPaid>
+  <us-gaap:InterestPaid contextRef="D-2014" decimals="-3" unitRef="U-Monetary">500000</us-gaap:InterestPaid>
+
+  <!-- Prior period adjustment -->
+  <us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest contextRef="I-2015_us-gaap_CreationDateAxis_abc_OrigionallyStatedReportDateMember" decimals="-3" unitRef="U-Monetary">40000000</us-gaap:StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest>
+  <abc:CorrectionOfPriorPeriodError contextRef="I-2015" decimals="-3" unitRef="U-Monetary">2000000</abc:CorrectionOfPriorPeriodError>
+  <abc:EffectOfMandatoryChangeInAccountingPolicyForAdoptionOfFasXxx contextRef="I-2015" decimals="-3" unitRef="U-Monetary">-2000000</abc:EffectOfMandatoryChangeInAccountingPolicyForAdoptionOfFasXxx>
+
+  <!-- Statement of changes in equity -->
+
+
+  <!-- Nature of business -->
+  <us-gaap:NatureOfOperations contextRef="D-2016">&lt;div style="font-family:Times New Roman;font-size:10pt;"&gt;&lt;div style="line-height:120%;font-size:10pt;"&gt;&lt;font style="font-family:inherit;font-size:10pt;"&gt;Duis fermentum. Nullam dui orci, scelerisque porttitor, volutpat a, porttitor a, enim. Sed lobortis. Maecenas scelerisque ullamcorper libero. Aliquam porta leo imperdiet pede. In semper, elit vel elementum auctor, lectus purus rhoncus arcu, lacinia sollicitudin justo odio et nunc. Phasellus sagittis fringilla risus. Curabitur iaculis sagittis orci. Ut malesuada libero nec nulla molestie vestibulum. Suspendisse lectus massa, ullamcorper at, tincidunt eget, bibendum vel, risus. Curabitur imperdiet. Suspendisse accumsan, arcu vel ornare interdum, magna tellus porta mauris, in porta mi lacus sodales felis. Pellentesque dapibus, leo non sollicitudin consequat, lectus orci fringilla felis, non interdum leo libero sed augue. Sed magna. Maecenas ante ipsum, congue ut, sodales a, pulvinar ut, dui. Suspendisse mauris massa, sollicitudin et, hendrerit eget, placerat id, orci. Donec molestie magna.&lt;/font&gt;&lt;/div&gt;&lt;div style="line-height:120%;font-size:10pt;"&gt;&lt;font style="font-family:inherit;font-size:10pt;"&gt;&lt;br clear="none"/&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style="line-height:120%;font-size:10pt;"&gt;&lt;font style="font-family:inherit;font-size:10pt;"&gt;Sed mauris. Nulla facilisi. Fusce tristique posuere ipsum. Nulla facilisi. Aliquam viverra risus vitae ante. Sed rhoncus mi in wisi. Nullam nibh dui, molestie vitae, imperdiet non, ornare at, elit. Aenean nec justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis sodales.&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;</us-gaap:NatureOfOperations>
+
+
+
+  <!-- Significant accounting policies -->
+  <us-gaap:CashAndCashEquivalentsPolicyTextBlock contextRef="D-2016">&lt;div style="font-family:Times New Roman;font-size:10pt;"&gt;&lt;div style="line-height:120%;font-size:10pt;"&gt;&lt;font style="font-family:inherit;font-size:10pt;"&gt;Proin elit sem, ornare non, ullamcorper vel, sollicitudin a, lacus. Mauris tincidunt cursus est. Nulla sit amet nibh. Sed elementum feugiat augue. Nam non tortor non leo porta bibendum. Morbi eu pede.&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;</us-gaap:CashAndCashEquivalentsPolicyTextBlock>
+  <us-gaap:DebtPolicyTextBlock contextRef="D-2016">&lt;div style="font-family:Times New Roman;font-size:10pt;"&gt;&lt;div style="line-height:120%;font-size:10pt;"&gt;&lt;font style="font-family:inherit;font-size:10pt;"&gt;Pellentesque condimentum commodo wisi. Fusce gravida, ligula a placerat placerat, leo erat euismod lectus, et lacinia justo libero non pede. Vivamus ac velit vel magna nonummy pretium.&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;</us-gaap:DebtPolicyTextBlock>
+  <us-gaap:ReceivablesPolicyTextBlock contextRef="D-2016">&lt;div style="font-family:Times New Roman;font-size:10pt;"&gt;&lt;div style="line-height:120%;font-size:10pt;"&gt;&lt;font style="font-family:inherit;font-size:10pt;"&gt;Proin elit sem, ornare non, ullamcorper vel, sollicitudin a, lacus. Mauris tincidunt cursus est. Nulla sit amet nibh. Sed elementum feugiat augue. Nam non tortor non leo porta bibendum. Morbi eu pede. Proin elit sem, ornare non, ullamcorper vel, sollicitudin a, lacus. Mauris tincidunt cursus est. Nulla sit amet nibh. Sed elementum feugiat augue. Nam non tortor non leo porta bibendum. Morbi eu pede.&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;</us-gaap:ReceivablesPolicyTextBlock>
+  <us-gaap:RevenueRecognitionPolicyTextBlock contextRef="D-2016">&lt;div style="font-family:Times New Roman;font-size:10pt;"&gt;&lt;div style="line-height:120%;font-size:10pt;"&gt;&lt;font style="font-family:inherit;font-size:10pt;"&gt;Nulla facilisi. Aliquam viverra risus vitae ante. Sed rhoncus mi in wisi.&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;</us-gaap:RevenueRecognitionPolicyTextBlock>
+
+
+
+  <!-- Property, plant, and equipment policies -->
+  <us-gaap:PropertyPlantAndEquipmentBasisOfValuation contextRef="D-2016_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_LandMember">Mauris tincidunt cursus</us-gaap:PropertyPlantAndEquipmentBasisOfValuation>
+  <us-gaap:PropertyPlantAndEquipmentBasisOfValuation contextRef="D-2016_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_FurnitureAndFixturesMember">Mauris tincidunt cursus</us-gaap:PropertyPlantAndEquipmentBasisOfValuation>
+  <us-gaap:PropertyPlantAndEquipmentBasisOfValuation contextRef="D-2016_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_MachineryAndEquipmentMember">Mauris tincidunt cursus</us-gaap:PropertyPlantAndEquipmentBasisOfValuation>
+  <us-gaap:PropertyPlantAndEquipmentDepreciationMethods contextRef="D-2016_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_FurnitureAndFixturesMember">Mauris tincidunt</us-gaap:PropertyPlantAndEquipmentDepreciationMethods>
+  <us-gaap:PropertyPlantAndEquipmentDepreciationMethods contextRef="D-2016_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_MachineryAndEquipmentMember">Sed elementum feugiat</us-gaap:PropertyPlantAndEquipmentDepreciationMethods>
+  <us-gaap:PropertyPlantAndEquipmentDispositions contextRef="D-2016_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_MachineryAndEquipmentMember">Nam non tortor</us-gaap:PropertyPlantAndEquipmentDispositions>
+  <us-gaap:PropertyPlantAndEquipmentDispositions contextRef="D-2016_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_LandMember">Nam non tortor</us-gaap:PropertyPlantAndEquipmentDispositions>
+  <us-gaap:PropertyPlantAndEquipmentDispositions contextRef="D-2016_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_FurnitureAndFixturesMember">Nam non tortor</us-gaap:PropertyPlantAndEquipmentDispositions>
+  <us-gaap:PropertyPlantAndEquipmentEstimatedUsefulLives contextRef="D-2016_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_FurnitureAndFixturesMember">5 years</us-gaap:PropertyPlantAndEquipmentEstimatedUsefulLives>
+  <us-gaap:PropertyPlantAndEquipmentEstimatedUsefulLives contextRef="D-2016_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_MachineryAndEquipmentMember">15 years</us-gaap:PropertyPlantAndEquipmentEstimatedUsefulLives>
+
+
+
+  <!-- Cash, cash equivalents, and marketable securities -->
+
+
+
+  <!-- Cash and cash equivalents components -->
+  <us-gaap:CashAndCashEquivalentsAtCarryingValue contextRef="I-2016_us-gaap_CashAndCashEquivalentsAxis_us-gaap_CorporateDebtSecuritiesMember" decimals="-3" unitRef="U-Monetary">1200000</us-gaap:CashAndCashEquivalentsAtCarryingValue>
+  <us-gaap:CashAndCashEquivalentsAtCarryingValue contextRef="I-2015_us-gaap_CashAndCashEquivalentsAxis_us-gaap_ForeignGovernmentDebtMember" decimals="-3" unitRef="U-Monetary">0</us-gaap:CashAndCashEquivalentsAtCarryingValue>
+  <us-gaap:CashAndCashEquivalentsAtCarryingValue contextRef="I-2016_us-gaap_CashAndCashEquivalentsAxis_us-gaap_CashMember" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:CashAndCashEquivalentsAtCarryingValue>
+  <us-gaap:CashAndCashEquivalentsAtCarryingValue contextRef="I-2015_us-gaap_CashAndCashEquivalentsAxis_us-gaap_USGovernmentCorporationsAndAgenciesSecuritiesMember" decimals="-3" unitRef="U-Monetary">500000</us-gaap:CashAndCashEquivalentsAtCarryingValue>
+  <us-gaap:CashAndCashEquivalentsAtCarryingValue contextRef="I-2016_us-gaap_CashAndCashEquivalentsAxis_us-gaap_USGovernmentCorporationsAndAgenciesSecuritiesMember" decimals="-3" unitRef="U-Monetary">500000</us-gaap:CashAndCashEquivalentsAtCarryingValue>
+  <us-gaap:CashAndCashEquivalentsAtCarryingValue contextRef="I-2016_us-gaap_CashAndCashEquivalentsAxis_us-gaap_MoneyMarketFundsMember" decimals="-3" unitRef="U-Monetary">3000000</us-gaap:CashAndCashEquivalentsAtCarryingValue>
+  <us-gaap:CashAndCashEquivalentsAtCarryingValue contextRef="I-2015_us-gaap_CashAndCashEquivalentsAxis_us-gaap_MoneyMarketFundsMember" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:CashAndCashEquivalentsAtCarryingValue>
+  <us-gaap:CashAndCashEquivalentsAtCarryingValue contextRef="I-2015_us-gaap_CashAndCashEquivalentsAxis_us-gaap_CashMember" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:CashAndCashEquivalentsAtCarryingValue>
+  <us-gaap:CashAndCashEquivalentsAtCarryingValue contextRef="I-2016_us-gaap_CashAndCashEquivalentsAxis_us-gaap_BankTimeDepositsMember" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:CashAndCashEquivalentsAtCarryingValue>
+  <us-gaap:CashAndCashEquivalentsAtCarryingValue contextRef="I-2015_us-gaap_CashAndCashEquivalentsAxis_us-gaap_BankTimeDepositsMember" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:CashAndCashEquivalentsAtCarryingValue>
+  <us-gaap:CashAndCashEquivalentsAtCarryingValue contextRef="I-2016_us-gaap_CashAndCashEquivalentsAxis_us-gaap_ForeignGovernmentDebtMember" decimals="-3" unitRef="U-Monetary">300000</us-gaap:CashAndCashEquivalentsAtCarryingValue>
+  <us-gaap:CashAndCashEquivalentsAtCarryingValue contextRef="I-2015_us-gaap_CashAndCashEquivalentsAxis_us-gaap_CorporateDebtSecuritiesMember" decimals="-3" unitRef="U-Monetary">2500000</us-gaap:CashAndCashEquivalentsAtCarryingValue>
+
+
+
+  <!-- Marketable securities components -->
+  <us-gaap:AvailableForSaleSecuritiesCurrent contextRef="I-2015_us-gaap_InstrumentAxis_us-gaap_ForeignGovernmentDebtMember" decimals="-3" unitRef="U-Monetary">1600000</us-gaap:AvailableForSaleSecuritiesCurrent>
+  <us-gaap:AvailableForSaleSecuritiesCurrent contextRef="I-2015_us-gaap_InstrumentAxis_us-gaap_EquitySecuritiesMember" decimals="-3" unitRef="U-Monetary">3000000</us-gaap:AvailableForSaleSecuritiesCurrent>
+  <us-gaap:AvailableForSaleSecuritiesCurrent contextRef="I-2016_us-gaap_InstrumentAxis_us-gaap_MunicipalNotesMember" decimals="-3" unitRef="U-Monetary">2500000</us-gaap:AvailableForSaleSecuritiesCurrent>
+  <us-gaap:AvailableForSaleSecuritiesCurrent contextRef="I-2016_us-gaap_InstrumentAxis_us-gaap_ForeignGovernmentDebtMember" decimals="-3" unitRef="U-Monetary">1200000</us-gaap:AvailableForSaleSecuritiesCurrent>
+  <us-gaap:AvailableForSaleSecuritiesCurrent contextRef="I-2015_us-gaap_InstrumentAxis_us-gaap_USGovernmentCorporationsAndAgenciesSecuritiesMember" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:AvailableForSaleSecuritiesCurrent>
+  <us-gaap:AvailableForSaleSecuritiesCurrent contextRef="I-2016_us-gaap_InstrumentAxis_us-gaap_BankTimeDepositsMember" decimals="-3" unitRef="U-Monetary">300000</us-gaap:AvailableForSaleSecuritiesCurrent>
+  <us-gaap:AvailableForSaleSecuritiesCurrent contextRef="I-2015_us-gaap_InstrumentAxis_us-gaap_MunicipalNotesMember" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:AvailableForSaleSecuritiesCurrent>
+  <us-gaap:AvailableForSaleSecuritiesCurrent contextRef="I-2016_us-gaap_InstrumentAxis_us-gaap_USGovernmentCorporationsAndAgenciesSecuritiesMember" decimals="-3" unitRef="U-Monetary">3000000</us-gaap:AvailableForSaleSecuritiesCurrent>
+  <us-gaap:AvailableForSaleSecuritiesCurrent contextRef="I-2015_us-gaap_InstrumentAxis_us-gaap_BankTimeDepositsMember" decimals="-3" unitRef="U-Monetary">400000</us-gaap:AvailableForSaleSecuritiesCurrent>
+  <us-gaap:AvailableForSaleSecuritiesCurrent contextRef="I-2016_us-gaap_InstrumentAxis_us-gaap_EquitySecuritiesMember" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:AvailableForSaleSecuritiesCurrent>
+
+
+
+  <!-- Inventories components -->
+  <us-gaap:InventoryFinishedGoods contextRef="I-2016" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:InventoryFinishedGoods>
+  <us-gaap:InventoryFinishedGoods contextRef="I-2015" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:InventoryFinishedGoods>
+  <us-gaap:InventoryNet contextRef="I-2016" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:InventoryNet>
+  <us-gaap:InventoryNet contextRef="I-2015" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:InventoryNet>
+  <us-gaap:InventoryPolicyTextBlock contextRef="D-2016">&lt;div style="font-family:Times New Roman;font-size:10pt;"&gt;&lt;div style="line-height:120%;font-size:10pt;"&gt;&lt;font style="font-family:inherit;font-size:10pt;"&gt;Mauris tincidunt cursus est. Nulla sit amet nibh. Sed elementum feugiat augue. Nam non tortor non leo porta bibendum. Morbi eu pede.Proin elit sem, ornare non, ullamcorper vel, sollicitudin a, lacus.&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;</us-gaap:InventoryPolicyTextBlock>
+  <us-gaap:InventoryRawMaterials contextRef="I-2016" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:InventoryRawMaterials>
+  <us-gaap:InventoryRawMaterials contextRef="I-2015" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:InventoryRawMaterials>
+  <us-gaap:InventoryWorkInProcess contextRef="I-2015" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:InventoryWorkInProcess>
+  <us-gaap:InventoryWorkInProcess contextRef="I-2016" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:InventoryWorkInProcess>
+  <us-gaap:OtherInventorySupplies contextRef="I-2015" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:OtherInventorySupplies>
+  <us-gaap:OtherInventorySupplies contextRef="I-2016" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:OtherInventorySupplies>
+
+
+
+  <!-- Property, plant, and equipment components -->
+  <us-gaap:PropertyPlantAndEquipmentGross contextRef="I-2015_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_MachineryAndEquipmentMember" decimals="-3" unitRef="U-Monetary">50000000</us-gaap:PropertyPlantAndEquipmentGross>
+  <us-gaap:PropertyPlantAndEquipmentGross contextRef="I-2015" decimals="-3" unitRef="U-Monetary">97000000</us-gaap:PropertyPlantAndEquipmentGross>
+  <us-gaap:PropertyPlantAndEquipmentGross contextRef="I-2016_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_LandMember" decimals="-3" unitRef="U-Monetary">40000000</us-gaap:PropertyPlantAndEquipmentGross>
+  <us-gaap:PropertyPlantAndEquipmentGross contextRef="I-2015_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_FurnitureAndFixturesMember" decimals="-3" unitRef="U-Monetary">7000000</us-gaap:PropertyPlantAndEquipmentGross>
+  <us-gaap:PropertyPlantAndEquipmentGross contextRef="I-2016" decimals="-3" unitRef="U-Monetary">97000000</us-gaap:PropertyPlantAndEquipmentGross>
+  <us-gaap:PropertyPlantAndEquipmentGross contextRef="I-2015_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_LandMember" decimals="-3" unitRef="U-Monetary">40000000</us-gaap:PropertyPlantAndEquipmentGross>
+  <us-gaap:PropertyPlantAndEquipmentGross contextRef="I-2016_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_FurnitureAndFixturesMember" decimals="-3" unitRef="U-Monetary">7000000</us-gaap:PropertyPlantAndEquipmentGross>
+  <us-gaap:PropertyPlantAndEquipmentGross contextRef="I-2016_us-gaap_PropertyPlantAndEquipmentByTypeAxis_us-gaap_MachineryAndEquipmentMember" decimals="-3" unitRef="U-Monetary">50000000</us-gaap:PropertyPlantAndEquipmentGross>
+
+  <us-gaap:AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment contextRef="I-2015" decimals="-3" unitRef="U-Monetary">15000000</us-gaap:AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment>
+  <us-gaap:AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment contextRef="I-2016" decimals="-3" unitRef="U-Monetary">15000000</us-gaap:AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment>
+
+
+
+  <!-- Deferred costs components -->
+  <us-gaap:DeferredAdvertisingCosts contextRef="I-2015" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:DeferredAdvertisingCosts>
+  <us-gaap:DeferredAdvertisingCosts contextRef="I-2016" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:DeferredAdvertisingCosts>
+  <us-gaap:DeferredSalesCommission contextRef="I-2015" decimals="-3" unitRef="U-Monetary">5000000</us-gaap:DeferredSalesCommission>
+  <us-gaap:DeferredSalesCommission contextRef="I-2016" decimals="-3" unitRef="U-Monetary">5000000</us-gaap:DeferredSalesCommission>
+  <us-gaap:DeferredSetUpCostsNoncurrent contextRef="I-2015" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:DeferredSetUpCostsNoncurrent>
+  <us-gaap:DeferredSetUpCostsNoncurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:DeferredSetUpCostsNoncurrent>
+  <us-gaap:DeferredTaxAndOtherLiabilitiesNoncurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">750000</us-gaap:DeferredTaxAndOtherLiabilitiesNoncurrent>
+  <us-gaap:DeferredTaxAndOtherLiabilitiesNoncurrent contextRef="I-2015" decimals="-3" unitRef="U-Monetary">750000</us-gaap:DeferredTaxAndOtherLiabilitiesNoncurrent>
+
+
+
+  <!-- Product warranty accrual -->
+  <us-gaap:ProductWarrantyAccrualCurrencyTranslationIncreaseDecrease contextRef="D-2016" decimals="-3" unitRef="U-Monetary">-1000000</us-gaap:ProductWarrantyAccrualCurrencyTranslationIncreaseDecrease>
+  <us-gaap:ProductWarrantyAccrualCurrencyTranslationIncreaseDecrease contextRef="D-2015" decimals="-3" unitRef="U-Monetary">-1000000</us-gaap:ProductWarrantyAccrualCurrencyTranslationIncreaseDecrease>
+  <us-gaap:ProductWarrantyAccrualPayments contextRef="D-2015" decimals="-3" unitRef="U-Monetary">6000000</us-gaap:ProductWarrantyAccrualPayments>
+  <us-gaap:ProductWarrantyAccrualPayments contextRef="D-2016" decimals="-3" unitRef="U-Monetary">6000000</us-gaap:ProductWarrantyAccrualPayments>
+  <us-gaap:ProductWarrantyAccrualWarrantiesIssued contextRef="D-2015" decimals="-3" unitRef="U-Monetary">7000000</us-gaap:ProductWarrantyAccrualWarrantiesIssued>
+  <us-gaap:ProductWarrantyAccrualWarrantiesIssued contextRef="D-2016" decimals="-3" unitRef="U-Monetary">7000000</us-gaap:ProductWarrantyAccrualWarrantiesIssued>
+
+
+
+  <!-- Long-term debt instruments -->
+  <us-gaap:DebtInstrumentCollateral contextRef="D-2016_us-gaap_DebtInstrumentAxis_abc_DebtInstrumentBbMember_us-gaap_LongtermDebtTypeAxis_us-gaap_LoansPayableMember">cursus elit sem</us-gaap:DebtInstrumentCollateral>
+  <us-gaap:DebtInstrumentCollateral contextRef="D-2016_us-gaap_DebtInstrumentAxis_abc_DebtInstrumentAaMember_us-gaap_LongtermDebtTypeAxis_us-gaap_LoansPayableMember">cursus elt sem</us-gaap:DebtInstrumentCollateral>
+  <us-gaap:DebtInstrumentDescription contextRef="D-2016_us-gaap_DebtInstrumentAxis_abc_DebtInstrumentBbMember_us-gaap_LongtermDebtTypeAxis_us-gaap_LoansPayableMember">Mincidunt est</us-gaap:DebtInstrumentDescription>
+  <us-gaap:DebtInstrumentDescription contextRef="D-2016_us-gaap_DebtInstrumentAxis_abc_DebtInstrumentAaMember_us-gaap_LongtermDebtTypeAxis_us-gaap_LoansPayableMember">Mauris tincidunt cursus est</us-gaap:DebtInstrumentDescription>
+  <us-gaap:DebtInstrumentInterestRateTerms contextRef="D-2016_us-gaap_DebtInstrumentAxis_abc_DebtInstrumentAaMember_us-gaap_LongtermDebtTypeAxis_us-gaap_LoansPayableMember">.10</us-gaap:DebtInstrumentInterestRateTerms>
+  <us-gaap:DebtInstrumentInterestRateTerms contextRef="D-2016_us-gaap_DebtInstrumentAxis_abc_DebtInstrumentBbMember_us-gaap_LongtermDebtTypeAxis_us-gaap_LoansPayableMember">.125</us-gaap:DebtInstrumentInterestRateTerms>
+  <us-gaap:DebtInstrumentMaturityDateDescription contextRef="D-2016_us-gaap_DebtInstrumentAxis_abc_DebtInstrumentBbMember_us-gaap_LongtermDebtTypeAxis_us-gaap_LoansPayableMember">October 2016</us-gaap:DebtInstrumentMaturityDateDescription>
+  <us-gaap:DebtInstrumentMaturityDateDescription contextRef="D-2016_us-gaap_DebtInstrumentAxis_abc_DebtInstrumentAaMember_us-gaap_LongtermDebtTypeAxis_us-gaap_LoansPayableMember">April 2018</us-gaap:DebtInstrumentMaturityDateDescription>
+
+  <us-gaap:LongTermDebt contextRef="I-2016_us-gaap_DebtInstrumentAxis_abc_DebtInstrumentBbMember_us-gaap_LongtermDebtTypeAxis_us-gaap_LoansPayableMember" decimals="-3" unitRef="U-Monetary">11000000</us-gaap:LongTermDebt>
+  <us-gaap:LongTermDebt contextRef="I-2016_us-gaap_DebtInstrumentAxis_abc_DebtInstrumentAaMember_us-gaap_LongtermDebtTypeAxis_us-gaap_LoansPayableMember" decimals="-3" unitRef="U-Monetary">30000000</us-gaap:LongTermDebt>
+  <us-gaap:LongTermDebt contextRef="I-2015_us-gaap_DebtInstrumentAxis_abc_DebtInstrumentAaMember_us-gaap_LongtermDebtTypeAxis_us-gaap_LoansPayableMember" decimals="-3" unitRef="U-Monetary">30000000</us-gaap:LongTermDebt>
+  <us-gaap:LongTermDebt contextRef="I-2015_us-gaap_DebtInstrumentAxis_abc_DebtInstrumentBbMember_us-gaap_LongtermDebtTypeAxis_us-gaap_LoansPayableMember" decimals="-3" unitRef="U-Monetary">11000000</us-gaap:LongTermDebt>
+
+
+  <!-- Long-term debt maturities -->
+  <us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalAfterYearFive contextRef="I-2016" decimals="-3" unitRef="U-Monetary">15000000</us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalAfterYearFive>
+  <us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInNextTwelveMonths contextRef="I-2016" decimals="-3" unitRef="U-Monetary">22000000</us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInNextTwelveMonths>
+  <us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFive contextRef="I-2016" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFive>
+  <us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFour contextRef="I-2016" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearFour>
+  <us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearThree contextRef="I-2016" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearThree>
+  <us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearTwo contextRef="I-2016" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:LongTermDebtMaturitiesRepaymentsOfPrincipalInYearTwo>
+
+
+
+  <!-- Other noncurrent liabilities components -->
+  <us-gaap:OtherSundryLiabilitiesNoncurrent contextRef="I-2016" decimals="-3" unitRef="U-Monetary">250000</us-gaap:OtherSundryLiabilitiesNoncurrent>
+  <us-gaap:OtherSundryLiabilitiesNoncurrent contextRef="I-2015" decimals="-3" unitRef="U-Monetary">250000</us-gaap:OtherSundryLiabilitiesNoncurrent>
+
+
+
+  <!-- Business segment breakdown -->
+  <us-gaap:Assets contextRef="I-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentCharlieMember" decimals="-3" unitRef="U-Monetary">47000000</us-gaap:Assets>
+  <us-gaap:Assets contextRef="I-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentDeltaMember" decimals="-3" unitRef="U-Monetary">50000000</us-gaap:Assets>
+  <us-gaap:Assets contextRef="I-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentBravoMember" decimals="-3" unitRef="U-Monetary">25000000</us-gaap:Assets>
+  <us-gaap:Assets contextRef="I-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentAlphaMember" decimals="-3" unitRef="U-Monetary">25000000</us-gaap:Assets>
+  <us-gaap:Assets contextRef="I-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentCharlieMember" decimals="-3" unitRef="U-Monetary">47000000</us-gaap:Assets>
+  <us-gaap:Assets contextRef="I-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentBravoMember" decimals="-3" unitRef="U-Monetary">25000000</us-gaap:Assets>
+  <us-gaap:Assets contextRef="I-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentAlphaMember" decimals="-3" unitRef="U-Monetary">25000000</us-gaap:Assets>
+  <us-gaap:Assets contextRef="I-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentDeltaMember" decimals="-3" unitRef="U-Monetary">50000000</us-gaap:Assets>
+
+  <us-gaap:Depreciation contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentCharlieMember" decimals="-3" unitRef="U-Monetary">100000</us-gaap:Depreciation>
+  <us-gaap:Depreciation contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentBravoMember" decimals="-3" unitRef="U-Monetary">100000</us-gaap:Depreciation>
+  <us-gaap:Depreciation contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentAlphaMember" decimals="-3" unitRef="U-Monetary">100000</us-gaap:Depreciation>
+  <us-gaap:Depreciation contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentDeltaMember" decimals="-3" unitRef="U-Monetary">200000</us-gaap:Depreciation>
+  <us-gaap:Depreciation contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentBravoMember" decimals="-3" unitRef="U-Monetary">100000</us-gaap:Depreciation>
+  <us-gaap:Depreciation contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentAlphaMember" decimals="-3" unitRef="U-Monetary">100000</us-gaap:Depreciation>
+  <us-gaap:Depreciation contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentDeltaMember" decimals="-3" unitRef="U-Monetary">200000</us-gaap:Depreciation>
+  <us-gaap:Depreciation contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentCharlieMember" decimals="-3" unitRef="U-Monetary">100000</us-gaap:Depreciation>
+
+  <us-gaap:OperatingExpenses contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentAlphaMember" decimals="-3" unitRef="U-Monetary">500000</us-gaap:OperatingExpenses>
+  <us-gaap:OperatingExpenses contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentBravoMember" decimals="-3" unitRef="U-Monetary">500000</us-gaap:OperatingExpenses>
+  <us-gaap:OperatingExpenses contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentCharlieMember" decimals="-3" unitRef="U-Monetary">500000</us-gaap:OperatingExpenses>
+  <us-gaap:OperatingExpenses contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentDeltaMember" decimals="-3" unitRef="U-Monetary">350000</us-gaap:OperatingExpenses>
+  <us-gaap:OperatingExpenses contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentCharlieMember" decimals="-3" unitRef="U-Monetary">500000</us-gaap:OperatingExpenses>
+  <us-gaap:OperatingExpenses contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentAlphaMember" decimals="-3" unitRef="U-Monetary">500000</us-gaap:OperatingExpenses>
+  <us-gaap:OperatingExpenses contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentDeltaMember" decimals="-3" unitRef="U-Monetary">350000</us-gaap:OperatingExpenses>
+  <us-gaap:OperatingExpenses contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentBravoMember" decimals="-3" unitRef="U-Monetary">500000</us-gaap:OperatingExpenses>
+
+  <us-gaap:OperatingIncomeLoss contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentAlphaMember" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:OperatingIncomeLoss>
+  <us-gaap:OperatingIncomeLoss contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentCharlieMember" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:OperatingIncomeLoss>
+  <us-gaap:OperatingIncomeLoss contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentDeltaMember" decimals="-3" unitRef="U-Monetary">1150000</us-gaap:OperatingIncomeLoss>
+  <us-gaap:OperatingIncomeLoss contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentBravoMember" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:OperatingIncomeLoss>
+  <us-gaap:OperatingIncomeLoss contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentDeltaMember" decimals="-3" unitRef="U-Monetary">1150000</us-gaap:OperatingIncomeLoss>
+  <us-gaap:OperatingIncomeLoss contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentCharlieMember" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:OperatingIncomeLoss>
+  <us-gaap:OperatingIncomeLoss contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentBravoMember" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:OperatingIncomeLoss>
+  <us-gaap:OperatingIncomeLoss contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentAlphaMember" decimals="-3" unitRef="U-Monetary">1000000</us-gaap:OperatingIncomeLoss>
+
+  <us-gaap:PaymentsToAcquirePropertyPlantAndEquipment contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentDeltaMember" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:PaymentsToAcquirePropertyPlantAndEquipment>
+  <us-gaap:PaymentsToAcquirePropertyPlantAndEquipment contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentCharlieMember" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:PaymentsToAcquirePropertyPlantAndEquipment>
+  <us-gaap:PaymentsToAcquirePropertyPlantAndEquipment contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentAlphaMember" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:PaymentsToAcquirePropertyPlantAndEquipment>
+  <us-gaap:PaymentsToAcquirePropertyPlantAndEquipment contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentBravoMember" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:PaymentsToAcquirePropertyPlantAndEquipment>
+  <us-gaap:PaymentsToAcquirePropertyPlantAndEquipment contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentBravoMember" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:PaymentsToAcquirePropertyPlantAndEquipment>
+  <us-gaap:PaymentsToAcquirePropertyPlantAndEquipment contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentAlphaMember" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:PaymentsToAcquirePropertyPlantAndEquipment>
+  <us-gaap:PaymentsToAcquirePropertyPlantAndEquipment contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentDeltaMember" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:PaymentsToAcquirePropertyPlantAndEquipment>
+  <us-gaap:PaymentsToAcquirePropertyPlantAndEquipment contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentCharlieMember" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:PaymentsToAcquirePropertyPlantAndEquipment>
+
+  <us-gaap:Revenues contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentBravoMember" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:Revenues>
+  <us-gaap:Revenues contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentDeltaMember" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:Revenues>
+  <us-gaap:Revenues contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentAlphaMember" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:Revenues>
+  <us-gaap:Revenues contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentCharlieMember" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:Revenues>
+  <us-gaap:Revenues contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentDeltaMember" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:Revenues>
+  <us-gaap:Revenues contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentAlphaMember" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:Revenues>
+  <us-gaap:Revenues contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentCharlieMember" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:Revenues>
+  <us-gaap:Revenues contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentBravoMember" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:Revenues>
+
+  <us-gaap:SellingGeneralAndAdministrativeExpense contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentAlphaMember" decimals="-3" unitRef="U-Monetary">250000</us-gaap:SellingGeneralAndAdministrativeExpense>
+  <us-gaap:SellingGeneralAndAdministrativeExpense contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentCharlieMember" decimals="-3" unitRef="U-Monetary">250000</us-gaap:SellingGeneralAndAdministrativeExpense>
+  <us-gaap:SellingGeneralAndAdministrativeExpense contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentDeltaMember" decimals="-3" unitRef="U-Monetary">250000</us-gaap:SellingGeneralAndAdministrativeExpense>
+  <us-gaap:SellingGeneralAndAdministrativeExpense contextRef="D-2016_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentBravoMember" decimals="-3" unitRef="U-Monetary">250000</us-gaap:SellingGeneralAndAdministrativeExpense>
+  <us-gaap:SellingGeneralAndAdministrativeExpense contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentDeltaMember" decimals="-3" unitRef="U-Monetary">250000</us-gaap:SellingGeneralAndAdministrativeExpense>
+  <us-gaap:SellingGeneralAndAdministrativeExpense contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentCharlieMember" decimals="-3" unitRef="U-Monetary">250000</us-gaap:SellingGeneralAndAdministrativeExpense>
+  <us-gaap:SellingGeneralAndAdministrativeExpense contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentAlphaMember" decimals="-3" unitRef="U-Monetary">250000</us-gaap:SellingGeneralAndAdministrativeExpense>
+  <us-gaap:SellingGeneralAndAdministrativeExpense contextRef="D-2015_us-gaap_StatementBusinessSegmentsAxis_abc_BusinessSegmentBravoMember" decimals="-3" unitRef="U-Monetary">250000</us-gaap:SellingGeneralAndAdministrativeExpense>
+
+
+  <!-- Geographic area breakdown -->
+  <us-gaap:AssetsNoncurrent contextRef="I-2015_us-gaap_StatementGeographicalAxis_country_CA" decimals="-3" unitRef="U-Monetary">12000000</us-gaap:AssetsNoncurrent>
+  <us-gaap:AssetsNoncurrent contextRef="I-2015_us-gaap_StatementGeographicalAxis_country_DE" decimals="-3" unitRef="U-Monetary">9000000</us-gaap:AssetsNoncurrent>
+  <us-gaap:AssetsNoncurrent contextRef="I-2015_us-gaap_StatementGeographicalAxis_abc_EuropeMember" decimals="-3" unitRef="U-Monetary">39000000</us-gaap:AssetsNoncurrent>
+  <us-gaap:AssetsNoncurrent contextRef="I-2016_us-gaap_StatementGeographicalAxis_country_US" decimals="-3" unitRef="U-Monetary">40000000</us-gaap:AssetsNoncurrent>
+  <us-gaap:AssetsNoncurrent contextRef="I-2016_us-gaap_StatementGeographicalAxis_country_DE" decimals="-3" unitRef="U-Monetary">9000000</us-gaap:AssetsNoncurrent>
+  <us-gaap:AssetsNoncurrent contextRef="I-2015_us-gaap_StatementGeographicalAxis_country_US" decimals="-3" unitRef="U-Monetary">40000000</us-gaap:AssetsNoncurrent>
+  <us-gaap:AssetsNoncurrent contextRef="I-2015_us-gaap_StatementGeographicalAxis_abc_NorthAmericaMember" decimals="-3" unitRef="U-Monetary">52000000</us-gaap:AssetsNoncurrent>
+  <us-gaap:AssetsNoncurrent contextRef="I-2016_us-gaap_StatementGeographicalAxis_abc_EuropeMember" decimals="-3" unitRef="U-Monetary">39000000</us-gaap:AssetsNoncurrent>
+  <us-gaap:AssetsNoncurrent contextRef="I-2015_us-gaap_StatementGeographicalAxis_country_GB" decimals="-3" unitRef="U-Monetary">30000000</us-gaap:AssetsNoncurrent>
+  <us-gaap:AssetsNoncurrent contextRef="I-2016_us-gaap_StatementGeographicalAxis_country_CA" decimals="-3" unitRef="U-Monetary">12000000</us-gaap:AssetsNoncurrent>
+  <us-gaap:AssetsNoncurrent contextRef="I-2016_us-gaap_StatementGeographicalAxis_country_GB" decimals="-3" unitRef="U-Monetary">30000000</us-gaap:AssetsNoncurrent>
+  <us-gaap:AssetsNoncurrent contextRef="I-2016_us-gaap_StatementGeographicalAxis_abc_NorthAmericaMember" decimals="-3" unitRef="U-Monetary">52000000</us-gaap:AssetsNoncurrent>
+
+  <us-gaap:Revenues contextRef="D-2015_us-gaap_StatementGeographicalAxis_abc_NorthAmericaMember" decimals="-3" unitRef="U-Monetary">6000000</us-gaap:Revenues>
+  <us-gaap:Revenues contextRef="D-2015_us-gaap_StatementGeographicalAxis_country_GB" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:Revenues>
+  <us-gaap:Revenues contextRef="D-2016_us-gaap_StatementGeographicalAxis_abc_NorthAmericaMember" decimals="-3" unitRef="U-Monetary">6000000</us-gaap:Revenues>
+  <us-gaap:Revenues contextRef="D-2016_us-gaap_StatementGeographicalAxis_country_CA" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:Revenues>
+  <us-gaap:Revenues contextRef="D-2016_us-gaap_StatementGeographicalAxis_country_DE" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:Revenues>
+  <us-gaap:Revenues contextRef="D-2016_us-gaap_StatementGeographicalAxis_country_GB" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:Revenues>
+  <us-gaap:Revenues contextRef="D-2016_us-gaap_StatementGeographicalAxis_abc_EuropeMember" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:Revenues>
+  <us-gaap:Revenues contextRef="D-2015_us-gaap_StatementGeographicalAxis_country_DE" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:Revenues>
+  <us-gaap:Revenues contextRef="D-2016_us-gaap_StatementGeographicalAxis_country_US" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:Revenues>
+  <us-gaap:Revenues contextRef="D-2015_us-gaap_StatementGeographicalAxis_country_CA" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:Revenues>
+  <us-gaap:Revenues contextRef="D-2015_us-gaap_StatementGeographicalAxis_abc_EuropeMember" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:Revenues>
+  <us-gaap:Revenues contextRef="D-2015_us-gaap_StatementGeographicalAxis_country_US" decimals="-3" unitRef="U-Monetary">4000000</us-gaap:Revenues>
+
+
+  <!-- Nonmonetary transactions components -->
+  <us-gaap:NonmonetaryTransactionAmountOfBarterTransaction contextRef="D-2016_us-gaap_NonmonetaryTransactionTypeAxis_us-gaap_ReceiptOfAssetsInSatisfactionOfDebtMember" decimals="-3" unitRef="U-Monetary">200000</us-gaap:NonmonetaryTransactionAmountOfBarterTransaction>
+  <us-gaap:NonmonetaryTransactionAmountOfBarterTransaction contextRef="D-2016" decimals="-3" unitRef="U-Monetary">600000</us-gaap:NonmonetaryTransactionAmountOfBarterTransaction>
+  <us-gaap:NonmonetaryTransactionAmountOfBarterTransaction contextRef="D-2016_us-gaap_NonmonetaryTransactionTypeAxis_us-gaap_InventoryExchangesMember" decimals="-3" unitRef="U-Monetary">200000</us-gaap:NonmonetaryTransactionAmountOfBarterTransaction>
+  <us-gaap:NonmonetaryTransactionAmountOfBarterTransaction contextRef="D-2016_us-gaap_NonmonetaryTransactionTypeAxis_us-gaap_AdvertisingBarterTransactionsMember" decimals="-3" unitRef="U-Monetary">200000</us-gaap:NonmonetaryTransactionAmountOfBarterTransaction>
+  <us-gaap:NonmonetaryTransactionBasisOfAccountingForAssetsTransferred contextRef="D-2016_us-gaap_NonmonetaryTransactionTypeAxis_us-gaap_InventoryExchangesMember">Nam non tortor non leo</us-gaap:NonmonetaryTransactionBasisOfAccountingForAssetsTransferred>
+  <us-gaap:NonmonetaryTransactionBasisOfAccountingForAssetsTransferred contextRef="D-2016_us-gaap_NonmonetaryTransactionTypeAxis_us-gaap_AdvertisingBarterTransactionsMember">Mulla sit amet nibh</us-gaap:NonmonetaryTransactionBasisOfAccountingForAssetsTransferred>
+  <us-gaap:NonmonetaryTransactionBasisOfAccountingForAssetsTransferred contextRef="D-2016_us-gaap_NonmonetaryTransactionTypeAxis_us-gaap_ReceiptOfAssetsInSatisfactionOfDebtMember">Nunc in elit non metus viverra sollicitudin.</us-gaap:NonmonetaryTransactionBasisOfAccountingForAssetsTransferred>
+  <us-gaap:NonmonetaryTransactionGainLossRecognizedOnTransfer contextRef="D-2016" decimals="-3" unitRef="U-Monetary">300000</us-gaap:NonmonetaryTransactionGainLossRecognizedOnTransfer>
+  <us-gaap:NonmonetaryTransactionGainLossRecognizedOnTransfer contextRef="D-2016_us-gaap_NonmonetaryTransactionTypeAxis_us-gaap_InventoryExchangesMember" decimals="-3" unitRef="U-Monetary">100000</us-gaap:NonmonetaryTransactionGainLossRecognizedOnTransfer>
+  <us-gaap:NonmonetaryTransactionGainLossRecognizedOnTransfer contextRef="D-2016_us-gaap_NonmonetaryTransactionTypeAxis_us-gaap_ReceiptOfAssetsInSatisfactionOfDebtMember" decimals="-3" unitRef="U-Monetary">100000</us-gaap:NonmonetaryTransactionGainLossRecognizedOnTransfer>
+  <us-gaap:NonmonetaryTransactionGainLossRecognizedOnTransfer contextRef="D-2016_us-gaap_NonmonetaryTransactionTypeAxis_us-gaap_AdvertisingBarterTransactionsMember" decimals="-3" unitRef="U-Monetary">100000</us-gaap:NonmonetaryTransactionGainLossRecognizedOnTransfer>
+  <us-gaap:NonmonetaryTransactionNameOfCounterparty contextRef="D-2016_us-gaap_NonmonetaryTransactionTypeAxis_us-gaap_AdvertisingBarterTransactionsMember">Nulla sit amet</us-gaap:NonmonetaryTransactionNameOfCounterparty>
+  <us-gaap:NonmonetaryTransactionNameOfCounterparty contextRef="D-2016_us-gaap_NonmonetaryTransactionTypeAxis_us-gaap_InventoryExchangesMember">Proinsitamet sem</us-gaap:NonmonetaryTransactionNameOfCounterparty>
+  <us-gaap:NonmonetaryTransactionNameOfCounterparty contextRef="D-2016_us-gaap_NonmonetaryTransactionTypeAxis_us-gaap_ReceiptOfAssetsInSatisfactionOfDebtMember">Duis metus</us-gaap:NonmonetaryTransactionNameOfCounterparty>
+
+
+
+  <!-- Select financial information -->
+  <!-- NOTE: The ACTUAL member is used as the domain. FIX -->
+  <us-gaap:OperatingIncomeLoss contextRef="D-2016_us-gaap_StatementScenarioAxis_us-gaap_ScenarioUnspecifiedDomain" decimals="-3" unitRef="U-Monetary">-850000</us-gaap:OperatingIncomeLoss>
+  <us-gaap:OperatingIncomeLoss contextRef="D-2016_us-gaap_StatementScenarioAxis_us-gaap_ScenarioForecastMember" decimals="-3" unitRef="U-Monetary">5000000</us-gaap:OperatingIncomeLoss>
+
+  <us-gaap:ProfitLoss contextRef="D-2016_us-gaap_StatementScenarioAxis_us-gaap_ScenarioUnspecifiedDomain" decimals="-3" unitRef="U-Monetary">3350000</us-gaap:ProfitLoss>
+  <us-gaap:ProfitLoss contextRef="D-2016_us-gaap_StatementScenarioAxis_us-gaap_ScenarioForecastMember" decimals="-3" unitRef="U-Monetary">2000000</us-gaap:ProfitLoss>
+
+  <us-gaap:Revenues contextRef="D-2016_us-gaap_StatementScenarioAxis_us-gaap_ScenarioForecastMember" decimals="-3" unitRef="U-Monetary">11000000</us-gaap:Revenues>
+  <us-gaap:Revenues contextRef="D-2016_us-gaap_StatementScenarioAxis_us-gaap_ScenarioUnspecifiedDomain" decimals="-3" unitRef="U-Monetary">-1000000</us-gaap:Revenues>
+
+
+  <!-- Subsequent events -->
+  <us-gaap:SubsequentEventDescription contextRef="D-2016_us-gaap_SubsequentEventTypeAxis_us-gaap_DividendDeclaredMember">Nunc in elit non metus viverra sollicitudin. Duis metus. Donec pulvinar nonummy erat. In vel justo at urna rutrum ultrices. Cras consectetuer orci non lorem. Vestibulum bibendum aliquet augue.</us-gaap:SubsequentEventDescription>
+  <us-gaap:SubsequentEventDescription contextRef="D-2016_us-gaap_SubsequentEventTypeAxis_us-gaap_ThreatenedLitigationMember">Suspendisse vestibulum augue eu justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce suscipit pede ut erat. Sed rutrum.</us-gaap:SubsequentEventDescription>
+
+  <us-gaap:SubsequentEventsDate contextRef="D-2016_us-gaap_SubsequentEventTypeAxis_us-gaap_DividendDeclaredMember">2017-03-01</us-gaap:SubsequentEventsDate>
+  <us-gaap:SubsequentEventsDate contextRef="D-2016_us-gaap_SubsequentEventTypeAxis_us-gaap_ThreatenedLitigationMember">2017-01-22</us-gaap:SubsequentEventsDate>
+
+
+  <abc:Steel contextRef="I-2016" decimals="-3" unitRef="U-Monetary">800000</abc:Steel>
+  <abc:Steel contextRef="I-2015" decimals="-3" unitRef="U-Monetary">600000</abc:Steel>
+
+  <abc:Copper contextRef="I-2016" decimals="-3" unitRef="U-Monetary">100000</abc:Copper>
+  <abc:Copper contextRef="I-2015" decimals="-3" unitRef="U-Monetary">200000</abc:Copper>
+
+  <abc:Lead contextRef="I-2016" decimals="-3" unitRef="U-Monetary">100000</abc:Lead>
+  <abc:Lead contextRef="I-2015" decimals="-3" unitRef="U-Monetary">200000</abc:Lead>
+
+
+  <!-- Parenthetical explanations -->
+
+  <link:footnoteLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <link:loc xlink:type="locator" xlink:href="#Fact-2001" xlink:label="Fact-2001" />
+    <link:loc xlink:type="locator" xlink:href="#Fact-2002" xlink:label="Fact-2002" />
+    <link:footnoteArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/fact-footnote" xlink:from="Fact-2001" xlink:to="Footnote-01" order="1" />
+    <link:footnoteArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/fact-footnote" xlink:from="Fact-2002" xlink:to="Footnote-01" order="2" />
+    <link:footnote xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/footnote" xlink:label="Footnote-01" xml:lang="en-US">Sed eu nibh. Fusce vitae mi. Sed dapibus venenatis ipsum. Sed in purus.</link:footnote>
+  </link:footnoteLink>
+
+  <link:footnoteLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <link:loc xlink:type="locator" xlink:href="#Fact-2000" xlink:label="Fact-2000" />
+    <link:footnoteArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/fact-footnote" xlink:from="Fact-2000" xlink:to="Footnote-02" order="1" />
+    <link:footnote xlink:type="resource" xlink:role="http://www.xbrl.org/2003/role/footnote" xlink:label="Footnote-02" xml:lang="en-US">
+    	Proin elit sem, ornare non, ullamcorper vel, sollicitudin a, lacus. Mauris tincidunt cursus est. Nulla sit amet nibh. 
+    	Sed elementum feugiat augue. Nam non tortor non leo porta bibendum. Morbi eu pede. In eu erat et est feugiat fermentum. 
+    	Praesent accumsan. Nulla convallis, lorem nec aliquet dapibus, libero felis sagittis augue, ut adipiscing nisl eros in quam. 
+    	Fusce eleifend. Sed justo nibh, placerat a, malesuada nec, condimentum ac, magna.
+    </link:footnote>
+  </link:footnoteLink>
+
+
+
+</xbrl>

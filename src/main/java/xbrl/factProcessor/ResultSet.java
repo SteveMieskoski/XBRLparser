@@ -17,6 +17,14 @@ public class ResultSet {
   Map<String, Double> incomeStatement;
 
   public ResultSet(
+          Period period,
+          Map<String, String> details) {
+    this.period = period;
+    setCompanyDetails(details);
+
+  }
+
+  public ResultSet(
       Period period,
       Map<String, Double> balanceSheet,
       Map<String, Double> cashFlow,
@@ -37,28 +45,7 @@ public class ResultSet {
     this.balanceSheet = balanceSheet;
     this.cashFlow = cashFlow;
     this.incomeStatement = incomeStatement;
-    if(details != null){
-      this.companyDetails = details;
-        for(String s: details.keySet()){
-            System.out.println(details.get(s));
-            switch (s){
-                case "EntityCentralIndexKey":
-                    setCik(details.get(s));
-                    break;
-                case "EntityRegistrantName":
-                    setName(details.get(s));
-                    break;
-                case "FiscalPeriodFocus":
-                    setPeriodFocus(details.get(s));
-                    break;
-                case "TradingSymbol":
-                    setTicker(details.get(s));
-                    break;
-
-            }
-        }
-    }
-
+    setCompanyDetails(details);
   }
 
   public static ResultSet create(
@@ -78,11 +65,37 @@ public class ResultSet {
         return new ResultSet(period, details, balanceSheet, cashFlow, incomeStatement);
     }
 
+  public static ResultSet create(
+          Period period,
+          Map<String, String> details) {
+    return new ResultSet(period, details);
+  }
+
   public Map<String, String> getCompanyDetails() {
     return companyDetails;
   }
 
   public void setCompanyDetails(Map<String, String> companyDetails) {
+    if(companyDetails != null){
+      for(String s: companyDetails.keySet()){
+        System.out.println(companyDetails.get(s));
+        switch (s){
+          case "EntityCentralIndexKey":
+            setCik(companyDetails.get(s));
+            break;
+          case "EntityRegistrantName":
+            setName(companyDetails.get(s));
+            break;
+          case "FiscalPeriodFocus":
+            setPeriodFocus(companyDetails.get(s));
+            break;
+          case "TradingSymbol":
+            setTicker(companyDetails.get(s));
+            break;
+
+        }
+      }
+    }
     this.companyDetails = companyDetails;
   }
 

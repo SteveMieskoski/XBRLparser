@@ -60,4 +60,14 @@ public class SchemaRole {
   public void setUsedOn(ArrayList<String> usedOn) {
     this.usedOn = usedOn;
   }
+
+  @Override
+  public String toString() {
+    return "SchemaRole{" +
+            "roleURI='" + roleURI + '\'' +
+            ", id='" + id + '\'' +
+            ", definition='" + definition + '\'' +
+            ", usedOn=" + usedOn +
+            '}';
+  }
 }

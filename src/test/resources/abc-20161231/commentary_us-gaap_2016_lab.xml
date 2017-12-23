@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<!--
+Taxonomy Label Links linkbase based on XBRL standard Version 2.1.
+Created by UBmatrix Taxonomy Designer 3.0.3.2436 (2009-06-02 13:18).  
+Contact www.ubmatrix.com
+Copyright (c) 2002-2016 UBmatrix inc., All Rights Reserved
+Produced on 2016-04-24 08:01:50
+-->
+<linkbase
+  xmlns="http://www.xbrl.org/2003/linkbase"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="
+    http://www.xbrl.org/2003/linkbase 
+      http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd
+    ">
+  <labelLink xlink:type="extended"
+    xlink:role="http://www.xbrl.org/2003/role/link">
+    <loc xlink:type="locator"
+      xlink:label="us-gaap_AssetsNet"
+      xlink:href="http://xbrl.fasb.org/us-gaap/2016/elts/us-gaap-2016-01-31.xsd#us-gaap_AssetsNet" />
+    <labelArc xlink:type="arc"
+      xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label"
+      xlink:from="us-gaap_AssetsNet" xlink:to="us-gaap_AssetsNet_lbl" />
+    <label xlink:type="resource"
+      xlink:label="us-gaap_AssetsNet_lbl" xml:lang="en-US"
+      xlink:role="http://www.xbrl.org/2003/role/commentaryGuidance">This concept is NOT to report assets. Assets Net is basically equity. Refer to SFAC 6.</label>
+    <loc xlink:type="locator"
+      xlink:label="us-gaap_Assets"
+      xlink:href="http://xbrl.fasb.org/us-gaap/2016/elts/us-gaap-2016-01-31.xsd#us-gaap_Assets" />
+    <labelArc xlink:type="arc"
+      xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label"
+      xlink:from="us-gaap_Assets" xlink:to="us-gaap_Assets_lbl" />
+    <label xlink:type="resource"
+      xlink:label="us-gaap_Assets_lbl" xml:lang="en-US"
+      xlink:role="http://www.xbrl.org/2003/role/commentaryGuidance">This is a demonstration of COMMENTARY added to an XBRL digital Financial Report.</label>
+    <loc xlink:type="locator"
+      xlink:label="us-gaap_IncomeLossFromContinuingOperations"
+      xlink:href="http://xbrl.fasb.org/us-gaap/2016/elts/us-gaap-2016-01-31.xsd#us-gaap_IncomeLossFromContinuingOperations" />
+    <labelArc xlink:type="arc"
+      xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label"
+      xlink:from="us-gaap_IncomeLossFromContinuingOperations"
+      xlink:to="us-gaap_IncomeLossFromContinuingOperations_lbl" />
+    <label xlink:type="resource"
+      xlink:label="us-gaap_IncomeLossFromContinuingOperations_lbl"
+      xml:lang="en-US"
+      xlink:role="http://www.xbrl.org/2003/role/commentaryGuidance">This concept is NOT Operating Income (Loss). Operating Income (Loss) is represented using the concept us-gaap:OperatingIncomeLoss.</label>
+  </labelLink>
+</linkbase>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Provides a mapping between US GAAP XBRL Taxonomy Concepts and extension concepts created by filer (prototype) -->
+<!-- Created by Charles Hoffman, CPA 2016-04-15 -->
+<link:linkbase xmlns='http://www.xbrl.org/2003/linkbase' xmlns:xbrldt='http://xbrl.org/2005/xbrldt' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:link='http://www.xbrl.org/2003/linkbase' xsi:schemaLocation='http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd'>
+
+  <roleRef xlink:type="simple" xlink:href="abc-20161231.xsd#MappingsOfExtensionsToUSGAAPTaxonomy" roleURI="http://www.abc.com/role/MappingsOfExtensionsToUSGAAPTaxonomy" />
+
+
+   <link:definitionLink xlink:type='extended' xlink:role='http://www.abc.com/role/MappingsOfExtensionsToUSGAAPTaxonomy' xlink:title='Explicitly indicates that this concept is a specialization of the US GAAP XBRL Taxonomy concept us-gaap:InventoryRawMaterials'>
+      <link:loc xlink:type='locator' xlink:href='abc-20161231.xsd#abc_Steel' xlink:label='abc_Steel' />
+      <link:loc xlink:type='locator' xlink:href='http://xbrl.fasb.org/us-gaap/2016/elts/us-gaap-2016-01-31.xsd#us-gaap_InventoryRawMaterials' xlink:label='us-gaap_InventoryRawMaterials' />
+      <link:definitionArc xlink:type='arc' xlink:arcrole='http://www.xbrl.org/2003/arcrole/general-special' xlink:from='us-gaap_InventoryRawMaterials' xlink:to='abc_Steel' order='1' use='optional' />
+   </link:definitionLink>
+
+   <link:definitionLink xlink:type='extended' xlink:role='http://www.abc.com/role/MappingsOfExtensionsToUSGAAPTaxonomy' xlink:title='Explicitly indicates that this concept is a specialization of the US GAAP XBRL Taxonomy concept us-gaap:InventoryRawMaterials'>
+      <link:loc xlink:type='locator' xlink:href='abc-20161231.xsd#abc_Steel' xlink:label='abc_Copper' />
+      <link:loc xlink:type='locator' xlink:href='http://xbrl.fasb.org/us-gaap/2016/elts/us-gaap-2016-01-31.xsd#us-gaap_InventoryRawMaterials' xlink:label='us-gaap_InventoryRawMaterials' />
+      <link:definitionArc xlink:type='arc' xlink:arcrole='http://www.xbrl.org/2003/arcrole/general-special' xlink:from='us-gaap_InventoryRawMaterials' xlink:to='abc_Copper' order='1' use='optional' />
+   </link:definitionLink>
+
+   <link:definitionLink xlink:type='extended' xlink:role='http://www.abc.com/role/MappingsOfExtensionsToUSGAAPTaxonomy' xlink:title='Explicitly indicates that this concept is a specialization of the US GAAP XBRL Taxonomy concept us-gaap:InventoryRawMaterials'>
+      <link:loc xlink:type='locator' xlink:href='abc-20161231.xsd#abc_Steel' xlink:label='abc_Lead' />
+      <link:loc xlink:type='locator' xlink:href='http://xbrl.fasb.org/us-gaap/2016/elts/us-gaap-2016-01-31.xsd#us-gaap_InventoryRawMaterials' xlink:label='us-gaap_InventoryRawMaterials' />
+      <link:definitionArc xlink:type='arc' xlink:arcrole='http://www.xbrl.org/2003/arcrole/general-special' xlink:from='us-gaap_InventoryRawMaterials' xlink:to='abc_Lead' order='1' use='optional' />
+   </link:definitionLink>
+
+
+</link:linkbase>

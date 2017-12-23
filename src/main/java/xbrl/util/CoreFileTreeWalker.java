@@ -1,5 +1,6 @@
 package xbrl.util;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
@@ -12,6 +13,7 @@ public class CoreFileTreeWalker extends SimpleFileVisitor<Path> {
   //    private final PathMatcher factMatcher;
   private final PathMatcher xsdMatcher;
   private int numMatches = 0;
+  private String dirPathBase;
   private String found;
   private HashMap<String, String> collectAll;
   private String factFile = null;
@@ -21,12 +23,12 @@ public class CoreFileTreeWalker extends SimpleFileVisitor<Path> {
   private boolean useCollectAll = false;
 
   public CoreFileTreeWalker(String pathBase) {
-    String pathBase1 = pathBase;
+    dirPathBase = pathBase;
     xsdMatcher = FileSystems.getDefault().getPathMatcher("glob:**.xsd");
   }
 
   public CoreFileTreeWalker(String pathBase, String glob) {
-    String pathBase1 = pathBase;
+    dirPathBase = pathBase;
     this.collectAll = new HashMap<>();
     this.useCollectAll = true;
     xsdMatcher = FileSystems.getDefault().getPathMatcher("glob:" + glob);
@@ -37,6 +39,11 @@ public class CoreFileTreeWalker extends SimpleFileVisitor<Path> {
   void find(Path file) {
     Path name = file.getFileName();
     if (name != null) {
+      if(!name.toString().contains("_") && name.toString().endsWith("xml")){
+          String fileSeparator = System.getProperty("file.separator");
+          factFile = dirPathBase + fileSeparator + name.toFile().getName(); // could be the fact xml file, used as fallback
+
+      }
       if (xsdMatcher.matches(name)) {
         if(useCollectAll){
           collectAll.put(name.toString(), file.toString());

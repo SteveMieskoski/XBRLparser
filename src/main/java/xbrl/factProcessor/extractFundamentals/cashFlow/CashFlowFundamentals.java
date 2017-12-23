@@ -50,6 +50,7 @@ public class CashFlowFundamentals implements IFundamentals {
       }
     }
     Map<String, Double> bsValues = CashFlowCollect.findAndExtractValues(rawData, mappings);
+    if(bsValues == null) return null;
     return applyAdjustments(bsValues);
   }
 

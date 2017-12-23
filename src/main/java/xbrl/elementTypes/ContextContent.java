@@ -55,6 +55,7 @@ public class ContextContent {
     }
     if (contextElement != null) {
       if (contextElement.getId() != null) {
+        System.out.println(contextElement);
         this.contextElements.add(contextElement);
         this.contexts.add(contextElement.getId());
       }
@@ -139,6 +140,7 @@ public class ContextContent {
     if (this.contextElements != null && this.contexts != null) {
       int idx = this.contexts.indexOf(context);
       if (idx >= 0) {
+//        System.out.println(idx);
         return this.contextElements.get(idx);
       } else {
         return null;

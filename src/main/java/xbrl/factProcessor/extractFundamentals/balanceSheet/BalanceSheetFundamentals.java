@@ -50,6 +50,7 @@ public class BalanceSheetFundamentals implements IFundamentals {
       }
     }
     Map<String, Double> bsValues = BalanceSheetCollect.findAndExtractValues(rawData, mappings);
+    if(bsValues == null) return null;
     return applyAdjustments(bsValues);
   }
 
