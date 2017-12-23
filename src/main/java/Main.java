@@ -1,6 +1,5 @@
 import xbrl.factProcessor.FactProcessor;
 import xbrl.factProcessor.FundamentalAccountingFacts;
-import xbrl.factProcessor.ProcessFacts;
 
 import javax.security.auth.callback.Callback;
 
@@ -8,8 +7,8 @@ public class Main {
 
   public static void main(String[] args) {
 
-    ProcessFacts processFacts =
-        ProcessFacts.parse(
+    FactProcessor processFacts =
+            FactProcessor.parse(
             "/media/sysadmin/projects/Fin/XBRLparser/src/main/resources/abc-20161231/abc-20161231.xml");
     processFacts.createExcel();
 

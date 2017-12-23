@@ -22,7 +22,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class FactProcessor {
-    private final Logger logger = LoggerFactory.getLogger(ProcessFacts.class);
+    private final Logger logger = LoggerFactory.getLogger(FactProcessor.class);
     private HoldStuff holdStuff;
 
     public FactProcessor() {}
@@ -41,12 +41,12 @@ public class FactProcessor {
         accountingFacts.process();
     }
 
-    public static ProcessFacts build() {
-        return new ProcessFacts();
+    public static FactProcessor build() {
+        return new FactProcessor();
     }
 
-    public static ProcessFacts parse(String xbrlFile) {
-        return new ProcessFacts(xbrlFile);
+    public static FactProcessor parse(String xbrlFile) {
+        return new FactProcessor(xbrlFile);
     }
 
     public void createExcel() {
