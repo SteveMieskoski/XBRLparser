@@ -17,6 +17,8 @@ public class ContextParser implements AbstractParser {
   private String customPrefix;
   private String defaultPrefix;
 
+  public ContextParser() {}
+
   public ContextParser(String customPrefix, String defaultPrefix) {
     this.customPrefix = customPrefix;
     this.defaultPrefix = defaultPrefix;
@@ -95,11 +97,16 @@ public class ContextParser implements AbstractParser {
               String memberValue = segmentElement.getTextTrim();
 
               if (!memberValue.isEmpty()) {
-                String val =
-                    memberValue
-                        .replace(this.defaultPrefix + ":", "")
-                        .replace(this.customPrefix + ":", "");
-                segment.setValue(val);
+                if (this.defaultPrefix != null && this.customPrefix != null) {
+                  String val =
+                      memberValue
+                          .replace(this.defaultPrefix + ":", "")
+                          .replace(this.customPrefix + ":", "");
+                  segment.setValue(val);
+                } else {
+                  segment.setValue(memberValue);
+                }
+
                 segment.setAdjValue(memberValue.replace(":", "_"));
                 segment.setRawValue(memberValue);
               }
@@ -109,12 +116,18 @@ public class ContextParser implements AbstractParser {
                 Attribute attribute = segAttrIter.next();
                 if (attribute.getName().equals("dimension")) {
                   String dimValue = attribute.getValue();
-                  String val =
-                      dimValue
-                          .replace(this.defaultPrefix + ":", "")
-                          .replace(this.customPrefix + ":", "");
+                  if (this.defaultPrefix != null && this.customPrefix != null) {
+                    String val =
+                        dimValue
+                            .replace(this.defaultPrefix + ":", "")
+                            .replace(this.customPrefix + ":", "");
+                    segment.setAdjDimension(val);
+                  } else {
+                    segment.setAdjDimension(dimValue);
+                  }
+
                   segment.setDimension(dimValue.replace(":", "_"));
-                  segment.setAdjDimension(val);
+
                   segment.setRawDimension(dimValue);
                 } else {
                   segment.addAdditionalContent(attribute.getName(), attribute.getValue());

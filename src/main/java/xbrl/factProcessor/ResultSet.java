@@ -16,12 +16,9 @@ public class ResultSet {
   Map<String, Double> cashFlow;
   Map<String, Double> incomeStatement;
 
-  public ResultSet(
-          Period period,
-          Map<String, String> details) {
+  public ResultSet(Period period, Map<String, String> details) {
     this.period = period;
     setCompanyDetails(details);
-
   }
 
   public ResultSet(
@@ -56,18 +53,16 @@ public class ResultSet {
     return new ResultSet(period, balanceSheet, cashFlow, incomeStatement);
   }
 
-    public static ResultSet create(
-            Period period,
-            Map<String, String> details,
-            Map<String, Double> balanceSheet,
-            Map<String, Double> cashFlow,
-            Map<String, Double> incomeStatement) {
-        return new ResultSet(period, details, balanceSheet, cashFlow, incomeStatement);
-    }
-
   public static ResultSet create(
-          Period period,
-          Map<String, String> details) {
+      Period period,
+      Map<String, String> details,
+      Map<String, Double> balanceSheet,
+      Map<String, Double> cashFlow,
+      Map<String, Double> incomeStatement) {
+    return new ResultSet(period, details, balanceSheet, cashFlow, incomeStatement);
+  }
+
+  public static ResultSet create(Period period, Map<String, String> details) {
     return new ResultSet(period, details);
   }
 
@@ -76,10 +71,10 @@ public class ResultSet {
   }
 
   public void setCompanyDetails(Map<String, String> companyDetails) {
-    if(companyDetails != null){
-      for(String s: companyDetails.keySet()){
+    if (companyDetails != null) {
+      for (String s : companyDetails.keySet()) {
         System.out.println(companyDetails.get(s));
-        switch (s){
+        switch (s) {
           case "EntityCentralIndexKey":
             setCik(companyDetails.get(s));
             break;
@@ -92,7 +87,6 @@ public class ResultSet {
           case "TradingSymbol":
             setTicker(companyDetails.get(s));
             break;
-
         }
       }
     }
@@ -163,17 +157,27 @@ public class ResultSet {
     this.incomeStatement = incomeStatement;
   }
 
-    @Override
-    public String toString() {
-        return "ResultSet{" +
-//                "period=" + period +
-                ", ticker='" + ticker + '\'' +
-                ", cik='" + cik + '\'' +
-                ", periodFocus='" + periodFocus + '\'' +
-                ", name='" + name + '\'' +
-//                ", balanceSheet=" + balanceSheet +
-//                ", cashFlow=" + cashFlow +
-//                ", incomeStatement=" + incomeStatement +
-                '}';
-    }
+  @Override
+  public String toString() {
+    return "ResultSet{"
+        +
+        //                "period=" + period +
+        ", ticker='"
+        + ticker
+        + '\''
+        + ", cik='"
+        + cik
+        + '\''
+        + ", periodFocus='"
+        + periodFocus
+        + '\''
+        + ", name='"
+        + name
+        + '\''
+        +
+        //                ", balanceSheet=" + balanceSheet +
+        //                ", cashFlow=" + cashFlow +
+        //                ", incomeStatement=" + incomeStatement +
+        '}';
+  }
 }

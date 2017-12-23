@@ -17,7 +17,16 @@ public class SchemaParser {
     schemaContent = new SchemaContent();
   };
 
-  public SchemaContent parse(String filename) {
+  public SchemaParser(String filename) {
+    parseSchema(filename);
+  };
+
+  public static SchemaParser parse(String filename){
+    return new SchemaParser(filename);
+  }
+
+  public void parseSchema(String filename) {
+    schemaContent = new SchemaContent();
     System.out.println("filename: " + filename);
     this.currentFile = filename;
     this.schemaContent.startFileCache(filename);
@@ -28,10 +37,10 @@ public class SchemaParser {
 
       Document document = reader.read(filename);
       //      System.out.println("SCHEMA PARSE COMPLETE");
-      return schemaContent;
+//      return schemaContent;
     } catch (DocumentException e) {
       e.printStackTrace();
-      return null;
+//      return null;
     }
   }
 

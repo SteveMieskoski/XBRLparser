@@ -46,7 +46,7 @@ public class OrganizationParser implements AbstractParser {
           }
         }
       }
-//      getDocumentPrimaryReportingPeriod(organizationElements);
+      //      getDocumentPrimaryReportingPeriod(organizationElements);
       System.out.println("ORGANIZATION PARSE COMPLETE");
       return organizationElements;
     } catch (Exception ex) {
@@ -54,6 +54,4 @@ public class OrganizationParser implements AbstractParser {
       return null;
     }
   }
-
-
 }

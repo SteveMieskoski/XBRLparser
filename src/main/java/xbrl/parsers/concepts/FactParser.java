@@ -14,63 +14,64 @@ import java.util.List;
 
 public class FactParser implements FactParse {
 
-    private Integer index = 0;
-    private List<FactElement> factList;
+  private Integer index = 0;
+  private List<FactElement> factList;
 
-    public FactParser() {
-        factList = new ArrayList<>();
-    }
+  public FactParser() {
+    factList = new ArrayList<>();
+  }
 
-    @Override
-    public ContextContent parse(Document xmlDocument, ContextContent contextContent) {
-        try {
-            Element root = xmlDocument.getRootElement();
-            for (Iterator<Element> it = root.elementIterator(); it.hasNext(); ) {
-                Element element = it.next();
-                if (element.attribute("contextRef") != null) {
-                    FactElement factElement = createFactElement(element);
+  @Override
+  public ContextContent parse(Document xmlDocument, ContextContent contextContent) {
+    try {
+      Element root = xmlDocument.getRootElement();
+      for (Iterator<Element> it = root.elementIterator(); it.hasNext(); ) {
+        Element element = it.next();
+        if (element.attribute("contextRef") != null) {
+          FactElement factElement = createFactElement(element);
 
-                    ContextElement contextForFact = contextContent.getContext(factElement.getContextRef());
-                    if(contextForFact == null){
+          ContextElement contextForFact = contextContent.getContext(factElement.getContextRef());
+          if (contextForFact == null) {
 
-                        throw new MisformedXBRLException("Fact Concept <"+ factElement.getTag() + "> references a non-existent contextRef");
-                    }
-                    factElement.setSegment(contextForFact.getSegment());
-                    factElement.setPeriod(contextForFact.getPeriod());
-                    factElement.setTemporalType(contextForFact.getPeriod().getTemporalType());
-                    ;
-                    contextContent.addAFact(factElement);
-                    contextContent.addContextFact(factElement);
-                    factList.add(factElement);
-                }
-            }
-
-            System.out.println("FACTS PARSE COMPLETE");
-            return contextContent;
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            return null;
+            throw new MisformedXBRLException(
+                "Fact Concept <" + factElement.getTag() + "> references a non-existent contextRef");
+          }
+          factElement.setSegment(contextForFact.getSegment());
+          factElement.setPeriod(contextForFact.getPeriod());
+          factElement.setTemporalType(contextForFact.getPeriod().getTemporalType());
+          ;
+          contextContent.addAFact(factElement);
+          contextContent.addContextFact(factElement);
+          factList.add(factElement);
         }
-    }
+      }
 
-    private FactElement createFactElement(Element element) {
-        ++index;
-        FactElement factElement = new FactElement();
-        factElement.setTag(element.getName());
-        factElement.setNameSpace(element.getNamespacePrefix());
-        factElement.setValue(element.getText());
-        for (Iterator<Attribute> attr = element.attributeIterator(); attr.hasNext(); ) {
-            Attribute attribute = attr.next();
-            factElement.setAttributes(attribute.getName(), attribute.getValue());
-        }
-        return factElement;
+      System.out.println("FACTS PARSE COMPLETE");
+      return contextContent;
+    } catch (Exception ex) {
+      ex.printStackTrace();
+      return null;
     }
+  }
 
-    public List<FactElement> getFactList() {
-        return factList;
+  private FactElement createFactElement(Element element) {
+    ++index;
+    FactElement factElement = new FactElement();
+    factElement.setTag(element.getName());
+    factElement.setNameSpace(element.getNamespacePrefix());
+    factElement.setValue(element.getText());
+    for (Iterator<Attribute> attr = element.attributeIterator(); attr.hasNext(); ) {
+      Attribute attribute = attr.next();
+      factElement.setAttributes(attribute.getName(), attribute.getValue());
     }
+    return factElement;
+  }
 
-    public void setFactList(List<FactElement> factList) {
-        this.factList = factList;
-    }
+  public List<FactElement> getFactList() {
+    return factList;
+  }
+
+  public void setFactList(List<FactElement> factList) {
+    this.factList = factList;
+  }
 }
