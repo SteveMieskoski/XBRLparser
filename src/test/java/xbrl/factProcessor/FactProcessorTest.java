@@ -1,24 +1,14 @@
 package xbrl.factProcessor;
 
 import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 import xbrl.elementTypes.ContextContent;
 import xbrl.elementTypes.OrganizationElement;
-import xbrl.elementTypes.SchemaContent;
-import xbrl.elementTypes.SchemaElement;
 import xbrl.elementTypes.subTypes.Period;
-import xbrl.parsers.SchemaCache;
-import xbrl.parsers.SchemaParser;
-import com.spotify.hamcrest.pojo.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
-import static org.hamcrest.CoreMatchers.*;
 
 public class FactProcessorTest {
 
@@ -69,7 +59,7 @@ public class FactProcessorTest {
     Assert.assertEquals(
         "FY: DocumentPrimaryReportingPeriod",
         expectedPeriod,
-        factProcessor.getDocumentPrimaryReportingPeriod(testOrgList));
+        factProcessor.getDocumentReportingPeriod(testOrgList));
 
     // Quarter
     testOrgList.clear();
@@ -91,6 +81,6 @@ public class FactProcessorTest {
     Assert.assertEquals(
         "Q#: DocumentPrimaryReportingPeriod",
         quarterPeriod,
-        factProcessor.getDocumentPrimaryReportingPeriod(testOrgList));
+        factProcessor.getDocumentReportingPeriod(testOrgList));
   };
 }

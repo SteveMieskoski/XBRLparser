@@ -1,10 +1,15 @@
 package xbrl.elementTypes;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.lang.invoke.MethodHandles;
 import java.util.LinkedList;
 import java.util.List;
 
 public class ContextContent {
-
+  private static final Logger logger =
+          LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
   protected String currentPeriodEndDate;
   protected LinkedList<OrganizationElement> organizationContent;
   protected LinkedList<ContextElement> contextElements;
@@ -24,7 +29,7 @@ public class ContextContent {
     this.contextElements = contextElements;
   }
 
-  public void addAllContextElements(LinkedList<ContextElement> contextElements) {
+  public void addAllContextElements(List<ContextElement> contextElements) {
     if (this.contextElements == null) {
       for (ContextElement ce : contextElements) {
         addContext(ce);
@@ -55,7 +60,7 @@ public class ContextContent {
     }
     if (contextElement != null) {
       if (contextElement.getId() != null) {
-        System.out.println(contextElement);
+//       logger.info("{}",contextElement);
         this.contextElements.add(contextElement);
         this.contexts.add(contextElement.getId());
       }
@@ -140,7 +145,7 @@ public class ContextContent {
     if (this.contextElements != null && this.contexts != null) {
       int idx = this.contexts.indexOf(context);
       if (idx >= 0) {
-//        System.out.println(idx);
+//       logger.info("{}",idx);
         return this.contextElements.get(idx);
       } else {
         return null;

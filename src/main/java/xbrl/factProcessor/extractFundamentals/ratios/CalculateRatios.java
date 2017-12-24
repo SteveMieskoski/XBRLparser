@@ -1,11 +1,17 @@
 package xbrl.factProcessor.extractFundamentals.ratios;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.lang.invoke.MethodHandles;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
 public class CalculateRatios {
+    private static final Logger logger =
+            LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     private static final Map<String, Set<String>> ratioRequirementsMap = new HashMap<>();
 

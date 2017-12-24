@@ -10,7 +10,7 @@ public class Main {
     FactProcessor processFacts =
             FactProcessor.parse(
             "/media/sysadmin/projects/Fin/XBRLparser/src/main/resources/abc-20161231/abc-20161231.xml");
-    processFacts.createExcel();
+//    processFacts.createExcel();
 
     //    if(args.length > 0){
     //      CliInterpreter.parseCommandLine(args);

@@ -1,12 +1,16 @@
 package xbrl.factProcessor.extractFundamentals.balanceSheet;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import xbrl.elementTypes.FactElement;
 
+import java.lang.invoke.MethodHandles;
 import java.util.HashMap;
 import java.util.Map;
 
 public class BalanceSheetCollect {
-
+  private static final Logger logger =
+          LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
   public static Map<String, Double> doCheck(
           Map<String, FactElement> factByName,
           String[] check,
@@ -62,11 +66,11 @@ public class BalanceSheetCollect {
         ++countused;
         values = doCheck(factByName, mappings.get(s), s, values);
       } else {
-        System.out.println("Balance Sheet Missing: " + s);
+       logger.info("{}","Balance Sheet Missing: " + s);
       }
     }
-    System.out.println(countall);
-    System.out.println(countused);
+   logger.info("{}",countall);
+   logger.info("{}",countused);
 
     //===========
     return values;

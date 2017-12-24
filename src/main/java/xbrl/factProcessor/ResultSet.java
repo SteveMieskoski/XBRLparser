@@ -16,6 +16,9 @@ public class ResultSet {
   Map<String, Double> cashFlow;
   Map<String, Double> incomeStatement;
 
+  public ResultSet() {
+  }
+
   public ResultSet(Period period, Map<String, String> details) {
     this.period = period;
     setCompanyDetails(details);
@@ -73,7 +76,7 @@ public class ResultSet {
   public void setCompanyDetails(Map<String, String> companyDetails) {
     if (companyDetails != null) {
       for (String s : companyDetails.keySet()) {
-        System.out.println(companyDetails.get(s));
+//        System.out.println(companyDetails.get(s));
         switch (s) {
           case "EntityCentralIndexKey":
             setCik(companyDetails.get(s));

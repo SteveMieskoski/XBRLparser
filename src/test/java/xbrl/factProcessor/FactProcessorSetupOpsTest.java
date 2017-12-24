@@ -46,7 +46,7 @@ public class FactProcessorSetupOpsTest {
         Assert.assertNotNull("getAllFacts", contextContent.getAllFacts());*/
     }
 
-//    @Ignore("getDocumentPrimaryReportingPeriod Test is ignored") //UnCommented when building other tests to reduce noise
+//    @Ignore("getDocumentReportingPeriod Test is ignored") //UnCommented when building other tests to reduce noise
     @Test
     public void getDocumentPrimaryReportingPeriod() {
         /*//todo: convert to using junit parameters
@@ -66,7 +66,7 @@ public class FactProcessorSetupOpsTest {
         expectedPeriod.setEndDate(LocalDate.parse("2016-12-31"));
         expectedPeriod.setStartDate(LocalDate.parse("2016-01-01"));
 
-        Assert.assertEquals("FY: DocumentPrimaryReportingPeriod", expectedPeriod, FactProcessorSetupOps.getDocumentPrimaryReportingPeriod(testOrgList));
+        Assert.assertEquals("FY: DocumentPrimaryReportingPeriod", expectedPeriod, FactProcessorSetupOps.getDocumentReportingPeriod(testOrgList));
 
         // Quarter
         testOrgList.clear();
@@ -86,7 +86,7 @@ public class FactProcessorSetupOpsTest {
         quarterPeriod.setStartDate(LocalDate.parse("2016-09-30"));
 
 
-        Assert.assertEquals("Q#: DocumentPrimaryReportingPeriod", quarterPeriod, FactProcessorSetupOps.getDocumentPrimaryReportingPeriod(testOrgList));
+        Assert.assertEquals("Q#: DocumentPrimaryReportingPeriod", quarterPeriod, FactProcessorSetupOps.getDocumentReportingPeriod(testOrgList));
 */
     }
 }

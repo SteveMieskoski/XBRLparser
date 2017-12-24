@@ -1,11 +1,16 @@
 package xbrl.factProcessor.extractFundamentals.incomeStatement;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import xbrl.elementTypes.FactElement;
 
+import java.lang.invoke.MethodHandles;
 import java.util.HashMap;
 import java.util.Map;
 
 public class IncomeStatementCollect {
+  private static final Logger logger =
+          LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
   public static Map<String, Double> doCheck(
           Map<String, FactElement> factByName,
@@ -16,8 +21,10 @@ public class IncomeStatementCollect {
     for (String s : check) {
       if (factByName.get(s) != null) {
         String value = factByName.get(s).getValue();
+
         if(value != null && !value.isEmpty()) {
           values.put(add, Double.parseDouble(factByName.get(s).getValue()));
+
           return values;
         }
       }
@@ -28,7 +35,6 @@ public class IncomeStatementCollect {
 
   public static Map<String, Double> findAndExtractValues(Map<String, FactElement> factByName, Map<String, String[]> mappings) {
     Map<String, Double> values = new HashMap<>();
-
 
     values.put("CostOfRevenue", 0d);
     values.put("CostOfRevenueGoods", 0d);
@@ -77,11 +83,11 @@ public class IncomeStatementCollect {
         ++countused;
         values = doCheck(factByName, mappings.get(s), s, values);
       } else {
-        System.out.println("Income Statement Missing: " + s);
+       logger.info("{}","Income Statement Missing: " + s);
       }
     }
-    System.out.println(countall);
-    System.out.println(countused);
+   logger.info("Mapping Contained {} Concepts",countall);
+   logger.info("{}",countused);
 
     // =============
 

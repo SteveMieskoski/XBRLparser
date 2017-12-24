@@ -67,6 +67,8 @@ public class ConstantValues {
   public static final String loc_tag = "loc";
   public static final String label_tag = "label";
 
+  public static final String[] nonFactTags = {"schemaRef", "linkbaseRef" , "roleRef", "arcroleRef", "context", "unit", "footnoteLink"};
+
   public static Map<String, String> linkNameForRelLinkbases(String linkType) {
     Map<String, String> tagMap = new HashMap<>();
 
