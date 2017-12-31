@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created by Charles Hoffman, CPA: 7/21/2016 -->
+<linkbase xmlns='http://www.xbrl.org/2003/linkbase' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+          xmlns:xlink='http://www.w3.org/1999/xlink'
+          xsi:schemaLocation='http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd'>
+    <arcroleRef xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+                xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#all"
+                arcroleURI="http://xbrl.org/int/dim/arcrole/all"/>
+    <arcroleRef xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple"
+                xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"
+                arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member"/>
+    <roleRef xlink:type='simple' xlink:href='../fac.xsd#BalanceSheetClassified4'
+             roleURI='http://www.xbrlsite.com/2014/Protototype/fac/BalanceSheetClassified4'/>
+
+    <calculationLink xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink"
+                     xlink:type="extended"
+                     xlink:role="http://www.xbrlsite.com/2014/Protototype/fac/BalanceSheetClassified4">
+        <loc xlink:type="locator" xlink:label="fac_Assets" xlink:href="../fac.xsd#fac_Assets"/>
+        <loc xlink:type="locator" xlink:label="fac_CurrentAssets" xlink:href="../fac.xsd#fac_CurrentAssets"/>
+        <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item"
+                        xlink:from="fac_Assets" xlink:to="fac_CurrentAssets" order="1" weight="1" use="optional"/>
+        <loc xlink:type="locator" xlink:label="fac_FixedAssets" xlink:href="../fac.xsd#fac_FixedAssets"/>
+        <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item"
+                        xlink:from="fac_Assets" xlink:to="fac_FixedAssets" order="2" weight="1" use="optional"/>
+        <loc xlink:type="locator" xlink:label="fac_OtherThanFixedNoncurrentAssets"
+             xlink:href="../fac.xsd#fac_OtherThanFixedNoncurrentAssets"/>
+        <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item"
+                        xlink:from="fac_Assets" xlink:to="fac_OtherThanFixedNoncurrentAssets" order="3" weight="1"
+                        use="optional"/>
+
+        <loc xlink:type="locator" xlink:label="fac_LiabilitiesAndEquity"
+             xlink:href="../fac.xsd#fac_LiabilitiesAndEquity"/>
+        <loc xlink:type="locator" xlink:label="fac_Liabilities" xlink:href="../fac.xsd#fac_Liabilities"/>
+        <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item"
+                        xlink:from="fac_LiabilitiesAndEquity" xlink:to="fac_Liabilities" order="1" weight="1"
+                        use="optional"/>
+        <loc xlink:type="locator" xlink:label="fac_CurrentLiabilities" xlink:href="../fac.xsd#fac_CurrentLiabilities"/>
+        <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item"
+                        xlink:from="fac_Liabilities" xlink:to="fac_CurrentLiabilities" order="1" weight="1"
+                        use="optional"/>
+        <loc xlink:type="locator" xlink:label="fac_NoncurrentLiabilities"
+             xlink:href="../fac.xsd#fac_NoncurrentLiabilities"/>
+        <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item"
+                        xlink:from="fac_Liabilities" xlink:to="fac_NoncurrentLiabilities" order="2" weight="1"
+                        use="optional"/>
+        <loc xlink:type="locator" xlink:label="fac_CommitmentsAndContingencies"
+             xlink:href="../fac.xsd#fac_CommitmentsAndContingencies"/>
+        <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item"
+                        xlink:from="fac_LiabilitiesAndEquity" xlink:to="fac_CommitmentsAndContingencies" order="2"
+                        weight="1" use="optional"/>
+        <loc xlink:type="locator" xlink:label="fac_TemporaryEquity" xlink:href="../fac.xsd#fac_TemporaryEquity"/>
+        <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item"
+                        xlink:from="fac_LiabilitiesAndEquity" xlink:to="fac_TemporaryEquity" order="3" weight="1"
+                        use="optional"/>
+        <loc xlink:type="locator" xlink:label="fac_Equity" xlink:href="../fac.xsd#fac_Equity"/>
+        <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item"
+                        xlink:from="fac_LiabilitiesAndEquity" xlink:to="fac_Equity" order="4" weight="1"
+                        use="optional"/>
+        <loc xlink:type="locator" xlink:label="fac_EquityAttributableToParent"
+             xlink:href="../fac.xsd#fac_EquityAttributableToParent"/>
+        <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item"
+                        xlink:from="fac_Equity" xlink:to="fac_EquityAttributableToParent" order="1" weight="1"
+                        use="optional"/>
+        <loc xlink:type="locator" xlink:label="fac_EquityAttributableToNoncontrollingInterest"
+             xlink:href="../fac.xsd#fac_EquityAttributableToNoncontrollingInterest"/>
+        <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item"
+                        xlink:from="fac_Equity" xlink:to="fac_EquityAttributableToNoncontrollingInterest" order="2"
+                        weight="1" use="optional"/>
+
+        <loc xlink:type="locator" xlink:label="fac_Ass" xlink:href="../fac.xsd#fac_Ass"/>
+        <loc xlink:type="locator" xlink:label="fac_CurrentAss" xlink:href="../fac.xsd#fac_CurrentAss"/>
+        <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item"
+                        xlink:from="fac_Ass" xlink:to="fac_CurrentAss" order="1" weight="1" use="optional"/>
+        <loc xlink:type="locator" xlink:label="fac_FixedAss" xlink:href="../fac.xsd#fac_FixedAss"/>
+        <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item"
+                        xlink:from="fac_Ass" xlink:to="fac_FixedAss" order="2" weight="1" use="optional"/>
+        <loc xlink:type="locator" xlink:label="fac_OtherThanFixedNoncurrentAss"
+             xlink:href="../fac.xsd#fac_OtherThanFixedNoncurrentAss"/>
+        <calculationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/summation-item"
+                        xlink:from="fac_Ass" xlink:to="fac_OtherThanFixedNoncurrentAss" order="3" weight="1"
+                        use="optional"/>
+    </calculationLink>
+</linkbase>

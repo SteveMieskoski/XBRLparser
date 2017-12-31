@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Taxonomy based on XBRL standard Version 2.1.
+Created by UBmatrix Taxonomy Designer 3.0.3.2433 (2009-05-15 09:36).  
+Contact www.ubmatrix.com
+Copyright (c) 2002-2010 UBmatrix inc., All Rights Reserved
+Produced on 2010-09-30 12:44:20
+-->
+<schema
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:abc="http://www.abc.com/2010-12-31"
+  xmlns:dei="http://xbrl.us/dei/2009-01-31"
+  xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+  targetNamespace="http://www.abc.com/2010-12-31"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+  <annotation>
+    <appinfo>
+      <link:roleType
+        roleURI="http://www.abc.com/role/DocumentInformation"
+        id="DocumentInformation">
+        <link:definition>200 - Document - Document Information</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/AccountingPolicies"
+        id="AccountingPolicies">
+        <link:definition>301 - Disclosure - Accounting Policies</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/InventoryByComponent"
+        id="InventoryByComponent">
+        <link:definition>302 - Disclosure - Inventory, By Component</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/LossContingencyAccrual"
+        id="LossContingencyAccrual">
+        <link:definition>303 - Disclosure - Loss Contingency Accrual</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType
+        roleURI="http://www.abc.com/role/NonmonetaryTransactions"
+        id="NonmonetaryTransactions">
+        <link:definition>304 - Disclosure - Nonmonetary Transactions</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:linkbaseRef xlink:type="simple"
+        xlink:role="http://www.xbrlOrig.org/2003/role/presentationLinkbaseRef"
+        xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+        xlink:href="abc-20101231_pre.xml"
+        xlink:title="Presentation Links, all" />
+      <link:linkbaseRef xlink:type="simple"
+        xlink:role="http://www.xbrlOrig.org/2003/role/definitionLinkbaseRef"
+        xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+        xlink:href="abc-20101231_def.xml"
+        xlink:title="Definition Links, all" />
+      <link:linkbaseRef xlink:type="simple"
+        xlink:role="http://www.xbrlOrig.org/2003/role/labelLinkbaseRef"
+        xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+        xlink:href="abc-20101231_lab.xml"
+        xlink:title="Label Links, all" />
+      <link:linkbaseRef xlink:type="simple"
+        xlink:role="http://www.xbrlOrig.org/2003/role/calculationLinkbaseRef"
+        xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+        xlink:href="abc-20101231_cal.xml"
+        xlink:title="Calculation Links, all" />
+    </appinfo>
+  </annotation>
+  <import
+    namespace="http://www.xbrl.org/2003/instance"
+    schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" />
+  <import
+    namespace="http://xbrl.org/2005/xbrldt"
+    schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd" />
+  <import
+    namespace="http://xbrl.us/us-types/2009-01-31"
+    schemaLocation="http://taxonomies.xbrl.us/us-gaap/2009/elts/us-types-2009-01-31.xsd" />
+  <import
+    namespace="http://xbrl.us/us-gaap-std/2009-01-31"
+    schemaLocation="http://taxonomies.xbrl.us/us-gaap/2009/elts/us-gaap-std-2009-01-31.xsd" />
+  <import
+    namespace="http://xbrl.us/dei-std/2009-01-31"
+    schemaLocation="http://taxonomies.xbrl.us/us-gaap/2009/non-gaap/dei-std-2009-01-31.xsd" />
+  <import
+    namespace="http://www.xbrl.org/2003/linkbase"
+    schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" />
+  <element
+    id="abc_AccountingPoliciesHierarchy"
+    name="AccountingPoliciesHierarchy"
+    type="xbrli:stringItemType"
+    substitutionGroup="xbrli:item"
+    xbrli:periodType="duration"
+    abstract="true"
+    nillable="true" />
+  <element
+    id="abc_AccountingPoliciesLineItems"
+    name="AccountingPoliciesLineItems"
+    type="xbrli:stringItemType"
+    substitutionGroup="xbrli:item"
+    xbrli:periodType="duration"
+    abstract="true"
+    nillable="true" />
+  <element
+    id="abc_AccountingPoliciesTable"
+    name="AccountingPoliciesTable"
+    type="xbrli:stringItemType"
+    substitutionGroup="xbrldt:hypercubeItem"
+    xbrli:periodType="duration"
+    abstract="true"
+    nillable="true" />
+  <element
+    id="abc_DocumentInformationHierarchy"
+    name="DocumentInformationHierarchy"
+    type="xbrli:stringItemType"
+    substitutionGroup="xbrli:item"
+    xbrli:periodType="duration"
+    abstract="true"
+    nillable="true" />
+  <element
+    id="abc_InventoryByComponentLineItems"
+    name="InventoryByComponentLineItems"
+    type="xbrli:stringItemType"
+    substitutionGroup="xbrli:item"
+    xbrli:periodType="duration"
+    abstract="true"
+    nillable="true" />
+  <element
+    id="abc_InventoryByComponentRollUp"
+    name="InventoryByComponentRollUp"
+    type="xbrli:stringItemType"
+    substitutionGroup="xbrli:item"
+    xbrli:periodType="duration"
+    abstract="true"
+    nillable="true" />
+  <element
+    id="abc_InventoryByComponentTable"
+    name="InventoryByComponentTable"
+    type="xbrli:stringItemType"
+    substitutionGroup="xbrldt:hypercubeItem"
+    xbrli:periodType="duration"
+    abstract="true"
+    nillable="true" />
+  <element
+    id="abc_LossContingencyAccrualCarryingValuePeriodIncreaseDecreaseRollUp"
+    name="LossContingencyAccrualCarryingValuePeriodIncreaseDecreaseRollUp"
+    type="xbrli:stringItemType"
+    substitutionGroup="xbrli:item"
+    xbrli:periodType="duration"
+    abstract="true"
+    nillable="true" />
+  <element
+    id="abc_LossContingencyAccrualLineItems"
+    name="LossContingencyAccrualLineItems"
+    type="xbrli:stringItemType"
+    substitutionGroup="xbrli:item"
+    xbrli:periodType="duration"
+    abstract="true"
+    nillable="true" />
+  <element
+    id="abc_LossContingencyAccrualTable"
+    name="LossContingencyAccrualTable"
+    type="xbrli:stringItemType"
+    substitutionGroup="xbrldt:hypercubeItem"
+    xbrli:periodType="duration"
+    abstract="true"
+    nillable="true" />
+  <element
+    id="abc_NonmonetaryTransactionHierarchy"
+    name="NonmonetaryTransactionHierarchy"
+    type="xbrli:stringItemType"
+    substitutionGroup="xbrli:item"
+    xbrli:periodType="duration"
+    abstract="true"
+    nillable="true" />
+</schema>
