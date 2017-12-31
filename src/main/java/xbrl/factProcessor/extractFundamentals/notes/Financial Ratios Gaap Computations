@@ -51,8 +51,8 @@ Activity ratios (Efficiency Ratios)
         Dividend Payout Ratio
             dividends paid / earnings
     Investment Ratios
-        Operation Profit Margin
-            OperatingIncomeLoss / Revenues
+        //Operation Profit Margin
+        //    OperatingIncomeLoss / Revenues
         Net Profit Margin
             NetIncomeLoss / Revenues
 

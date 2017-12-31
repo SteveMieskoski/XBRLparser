@@ -4,73 +4,118 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.invoke.MethodHandles;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
 public class CalculateRatios {
-    private static final Logger logger =
-            LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+  private static final Logger logger =
+      LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-    private static final Map<String, Set<String>> ratioRequirementsMap = new HashMap<>();
-
-    static {
-
-        HashSet<String> ROE = new HashSet<>();
-        ROE.add("NetIncomeLoss");
-        ROE.add("Equity");
-
-        HashSet<String> ROA = new HashSet<>();
-        ROA.add("NetIncomeLoss");
-        ROA.add("Assets");
-
-        HashSet<String> CurrentRatio = new HashSet<>();
-        CurrentRatio.add("CurrentAssets");
-        CurrentRatio.add("CurrentLiabilities");
-
-        HashSet<String> WorkingCapitalToSales = new HashSet<>();
-        WorkingCapitalToSales.add("CurrentAssets");
-        WorkingCapitalToSales.add("CurrentLiabilities");
-        WorkingCapitalToSales.add("Revenues");
-//
-        HashSet<String> EfficiencyRatio = new HashSet<>();
-        EfficiencyRatio.add("NoninterestExpense");
-        EfficiencyRatio.add("Revenues");
-
-        HashSet<String> CashRatio = new HashSet<>();
-        CashRatio.add("Cash");
-        CashRatio.add("CurrentLiabilities");
-
-        HashSet<String> AssetTurnover = new HashSet<>();
-        AssetTurnover.add("Revenues");
-        AssetTurnover.add("Assets");
-
-        HashSet<String> DebtRatio = new HashSet<>();
-        DebtRatio.add("Liabilities");
-        DebtRatio.add("Assets");
-
-        //
-
-        ratioRequirementsMap.put("ROE", ROE);
-        ratioRequirementsMap.put("ROA", ROA);
-        ratioRequirementsMap.put("CurrentRatio", CurrentRatio);
-        ratioRequirementsMap.put("EfficiencyRatio", EfficiencyRatio);
-        ratioRequirementsMap.put("WorkingCapitalToSales", WorkingCapitalToSales);
-        ratioRequirementsMap.put("CashRatio", CashRatio);
-        ratioRequirementsMap.put("AssetTurnover", AssetTurnover);
-        ratioRequirementsMap.put("DebtRatio", DebtRatio);
+  public static Map<String, Double> calculateRatios(
+      Map<String, Boolean> canCalculate, Map<String, Double> values) {
+    Map<String, Double> calculated = new HashMap<>();
+    if (canCalculate.get("ROE")) {
+      calculated.put("ROE", ROE(values));
     }
-
-    public static Map<String, Boolean> determineComputableRatios(Map<String, Double> fundamentals){
-        Map<String, Boolean> canCompute = new HashMap<>();
-        for(String s: ratioRequirementsMap.keySet()){
-            canCompute.put(s, fundamentals.keySet().containsAll(ratioRequirementsMap.get(s)));
-//            for(String ss: ratioRequirementsMap.get(s)){
-//                System.out.println(ss + ": " + fundamentals.keySet().contains(ss));
-//            }
-
-        }
-        return canCompute;
+    ;
+    if (canCalculate.get("ROA")) {
+      calculated.put("ROA", ROA(values));
     }
+    ;
+    if (canCalculate.get("CurrentRatio")) {
+      DecimalFormat df = new DecimalFormat("#.####");
+      df.setRoundingMode(RoundingMode.DOWN);
+      calculated.put("CurrentRatio", new Double(df.format(CurrentRatio(values))));
+    }
+    ;
+//    if (canCalculate.get("EfficiencyRatio")) {
+//      calculated.put("EfficiencyRatio", EfficiencyRatio(values));
+//    }
+    ;
+    if (canCalculate.get("WorkingCapitalToSales")) {
+      calculated.put("WorkingCapitalToSales", WorkingCapitalToSales(values));
+    }
+    ;
+    if (canCalculate.get("CashRatio")) {
+      DecimalFormat df = new DecimalFormat("#.####");
+      df.setRoundingMode(RoundingMode.DOWN);
+      calculated.put("CashRatio", new Double(df.format(CashRatio(values))));
+    }
+    ;
+    //        if(canCalculate.get("AssetTurnover")){
+    //            calculated.put("AssetTurnover", AssetTurnover(values));
+    //        };
+    if (canCalculate.get("DebtRatio")) {
+      calculated.put("DebtRatio", DebtRatio(values));
+    }
+    ;
+    if (canCalculate.get("SGR")) {
+      calculated.put("SGR", SGR(values));
+    }
+    ;
+    if (canCalculate.get("ROS")) {
+      calculated.put("ROS", ROS(values));
+    }
+    ;
+    if (canCalculate.get("OperatingProfit")) {
+      calculated.put("OperatingProfit", OperatingProfit(values));
+    }
+    ;
+//    if (canCalculate.get("NetProfitMargin")) {
+//      calculated.put("NetProfitMargin", NetProfitMargin(values));
+//    }
+    return calculated;
+  }
+
+  public static Double ROE(Map<String, Double> values) {
+    return values.get("NetIncomeLoss") / values.get("Equity");
+  }
+
+  public static Double ROA(Map<String, Double> values) {
+    return values.get("NetIncomeLoss") / values.get("Assets");
+  }
+
+  public static Double ROS(Map<String, Double> values) {
+    return values.get("NetIncomeLoss") / values.get("Revenues");
+  }
+
+  public static Double SGR(Map<String, Double> values) {
+    return ((values.get("NetIncomeLoss") / values.get("Revenues"))
+            * (1 + ((values.get("Assets") - values.get("Equity")) / values.get("Equity"))))
+        / ((1 / (values.get("Revenues") / values.get("Assets")))
+            - (((values.get("NetIncomeLoss") / values.get("Revenues"))
+                * (1 + (((values.get("Assets") - values.get("Equity")) / values.get("Equity")))))));
+  }
+
+  public static Double OperatingProfit(Map<String, Double> values) {
+    return values.get("Revenues") - (values.get("CostOfRevenue") + values.get("OperatingExpenses"));
+  }
+
+  public static Double CurrentRatio(Map<String, Double> values) {
+    return values.get("CurrentAssets") / values.get("CurrentLiabilities");
+  }
+
+  public static Double WorkingCapitalToSales(Map<String, Double> values) {
+    return (values.get("CurrentAssets") - values.get("CurrentLiabilities")) / values.get("Revenues");
+  }
+
+//  public static Double EfficiencyRatio(Map<String, Double> values) {
+//    return values.get("NetIncomeLoss") / values.get("Equity");
+//  }
+
+  public static Double CashRatio(Map<String, Double> values) {
+    return values.get("Cash") / values.get("CurrentLiabilities");
+  }
+
+  public static Double DebtRatio(Map<String, Double> values) {
+    return values.get("Liabilities") / values.get("Assets");
+  }
+
+//  public static Double NetProfitMargin(Map<String, Double> values) {
+//    return values.get("NetIncomeLoss") / values.get("Equity");
+//  }
 }

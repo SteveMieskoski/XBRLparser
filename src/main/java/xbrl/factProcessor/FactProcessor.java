@@ -41,8 +41,6 @@ public class FactProcessor {
       factElements = FactParser.addContextToFacts(factElements, contextElements);
       Period period = getDocumentReportingPeriod(organizationElements);
 
-//     logger.info("{}",period);
-
       Map<Period, Map<String, FactElement>> facts = mapFactsByPeriodAndTag(factElements);
 
       FundamentalAccountingConcepts accountingFacts =
@@ -58,76 +56,6 @@ public class FactProcessor {
     public static FactProcessor parse(String xbrlFile) {
         return new FactProcessor(xbrlFile);
     }
-
-  public static ReportContent getReportWithFactsGroupedByPeriod(String xbrlFile){
-    try {
-      SAXReader reader = new SAXReader();
-      Document document = reader.read(new File(xbrlFile));
-
-      List<FactElement> factElements = FactParser.parse(document);
-      List<ContextElement> contextElements = ContextParser.parse(document, null, null);
-      factElements = FactParser.addContextToFacts(factElements, contextElements);
-      ExpandedReportContent expandedReportContent = new ExpandedReportContent();
-      expandedReportContent.setFactsGroupedByPeriod(factElements);
-      return expandedReportContent;
-    } catch (DocumentException e) {
-      e.printStackTrace();
-      return null;
-    }
-  }
-
-  public static ReportContent getReportWithRawFacts(String xbrlFile){
-    try {
-      SAXReader reader = new SAXReader();
-      Document document = reader.read(new File(xbrlFile));
-
-      List<FactElement> factElements = FactParser.parse(document);
-      List<ContextElement> contextElements = ContextParser.parse(document, null, null);
-      factElements = FactParser.addContextToFacts(factElements, contextElements);
-      RawReportContent  expandedReportContent = new RawReportContent();
-      expandedReportContent.setFactElements(factElements);
-      return expandedReportContent;
-    } catch (DocumentException e) {
-      e.printStackTrace();
-      return null;
-    }
-  }
-
-  public static ResultSet statementsContents(String xbrlFile) {
-      FundamentalAccountingConcepts accountingConcepts = staticSetup(xbrlFile);
-    return accountingConcepts.processAndReturnResults();
-  }
-
-    public static ResultSet statementsContents(String xbrlFile, Map<String, String[]> mappings) {
-        FundamentalAccountingConcepts accountingConcepts = staticSetup(xbrlFile);
-        return accountingConcepts.processAndReturnResults(mappings);
-    }
-
-    public static ResultSet statementsContents(String xbrlFile, String mapPreset) {
-        FundamentalAccountingConcepts accountingConcepts = staticSetup(xbrlFile);
-        return accountingConcepts.processAndReturnResults();
-    }
-
-  private static FundamentalAccountingConcepts staticSetup(String xbrlFile){
-    List<OrganizationElement> organizationElements = null;
-    Period period = null;
-    try {
-      SAXReader reader = new SAXReader();
-      Document document = reader.read(new File(xbrlFile));
-      List<FactElement> factElements = FactParser.parse(document);
-      organizationElements = OrganizationParser.parse(document);
-      List<ContextElement> contextElements = ContextParser.parse(document, null, null);
-      factElements = FactParser.addContextToFacts(factElements, contextElements);
-      period = getDocumentReportingPeriod(organizationElements);
-      Map<Period, Map<String, FactElement>> facts = mapFactsByPeriodAndTag(factElements);
-      return new FundamentalAccountingConcepts(facts, period, organizationElements);
-    } catch (DocumentException e) {
-      e.printStackTrace();
-      return null;
-    }
-  }
-
-
 
   private static Map<Period, Map<String, FactElement>> mapFactsByPeriodAndTag(
       List<FactElement> facts) {

@@ -7,16 +7,151 @@ public class ConceptMappings {
   public static final Map<String, String[]> mappings = new HashMap<>();
 
   static {
+    /*Balance Sheet*/
     String[] Assets = {"Assets", "AssetsCurrent"};
-    String[] BenefitsCostsExpenses = {"BenefitsLossesAndExpenses"};
+    /*Balance Sheet*/
     String[] CommitmentsAndContingencies = {"CommitmentsAndContingencies"};
+    /*Balance Sheet*/
+    String[] CurrentAssets = {"AssetsCurrent"};
+    /*Balance Sheet*/
+    String[] CurrentLiabilities = {"LiabilitiesCurrent"};
+    /*Balance Sheet*/
+    String[] Equity = {
+      "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+      "PartnersCapitalIncludingPortionAttributableToNoncontrollingInterest",
+      "LimitedLiabilityCompanyLlcMembersEquityIncludingPortionAttributableToNoncontrollingInterest"
+    };
+    /*Balance Sheet*/
+    String[] EquityAttributableToNoncontrollingInterest = {
+      "MinorityInterest",
+      "PartnersCapitalAttributableToNoncontrollingInterest",
+      "MembersEquityAttributableToNoncontrollingInterest",
+      "MinorityInterestInLimitedPartnerships",
+      "MinorityInterestInOperatingPartnerships",
+      "MinorityInterestInPreferredUnitHolders",
+      "MinorityInterestInJointVentures",
+      "OtherMinorityInterests",
+      "NonredeemableNoncontrollingInterest",
+      "NoncontrollingInterestInVariableInterestEntity"
+    };
+    /*Balance Sheet*/
+    String[] EquityAttributableToParent = {
+      "StockholdersEquity", "PartnersCapital", "MembersEquity", "GeneralPartnersCapitalAccount"
+    };
+    /*Balance Sheet*/
+    String[] Liabilities = {"Liabilities"};
+    /*Balance Sheet*/
+    String[] LiabilitiesAndEquity = {
+      "LiabilitiesAndStockholdersEquity", "LiabilitiesAndPartnersCapital"
+    };
+    /*Balance Sheet*/
+    String[] NoncurrentAssets = {"NoncurrentAssets"};
+    /*Balance Sheet*/
+    String[] NoncurrentLiabilities = {"LiabilitiesNoncurrent"};
+    /*Balance Sheet??*/
+    String[] RedeemableNoncontrollingInterest = {
+      "RedeemableNoncontrollingInterestEquityCarryingAmount",
+      "RedeemableNoncontrollingInterestEquityFairValue",
+      "RedeemableNoncontrollingInterestEquityOtherFairValue"
+    };
+    /*Balance Sheet??*/
+    String[] RedeemableNoncontrollingInterestCommon = {
+      "RedeemableNoncontrollingInterestEquityCommonCarryingAmount"
+    };
+    /*Balance Sheet??*/
+    String[] RedeemableNoncontrollingInterestOther = {
+      "RedeemableNoncontrollingInterestEquityOtherCarryingAmount"
+    };
+    /*Balance Sheet*/
+    String[] RedeemableNoncontrollingInterestPreferred = {
+      "RedeemableNoncontrollingInterestEquityPreferredCarryingAmount"
+    };
+    /*Balance Sheet*/
+    String[] OtherThanFixedNoncurrentAssets = {
+      "AssetsNoncurrent",
+      "AssetsNoncurrentOtherThanNoncurrentInvestmentsAndPropertyPlantAndEquipment"
+    };
+    /*Balance Sheet*/
+    String[] FixedAssets = {
+      "PropertyPlantAndEquipmentNet", "PublicUtilitiesPropertyPlantAndEquipmentNet"
+    };
+    /*Balance Sheet*/
+    String[] TemporaryEquity = {
+      "TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests",
+      "RedeemablePreferredStockCarryingAmount",
+      "TemporaryEquityValueExcludingAdditionalPaidInCapital",
+      "TemporaryEquityCarryingAmountAttributableToParent"
+    };
+    /*Balance Sheet*/
+    String[] TemporaryEquityAttributableToParent = {
+      "TemporaryEquityCarryingAmountAttributableToParent"
+    };
+    /*Balance Sheet (Extended)*/
+    String[] Inventory = {"Inventory"};
+
+    // ==================================================================================================
+    /*Cash Flow*/
+    String[] ExchangeGainsLosses = {
+      "EffectOfExchangeRateOnCashAndCashEquivalents",
+      "EffectOfExchangeRateOnCash",
+      "EffectOfExchangeRateOnCashAndCashEquivalentsContinuingOperations",
+      "EffectOfExchangeRateOnCashContinuingOperations",
+      "EffectOfExchangeRateOnCashAndCashEquivalentsDiscontinuedOperations"
+    };
+    /*Cash Flow*/
+    String[] NetCashFlowContinuing = {"NetCashProvidedByUsedInContinuingOperations"};
+    /*Cash Flow*/
+    String[] NetCashFlowDiscontinued = {"NetCashProvidedByUsedInDiscontinuedOperations"};
+    /*Cash Flow*/
+    String[] NetCashFlowFromFinancingActivities = {"NetCashProvidedByUsedInFinancingActivities"};
+    /*Cash Flow*/
+    String[] NetCashFlowFromFinancingActivitiesContinuing = {
+      "NetCashProvidedByUsedInFinancingActivitiesContinuingOperations"
+    };
+    /*Cash Flow*/
+    String[] NetCashFlowFromFinancingActivitiesDiscontinued = {
+      "CashProvidedByUsedInFinancingActivitiesDiscontinuedOperations"
+    };
+    /*Cash Flow*/
+    String[] NetCashFlowFromInvestingActivities = {"NetCashProvidedByUsedInInvestingActivities"};
+    /*Cash Flow*/
+    String[] NetCashFlowFromInvestingActivitiesContinuing = {
+      "NetCashProvidedByUsedInInvestingActivitiesContinuingOperations"
+    };
+    /*Cash Flow*/
+    String[] NetCashFlowFromInvestingActivitiesDiscontinued = {
+      "CashProvidedByUsedInInvestingActivitiesDiscontinuedOperations"
+    };
+    /*Cash Flow*/
+    String[] NetCashFlowFromOperatingActivities = {"NetCashProvidedByUsedInOperatingActivities"};
+    /*Cash Flow*/
+    String[] NetCashFlowFromOperatingActivitiesContinuing = {
+      "NetCashProvidedByUsedInOperatingActivitiesContinuingOperations"
+    };
+    /*Cash Flow*/
+    String[] NetCashFlowFromOperatingActivitiesDiscontinued = {
+      "CashProvidedByUsedInOperatingActivitiesDiscontinuedOperations"
+    };
+    /*Cash Flow*/
+    String[] NetCashFlow = {
+      "CashAndCashEquivalentsPeriodIncreaseDecrease",
+      "CashPeriodIncreaseDecrease",
+      "CashAndCashEquivalentsPeriodIncreaseDecreaseExcludingExchangeRateEffect"
+    };
+    /*Cash Flow (Extended Item*/
+    String [] Cash = {"Cash","CashEquivalentsAtCarryingValue ","CashAndDueFromBanks","CashCashEquivalentsAndShortTermInvestments"};
+    // ==================================================================================================
+    /*Income Statement*/
     String[] ComprehensiveIncomeLoss = {
       "ComprehensiveIncomeNetOfTaxIncludingPortionAttributableToNoncontrollingInterest"
     };
+    /*Income Statement*/
     String[] ComprehensiveIncomeLossAttributableToNoncontrollingInterest = {
       "ComprehensiveIncomeNetOfTaxAttributableToNoncontrollingInterest"
     };
+    /*Income Statement*/
     String[] ComprehensiveIncomeLossAttributableToParent = {"ComprehensiveIncomeNetOfTax"};
+    /*Income Statement*/
     String[] CostOfRevenue = {
       "CostOfRevenue",
       "CostOfGoodsAndServicesSold",
@@ -41,98 +176,60 @@ public class ConceptMappings {
       "ExplorationExpenseMining",
       "DirectCostsOfHotels"
     };
-
+    /*Income Statement*/
     String[] CostOfRevenueGoods = {"CostOfGoodsSold"};
+    /*Income Statement*/
     String[] CostOfRevenueServices = {"CostOfServices"};
-    String[] CostsAndExpenses = {"CostsAndExpenses", "OperatingCostsAndExpenses", "BenefitsLossesAndExpenses"};
-    String[] CurrentAssets = {"AssetsCurrent"};
-    String[] CurrentLiabilities = {"LiabilitiesCurrent"};
-    String[] Equity = {
-      "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
-      "PartnersCapitalIncludingPortionAttributableToNoncontrollingInterest",
-      "LimitedLiabilityCompanyLlcMembersEquityIncludingPortionAttributableToNoncontrollingInterest"
+    /*Income Statement*/
+    String[] CostsAndExpenses = {
+      "CostsAndExpenses", "OperatingCostsAndExpenses", "BenefitsLossesAndExpenses"
     };
-
-    String[] EquityAttributableToNoncontrollingInterest = {
-      "MinorityInterest",
-      "PartnersCapitalAttributableToNoncontrollingInterest",
-      "MembersEquityAttributableToNoncontrollingInterest",
-      "MinorityInterestInLimitedPartnerships",
-      "MinorityInterestInOperatingPartnerships",
-      "MinorityInterestInPreferredUnitHolders",
-      "MinorityInterestInJointVentures",
-      "OtherMinorityInterests",
-      "NonredeemableNoncontrollingInterest",
-      "NoncontrollingInterestInVariableInterestEntity"
-    };
-    String[] EquityAttributableToParent = {
-      "StockholdersEquity", "PartnersCapital", "MembersEquity", "GeneralPartnersCapitalAccount"
-    };
-    String[] ExchangeGainsLosses = {
-      "EffectOfExchangeRateOnCashAndCashEquivalents",
-      "EffectOfExchangeRateOnCash",
-      "EffectOfExchangeRateOnCashAndCashEquivalentsContinuingOperations",
-      "EffectOfExchangeRateOnCashContinuingOperations",
-      "EffectOfExchangeRateOnCashAndCashEquivalentsDiscontinuedOperations"
-    };
-    String[] ExtraordinaryItemsOfIncomeExpenseNetOfTax = {"ExtraordinaryItemNetOfTax"};
-
-    String[] FixedAssets = {
-      "PropertyPlantAndEquipmentNet", "PublicUtilitiesPropertyPlantAndEquipmentNet"
-    };
-    String[] GainLossOnDispositionStockInSubsidiaryOrEquityMethodInvestee = {
-      "GainLossOnSaleOfStockInSubsidiaryOrEquityMethodInvestee"
-    };
-    String[] GainLossOnSalePropertiesNetTax = {
-      "GainLossOnSaleOfPropertiesNetOfApplicableIncomeTaxes"
-    };
+    /*Income Statement*/
     String[] GrossProfit = {"GrossProfit"};
-
-
-
-    String[] GainLossOnSalePreviouslyUnissuedStockBySubsidiaryOrEquityInvesteeNonoperatingIncome = {
-      "GainLossOnSaleOfPreviouslyUnissuedStockBySubsidiaryOrEquityInvesteeNonoperatingIncome"
-    };
-
-
-
+    /*Income Statement*/
     String[] IncomeLossBeforeEquityMethodInvestments = {
       "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments"
     };
+    /*Income Statement*/
     String[] IncomeLossFromEquityMethodInvestments = {
-            "IncomeLossFromEquityMethodInvestments",
-            "EquityMethodInvestmentSummarizedFinancialInformationNetIncomeLoss",
-            "IncomeLossFromEquityMethodInvestmentsNetOfDividendsOrDistributions"
+      "IncomeLossFromEquityMethodInvestments",
+      "EquityMethodInvestmentSummarizedFinancialInformationNetIncomeLoss",
+      "IncomeLossFromEquityMethodInvestmentsNetOfDividendsOrDistributions"
     };
+    /*Income Statement*/
     String[] IncomeLossFromContinuingOperationsAfterTax = {
       "IncomeLossFromContinuingOperationsIncludingPortionAttributableToNoncontrollingInterest",
       "IncomeLossBeforeExtraordinaryItemsAndCumulativeEffectOfChangeInAccountingPrinciple",
       "IncomeLossFromContinuingOperations"
     };
+    /*Income Statement*/
     String[] IncomeLossFromContinuingOperationsBeforeTax = {
       "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
       "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments"
     };
-
+    /*Income Statement*/
     String[] IncomeLossFromDiscontinuedOperationsNetOfTax = {
       "IncomeLossFromDiscontinuedOperationsNetOfTax",
       "DiscontinuedOperationGainLossOnDisposalOfDiscontinuedOperationNetOfTax",
       "IncomeLossFromDiscontinuedOperationsNetOfTaxAttributableToReportingEntity",
       "DiscontinuedOperationIncomeLossFromDiscontinuedOperationDuringPhaseOutPeriodNetOfTax"
     };
+    /*Income Statement*/
     String[] IncomeLossFromDiscontinuedOperationsNetOfTaxAdjustmentToPriorYearGainLossOnDisposal = {
-            "DiscontinuedOperationAmountOfAdjustmentToPriorPeriodGainLossOnDisposalNetOfTax"
+      "DiscontinuedOperationAmountOfAdjustmentToPriorPeriodGainLossOnDisposalNetOfTax"
     };
+    /*Income Statement*/
     String[] IncomeLossFromDiscontinuedOperationsNetOfTaxProvisionForGainLossOnDisposal = {
-            "DiscontinuedOperationProvisionForLossGainOnDisposalNetOfTax"
+      "DiscontinuedOperationProvisionForLossGainOnDisposalNetOfTax"
     };
-
+    /*Income Statement*/
     String[] IncomeLossFromDiscontinuedOperationsNetOfTaxGainLossOnDisposal = {
       "DiscontinuedOperationGainLossOnDisposalOfDiscontinuedOperationNetOfTax"
     };
     String[] IncomeLossFromDiscontinuedOperationsNetOfTaxDuringPhaseOut = {
       "DiscontinuedOperationIncomeLossFromDiscontinuedOperationDuringPhaseOutPeriodNetOfTax"
     };
+    /*Income Statement*/
     String[] IncomeTaxExpenseBenefit = {
       "IncomeTaxExpenseBenefit",
       "IncomeTaxExpenseBenefitContinuingOperations",
@@ -140,110 +237,59 @@ public class ConceptMappings {
       "FederalIncomeTaxExpenseBenefitContinuingOperations",
       "AffordableHousingProgramAssessments"
     };
+    /*Income Statement*/
     String[] IncomeTaxExpenseBenefitCurrent = {"CurrentIncomeTaxExpenseBenefit"};
+    /*Income Statement*/
     String[] IncomeTaxExpenseBenefitDeferred = {"DeferredIncomeTaxExpenseBenefit"};
-
+    /*Income Statement*/
     String[] InterestAndDebtExpense = {"InterestAndDebtExpense"};
+    /*Income Statement*/
     String[] InterestAndDividendIncomeOperating = {"InterestAndDividendIncomeOperating"};
+    /*Income Statement*/
     String[] InterestExpenseOperating = {
       "InterestExpense", "InterestExpenseBorrowings", "InterestExpenseDeposits"
     };
-    String[] InterestIncomeExpenseAfterProvisionForLosses = {
-      "InterestIncomeExpenseAfterProvisionForLoanLoss",
-      "NetInterestIncomeLossAfterProvisionForLoanLosses"
-    };
-
-    String[] InterestIncomeExpenseOperatingNet = {"InterestIncomeExpenseNet"};
-
-    String[] Liabilities = {"Liabilities"};
-
-    String[] LiabilitiesAndEquity = {
-      "LiabilitiesAndStockholdersEquity", "LiabilitiesAndPartnersCapital"
-    };
-    String[] NetCashFlow = {
-      "CashAndCashEquivalentsPeriodIncreaseDecrease",
-      "CashPeriodIncreaseDecrease",
-      "CashAndCashEquivalentsPeriodIncreaseDecreaseExcludingExchangeRateEffect"
-    };
-
-    String[] NetCashFlowContinuing = {"NetCashProvidedByUsedInContinuingOperations"};
-    String[] NetCashFlowDiscontinued = {"NetCashProvidedByUsedInDiscontinuedOperations"};
-    String[] NetCashFlowFromFinancingActivities = {"NetCashProvidedByUsedInFinancingActivities"};
-    String[] NetCashFlowFromFinancingActivitiesContinuing = {
-      "NetCashProvidedByUsedInFinancingActivitiesContinuingOperations"
-    };
-    String[] NetCashFlowFromFinancingActivitiesDiscontinued = {
-      "CashProvidedByUsedInFinancingActivitiesDiscontinuedOperations"
-    };
-    String[] NetCashFlowFromInvestingActivities = {"NetCashProvidedByUsedInInvestingActivities"};
-    String[] NetCashFlowFromInvestingActivitiesContinuing = {
-      "NetCashProvidedByUsedInInvestingActivitiesContinuingOperations"
-    };
-    String[] NetCashFlowFromInvestingActivitiesDiscontinued = {
-      "CashProvidedByUsedInInvestingActivitiesDiscontinuedOperations"
-    };
-
-    String[] NetCashFlowFromOperatingActivities = {"NetCashProvidedByUsedInOperatingActivities"};
-    String[] NetCashFlowFromOperatingActivitiesContinuing = {
-      "NetCashProvidedByUsedInOperatingActivitiesContinuingOperations"
-    };
-    String[] NetCashFlowFromOperatingActivitiesDiscontinued = {
-      "CashProvidedByUsedInOperatingActivitiesDiscontinuedOperations"
-    };
+    /*Income Statement*/
     String[] NetIncomeLoss = {
-            "ProfitLoss", "IncomeLossIncludingPortionAttributableToNoncontrollingInterest"
+      "ProfitLoss", "IncomeLossIncludingPortionAttributableToNoncontrollingInterest"
     };
+    /*Income Statement*/
     String[] NetIncomeLossAttributableToNoncontrollingInterest = {
-            "NetIncomeLossAttributableToNoncontrollingInterest",
-            "IncomeLossAttributableToNoncontrollingInterest",
-            "NetIncomeLossAttributableToNonredeemableNoncontrollingInterest",
-            "NetIncomeLossAttributableToRedeemableNoncontrollingInterest",
-            "IncomeLossFromContinuingOperationsAttributableToNoncontrollingEntity"
+      "NetIncomeLossAttributableToNoncontrollingInterest",
+      "IncomeLossAttributableToNoncontrollingInterest",
+      "NetIncomeLossAttributableToNonredeemableNoncontrollingInterest",
+      "NetIncomeLossAttributableToRedeemableNoncontrollingInterest",
+      "IncomeLossFromContinuingOperationsAttributableToNoncontrollingEntity"
     };
+    /*Income Statement*/
     String[] NetIncomeLossAttributableToNonredeemableNoncontrollingInterest = {
-            "NetIncomeLossAttributableToNonredeemableNoncontrollingInterest"
+      "NetIncomeLossAttributableToNonredeemableNoncontrollingInterest"
     };
+    /*Income Statement*/
     String[] NetIncomeLossAttributableToParent = {
-            "NetIncomeLoss",
-            "IncomeLossAttributableToParent",
-            "NetIncomeLossAttributableToParentNetOfFederalHomeLoanBankAssessments"
+      "NetIncomeLoss",
+      "IncomeLossAttributableToParent",
+      "NetIncomeLossAttributableToParentNetOfFederalHomeLoanBankAssessments"
     };
+    /*Income Statement*/
     String[] NetIncomeLossAttributableToRedeemableNoncontrollingInterest = {
-            "NetIncomeLossAttributableToRedeemableNoncontrollingInterest"
+      "NetIncomeLossAttributableToRedeemableNoncontrollingInterest"
     };
+    /*Income Statement*/
     String[] NetIncomeLossAvailableToCommonStockholdersBasic = {
       "NetIncomeLossAvailableToCommonStockholdersBasic"
     };
-
-
-    String[] NoncurrentAssets = {"NoncurrentAssets"};
-    String[] NoncurrentLiabilities = {"LiabilitiesNoncurrent"};
-    String[] NoninterestExpense = {"NoninterestExpense"};
-    String[] NoninterestIncome = {"NoninterestIncome", "NoninterestIncomeOther"};
+    /*Income Statement*/
     String[] NonoperatingIncomeLoss = {"NonoperatingIncomeExpense"};
-
-
+    /*Income Statement*/
     String[] OperatingExpenses = {"OperatingExpenses", "UtilitiesOperatingExpense"};
-
+    /*Income Statement*/
     String[] OperatingIncomeLoss = {
-            "OperatingIncomeLoss",
-            "IncomeLossFromContinuingOperationsBeforeInterestExpenseInterestIncomeIncomeTaxesExtraordinaryItemsNoncontrollingInterestsNet"
+      "OperatingIncomeLoss",
+      "IncomeLossFromContinuingOperationsBeforeInterestExpenseInterestIncomeIncomeTaxesExtraordinaryItemsNoncontrollingInterestsNet"
     };
+    /*Income Statement*/
     String[] OtherComprehensiveIncomeLoss = {"OtherComprehensiveIncomeLossNetOfTax"};
-    String[] OtherComprehensiveIncomeLossAttributableToNoncontrollingInterest = {
-            "OtherComprehensiveIncomeLossNetOfTaxPortionAttributableToNoncontrollingInterest"
-    };
-    String[] OtherComprehensiveIncomeLossAttributableToParent = {
-            "OtherComprehensiveIncomeLossNetOfTaxPortionAttributableToParent"
-    };
-    String[] OtherOperatingIncomeExpenses = {"OtherOperatingIncome"};
-    String[] OtherThanFixedNoncurrentAssets = {
-            "AssetsNoncurrent",
-            "AssetsNoncurrentOtherThanNoncurrentInvestmentsAndPropertyPlantAndEquipment"
-    };
-
-    String[] OperatingAndNonoperatingCostsAndExpenses = {"CostsAndExpenses"};
-
     // not listed???
     String[] OperatingAndNonoperatingRevenues = {
       "Revenues",
@@ -295,51 +341,13 @@ public class ConceptMappings {
       "OilAndGasSalesRevenue",
       "HealthCareOrganizationRevenue",
       "RevenueMineralSales",
-    //  "InterestIncomeExpenseNet"// -> InterestIncomeExpenseOperatingNet
+      //  "InterestIncomeExpenseNet"// -> InterestIncomeExpenseOperatingNet
     };
-
-
-
-
-
-
-
-
-    String[] ParticipatingSecuritiesDistributedAndUndistributedEarningsLossBasic = {
-      "ParticipatingSecuritiesDistributedAndUndistributedEarningsLossBasic"
-    };
-
+    /*Income Statement*/
     String[] PreferredStockDividendsAndOtherAdjustments = {
       "PreferredStockDividendsAndOtherAdjustments"
     };
-
-    String[] ProvisionForLoanLeaseAndOtherLosses = {
-      "ProvisionForLoanLeaseAndOtherLosses",
-      "ProvisionForLoanAndLeaseLosses",
-      "ProvisionForLoanLossesExpensed"
-    };
-
-    String[] RedeemableNoncontrollingInterest = {
-      "RedeemableNoncontrollingInterestEquityCarryingAmount",
-      "RedeemableNoncontrollingInterestEquityFairValue",
-      "RedeemableNoncontrollingInterestEquityOtherFairValue"
-    };
-
-    String[] RedeemableNoncontrollingInterestCommon = {
-      "RedeemableNoncontrollingInterestEquityCommonCarryingAmount"
-    };
-    String[] RedeemableNoncontrollingInterestOther = {
-      "RedeemableNoncontrollingInterestEquityOtherCarryingAmount"
-    };
-    String[] RedeemableNoncontrollingInterestPreferred = {
-      "RedeemableNoncontrollingInterestEquityPreferredCarryingAmount"
-    };
-    String[] RevenuesExcludingInterestDividends = {
-            "BrokerageCommissionsRevenue",
-            "InvestmentBankingRevenue",
-            "RevenuesExcludingInterestAndDividends"
-    };
-    String[] RevenuesNetInterestExpense = {"RevenuesNetOfInterestExpense"};
+    /*Income Statement*/
     String[] Revenues = {
       "Revenues",
       "SalesRevenueNet",
@@ -419,27 +427,62 @@ public class ConceptMappings {
       "InterestIncomeExpenseNet",
       "CoalProductsAndServicesRevenue"
     };
-
-
-
-
-
-    String[] TemporaryEquity = {
-      "TemporaryEquityCarryingAmountIncludingPortionAttributableToNoncontrollingInterests",
-      "RedeemablePreferredStockCarryingAmount",
-      "TemporaryEquityValueExcludingAdditionalPaidInCapital",
-      "TemporaryEquityCarryingAmountAttributableToParent"
+    // ==================================================================================================
+    String[] BenefitsCostsExpenses = {"BenefitsLossesAndExpenses"};
+    String[] GainLossOnSalePreviouslyUnissuedStockBySubsidiaryOrEquityInvesteeNonoperatingIncome = {
+      "GainLossOnSaleOfPreviouslyUnissuedStockBySubsidiaryOrEquityInvesteeNonoperatingIncome"
     };
-    String[] TemporaryEquityAttributableToParent = {
-      "TemporaryEquityCarryingAmountAttributableToParent"
+
+    String[] NoninterestExpense = {"NoninterestExpense"};
+    String[] NoninterestIncome = {"NoninterestIncome", "NoninterestIncomeOther"};
+    String[] OtherComprehensiveIncomeLossAttributableToNoncontrollingInterest = {
+      "OtherComprehensiveIncomeLossNetOfTaxPortionAttributableToNoncontrollingInterest"
     };
+    String[] OtherComprehensiveIncomeLossAttributableToParent = {
+      "OtherComprehensiveIncomeLossNetOfTaxPortionAttributableToParent"
+    };
+    String[] OtherOperatingIncomeExpenses = {"OtherOperatingIncome"};
+    String[] InterestIncomeExpenseAfterProvisionForLosses = {
+      "InterestIncomeExpenseAfterProvisionForLoanLoss",
+      "NetInterestIncomeLossAfterProvisionForLoanLosses"
+    };
+
+    String[] InterestIncomeExpenseOperatingNet = {"InterestIncomeExpenseNet"};
+
+    String[] OperatingAndNonoperatingCostsAndExpenses = {"CostsAndExpenses"};
+
+    String[] ExtraordinaryItemsOfIncomeExpenseNetOfTax = {"ExtraordinaryItemNetOfTax"};
+
+    String[] ParticipatingSecuritiesDistributedAndUndistributedEarningsLossBasic = {
+      "ParticipatingSecuritiesDistributedAndUndistributedEarningsLossBasic"
+    };
+
+    String[] GainLossOnDispositionStockInSubsidiaryOrEquityMethodInvestee = {
+      "GainLossOnSaleOfStockInSubsidiaryOrEquityMethodInvestee"
+    };
+    String[] GainLossOnSalePropertiesNetTax = {
+      "GainLossOnSaleOfPropertiesNetOfApplicableIncomeTaxes"
+    };
+    String[] ProvisionForLoanLeaseAndOtherLosses = {
+      "ProvisionForLoanLeaseAndOtherLosses",
+      "ProvisionForLoanAndLeaseLosses",
+      "ProvisionForLoanLossesExpensed"
+    };
+
+    String[] RevenuesExcludingInterestDividends = {
+      "BrokerageCommissionsRevenue",
+      "InvestmentBankingRevenue",
+      "RevenuesExcludingInterestAndDividends"
+    };
+    String[] RevenuesNetInterestExpense = {"RevenuesNetOfInterestExpense"};
 
     String[] UndistributedEarningsLossAllocatedToParticipatingSecuritiesBasic = {
       "UndistributedEarningsLossAllocatedToParticipatingSecuritiesBasic"
     };
-
+    // ==================================================================================================
     mappings.put("Assets", Assets);
     mappings.put("BenefitsCostsExpenses", BenefitsCostsExpenses);
+    mappings.put("Cash", Cash);
     mappings.put("ComprehensiveIncomeLoss", ComprehensiveIncomeLoss);
     mappings.put("CommitmentsAndContingencies", CommitmentsAndContingencies);
     mappings.put(

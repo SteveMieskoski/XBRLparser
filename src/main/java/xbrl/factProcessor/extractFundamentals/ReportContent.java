@@ -6,10 +6,22 @@ import xbrl.factProcessor.ResultSet;
 import xbrl.factProcessor.extractFundamentals.constants.CikToTicker;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-public class ReportContent extends AbstractReportContent{
+public class ReportContent {
+
+  protected Map<String, Map<Integer, Double>> balanceSheet;
+  protected Map<String, Map<Integer, Double>> cashFlow;
+  protected Map<String, Map<Integer, Double>> incomeStatement;
+  protected Map<String, Map<Integer, String>> companyDetails;
+  protected Map<Integer, String> ticker;
+  protected Map<Integer, Period> entityPeriod;
+  protected Map<Integer, Integer> reportingOrder;
+
+  private Map<Period, Map<String, Double>> factsGroupedByPeriod;
+  private List<FactElement> factElements;
 
   public ReportContent() {}
 
@@ -38,6 +50,116 @@ public class ReportContent extends AbstractReportContent{
     addReportingOrder(cik, this.ticker.size());
   }
 
+  public void addTicker(Integer key) {
+    if (this.ticker == null) {
+      this.ticker = new HashMap<>();
+    }
+    String value = CikToTicker.find(key.toString());
+    this.ticker.put(key, value);
+  }
+
+  protected void addReportingOrder(Integer key, Integer value) {
+    if (this.reportingOrder == null) {
+      this.reportingOrder = new HashMap<>();
+    }
+    this.reportingOrder.put(key, value);
+  }
+
+  protected void addAllBalanceSheet(Integer key, Map<String, Double> valueMap) {
+    if (this.balanceSheet == null) {
+      this.balanceSheet = new HashMap<>();
+    }
+    addValues(this.balanceSheet, key, valueMap);
+  }
+
+  protected void addAllCashFlow(Integer key, Map<String, Double> valueMap) {
+    if (this.cashFlow == null) {
+      this.cashFlow = new HashMap<>();
+    }
+    addValues(this.cashFlow, key, valueMap);
+  }
+
+  protected void addAllIncomeStatement(Integer key, Map<String, Double> valueMap) {
+    if (this.incomeStatement == null) {
+      this.incomeStatement = new HashMap<>();
+    }
+    addValues(this.incomeStatement, key, valueMap);
+  }
+
+  protected void addValues(
+      Map<String, Map<Integer, Double>> component, Integer key, Map<String, Double> valueMap) {
+    // no updates to concepts not included
+    if (valueMap == null) return;
+    for (String s : valueMap.keySet()) {
+      if (valueMap.get(s) > 0d) {
+        if (component.containsKey(s)) {
+          component.get(s).put(key, valueMap.get(s));
+        } else {
+          HashMap<Integer, Double> tmp = new HashMap<>();
+          tmp.put(key, valueMap.get(s));
+          component.put(s, tmp);
+        }
+      }
+    }
+  }
+
+  protected void addAllCompanyDetails(Integer key, Map<String, String> valueMap) {
+    if (this.companyDetails == null) {
+      this.companyDetails = new HashMap<>();
+    }
+    // no updates to concepts not included
+    for (String s : valueMap.keySet()) {
+      if (this.companyDetails.containsKey(s)) {
+        this.companyDetails.get(s).put(key, valueMap.get(s));
+      } else {
+        HashMap<Integer, String> tmp = new HashMap<>();
+        tmp.put(key, valueMap.get(s));
+        this.companyDetails.put(s, tmp);
+      }
+    }
+  }
+
+  private void mapFactsByPeriodAndTag(List<FactElement> facts) {
+    this.factElements = facts;
+    this.factsGroupedByPeriod = new HashMap<>();
+    for (FactElement fe : facts) {
+
+      if (this.factsGroupedByPeriod.containsKey(fe.getPeriod())) {
+        try {
+          this.factsGroupedByPeriod
+              .get(fe.getPeriod())
+              .put(fe.getTag(), Double.parseDouble(fe.getValue()));
+        } catch (NumberFormatException e) {
+          e.printStackTrace();
+        }
+      } else {
+        HashMap<String, Double> tmp = new HashMap<>();
+        try {
+          tmp.put(fe.getTag(), Double.parseDouble(fe.getValue()));
+        } catch (NumberFormatException e) {
+          e.printStackTrace();
+        }
+        this.factsGroupedByPeriod.put(fe.getPeriod(), tmp);
+      }
+    }
+  }
+
+  public List<FactElement> getFactElements() {
+    return factElements;
+  }
+
+  public void setFactElements(List<FactElement> factElements) {
+    this.factElements = factElements;
+    mapFactsByPeriodAndTag(factElements);
+  }
+
+  public Map<Period, Map<String, Double>> getFactsGroupedByPeriod() {
+    return factsGroupedByPeriod;
+  }
+
+  public void setFactsGroupedByPeriod(Map<Period, Map<String, Double>> factsGroupedByPeriod) {
+    this.factsGroupedByPeriod = factsGroupedByPeriod;
+  }
 
   public Map<Integer, String> getTicker() {
     return ticker;

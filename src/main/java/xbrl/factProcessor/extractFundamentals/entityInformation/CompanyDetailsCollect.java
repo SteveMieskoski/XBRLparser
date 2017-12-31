@@ -1,4 +1,4 @@
-package xbrl.factProcessor.extractFundamentals;
+package xbrl.factProcessor.extractFundamentals.entityInformation;
 
 import xbrl.elementTypes.OrganizationElement;
 

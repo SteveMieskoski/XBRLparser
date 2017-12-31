@@ -5,28 +5,36 @@ import org.slf4j.LoggerFactory;
 import xbrl.elementTypes.FactElement;
 import xbrl.elementTypes.OrganizationElement;
 import xbrl.elementTypes.subTypes.Period;
-import xbrl.export.ToExcel;
 import xbrl.factProcessor.ResultSet;
-import xbrl.factProcessor.extractFundamentals.balanceSheet.BalanceSheetAdjustments;
 import xbrl.factProcessor.extractFundamentals.balanceSheet.BalanceSheetFundamentals;
-import xbrl.factProcessor.extractFundamentals.cashFlow.CashFlowAdjustments;
 import xbrl.factProcessor.extractFundamentals.cashFlow.CashFlowFundamentals;
 import xbrl.factProcessor.extractFundamentals.constants.ConceptMappings;
 import xbrl.factProcessor.extractFundamentals.constants.ConceptMappingsSubParAlts;
-import xbrl.factProcessor.extractFundamentals.incomeStatement.IncomeStatementAdjustments;
+import xbrl.factProcessor.extractFundamentals.entityInformation.CompanyDetailsCollect;
 import xbrl.factProcessor.extractFundamentals.incomeStatement.IncomeStatementFundamentals;
 import xbrl.factProcessor.extractFundamentals.ratios.CalculateRatios;
+import xbrl.factProcessor.extractFundamentals.ratios.ComputableRatiosCheck;
 import xbrl.util.CommLine;
 
 import java.lang.invoke.MethodHandles;
-import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class FundamentalAccountingConcepts extends AbstractFundamentalAccountingConcepts {
+public class FundamentalAccountingConcepts {
   private static final Logger logger =
       LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+
+  protected Map<String, List<FactElement>> factByName;
+  protected Map<String, FactElement> periodFactMap;
+  protected Map<String, FactElement> instantFactMap;
+  protected List<OrganizationElement> organizationElements;
+  protected Period focusPeriod;
+  protected Period focusInstant;
+  protected Map<Period, Map<String, FactElement>> periodFactsByName;
+  protected Map<String, Object> misc;
+  
+  
   private Map<String, String[]> mappings;
   private Period period;
   private CommLine commLine;
@@ -38,7 +46,6 @@ public class FundamentalAccountingConcepts extends AbstractFundamentalAccounting
       Period period,
       List<OrganizationElement> organizationElements,
       CommLine commLine) {
-    //   logger.info("{}",periodFactsByName);
     this.periodFactsByName = periodFactsByName;
     this.commLine = commLine;
     this.focusPeriod = period;
@@ -62,7 +69,7 @@ public class FundamentalAccountingConcepts extends AbstractFundamentalAccounting
     setFocusPeriodFactList(periodFactsByName);
 
     if (organizationElements != null) {
-      super.setOrganizationElementsList(organizationElements);
+      setOrganizationElementsList(organizationElements);
     }
     resultSet = ResultSet.create(this.focusPeriod, getDetails());
   }
@@ -102,31 +109,38 @@ public class FundamentalAccountingConcepts extends AbstractFundamentalAccounting
     }
   }
 
-  public ResultSet processAndReturnResults() {
-    if (this.mappings != null) {
-      return doProcess();
-    } else {
-      setMappings(ConceptMappings.mappings);
-      return doProcess();
+  public void setOrganizationElementsList(List<OrganizationElement> organizationElements) {
+    this.organizationElements = organizationElements;
+    details = CompanyDetailsCollect.findAndExtractValues(organizationElements);
+  }
+
+  void setFocusPeriod(Period focusPeriod) {
+    this.focusPeriod = focusPeriod;
+    this.focusInstant = new Period();
+    this.focusInstant.setTemporalType("Instant");
+    this.focusInstant.setInstant(this.focusPeriod.getPeriodEnd());
+    if (this.periodFactsByName != null) {
+      setFocusPeriodFactList(this.periodFactsByName);
     }
   }
 
-  public ResultSet processAndReturnResults(Map<String, String[]> mappings) {
-    setMappings(mappings);
-    return doProcess();
+  protected Map<String, FactElement> getInstantOrDurationFacts(String currentInstantOrDuration){
+    if(currentInstantOrDuration.equals("instant")){
+      return getInstantFactMap();
+    } else {
+      return getPeriodFactMap();
+    }
   }
 
-  public ResultSet processAndReturnResults(String mapPreset) {
-    if (mapPreset == null) mapPreset = "";
-    switch (mapPreset) {
-      case "experimental":
-        Map<String, String[]> mappings = ConceptMappings.mappings;
-        mappings.putAll(ConceptMappingsSubParAlts.mappingOther);
-        setMappings(mappings);
-        return doProcess();
-      default:
-        setMappings(ConceptMappings.mappings);
-        return doProcess();
+  void setFocusPeriodFactList(Map<Period, Map<String, FactElement>> periodFactsByName) {
+    for (Period period : periodFactsByName.keySet()) {
+      if (period.equals(this.focusPeriod)) {
+        logger.info("{}","focusPeriod: " + period);
+        this.periodFactMap = periodFactsByName.get(period);
+      } else if (period.equals(this.focusInstant)) {
+        logger.info("{}","focusInstant: " + period);
+        this.instantFactMap = periodFactsByName.get(period);
+      }
     }
   }
 
@@ -138,12 +152,16 @@ public class FundamentalAccountingConcepts extends AbstractFundamentalAccounting
     fundamentals = processIncomeStatement(fundamentals);
 
     logger.info("{}", "----------- Calculable Ratios  -------------");
-    Map<String, Boolean> canCalculate = CalculateRatios.determineComputableRatios(fundamentals);
+    Map<String, Boolean> canCalculate = ComputableRatiosCheck.determineComputableRatios(fundamentals);
     logger.info("Calculable Ratios Check Results: ");
     for (String s : canCalculate.keySet()) {
            logger.info("{}",s + ": " + canCalculate.get(s));
     }
 
+    Map<String, Double> ratos = CalculateRatios.calculateRatios(canCalculate, fundamentals);
+    for (String s : ratos.keySet()) {
+      logger.info("{}",s + ": " + ratos.get(s));
+    }
     if (this.resultSet != null && this.commLine != null) {
       if (this.resultSet.getTicker() == null && getMisc("customPrefix") != null) {
         this.resultSet.setTicker((String) getMisc("customPrefix"));
@@ -196,77 +214,88 @@ public class FundamentalAccountingConcepts extends AbstractFundamentalAccounting
     return fundamentals;
   }
 
-  public Map<String, Double> extractBalanceSheetConcepts() {
-    Map<String, Double> fundamentals;
-
-    fundamentals =
-        BalanceSheetFundamentals.build()
-            .extractDataPoints(super.getInstantOrDurationFacts("instant"));
-
-    logger.info("{}", "----------- Balance Sheet -------------");
-    printFundamentals(fundamentals);
-    return fundamentals;
-  }
-
   public Map<String, Double> extractBalanceSheetConcepts(Map<String, String[]> mapping) {
     Map<String, Double> fundamentals;
 
     fundamentals =
         BalanceSheetFundamentals.build(mapping)
-            .extractDataPoints(super.getInstantOrDurationFacts("instant"));
+            .extractDataPoints(getInstantOrDurationFacts("instant"));
 
     logger.info("{}", "----------- Balance Sheet -------------");
     printFundamentals(fundamentals);
     return fundamentals;
   }
 
-  public Map<String, Double> extractCashFlowConcepts() {
-    Map<String, Double> fundamentals;
-
-    fundamentals =
-        CashFlowFundamentals.build().extractDataPoints(super.getInstantOrDurationFacts("duration"));
-
-    logger.info("{}", "----------- Cash Flow -------------");
-    printFundamentals(fundamentals);
-    return fundamentals;
-  }
-
+  
   public Map<String, Double> extractCashFlowConcepts(Map<String, String[]> mapping) {
     Map<String, Double> fundamentals;
 
     fundamentals =
         CashFlowFundamentals.build(mapping)
-            .extractDataPoints(super.getInstantOrDurationFacts("duration"));
+            .extractDataPoints(getInstantOrDurationFacts("duration"));
 
     logger.info("{}", "----------- Cash Flow -------------");
     printFundamentals(fundamentals);
     return fundamentals;
   }
 
-  public Map<String, Double> extractIncomeStatementConcepts() {
-    Map<String, Double> fundamentals;
-
-    fundamentals =
-        IncomeStatementFundamentals.build()
-            .extractDataPoints(super.getInstantOrDurationFacts("duration"));
-
-    logger.info("{}", "---------- Income Statement --------------");
-    printFundamentals(fundamentals);
-    return fundamentals;
-  }
-
+  
   public Map<String, Double> extractIncomeStatementConcepts(Map<String, String[]> mapping) {
     Map<String, Double> fundamentals;
 
     fundamentals =
         IncomeStatementFundamentals.build(mapping)
-            .extractDataPoints(super.getInstantOrDurationFacts("duration"));
+            .extractDataPoints(getInstantOrDurationFacts("duration"));
 
     logger.info("{}", "---------- Income Statement --------------");
     printFundamentals(fundamentals);
     return fundamentals;
   }
 
+  protected static void printFundamentals(Map<String, Double> fundamentals) {
+    logger.info("{}","=================================");
+    for (String s : fundamentals.keySet()) {
+
+      if (!fundamentals.get(s).equals(0d)) {
+        logger.info("{}",s + ": " + fundamentals.get(s));
+      }
+      //      logger.info("{}",fundamentals.get(s));
+    }
+  }
+
+
+  public Map<String, Object> getAllMisc() {
+    return misc;
+  }
+
+  public Object getMisc(String key) {
+    return this.misc != null ? this.misc.get(key): null;
+  }
+
+  public void setMisc(Map<String, Object> misc) {
+    this.misc = misc;
+  }
+
+  public Map<String, FactElement> getPeriodFactMap() {
+    return periodFactMap;
+  }
+
+  public void setPeriodFactMap(Map<String, FactElement> periodFactMap) {
+    this.periodFactMap = periodFactMap;
+  }
+
+  public Map<String, FactElement> getInstantFactMap() {
+    return instantFactMap;
+  }
+
+  public void setInstantFactMap(Map<String, FactElement> instantFactMap) {
+    this.instantFactMap = instantFactMap;
+  }
+
+  public Map<String, String> getDetails() {
+    return details;
+  }
+  
   @Override
   public String toString() {
     return "FundamentalAccountingConcepts{"
