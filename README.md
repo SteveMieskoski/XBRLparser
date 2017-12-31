@@ -1,7 +1,10 @@
 # XBRLparser
 
-(i.e. in-progress)\
-extracts financial concept facts from a xbrl conformant xml file, and provides the option to return the content as an excell file.  This is the initial starting point with additinal features (such as processing the linkbase refs) planned to expand this into a more complete Xbrl parsing utility.  with these initial efforts focused on unmarshalling the document.
+(in-progress)\
+Currently extracts financial facts from a xbrl conformant xml file then extracts financial concepts using a user defined or default(us-gaap) mapping between various tags and financial concepts. Finally, exporting the extracted content as an excel file.
+
+Note:
+This is the initial starting point with additinal features (such as processing the linkbase refs) planned to expand this into a more complete Xbrl parsing utility.  The next feature focuses on a complete unmarshalling of a supplied xbrl the document into a data structure for further processing, validation, or display.
 
 ## Basic Overview:
 Create a library with the purpose of extracting numeric and contextual content from financial statements following the XBRL 2.1 specification.
