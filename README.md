@@ -16,4 +16,4 @@ Return an object to enable further operations upon the content. Including natura
 I was unable to find comprehensive financial data for the right price.  Thus, this began as a component of a economic/financial data gathering application. However due to the complexity involved it was extracted(cut) into a project onto itself.
 
 ## History:
-Initially used JAXB to process the us-gaap schema and unmarshall the content, but changed to a DOM based approach to extract the elements with little or no data loss.  Followed by subsequent processing to connect the associations, dimensions, etc. This is generally the approach I am currently pursuing.
+Initially used JAXB to process the us-gaap schema and unmarshall the content.  Then changed to a graph based approach, and finally choose a SAX based approach to extract the elements with little or no data loss.  Followed by subsequent processing to connect the associations, dimensions, etc. This is generally the approach I am currently pursuing.
