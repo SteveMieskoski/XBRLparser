@@ -15,6 +15,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+// TODO: need to update gradle to handle dependancies
 public class FactProcessor implements CommLine {
 
   private List<String> additionalSchemas;
