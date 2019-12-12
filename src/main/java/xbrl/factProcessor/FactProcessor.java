@@ -2,13 +2,12 @@ package xbrl.factProcessor;
 
 import xbrl.elementTypes.ContextContent;
 import xbrl.elementTypes.FactElement;
-import xbrl.elementTypes.subTypes.Period;
 import xbrl.export.ToExcel;
-import xbrl.factProcessor.extractFundamentals.FundamentalAccountingConcepts;
+import xbrl.factProcessor.extractFundamentals.*;
 import xbrl.parsers.SchemaCache;
 import xbrl.schemaElementTypes.SchemaContent;
 import xbrl.util.CommLine;
-import xbrl.util.UniversalNamespaceCache;
+
 
 import java.util.ArrayList;
 import java.util.List;
