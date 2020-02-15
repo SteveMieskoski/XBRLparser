@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Taxonomy Label Links linkbase based on XBRL standard Version 2.1.
+Created by UBmatrix Taxonomy Designer 3.0.3.2433 (2009-05-15 09:36).  
+Contact www.ubmatrix.com
+Copyright (c) 2002-2010 UBmatrix inc., All Rights Reserved
+Produced on 2010-09-30 12:44:20
+-->
+<linkbase
+  xmlns="http://www.xbrl.org/2003/linkbase"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="
+    http://www.xbrl.org/2003/linkbase 
+      http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd
+    ">
+  <labelLink xlink:type="extended"
+    xlink:role="http://www.xbrlOrig.org/2003/role/link">
+    <loc xlink:type="locator"
+      xlink:label="abc_AccountingPoliciesHierarchy"
+      xlink:href="abc-20101231.xsd#abc_AccountingPoliciesHierarchy" />
+    <labelArc xlink:type="arc"
+      xlink:arcrole="http://www.xbrlOrig.org/2003/arcrole/concept-label"
+      xlink:from="abc_AccountingPoliciesHierarchy"
+      xlink:to="abc_AccountingPoliciesHierarchy_lbl" />
+    <label xlink:type="resource"
+      xlink:label="abc_AccountingPoliciesHierarchy_lbl"
+      xml:lang="en-US"
+      xlink:role="http://www.xbrlOrig.org/2003/role/label">Accounting Policies [Hierarchy]</label>
+    <loc xlink:type="locator"
+      xlink:label="abc_AccountingPoliciesLineItems"
+      xlink:href="abc-20101231.xsd#abc_AccountingPoliciesLineItems" />
+    <labelArc xlink:type="arc"
+      xlink:arcrole="http://www.xbrlOrig.org/2003/arcrole/concept-label"
+      xlink:from="abc_AccountingPoliciesLineItems"
+      xlink:to="abc_AccountingPoliciesLineItems_lbl" />
+    <label xlink:type="resource"
+      xlink:label="abc_AccountingPoliciesLineItems_lbl"
+      xml:lang="en-US"
+      xlink:role="http://www.xbrlOrig.org/2003/role/label">Accounting Policies [Line Items]</label>
+    <loc xlink:type="locator"
+      xlink:label="abc_AccountingPoliciesTable"
+      xlink:href="abc-20101231.xsd#abc_AccountingPoliciesTable" />
+    <labelArc xlink:type="arc"
+      xlink:arcrole="http://www.xbrlOrig.org/2003/arcrole/concept-label"
+      xlink:from="abc_AccountingPoliciesTable"
+      xlink:to="abc_AccountingPoliciesTable_lbl" />
+    <label xlink:type="resource"
+      xlink:label="abc_AccountingPoliciesTable_lbl"
+      xml:lang="en-US"
+      xlink:role="http://www.xbrlOrig.org/2003/role/label">Accounting Policies [Table]</label>
+    <loc xlink:type="locator"
+      xlink:label="abc_DocumentInformationHierarchy"
+      xlink:href="abc-20101231.xsd#abc_DocumentInformationHierarchy" />
+    <labelArc xlink:type="arc"
+      xlink:arcrole="http://www.xbrlOrig.org/2003/arcrole/concept-label"
+      xlink:from="abc_DocumentInformationHierarchy"
+      xlink:to="abc_DocumentInformationHierarchy_lbl" />
+    <label xlink:type="resource"
+      xlink:label="abc_DocumentInformationHierarchy_lbl"
+      xml:lang="en-US"
+      xlink:role="http://www.xbrlOrig.org/2003/role/label">Document Information [Hierarchy]</label>
+    <loc xlink:type="locator"
+      xlink:label="abc_InventoryByComponentLineItems"
+      xlink:href="abc-20101231.xsd#abc_InventoryByComponentLineItems" />
+    <labelArc xlink:type="arc"
+      xlink:arcrole="http://www.xbrlOrig.org/2003/arcrole/concept-label"
+      xlink:from="abc_InventoryByComponentLineItems"
+      xlink:to="abc_InventoryByComponentLineItems_lbl" />
+    <label xlink:type="resource"
+      xlink:label="abc_InventoryByComponentLineItems_lbl"
+      xml:lang="en-US"
+      xlink:role="http://www.xbrlOrig.org/2003/role/label">Inventory, by Component [Line Items]</label>
+    <loc xlink:type="locator"
+      xlink:label="abc_InventoryByComponentRollUp"
+      xlink:href="abc-20101231.xsd#abc_InventoryByComponentRollUp" />
+    <labelArc xlink:type="arc"
+      xlink:arcrole="http://www.xbrlOrig.org/2003/arcrole/concept-label"
+      xlink:from="abc_InventoryByComponentRollUp"
+      xlink:to="abc_InventoryByComponentRollUp_lbl" />
+    <label xlink:type="resource"
+      xlink:label="abc_InventoryByComponentRollUp_lbl"
+      xml:lang="en-US"
+      xlink:role="http://www.xbrlOrig.org/2003/role/label">Inventory, by Component [Roll Up]</label>
+    <loc xlink:type="locator"
+      xlink:label="abc_InventoryByComponentTable"
+      xlink:href="abc-20101231.xsd#abc_InventoryByComponentTable" />
+    <labelArc xlink:type="arc"
+      xlink:arcrole="http://www.xbrlOrig.org/2003/arcrole/concept-label"
+      xlink:from="abc_InventoryByComponentTable"
+      xlink:to="abc_InventoryByComponentTable_lbl" />
+    <label xlink:type="resource"
+      xlink:label="abc_InventoryByComponentTable_lbl"
+      xml:lang="en-US"
+      xlink:role="http://www.xbrlOrig.org/2003/role/label">Inventory, by Component [Table]</label>
+    <loc xlink:type="locator"
+      xlink:label="abc_LossContingencyAccrualCarryingValuePeriodIncreaseDecreaseRollUp"
+      xlink:href="abc-20101231.xsd#abc_LossContingencyAccrualCarryingValuePeriodIncreaseDecreaseRollUp" />
+    <labelArc xlink:type="arc"
+      xlink:arcrole="http://www.xbrlOrig.org/2003/arcrole/concept-label"
+      xlink:from="abc_LossContingencyAccrualCarryingValuePeriodIncreaseDecreaseRollUp"
+      xlink:to="abc_LossContingencyAccrualCarryingValuePeriodIncreaseDecreaseRollUp_lbl" />
+    <label xlink:type="resource"
+      xlink:label="abc_LossContingencyAccrualCarryingValuePeriodIncreaseDecreaseRollUp_lbl"
+      xml:lang="en-US"
+      xlink:role="http://www.xbrlOrig.org/2003/role/label">Loss Contingency Accrual, Carrying Value, Period Increase (Decrease) [Roll Up]</label>
+    <loc xlink:type="locator"
+      xlink:label="abc_LossContingencyAccrualLineItems"
+      xlink:href="abc-20101231.xsd#abc_LossContingencyAccrualLineItems" />
+    <labelArc xlink:type="arc"
+      xlink:arcrole="http://www.xbrlOrig.org/2003/arcrole/concept-label"
+      xlink:from="abc_LossContingencyAccrualLineItems"
+      xlink:to="abc_LossContingencyAccrualLineItems_lbl" />
+    <label xlink:type="resource"
+      xlink:label="abc_LossContingencyAccrualLineItems_lbl"
+      xml:lang="en-US"
+      xlink:role="http://www.xbrlOrig.org/2003/role/label">Loss Contingency Accrual [Line Items]</label>
+    <loc xlink:type="locator"
+      xlink:label="abc_LossContingencyAccrualTable"
+      xlink:href="abc-20101231.xsd#abc_LossContingencyAccrualTable" />
+    <labelArc xlink:type="arc"
+      xlink:arcrole="http://www.xbrlOrig.org/2003/arcrole/concept-label"
+      xlink:from="abc_LossContingencyAccrualTable"
+      xlink:to="abc_LossContingencyAccrualTable_lbl" />
+    <label xlink:type="resource"
+      xlink:label="abc_LossContingencyAccrualTable_lbl"
+      xml:lang="en-US"
+      xlink:role="http://www.xbrlOrig.org/2003/role/label">Loss Contingency Accrual [Table]</label>
+    <loc xlink:type="locator"
+      xlink:label="abc_NonmonetaryTransactionHierarchy"
+      xlink:href="abc-20101231.xsd#abc_NonmonetaryTransactionHierarchy" />
+    <labelArc xlink:type="arc"
+      xlink:arcrole="http://www.xbrlOrig.org/2003/arcrole/concept-label"
+      xlink:from="abc_NonmonetaryTransactionHierarchy"
+      xlink:to="abc_NonmonetaryTransactionHierarchy_lbl" />
+    <label xlink:type="resource"
+      xlink:label="abc_NonmonetaryTransactionHierarchy_lbl"
+      xml:lang="en-US"
+      xlink:role="http://www.xbrlOrig.org/2003/role/label">Nonmonetary Transaction [Hierarchy]</label>
+  </labelLink>
+</linkbase>
