@@ -1,3 +1,5 @@
+import FilingParser.FilingEntry;
+import taxonomyParser.TaxonomyEntry;
 import xbrl.experimentalParsers.currentExp.LabelNode;
 import xbrl.experimentalParsers.currentExp.LabelTreeIterator;
 import xbrl.experimentalParsers.currentExp.LabelTreeProcessor;
@@ -6,7 +8,7 @@ import xbrl.experimentalParsers.extendedLink.ExtendedLinkOrig;
 import xbrl.experimentalParsers.priorExps.DigParseDemo;
 import xbrl.factProcessor.FactProcessor;
 import xbrl.factProcessor.FundamentalAccountingFacts;
-import xbrlSchemas.Entry;
+import xbrlSchemas.ExpEntry;
 
 import java.io.File;
 
@@ -15,13 +17,25 @@ public class Main {
   public static void main(String[] args) {
 
 //    extendedLinkTreeThingTrial();
-    schemaParse();
+    newParser();
+  }
+
+  private static void taxonomyParser() {
+    String filename =
+            "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/sec/us-gaap-2017-01-31.xsd";
+    new TaxonomyEntry();
+  }
+
+  private static void newParser() {
+    String filename =
+            "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/sec/us-gaap-2017-01-31.xsd";
+    new FilingEntry();
   }
 
   private static void schemaParse() {
     String filename =
-        "/home/steve/projects/2_java/XBRLparser/src/main/resources/schemas/sec/us-gaap-2017-01-31.xsd";
-    new Entry();
+        "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/sec/us-gaap-2017-01-31.xsd";
+    new ExpEntry();
   }
 
   private static void factDemo() {

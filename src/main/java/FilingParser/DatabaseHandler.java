@@ -1,7 +1,9 @@
-package xbrlSchemas;
+package newParser;
+
+import xbrlSchemas.SqliteXbrlDdl;
+import xbrlSchemas.SqliteXbrlIndustryCodePopulate;
 
 import java.sql.*;
-import java.util.ArrayList;
 
 public class DatabaseHandler {
 

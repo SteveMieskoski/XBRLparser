@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 
-public class Entry {
+public class ExpEntry {
 
   SchemaContent schemaContent;
   String currentFile;
@@ -29,17 +29,17 @@ public class Entry {
   HashSet<String> ids = new HashSet<>();
   ArrayList<String> cache = new ArrayList<>();
 
-  public Entry() {
+  public ExpEntry() {
     String allEntryPoint =
-        "/home/steve/projects/2_java/XBRLparser/src/main/resources/schemas/us-gaap/entire/us-gaap-entryPoint-all-2017-01-31.xsd";
+        "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/us-gaap/entire/us-gaap-entryPoint-all-2017-01-31.xsd";
     String filename =
-        "/home/steve/projects/2_java/XBRLparser/src/main/resources/schemas/sec/us-gaap-2017-01-31.xsd";
+        "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/sec/us-gaap-2017-01-31.xsd";
     String file1 =
-        "/home/steve/projects/2_java/XBRLparser/src/main/resources/schemas/us-gaap/dis/us-gaap-dis-cc-cal-2017-01-31.xml";
+        "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/us-gaap/dis/us-gaap-dis-cc-cal-2017-01-31.xml";
     String file2 =
-        "/home/steve/projects/2_java/XBRLparser/src/main/resources/schemas/us-gaap/dis/us-gaap-dis-acec-def-2017-01-31.xml";
+        "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/us-gaap/dis/us-gaap-dis-acec-def-2017-01-31.xml";
     String file3 =
-        "/home/steve/projects/2_java/XBRLparser/src/main/resources/schemas/us-gaap/dis/us-gaap-dis-cc-def-2017-01-31.xml";
+        "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/us-gaap/dis/us-gaap-dis-cc-def-2017-01-31.xml";
     String fileRelative = "../elts/us-gaap-dep-pre-2017-01-31.xml";
     parse(file3);
     //        databaseConnection();
@@ -48,7 +48,7 @@ public class Entry {
   public File getFile(String filename) {
     File file;
     String basePath =
-        "/home/steve/projects/2_java/XBRLparser/src/main/resources/schemas/us-gaap/entire/";
+        "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/us-gaap/entire/";
     File fileBase = new File(basePath);
     File fileInput = new File(filename);
 
@@ -65,7 +65,7 @@ public class Entry {
           && !filename.startsWith("../")
           && !filename.contains("http://")) {
         String altBasePath =
-            "/home/steve/projects/2_java/XBRLparser/src/main/resources/schemas/sec/";
+            "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/sec/";
         File altFileBase = new File(altBasePath);
         file = new File(altFileBase, filename);
       } else if (filename.contains("http://")) {
@@ -92,11 +92,11 @@ public class Entry {
     System.out.println("filename: " + filename);
     this.currentFile = filename;
     String basePath =
-        "/home/steve/projects/2_java/XBRLparser/src/main/resources/schemas/us-gaap/entire/";
+        "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/us-gaap/entire/";
     File fileBase = new File(basePath);
     File fileInput = new File(filename);
     String allEntryPoint =
-        "/home/steve/projects/2_java/XBRLparser/src/main/resources/schemas/us-gaap/entire/us-gaap-entryPoint-all-2017-01-31.xsd";
+        "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/us-gaap/entire/us-gaap-entryPoint-all-2017-01-31.xsd";
     try {
       File file = getFile(filename);
       if (file == null) {
@@ -170,7 +170,7 @@ public class Entry {
           System.out.print(attribute.getName() + " : "); // todo remove dev item
           System.out.println(attribute.getValue()); // todo remove dev item
           if (attribute.getName().equals("schemaLocation")) {
-            //            parse(attribute.getValue());
+                        parse(attribute.getValue());
           }
         }
       }
