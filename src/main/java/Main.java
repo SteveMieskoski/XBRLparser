@@ -6,6 +6,7 @@ import xbrl.experimentalParsers.extendedLink.ExtendedLinkOrig;
 import xbrl.experimentalParsers.priorExps.DigParseDemo;
 import xbrl.factProcessor.FactProcessor;
 import xbrl.factProcessor.FundamentalAccountingFacts;
+import xbrlSchemas.Entry;
 
 import java.io.File;
 
@@ -13,7 +14,14 @@ public class Main {
 
   public static void main(String[] args) {
 
-    extendedLinkTreeThingTrial();
+//    extendedLinkTreeThingTrial();
+    schemaParse();
+  }
+
+  private static void schemaParse() {
+    String filename =
+        "/home/steve/projects/2_java/XBRLparser/src/main/resources/schemas/sec/us-gaap-2017-01-31.xsd";
+    new Entry();
   }
 
   private static void factDemo() {
@@ -60,7 +68,7 @@ public class Main {
   private static void extendedLinkTreeThingTrial() {
     // can handle calculation extended links (generally)
     String filename =
-            "/media/sysadmin/projects/Fin/xbrl-parsers_scraps/XBRLparser/demo_data/0001558370-17-006547-xbrl/ktyb-20170630_pre.xml";
+        "/media/sysadmin/projects/Fin/xbrl-parsers_scraps/XBRLparser/demo_data/0001558370-17-006547-xbrl/ktyb-20170630_pre.xml";
     System.out.println("****LabelTree Processor****");
 
     ExtendedLink processor = new ExtendedLink();
