@@ -351,7 +351,10 @@
   <xsd:element name="OtherLoansMember" id="ktyb_OtherLoansMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
   <xsd:element name="FinancingReceivableAccruedInterestReceivable" id="ktyb_FinancingReceivableAccruedInterestReceivable" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant" />
   <xsd:element name="FinancingReceivablePercentageOfNonaccrualInvestmentSecuredByRealEstate" id="ktyb_FinancingReceivablePercentageOfNonaccrualInvestmentSecuredByRealEstate" type="num:percentItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant" />
-  <xsd:element name="FinancingReceivableMinimumPeriodForWhichPrincipalOrInterestInDefaultForLoansToBeConsideredAsNonaccrual" id="ktyb_FinancingReceivableMinimumPeriodForWhichPrincipalOrInterestInDefaultForLoansToBeConsideredAsNonaccrual" type="xbrli:durationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />
+  <xsd:element
+          name="FinancingReceivableMinimumPeriodForWhichPrincipalOrInterestInDefaultForLoansToBeConsideredAsNonaccrual"
+          id="ktyb_FinancingReceivableMinimumPeriodForWhichPrincipalOrInterestInDefaultForLoansToBeConsideredAsNonaccrual"
+          type="xbrli:durationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
   <xsd:element name="FinancingReceivableMaximumPeriodPastDueForLoansToBeConsideredImpaired" id="ktyb_FinancingReceivableMaximumPeriodPastDueForLoansToBeConsideredImpaired" type="xbrli:durationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />
   <element id="ktyb_FinancingReceivableRecordedInvestmentPastDueAndNonAccrualStatus" name="FinancingReceivableRecordedInvestmentPastDueAndNonAccrualStatus" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" xbrli:balance="debit" xmlns="http://www.w3.org/2001/XMLSchema" />
   <xsd:element name="FinancingReceivableMinimumPeriodPastDueForLoansToBeConsideredAsNonPerforming" id="ktyb_FinancingReceivableMinimumPeriodPastDueForLoansToBeConsideredAsNonPerforming" type="xbrli:durationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />

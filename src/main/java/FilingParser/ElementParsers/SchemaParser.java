@@ -1,12 +1,15 @@
-package ElementParsers;
+package FilingParser.ElementParsers;
 
+import FilingParser.ElementTypes.Context;
 import FilingParser.FilingEntry;
 import org.dom4j.Attribute;
 import org.dom4j.Element;
 import org.dom4j.ElementHandler;
 import org.dom4j.ElementPath;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class SchemaParser implements ElementHandler {
     Element parent = null;
@@ -27,6 +30,7 @@ public class SchemaParser implements ElementHandler {
             // dev item
             parent = element.getParent();
             parentPath = element.getUniquePath();
+
         } else {
             if (element.getParent().isRootElement()
                     || (element.getParent().getPath().startsWith("/linkbase")
@@ -52,7 +56,7 @@ public class SchemaParser implements ElementHandler {
         for (Iterator<Attribute> attrIter = element.attributeIterator(); attrIter.hasNext(); ) {
             Attribute attribute = attrIter.next();
             if (attribute != null) {
-                System.out.print(attribute.getName() + " : "); // todo remove dev item
+                System.out.print("schema -: " +attribute.getName() + " : "); // todo remove dev item
                 System.out.println(attribute.getValue()); // todo remove dev item
                 if (attribute.getName().equals("schemaLocation")) {
                     this.filingEntry.parse(attribute.getValue());

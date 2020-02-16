@@ -1,4 +1,5 @@
 import FilingParser.FilingEntry;
+import FilingParser.ParserEntry;
 import taxonomyParser.TaxonomyEntry;
 import xbrl.experimentalParsers.currentExp.LabelNode;
 import xbrl.experimentalParsers.currentExp.LabelTreeIterator;
@@ -29,7 +30,7 @@ public class Main {
   private static void newParser() {
     String filename =
             "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/sec/us-gaap-2017-01-31.xsd";
-    new FilingEntry();
+    new ParserEntry();
   }
 
   private static void schemaParse() {

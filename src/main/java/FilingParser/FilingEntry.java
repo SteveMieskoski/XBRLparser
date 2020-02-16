@@ -1,22 +1,15 @@
 package FilingParser;
 
-import ElementParsers.BaseXbrlParser;
-import ElementParsers.SchemaParser;
 import org.dom4j.*;
 import org.dom4j.io.SAXReader;
-import org.xml.sax.EntityResolver;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
 import xbrl.schemaElementTypes.SchemaContent;
-import xbrl.schemaElementTypes.SchemaElement;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
+import java.util.List;
 
 public class FilingEntry {
 
@@ -28,8 +21,13 @@ public class FilingEntry {
   HashSet<String> ids = new HashSet<>();
   ArrayList<String> cache = new ArrayList<>();
   boolean isXsd = false;
+  List<List<Element>> elements = new ArrayList<>();
+  List<String> extendedPrefixes = new ArrayList<>();
 
   public FilingEntry() {
+    extendedPrefixes.add(
+        "us-gaap"); // <- need to remove this hard coding and get this via parsing (i.e.
+    // programmatically)
     String allEntryPoint =
         "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/us-gaap/entire/us-gaap-entryPoint-all-2017-01-31.xsd";
     String filename =
@@ -50,14 +48,9 @@ public class FilingEntry {
   }
 
   public void preParse(String filename) {
-    if (filename.endsWith("xsd")) {
-      isXsd = true;
-      File fileInput = new File(filename);
-      basePath = fileInput.getParent();
-      altBasePath = basePath;
-    } else {
-      isXsd = false;
-    }
+    File fileInput = new File(filename);
+    basePath = fileInput.getParent();
+    altBasePath = basePath;
     parse(filename);
   }
 
@@ -79,7 +72,6 @@ public class FilingEntry {
     File fileInput = new File(filename);
 
     try {
-
       System.out.println("-----------------------------------------"); // todo remove dev item
       System.out.println(filename); // todo remove dev item
       if (!cache.contains(filename)) {
@@ -124,17 +116,17 @@ public class FilingEntry {
       System.out.println(file.getCanonicalPath()); // todo remove dev item
       SAXReader reader = new SAXReader();
       reader.setDefaultHandler(new FilingRawParser(this));
-//      reader.addHandler("/schema", new SchemaParser(this));
-//      reader.addHandler("/xbrl/*", new BaseXbrlParser(this));
       Document document = reader.read(file);
-      //      demo(document);
-      //      Element root = document.getRootElement();
 
     } catch (Exception e) {
       e.printStackTrace();
     }
-    //    System.out.println("============================"); // todo remove dev item
-    //    System.out.println(attrs); // todo remove dev item
-    //    System.out.println(ids); // todo remove dev item
+    System.out.println(
+        "====================================================================================="); // todo remove dev item
+    //    System.out.println(elements); // todo remove dev item
+    ParserTwo parserTwo = new ParserTwo(this);
+    //        System.out.println(parserTwo.getContexts()); // todo remove dev item
+    //    System.out.println(parserTwo.getItemConcepts()); // todo remove dev item
+    //    System.out.println(parserTwo.getCalculations()); // todo remove dev item
   }
 }
