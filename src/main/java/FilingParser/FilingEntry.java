@@ -1,5 +1,7 @@
 package FilingParser;
 
+import ElementParsers.BaseXbrlParser;
+import ElementParsers.SchemaParser;
 import org.dom4j.*;
 import org.dom4j.io.SAXReader;
 import org.xml.sax.EntityResolver;
@@ -20,6 +22,8 @@ public class FilingEntry {
 
   SchemaContent schemaContent;
   String currentFile;
+  String basePath = null;
+  String altBasePath = null;
   HashSet<String> attrs = new HashSet<>();
   HashSet<String> ids = new HashSet<>();
   ArrayList<String> cache = new ArrayList<>();
@@ -37,12 +41,24 @@ public class FilingEntry {
     String file3 =
         "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/us-gaap/dis/us-gaap-dis-cc-def-2017-01-31.xml";
     String file4 =
-        "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/demo_data/0001558370-17-006547-xbrl/ktyb-20170630.xsd";
+        "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/demo_data/0001558370-17-006547-xbrl/ktyb-20170630.xml";
     String file5 =
         "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/demo_data/0001558370-17-006547-xbrl/ktyb-20170630_cal.xml";
     String fileRelative = "../elts/us-gaap-dep-pre-2017-01-31.xml";
-    parse(file4);
+    preParse(file4);
     //        databaseConnection();
+  }
+
+  public void preParse(String filename) {
+    if (filename.endsWith("xsd")) {
+      isXsd = true;
+      File fileInput = new File(filename);
+      basePath = fileInput.getParent();
+      altBasePath = basePath;
+    } else {
+      isXsd = false;
+    }
+    parse(filename);
   }
 
   public File getFile(String filename) {
@@ -50,16 +66,18 @@ public class FilingEntry {
       return null;
     }
     File file;
-    String basePath =
-        "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/us-gaap/entire/";
+    if (basePath == null) {
+      basePath =
+          "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/us-gaap/entire/";
+    }
+
+    if (altBasePath == null) {
+      altBasePath = "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/sec/";
+    }
+
     File fileBase = new File(basePath);
     File fileInput = new File(filename);
 
-    if (filename.endsWith("xsd")) {
-      isXsd = true;
-    } else {
-      isXsd = false;
-    }
     try {
 
       System.out.println("-----------------------------------------"); // todo remove dev item
@@ -72,8 +90,6 @@ public class FilingEntry {
       if (!filename.startsWith("/")
           && !filename.startsWith("../")
           && !filename.contains("http://")) {
-        String altBasePath =
-            "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/sec/";
         File altFileBase = new File(altBasePath);
         file = new File(altFileBase, filename);
       } else if (filename.contains("http://")) {
@@ -107,8 +123,9 @@ public class FilingEntry {
 
       System.out.println(file.getCanonicalPath()); // todo remove dev item
       SAXReader reader = new SAXReader();
-      reader.setDefaultHandler(new FilingRawParser(this, isXsd));
-
+      reader.setDefaultHandler(new FilingRawParser(this));
+//      reader.addHandler("/schema", new SchemaParser(this));
+//      reader.addHandler("/xbrl/*", new BaseXbrlParser(this));
       Document document = reader.read(file);
       //      demo(document);
       //      Element root = document.getRootElement();
