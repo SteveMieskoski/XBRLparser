@@ -1,4 +1,4 @@
-package newParser;
+package FilingParser;
 
 public interface SqliteXbrlDdl {
 
