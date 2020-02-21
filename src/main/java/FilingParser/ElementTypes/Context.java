@@ -9,15 +9,15 @@ import java.util.List;
 import java.util.Map;
 
 public class Context {
-  String id;
-  String entityIdentifier;
-  String identifierSchema;
-  List<XmlEntry> segments = new ArrayList<>();
-  String periodStart;
-  String periodEnd = null;
-  Boolean isInstant;
-  Boolean isForever;
-  String scenario;
+  public String id;
+  public String entityIdentifier;
+  public  String identifierSchema;
+  public  List<XmlEntry> segments = new ArrayList<>();
+  public String periodStart;
+  public String periodEnd = null;
+  public Boolean isInstant;
+  public Boolean isForever = false;
+  public String scenario;
 
   public Context() {}
 
@@ -56,8 +56,9 @@ public class Context {
         Attribute attribute = attrIter.next();
         if (attribute != null) {
           withAttributes = true;
-          System.out.print(attribute.getName() + " : "); // todo remove dev item
-          System.out.println(attribute.getValue()); // todo remove dev item
+//          System.out.println("Context.parseHandler"); // todo remove dev item
+//          System.out.print(attribute.getName() + " : "); // todo remove dev item
+//          System.out.println(attribute.getValue()); // todo remove dev item
           xmlEntry = new XmlEntry();
           xmlEntry.setAttribute(attribute.getName(), attribute.getValue());
         }
@@ -122,7 +123,19 @@ public class Context {
     this.scenario = scenario;
   }
 
-    @Override
+  public String getIdentifierSchema() {
+    return identifierSchema;
+  }
+
+  public Boolean getInstant() {
+    return isInstant;
+  }
+
+  public Boolean getForever() {
+    return isForever;
+  }
+
+  @Override
     public String toString() {
         return "\nContext{" +
                 "id='" + id + '\'' +

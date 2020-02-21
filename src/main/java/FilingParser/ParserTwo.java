@@ -34,6 +34,7 @@ public class ParserTwo {
   }
 
   public ParserTwo(FilingEntry filingEntry) {
+    System.out.println("Begin processing parsed"); // todo remove dev item
     this.elements = filingEntry.elements;
     this.extendedPrefixes = filingEntry.extendedPrefixes;
     process();
@@ -49,12 +50,12 @@ public class ParserTwo {
           calculations.add(new ExtendedLink(element));
           break;
         default:
-          System.out.println("----------------------------------------------------"); // todo remove dev item
+//          System.out.println("----------------------------------------------------"); // todo remove dev item
           for (Element el : element) {
-              System.out.println(el.getName() + " : " + el.getPath()); // todo remove dev item
+//              System.out.println(el.getName() + " : " + el.getPath()); // todo remove dev item
               if(this.extendedPrefixes.contains(el.getNamespacePrefix())){
                 if(!el.getName().contains("TextBlock")){
-                  System.out.println(el.getNamespacePrefix()); // todo remove dev item
+//                  System.out.println(el.getNamespacePrefix()); // todo remove dev item
                   itemConcepts.add(ItemConcept.parseAndBuild(this.extendedPrefixes, el));
                 } else {
                   iinLineIemConcepts.add(ItemConcept.parseAndBuild(this.extendedPrefixes, el));

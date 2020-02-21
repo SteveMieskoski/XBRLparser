@@ -6,18 +6,64 @@ import org.dom4j.Element;
 import java.util.*;
 
 public class ExtendedLink {
-  String tag;
-  String type;
-  String role;
-  String title;
-  Map<String, String> additional = null;
+  public String uuid;
+  public String tag;
+  public String type;
+  public String role;
+  public String title;
+  public String schema;
+  public Map<String, String> additional = null;
 
-  List<Arc> arcs = new ArrayList<>();
-  List<Loc> locs = new ArrayList<>();
+  public List<Arc> arcs = new ArrayList<>();
+  public List<Loc> locs = new ArrayList<>();
 
-    public ExtendedLink(){}
+  public ExtendedLink() {}
+
+  //  public ExtendedLink(List<Element> elements){
+  //    this(elements, "default");
+  //  }
 
   public ExtendedLink(List<Element> elements) {
+    uuid = UUID.randomUUID().toString();
+    Element parent = elements.get(0);
+    this.tag = parent.getName();
+    String arcName = parent.getName().replace("Link", "Arc");
+    for (Iterator<Attribute> attrIter = parent.attributeIterator(); attrIter.hasNext(); ) {
+      Attribute attribute = attrIter.next();
+      if (attribute != null) {
+        switch (attribute.getName()) {
+          case "type":
+            this.type = attribute.getValue();
+            break;
+          case "role":
+            this.role = attribute.getValue();
+            break;
+          case "title":
+            this.title = attribute.getValue();
+            break;
+          case "xmlns":
+            this.schema = attribute.getValue();
+            break;
+          default:
+            if (additional == null) {
+              additional = new HashMap<>();
+              additional.put(attribute.getName(), attribute.getValue());
+            }
+        }
+      }
+    }
+    for (Element element : elements) {
+      if (element.getName().equals(arcName)) {
+        arcs.add(new Arc(element));
+      }
+
+      if (element.getName().equals("loc")) {
+        locs.add(new Loc(element));
+      }
+    }
+  }
+
+  public void parseHandler(List<Element> elements) {
     Element parent = elements.get(0);
     this.tag = parent.getName();
     String arcName = parent.getName().replace("Link", "Arc");
@@ -53,54 +99,16 @@ public class ExtendedLink {
     }
   }
 
-
-
-    public void parseHandler(List<Element> elements) {
-        Element parent = elements.get(0);
-        this.tag = parent.getName();
-        String arcName = parent.getName().replace("Link", "Arc");
-        for (Iterator<Attribute> attrIter = parent.attributeIterator(); attrIter.hasNext(); ) {
-            Attribute attribute = attrIter.next();
-            if (attribute != null) {
-                switch (attribute.getName()) {
-                    case "type":
-                        this.type = attribute.getValue();
-                        break;
-                    case "role":
-                        this.role = attribute.getValue();
-                        break;
-                    case "title":
-                        this.title = attribute.getValue();
-                        break;
-                    default:
-                        if (additional == null) {
-                            additional = new HashMap<>();
-                            additional.put(attribute.getName(), attribute.getValue());
-                        }
-                }
-            }
-        }
-        for (Element element : elements) {
-            if (element.getName().equals(arcName)) {
-                arcs.add(new Arc(element));
-            }
-
-            if (element.getName().equals("loc")) {
-                locs.add(new Loc(element));
-            }
-        }
-    }
-
   public class Arc {
-    String type;
-    String from;
-    String to;
-    String arcrole;
-    String order;
-    String use;
-    String weight;
-    String priority;
-    Map<String, String> additional = null;
+    public String type;
+    public String from;
+    public String to;
+    public String arcrole;
+    public String order;
+    public String use;
+    public String weight;
+    public String priority;
+    public Map<String, String> additional = null;
 
     public Arc(Element element) {
       parseHandler(element);
@@ -145,28 +153,46 @@ public class ExtendedLink {
       }
     }
 
-      @Override
-      public String toString() {
-          return "\n\tArc{" +
-                  "type='" + type + '\'' +
-                  ", from='" + from + '\'' +
-                  ", to='" + to + '\'' +
-                  ", arcrole='" + arcrole + '\'' +
-                  ", order='" + order + '\'' +
-                  ", use='" + use + '\'' +
-                  ", weight='" + weight + '\'' +
-                  ", priority='" + priority + '\'' +
-                  ", additional=" + additional +
-                  '}';
-      }
+    @Override
+    public String toString() {
+      return "\n\tArc{"
+          + "type='"
+          + type
+          + '\''
+          + ", from='"
+          + from
+          + '\''
+          + ", to='"
+          + to
+          + '\''
+          + ", arcrole='"
+          + arcrole
+          + '\''
+          + ", order='"
+          + order
+          + '\''
+          + ", use='"
+          + use
+          + '\''
+          + ", weight='"
+          + weight
+          + '\''
+          + ", priority='"
+          + priority
+          + '\''
+          + ", additional="
+          + additional
+          + '}';
+    }
   }
 
   public class Loc {
-    String href;
-    String label;
-    String role; // Optional
-    String title; // Optional
-    Map<String, String> additional = null;
+    public String href;
+    public String type;
+    public String label;
+    public String role; // Optional
+    public String title; // Optional
+    public Map<String, String> additional = null;
 
     public Loc(Element element) {
       parseHandler(element);
@@ -189,6 +215,9 @@ public class ExtendedLink {
             case "title":
               this.title = attribute.getValue();
               break;
+            case "type":
+              this.type = attribute.getValue();
+              break;
             default:
               if (additional == null) {
                 additional = new HashMap<>();
@@ -199,29 +228,48 @@ public class ExtendedLink {
       }
     }
 
-      @Override
-      public String toString() {
-          return "\n\tLoc{" +
-                  "href='" + href + '\'' +
-                  ", label='" + label + '\'' +
-                  ", role='" + role + '\'' +
-                  ", title='" + title + '\'' +
-                  ", additional=" + additional +
-                  '}';
-      }
-  }
-
-
     @Override
     public String toString() {
-        return "\nExtendedLink{" +
-                "tag='" + tag + '\'' +
-                ", type='" + type + '\'' +
-                ", role='" + role + '\'' +
-                ", title='" + title + '\'' +
-                ", additional=" + additional +
-                ", arcs=" + arcs +
-                ", locs=" + locs +
-                '}';
+      return "\n\tLoc{"
+          + "href='"
+          + href
+          + '\''
+          + ", label='"
+          + label
+          + '\''
+          + ", role='"
+          + role
+          + '\''
+          + ", title='"
+          + title
+          + '\''
+          + ", additional="
+          + additional
+          + '}';
     }
+  }
+
+  @Override
+  public String toString() {
+    return "\nExtendedLink{"
+        + "tag='"
+        + tag
+        + '\''
+        + ", type='"
+        + type
+        + '\''
+        + ", role='"
+        + role
+        + '\''
+        + ", title='"
+        + title
+        + '\''
+        + ", additional="
+        + additional
+        + ", arcs="
+        + arcs
+        + ", locs="
+        + locs
+        + '}';
+  }
 }

@@ -1,5 +1,9 @@
 package FilingParser;
 
+import FilingParser.ElementTypes.Context;
+import FilingParser.ElementTypes.ExtendedLink;
+import FilingParser.ElementTypes.ItemConcept;
+import FilingParser.ElementTypes.XmlEntry;
 import org.dom4j.*;
 import org.dom4j.io.SAXReader;
 import xbrl.schemaElementTypes.SchemaContent;
@@ -23,6 +27,7 @@ public class FilingEntry {
   boolean isXsd = false;
   List<List<Element>> elements = new ArrayList<>();
   List<String> extendedPrefixes = new ArrayList<>();
+  DatabaseHandler databaseHandler = new DatabaseHandler();
 
   public FilingEntry() {
     extendedPrefixes.add(
@@ -44,7 +49,12 @@ public class FilingEntry {
         "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/demo_data/0001558370-17-006547-xbrl/ktyb-20170630_cal.xml";
     String fileRelative = "../elts/us-gaap-dep-pre-2017-01-31.xml";
     preParse(file4);
-    //        databaseConnection();
+    //    databaseHandler.insertFacts(
+    //            "file1",
+    //            "file1",
+    //            "file1",
+    //            "file1",
+    //            "file1");
   }
 
   public void preParse(String filename) {
@@ -128,5 +138,82 @@ public class FilingEntry {
     //        System.out.println(parserTwo.getContexts()); // todo remove dev item
     //    System.out.println(parserTwo.getItemConcepts()); // todo remove dev item
     //    System.out.println(parserTwo.getCalculations()); // todo remove dev item
+    persist(parserTwo);
+  }
+
+  public void persist(ParserTwo parserTwo) {
+    insertFacts(parserTwo);
+    insertExtendedLinks(parserTwo);
+    insertContexts(parserTwo);
+
+
+
+  }
+
+  public void insertFacts(ParserTwo parserTwo){
+    System.out.println("Insert Facts"); // todo remove dev item
+    for (ItemConcept itemConcept : parserTwo.getItemConcepts()) {
+      databaseHandler.insertFacts(
+              itemConcept.prefix,
+              itemConcept.tag,
+              itemConcept.contextRef,
+              itemConcept.unitRef,
+              itemConcept.decimals,
+              itemConcept.value);
+    }
+  }
+
+  public void insertExtendedLinks(ParserTwo parserTwo){
+    System.out.println("Insert Extended Links"); // todo remove dev item
+    for (ExtendedLink extendedLink : parserTwo.getCalculations()) {
+      databaseHandler.insertLinkBase(
+              extendedLink.uuid,
+              extendedLink.tag,
+              extendedLink.type,
+              extendedLink.role,
+              extendedLink.title,
+              extendedLink.schema);
+      for (ExtendedLink.Arc arc : extendedLink.arcs) {
+        databaseHandler.insertArcs(
+                extendedLink.uuid,
+                arc.type,
+                arc.arcrole,
+                arc.from,
+                arc.to,
+                arc.order,
+                arc.use,
+                arc.weight,
+                arc.priority);
+      }
+      for (ExtendedLink.Loc loc : extendedLink.locs) {
+        databaseHandler.insertLocator(extendedLink.uuid, loc.type, loc.href, loc.label);
+      }
+    }
+  }
+
+  public void insertContexts(ParserTwo parserTwo){
+    System.out.println("Insert Contexts"); // todo remove dev item
+    for (Context context : parserTwo.getContexts()) {
+      String segmentDim = null;
+      String segmentValue = null;
+      if (!context.segments.isEmpty()) {
+        XmlEntry xmlEntry = context.segments.get(0);
+        segmentValue = xmlEntry.getText();
+        if (xmlEntry.attributes.containsKey("dimension")) {
+          segmentDim = xmlEntry.attributes.get("dimension");
+        }
+      }
+
+      databaseHandler.insertContexts(
+              context.getId(),
+              context.getEntityIdentifier(),
+              context.getIdentifierSchema(),
+              context.getPeriodStart(),
+              context.getPeriodEnd(),
+              context.getInstant(),
+              context.getForever(),
+              segmentDim,
+              segmentValue);
+    }
   }
 }

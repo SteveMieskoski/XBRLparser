@@ -14,10 +14,12 @@ public interface SqliteMySchemaXbrl {
           + "(\n"
           + "    linkBase_key INTEGER PRIMARY KEY AUTOINCREMENT,\n"
           + "    ref_id      TEXT,\n"
+          + "    tag         TEXT,\n"
           + "    type        TEXT,\n"
           + "    role        TEXT,\n"
           + "    title       TEXT,\n"
-          + "    schema      TEXT\n"
+          + "    schema      TEXT\n,"
+          + "    doc_id      TEXT\n"
           + ");\n";
 
   static String locators =
@@ -27,7 +29,8 @@ public interface SqliteMySchemaXbrl {
           + "    ref_id     TEXT,\n"
           + "    type       TEXT,\n"
           + "    href       TEXT,\n"
-          + "    label      TEXT\n"
+          + "    label      TEXT,\n"
+          + "    doc_id      TEXT\n"
           + ")";
 
   static String arcs =
@@ -42,18 +45,21 @@ public interface SqliteMySchemaXbrl {
           + "    'order'  TEXT,\n"
           + "    use      TEXT,\n"
           + "    weight   TEXT,\n"
-          + "    priority TEXT\n"
+          + "    priority TEXT,\n"
+          + "    doc_id   TEXT\n"
           + ")";
 
   static String facts =
       "CREATE TABLE facts\n"
           + "(\n"
           + "    fact_key    INTEGER PRIMARY KEY AUTOINCREMENT,\n"
+          + "    prefix      TEXT,\n"
           + "    concept_ref TEXT,\n"
           + "    context_ref TEXT,\n"
           + "    unit_ref    TEXT,\n"
           + "    decimals    TEXT,\n"
-          + "    value       TEXT\n"
+          + "    value       TEXT,\n"
+          + "    doc_id      TEXT\n"
           + ")";
 
   static String contexts =
@@ -65,8 +71,10 @@ public interface SqliteMySchemaXbrl {
           + "    identifier_schema TEXT,\n"
           + "    start_date        TEXT,\n"
           + "    end_date          TEXT,\n"
-          + "    isInstant         NUMERIC\n "
+          + "    isInstant         NUMERIC,\n "
+          + "    isForever         NUMERIC,\n "
           + "    segment_dim       TEXT,\n"
-          + "    segment_value     TEXT"
+          + "    segment_value     TEXT,\n"
+          + "    doc_id            TEXT\n"
           + ")";
 }

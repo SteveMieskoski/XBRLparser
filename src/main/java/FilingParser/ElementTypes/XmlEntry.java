@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class XmlEntry {
-    String tag;
-    Map<String, String> attributes = new HashMap<>();
-    String text;
+   public String tag;
+    public Map<String, String> attributes = new HashMap<>();
+    public String text;
 
     public XmlEntry() {
     }
