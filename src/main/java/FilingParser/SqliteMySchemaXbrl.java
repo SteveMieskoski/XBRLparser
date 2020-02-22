@@ -7,6 +7,7 @@ public interface SqliteMySchemaXbrl {
           + "DROP TABLE IF EXISTS locators;\n"
           + "DROP TABLE IF EXISTS arcs;\n"
           + "DROP TABLE IF EXISTS facts;\n"
+          + "DROP TABLE IF EXISTS roleRefs;\n"
           + "DROP TABLE IF EXISTS contexts;";
 
   static String linkBases =
@@ -76,5 +77,17 @@ public interface SqliteMySchemaXbrl {
           + "    segment_dim       TEXT,\n"
           + "    segment_value     TEXT,\n"
           + "    doc_id            TEXT\n"
+          + ")";
+
+  static String roleRefs =
+      "CREATE TABLE roleRefs\n"
+          + "(\n"
+          + "    roleRef_key INTEGER PRIMARY KEY AUTOINCREMENT,\n"
+          + "    roleRef_id  TEXT,\n"
+          + "    schema_def  TEXT,\n"
+          + "    type        TEXT,\n"
+          + "    href        TEXT,\n"
+          + "    role_uri    TEXT,\n"
+          + "    doc_id      TEXT\n"
           + ")";
 }

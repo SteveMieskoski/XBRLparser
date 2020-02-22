@@ -8,11 +8,21 @@ public class DatabaseHandler {
   String doc_id;
 
   public DatabaseHandler() {
-    this(UUID.randomUUID().toString());
+    this(UUID.randomUUID().toString(), true);
   }
 
-  public DatabaseHandler(String doc_id) {
+  public DatabaseHandler(boolean doReset) {
+    this(UUID.randomUUID().toString(), doReset);
+  }
+
+  public DatabaseHandler(String doc_id, boolean doReset) {
     this.doc_id = doc_id;
+    if(doReset){
+      reset();
+    }
+  }
+
+  public void reset(){
     Connection connection = null;
     try {
       // load the sqlite-JDBC driver using the current class loader
@@ -29,6 +39,7 @@ public class DatabaseHandler {
       statement.executeUpdate(SqliteMySchemaXbrl.arcs);
       statement.executeUpdate(SqliteMySchemaXbrl.facts);
       statement.executeUpdate(SqliteMySchemaXbrl.contexts);
+      statement.executeUpdate(SqliteMySchemaXbrl.roleRefs);
 
     } catch (Exception e) {
       // if the error message is "out of memory",
@@ -254,6 +265,52 @@ public class DatabaseHandler {
       preparedStatement.setString(8, segment_dim);
       preparedStatement.setString(9, segment_value);
       preparedStatement.setString(10, doc_id);
+      preparedStatement.executeUpdate();
+
+      return true;
+
+    } catch (Exception e) {
+      System.out.println("Insert ERROR"); // todo remove dev item
+      e.printStackTrace();
+      // if the error message is "out of memory",
+      // it probably means no database file is found
+      System.err.println(e.getMessage());
+      return false;
+    } finally {
+      try {
+        if (connection != null) connection.close();
+      } catch (SQLException e) {
+        System.out.println("Close ERROR"); // todo remove dev item
+        // connection close failed.
+        System.err.println(e);
+      }
+    }
+  }
+
+  public boolean insertRoleRefs(
+          String roleRef_id,
+          String schema_def,
+          String type,
+          String href,
+          String role_uri) {
+    Connection connection = null;
+    try {
+
+      // load the sqlite-JDBC driver using the current class loader
+      Class.forName("org.sqlite.JDBC");
+      // create a database connection
+      connection = DriverManager.getConnection(connectionURI);
+      //      Statement statement = connection.createStatement();
+      //      statement.setQueryTimeout(30); // set timeout to 30 sec.
+      PreparedStatement preparedStatement =
+              connection.prepareStatement(
+                      "insert into roleRefs (roleRef_id, schema_def, type, href, role_uri, doc_id) values(?,?,?,?,?,?)");
+      preparedStatement.setString(1, roleRef_id);
+      preparedStatement.setString(2, schema_def);
+      preparedStatement.setString(3, type);
+      preparedStatement.setString(4, href);
+      preparedStatement.setString(5, role_uri);
+      preparedStatement.setString(6, doc_id);
       preparedStatement.executeUpdate();
 
       return true;

@@ -1,4 +1,4 @@
-package FilingParser.ElementTypes;
+package xbrlSchemas.ElementTypes;
 
 public class ExtendedTypes {
     String name;

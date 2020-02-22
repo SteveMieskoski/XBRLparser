@@ -1,9 +1,6 @@
 package FilingParser;
 
-import FilingParser.ElementTypes.Context;
-import FilingParser.ElementTypes.ExtendedLink;
-import FilingParser.ElementTypes.ItemConcept;
-import FilingParser.ElementTypes.XmlEntry;
+import FilingParser.ElementTypes.*;
 import org.dom4j.*;
 import org.dom4j.io.SAXReader;
 import xbrl.schemaElementTypes.SchemaContent;
@@ -27,7 +24,8 @@ public class FilingEntry {
   boolean isXsd = false;
   List<List<Element>> elements = new ArrayList<>();
   List<String> extendedPrefixes = new ArrayList<>();
-  DatabaseHandler databaseHandler = new DatabaseHandler();
+  DatabaseHandler databaseHandler = new DatabaseHandler();; //new DatabaseHandler(false);
+  boolean shouldPersist = true; //false; // true;
 
   public FilingEntry() {
     extendedPrefixes.add(
@@ -138,16 +136,17 @@ public class FilingEntry {
     //        System.out.println(parserTwo.getContexts()); // todo remove dev item
     //    System.out.println(parserTwo.getItemConcepts()); // todo remove dev item
     //    System.out.println(parserTwo.getCalculations()); // todo remove dev item
+//        System.out.println(parserTwo.getRoleRefs()); // todo remove dev item
     persist(parserTwo);
   }
 
   public void persist(ParserTwo parserTwo) {
-    insertFacts(parserTwo);
-    insertExtendedLinks(parserTwo);
-    insertContexts(parserTwo);
-
-
-
+    if(shouldPersist){
+      insertFacts(parserTwo);
+      insertExtendedLinks(parserTwo);
+      insertContexts(parserTwo);
+      insertRoleRefs(parserTwo);
+    }
   }
 
   public void insertFacts(ParserTwo parserTwo){
@@ -214,6 +213,18 @@ public class FilingEntry {
               context.getForever(),
               segmentDim,
               segmentValue);
+    }
+  }
+
+  public void insertRoleRefs(ParserTwo parserTwo){
+    System.out.println("Insert Role refs"); // todo remove dev item
+    for (RoleRef roleRef : parserTwo.getRoleRefs()) {
+      databaseHandler.insertRoleRefs(
+              roleRef.roleRefId,
+              roleRef.schemaDef,
+              roleRef.type,
+              roleRef.href,
+              roleRef.roleUri);
     }
   }
 }
