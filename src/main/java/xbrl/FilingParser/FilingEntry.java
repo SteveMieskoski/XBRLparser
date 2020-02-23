@@ -4,7 +4,6 @@ import xbrl.FilingParser.Database.DatabaseHandler;
 import xbrl.FilingParser.Database.DatabaseInsert;
 import org.dom4j.*;
 import org.dom4j.io.SAXReader;
-import xbrl.schemaElementTypes.SchemaContent;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -15,7 +14,6 @@ import java.util.List;
 
 public class FilingEntry {
 
-  SchemaContent schemaContent;
   String currentFile;
   String basePath = null;
   String altBasePath = null;

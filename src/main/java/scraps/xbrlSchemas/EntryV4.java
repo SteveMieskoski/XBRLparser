@@ -5,7 +5,6 @@ import org.dom4j.io.SAXReader;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
-import xbrl.schemaElementTypes.SchemaContent;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,7 +15,6 @@ import java.util.HashSet;
 
 public class EntryV4 {
 
-  SchemaContent schemaContent;
   String currentFile;
   HashSet<String> attrs = new HashSet<>();
   HashSet<String> ids = new HashSet<>();

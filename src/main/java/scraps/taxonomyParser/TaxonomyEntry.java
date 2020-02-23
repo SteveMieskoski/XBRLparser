@@ -2,7 +2,6 @@ package scraps.taxonomyParser;
 
 import org.dom4j.*;
 import org.dom4j.io.SAXReader;
-import xbrl.schemaElementTypes.SchemaContent;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -16,7 +15,6 @@ import java.util.Iterator;
 
 public class TaxonomyEntry {
 
-  SchemaContent schemaContent;
   String currentFile;
   HashSet<String> attrs = new HashSet<>();
   HashSet<String> ids = new HashSet<>();

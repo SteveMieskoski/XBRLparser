@@ -5,8 +5,7 @@ import org.dom4j.io.SAXReader;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
-import xbrl.schemaElementTypes.SchemaContent;
-import xbrl.schemaElementTypes.SchemaElement;
+
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -14,7 +13,6 @@ import java.util.Iterator;
 
 public class EntryOrig {
 
-    SchemaContent schemaContent;
     String currentFile;
     HashSet<String> attrs = new HashSet<>();
     HashSet<String> ids = new HashSet<>();
@@ -181,7 +179,7 @@ System.out.println(element.getQualifiedName()); // todo remove dev item
 
         @Override
         public void onEnd(ElementPath path) {
-            Element element = path.getCurrent();
+/*            Element element = path.getCurrent();
             SchemaElement schemaElement = new SchemaElement();
             for (Iterator<Attribute> attrIter = element.attributeIterator(); attrIter.hasNext(); ) {
                 Attribute attribute = attrIter.next();
@@ -199,7 +197,7 @@ System.out.println(element.getQualifiedName()); // todo remove dev item
                 }
             }
 
-            element.detach();
+            element.detach();*/
         }
     }
 
