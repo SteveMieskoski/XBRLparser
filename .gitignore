@@ -113,7 +113,7 @@ fabric.properties
 .idea/workspace.xml
 build/
 demo_data/0001558370-17-006547-xbrl/xsdObjs/
-src/main/java/FilingParser.scraps/
+src/main/java/xbrl.FilingParser.scraps/
 src/main/java/xbrl/versionThree/ContextParse.java~
 /src/main/java/xbrl/notes/
 /src/test/java/xbrl/scraps/

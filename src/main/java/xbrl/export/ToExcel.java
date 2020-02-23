@@ -1,5 +1,6 @@
 package xbrl.export;
-
+public class ToExcel {}
+/*
 import org.apache.poi.hssf.usermodel.HSSFDataFormat;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
@@ -308,6 +309,7 @@ public class ToExcel {
 }
 
 
+*/
 /*  public static void createWorkbook(Map<String, Double> values, Period period) {
       try {
           // create a new file
@@ -391,7 +393,9 @@ public class ToExcel {
 //              s.setColumnWidth((short) (cellnum + 1), (short) ((50 * 8) / ((double) 1 / 20)));
               // r.setRowNum(( short ) rownum);
               // create 10 cells (0-9) (the += 2 becomes apparent later
-*//*              for (short cellnum = (short) 0; cellnum < 10; cellnum += 2) {
+*//*
+*/
+/*              for (short cellnum = (short) 0; cellnum < 10; cellnum += 2) {
                   // create a numeric cell
                   c = r.createCell(cellnum);
                   // do some goofy math to demonstrate decimals
@@ -418,6 +422,8 @@ public class ToExcel {
                   // make this column a bit wider
                   s.setColumnWidth((short) (cellnum + 1), (short) ((50 * 8) / ((double) 1 / 20)));
               }*//*
+*/
+/*
               rownum++;
           }
 
@@ -456,3 +462,4 @@ public class ToExcel {
           e.printStackTrace();
       }
   }*/
+
