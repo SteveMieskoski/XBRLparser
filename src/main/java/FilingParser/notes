@@ -1,0 +1,4 @@
+.xsd roleType id => roleRef roleRef_id => roleRef role_uri => linkBase role
+
+
+locator label => arc to -- arc from => locator label

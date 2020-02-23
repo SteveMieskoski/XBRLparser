@@ -1,5 +1,7 @@
 package FilingParser;
 
+import FilingParser.Database.DatabaseHandler;
+import FilingParser.Database.DatabaseInsert;
 import FilingParser.ElementTypes.*;
 import org.dom4j.*;
 import org.dom4j.io.SAXReader;
@@ -24,28 +26,31 @@ public class FilingEntry {
   boolean isXsd = false;
   List<List<Element>> elements = new ArrayList<>();
   List<String> extendedPrefixes = new ArrayList<>();
-  DatabaseHandler databaseHandler = new DatabaseHandler();; //new DatabaseHandler(false);
+  DatabaseHandler databaseHandler; //new DatabaseHandler(false);
   boolean shouldPersist = true; //false; // true;
 
+  String allEntryPoint =
+          "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/us-gaap/entire/us-gaap-entryPoint-all-2017-01-31.xsd";
+  String filename =
+          "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/sec/us-gaap-2017-01-31.xsd";
+  String file1 =
+          "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/us-gaap/dis/us-gaap-dis-cc-cal-2017-01-31.xml";
+  String file2 =
+          "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/us-gaap/dis/us-gaap-dis-acec-def-2017-01-31.xml";
+  String file3 =
+          "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/us-gaap/dis/us-gaap-dis-cc-def-2017-01-31.xml";
+  String file4 =
+          "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/demo_data/0001558370-17-006547-xbrl/ktyb-20170630.xml";
+  String file5 =
+          "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/demo_data/0001558370-17-006547-xbrl/ktyb-20170630_cal.xml";
+  String fileRelative = "../elts/us-gaap-dep-pre-2017-01-31.xml";
+
   public FilingEntry() {
+    databaseHandler = new DatabaseHandler();
     extendedPrefixes.add(
         "us-gaap"); // <- need to remove this hard coding and get this via parsing (i.e.
     // programmatically)
-    String allEntryPoint =
-        "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/us-gaap/entire/us-gaap-entryPoint-all-2017-01-31.xsd";
-    String filename =
-        "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/sec/us-gaap-2017-01-31.xsd";
-    String file1 =
-        "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/us-gaap/dis/us-gaap-dis-cc-cal-2017-01-31.xml";
-    String file2 =
-        "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/us-gaap/dis/us-gaap-dis-acec-def-2017-01-31.xml";
-    String file3 =
-        "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/us-gaap/dis/us-gaap-dis-cc-def-2017-01-31.xml";
-    String file4 =
-        "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/demo_data/0001558370-17-006547-xbrl/ktyb-20170630.xml";
-    String file5 =
-        "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/demo_data/0001558370-17-006547-xbrl/ktyb-20170630_cal.xml";
-    String fileRelative = "../elts/us-gaap-dep-pre-2017-01-31.xml";
+
     preParse(file4);
     //    databaseHandler.insertFacts(
     //            "file1",
@@ -53,6 +58,12 @@ public class FilingEntry {
     //            "file1",
     //            "file1",
     //            "file1");
+  }
+
+
+  public FilingEntry(DatabaseHandler databaseHandler){
+    this.databaseHandler = databaseHandler;
+    preParse(file4);
   }
 
   public void preParse(String filename) {
@@ -133,98 +144,24 @@ public class FilingEntry {
         "====================================================================================="); // todo remove dev item
     //    System.out.println(elements); // todo remove dev item
     ParserTwo parserTwo = new ParserTwo(this);
+    persist(parserTwo);
     //        System.out.println(parserTwo.getContexts()); // todo remove dev item
-    //    System.out.println(parserTwo.getItemConcepts()); // todo remove dev item
+        System.out.println(parserTwo.getItemConcepts()); // todo remove dev item
     //    System.out.println(parserTwo.getCalculations()); // todo remove dev item
 //        System.out.println(parserTwo.getRoleRefs()); // todo remove dev item
-    persist(parserTwo);
+
   }
 
   public void persist(ParserTwo parserTwo) {
     if(shouldPersist){
-      insertFacts(parserTwo);
-      insertExtendedLinks(parserTwo);
-      insertContexts(parserTwo);
-      insertRoleRefs(parserTwo);
+      DatabaseInsert databaseInsert = databaseHandler.getDatabaseInsert();
+      databaseInsert.insertFacts(parserTwo);
+      databaseInsert.insertExtendedLinks(parserTwo);
+      databaseInsert.insertContexts(parserTwo);
+      databaseInsert.insertRoleRefs(parserTwo);
     }
+    System.out.println(cache); // todo remove dev item
   }
 
-  public void insertFacts(ParserTwo parserTwo){
-    System.out.println("Insert Facts"); // todo remove dev item
-    for (ItemConcept itemConcept : parserTwo.getItemConcepts()) {
-      databaseHandler.insertFacts(
-              itemConcept.prefix,
-              itemConcept.tag,
-              itemConcept.contextRef,
-              itemConcept.unitRef,
-              itemConcept.decimals,
-              itemConcept.value);
-    }
-  }
 
-  public void insertExtendedLinks(ParserTwo parserTwo){
-    System.out.println("Insert Extended Links"); // todo remove dev item
-    for (ExtendedLink extendedLink : parserTwo.getCalculations()) {
-      databaseHandler.insertLinkBase(
-              extendedLink.uuid,
-              extendedLink.tag,
-              extendedLink.type,
-              extendedLink.role,
-              extendedLink.title,
-              extendedLink.schema);
-      for (ExtendedLink.Arc arc : extendedLink.arcs) {
-        databaseHandler.insertArcs(
-                extendedLink.uuid,
-                arc.type,
-                arc.arcrole,
-                arc.from,
-                arc.to,
-                arc.order,
-                arc.use,
-                arc.weight,
-                arc.priority);
-      }
-      for (ExtendedLink.Loc loc : extendedLink.locs) {
-        databaseHandler.insertLocator(extendedLink.uuid, loc.type, loc.href, loc.label);
-      }
-    }
-  }
-
-  public void insertContexts(ParserTwo parserTwo){
-    System.out.println("Insert Contexts"); // todo remove dev item
-    for (Context context : parserTwo.getContexts()) {
-      String segmentDim = null;
-      String segmentValue = null;
-      if (!context.segments.isEmpty()) {
-        XmlEntry xmlEntry = context.segments.get(0);
-        segmentValue = xmlEntry.getText();
-        if (xmlEntry.attributes.containsKey("dimension")) {
-          segmentDim = xmlEntry.attributes.get("dimension");
-        }
-      }
-
-      databaseHandler.insertContexts(
-              context.getId(),
-              context.getEntityIdentifier(),
-              context.getIdentifierSchema(),
-              context.getPeriodStart(),
-              context.getPeriodEnd(),
-              context.getInstant(),
-              context.getForever(),
-              segmentDim,
-              segmentValue);
-    }
-  }
-
-  public void insertRoleRefs(ParserTwo parserTwo){
-    System.out.println("Insert Role refs"); // todo remove dev item
-    for (RoleRef roleRef : parserTwo.getRoleRefs()) {
-      databaseHandler.insertRoleRefs(
-              roleRef.roleRefId,
-              roleRef.schemaDef,
-              roleRef.type,
-              roleRef.href,
-              roleRef.roleUri);
-    }
-  }
 }

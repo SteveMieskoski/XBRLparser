@@ -52,23 +52,27 @@ public class ParserTwo {
         default:
 //          System.out.println("----------------------------------------------------"); // todo remove dev item
           for (Element element : elements) {
-//              System.out.println(el.getName() + " : " + el.getPath()); // todo remove dev item
+//              System.out.println(element.getName() + " : " + element.getPath()); // todo remove dev item
               if(this.extendedPrefixes.contains(element.getNamespacePrefix())){
                 if(!element.getName().contains("TextBlock")){
-//                  System.out.println(el.getNamespacePrefix()); // todo remove dev item
+//                  System.out.println(element.getNamespacePrefix()); // todo remove dev item
                   itemConcepts.add(ItemConcept.parseAndBuild(this.extendedPrefixes, element));
+                  System.out.println("--------------------- FACTS -------------------------------"); // todo remove dev item
+                  System.out.println(itemConcepts); // todo remove dev item
                 } else {
                   iinLineIemConcepts.add(ItemConcept.parseAndBuild(this.extendedPrefixes, element));
                 }
 
+              } else {
+                switch (element.getName()){
+                  case "roleRef":
+                    roleRefs.add(new RoleRef(element));
+                    break;
+                  default:
+                    break;
+                }
               }
-              switch (element.getName()){
-                case "roleRef":
-                  roleRefs.add(new RoleRef(element));
-                  break;
-                default:
-                  break;
-              }
+
           }
       }
 

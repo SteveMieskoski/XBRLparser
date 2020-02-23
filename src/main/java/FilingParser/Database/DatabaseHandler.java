@@ -1,14 +1,16 @@
-package FilingParser;
+package FilingParser.Database;
 
 import java.sql.*;
 import java.util.UUID;
 
 public class DatabaseHandler {
+  DatabaseInsert databaseInsert;
+  DatabaseQueries databaseQueries;
   String connectionURI = "jdbc:sqlite:xbrlraw.db";
   String doc_id;
 
   public DatabaseHandler() {
-    this(UUID.randomUUID().toString(), true);
+    this(UUID.randomUUID().toString(), false);
   }
 
   public DatabaseHandler(boolean doReset) {
@@ -17,9 +19,19 @@ public class DatabaseHandler {
 
   public DatabaseHandler(String doc_id, boolean doReset) {
     this.doc_id = doc_id;
+    this.databaseInsert = new DatabaseInsert(this);
+    this.databaseQueries = new DatabaseQueries();
     if(doReset){
       reset();
     }
+  }
+
+  public DatabaseInsert getDatabaseInsert(){
+    return databaseInsert;
+  }
+
+  public DatabaseQueries getDatabaseQueries(){
+    return databaseQueries;
   }
 
   public void reset(){

@@ -1,4 +1,4 @@
-package FilingParser;
+package FilingParser.Database;
 
 public interface SqliteMySchemaXbrl {
 
@@ -30,6 +30,10 @@ public interface SqliteMySchemaXbrl {
           + "    ref_id     TEXT,\n"
           + "    type       TEXT,\n"
           + "    href       TEXT,\n"
+          + "    conceptRaw     TEXT,\n"
+          + "    schemaDef   TEXT,\n"
+          + "    concept     TEXT,\n"
+          + "    prefix   TEXT,\n"
           + "    label      TEXT,\n"
           + "    doc_id      TEXT\n"
           + ")";
