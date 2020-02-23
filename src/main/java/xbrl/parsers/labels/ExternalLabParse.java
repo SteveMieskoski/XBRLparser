@@ -6,8 +6,8 @@ import org.dom4j.io.SAXReader;
 import xbrl.elementTypes.FactElement;
 import xbrl.elementTypes.LabelElement;
 import xbrl.elementTypes.LabelsContainer;
-import xbrl.elementTypes.SchemaContent;
-import xbrl.elementTypes.SchemaElement;
+import xbrl.schemaElementTypes.SchemaContent;
+import xbrl.schemaElementTypes.SchemaElement;
 
 import java.util.*;
 

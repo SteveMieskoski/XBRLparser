@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Taxonomy Calculation Links linkbase based on XBRL standard Version 2.1.
+Created by UBmatrix Taxonomy Designer 3.0.3.2433 (2009-05-15 09:36).  
+Contact www.ubmatrix.com
+Copyright (c) 2002-2010 UBmatrix inc., All Rights Reserved
+Produced on 2010-09-30 12:44:20
+-->
+<linkbase
+  xmlns="http://www.xbrl.org/2003/linkbase"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="
+    http://www.xbrl.org/2003/linkbase 
+      http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd
+    ">
+  <roleRef xlink:type="simple"
+    xlink:href="abc-20101231.xsd#InventoryByComponent"
+    roleURI="http://www.abc.com/role/InventoryByComponent" />
+  <roleRef xlink:type="simple"
+    xlink:href="abc-20101231.xsd#LossContingencyAccrual"
+    roleURI="http://www.abc.com/role/LossContingencyAccrual" />
+  <calculationLink xlink:type="extended"
+    xlink:role="http://www.abc.com/role/InventoryByComponent">
+    <loc xlink:type="locator"
+      xlink:label="us-gaap_InventoryNet"
+      xlink:href="http://taxonomies.xbrlOrig.us/us-gaap/2009/elts/us-gaap-2009-01-31.xsd#us-gaap_InventoryNet" />
+    <loc xlink:type="locator"
+      xlink:label="us-gaap_InventoryFinishedGoods"
+      xlink:href="http://taxonomies.xbrlOrig.us/us-gaap/2009/elts/us-gaap-2009-01-31.xsd#us-gaap_InventoryFinishedGoods" />
+    <calculationArc xlink:type="arc"
+      xlink:arcrole="http://www.xbrlOrig.org/2003/arcrole/summation-item"
+      xlink:from="us-gaap_InventoryNet" xlink:to="us-gaap_InventoryFinishedGoods"
+      order="1"
+      weight="1"
+      use="optional" />
+    <loc xlink:type="locator"
+      xlink:label="us-gaap_InventoryWorkInProcess"
+      xlink:href="http://taxonomies.xbrlOrig.us/us-gaap/2009/elts/us-gaap-2009-01-31.xsd#us-gaap_InventoryWorkInProcess" />
+    <calculationArc xlink:type="arc"
+      xlink:arcrole="http://www.xbrlOrig.org/2003/arcrole/summation-item"
+      xlink:from="us-gaap_InventoryNet" xlink:to="us-gaap_InventoryWorkInProcess"
+      order="2"
+      weight="1"
+      use="optional" />
+    <loc xlink:type="locator"
+      xlink:label="us-gaap_InventoryRawMaterials"
+      xlink:href="http://taxonomies.xbrlOrig.us/us-gaap/2009/elts/us-gaap-2009-01-31.xsd#us-gaap_InventoryRawMaterials" />
+    <calculationArc xlink:type="arc"
+      xlink:arcrole="http://www.xbrlOrig.org/2003/arcrole/summation-item"
+      xlink:from="us-gaap_InventoryNet" xlink:to="us-gaap_InventoryRawMaterials"
+      order="3"
+      weight="1"
+      use="optional" />
+    <loc xlink:type="locator"
+      xlink:label="us-gaap_OtherInventorySupplies"
+      xlink:href="http://taxonomies.xbrlOrig.us/us-gaap/2009/elts/us-gaap-2009-01-31.xsd#us-gaap_OtherInventorySupplies" />
+    <calculationArc xlink:type="arc"
+      xlink:arcrole="http://www.xbrlOrig.org/2003/arcrole/summation-item"
+      xlink:from="us-gaap_InventoryNet" xlink:to="us-gaap_OtherInventorySupplies"
+      order="4"
+      weight="1"
+      use="optional" />
+  </calculationLink>
+  <calculationLink xlink:type="extended"
+    xlink:role="http://www.abc.com/role/LossContingencyAccrual">
+    <loc xlink:type="locator"
+      xlink:label="us-gaap_LossContingencyAccrualCarryingValuePeriodIncreaseDecrease"
+      xlink:href="http://taxonomies.xbrlOrig.us/us-gaap/2009/elts/us-gaap-2009-01-31.xsd#us-gaap_LossContingencyAccrualCarryingValuePeriodIncreaseDecrease" />
+    <loc xlink:type="locator"
+      xlink:label="us-gaap_LossContingencyAccrualCarryingValueProvision"
+      xlink:href="http://taxonomies.xbrlOrig.us/us-gaap/2009/elts/us-gaap-2009-01-31.xsd#us-gaap_LossContingencyAccrualCarryingValueProvision" />
+    <calculationArc xlink:type="arc"
+      xlink:arcrole="http://www.xbrlOrig.org/2003/arcrole/summation-item"
+      xlink:from="us-gaap_LossContingencyAccrualCarryingValuePeriodIncreaseDecrease"
+      xlink:to="us-gaap_LossContingencyAccrualCarryingValueProvision"
+      order="1"
+      weight="1"
+      use="optional" />
+    <loc xlink:type="locator"
+      xlink:label="us-gaap_LossContingencyAccrualCarryingValuePayments"
+      xlink:href="http://taxonomies.xbrlOrig.us/us-gaap/2009/elts/us-gaap-2009-01-31.xsd#us-gaap_LossContingencyAccrualCarryingValuePayments" />
+    <calculationArc xlink:type="arc"
+      xlink:arcrole="http://www.xbrlOrig.org/2003/arcrole/summation-item"
+      xlink:from="us-gaap_LossContingencyAccrualCarryingValuePeriodIncreaseDecrease"
+      xlink:to="us-gaap_LossContingencyAccrualCarryingValuePayments"
+      order="2"
+      weight="-1"
+      use="optional" />
+  </calculationLink>
+</linkbase>

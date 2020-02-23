@@ -1,16 +1,13 @@
 package xbrl.parsers;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import xbrl.elementTypes.RoleTypeUsGaap;
-import xbrl.elementTypes.SchemaContent;
-import xbrl.elementTypes.SchemaElement;
+import xbrl.schemaElementTypes.RoleTypeUsGaap;
+import xbrl.schemaElementTypes.SchemaContent;
+import xbrl.schemaElementTypes.SchemaElement;
 
 import java.util.*;
 
 public class SchemaCache {
 
-  private final Logger logger = LoggerFactory.getLogger(SchemaCache.class);
   private LinkedList<RoleTypeUsGaap> schemaRoles;
   private List<String> entryPoints;
   private Map<String, SchemaElement> schemaElementsByName;
@@ -25,6 +22,16 @@ public class SchemaCache {
     this.entryPoints = schemaContent.getEntryPoints();
     this.cache = schemaContent.getPreCache();
     this.cachedFilenames = schemaContent.getFilenames();
+  }
+
+  public void check() {
+    // todo: cache is not clearing and being repopulated.  but it is using the cached version rather
+    // todo: than re-parsing the files
+    System.out.println(schemaElementsByName.size());
+    for (String s : this.cache.keySet()) {
+      System.out.println(s);
+      System.out.println(this.cache.get(s).size());
+    }
   }
 
   public void addSchemaElements(SchemaElement value) {
@@ -87,40 +94,5 @@ public class SchemaCache {
 
   public SchemaElement getElementById(String id) {
     return this.schemaElementsById.get(id);
-  }
-
-  // For Tests to gain access to private properties
-  public <T> T check(String property) {
-    // todo: cache is not clearing and being repopulated.  but it is using the cached version rather
-    // todo: than re-parsing the files
-    switch (property) {
-      case "cache":
-        return (T) cache;
-      case "entryPoints":
-        return (T) entryPoints;
-      case "schemaRoles":
-        return (T) schemaRoles;
-      case "cachedFilenames":
-        return (T) cachedFilenames;
-    }
-    return null;
-  }
-
-  @Override
-  public String toString() {
-    return "SchemaCache{"
-        + "schemaRoles="
-        + schemaRoles
-        + ", entryPoints="
-        + entryPoints
-        + ", schemaElementsByName="
-        + schemaElementsByName
-        + ", schemaElementsById="
-        + schemaElementsById
-        + ", cache="
-        + cache
-        + ", cachedFilenames="
-        + cachedFilenames
-        + '}';
   }
 }

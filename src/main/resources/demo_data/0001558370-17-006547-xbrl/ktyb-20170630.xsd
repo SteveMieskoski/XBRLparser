@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<!--XBRL document created with Merrill Bridge  7.2.100.0 -->
+<!--Based on XBRL 2.1-->
+<!--Created on: 8/11/2017 10:27:00 AM-->
+<!--Modified on: 8/11/2017 10:27:00 AM-->
+<xsd:schema targetNamespace="http://www.kybank.com/20170630" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:num="http://www.xbrl.org/dtr/type/numeric" xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:ref="http://www.xbrl.org/2004/ref" xmlns:dei="http://xbrl.sec.gov/dei/2014-01-31" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:attributeFormDefault="unqualified" xmlns:invest="http://xbrl.sec.gov/invest/2013-01-31" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ktyb="http://www.kybank.com/20170630" xmlns:us-gaap="http://fasb.org/us-gaap/2016-01-31" xmlns:negated="http://www.xbrl.org/2009/role/negated">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <link:roleType roleURI="http://www.kybank.com/role/StatementConsolidatedBalanceSheets" id="StatementConsolidatedBalanceSheets">
+        <link:definition>00100 - Statement - CONSOLIDATED BALANCE SHEETS</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/StatementConsolidatedStatementsOfIncomeAndComprehensiveIncomeUnaudited" id="StatementConsolidatedStatementsOfIncomeAndComprehensiveIncomeUnaudited">
+        <link:definition>00200 - Statement - CONSOLIDATED STATEMENTS OF INCOME AND COMPREHENSIVE INCOME (unaudited)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/StatementConsolidatedStatementsOfCashFlows" id="StatementConsolidatedStatementsOfCashFlows">
+        <link:definition>00400 - Statement - CONSOLIDATED STATEMENTS OF CASH FLOWS</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureSecuritiesDetails" id="DisclosureSecuritiesDetails">
+        <link:definition>40201 - Disclosure - SECURITIES (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureSecuritiesAmortizedCostAndFairValueByContractualMaturityDetails" id="DisclosureSecuritiesAmortizedCostAndFairValueByContractualMaturityDetails">
+        <link:definition>40202 - Disclosure - SECURITIES - AMORTIZED COST AND FAIR VALUE BY CONTRACTUAL MATURITY (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureSecuritiesUnrealizedLossesDetails" id="DisclosureSecuritiesUnrealizedLossesDetails">
+        <link:definition>40203 - Disclosure - SECURITIES - UNREALIZED LOSSES (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureLoansAllowanceForLoanLossesAndRecordedInvestmentDetails" id="DisclosureLoansAllowanceForLoanLossesAndRecordedInvestmentDetails">
+        <link:definition>40303 - Disclosure - LOANS - ALLOWANCE FOR LOAN LOSSES AND RECORDED INVESTMENT (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureLoansIndividuallyEvaluatedForImpairmentDetails" id="DisclosureLoansIndividuallyEvaluatedForImpairmentDetails">
+        <link:definition>40304 - Disclosure - LOANS - INDIVIDUALLY EVALUATED FOR IMPAIRMENT (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureRealEstateOwnedDetails" id="DisclosureRealEstateOwnedDetails">
+        <link:definition>40401 - Disclosure - REAL ESTATE OWNED (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureEarningsPerShareDetails" id="DisclosureEarningsPerShareDetails">
+        <link:definition>40501 - Disclosure - EARNINGS PER SHARE (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureOtherBorrowingsDetails" id="DisclosureOtherBorrowingsDetails">
+        <link:definition>40801 - Disclosure - OTHER BORROWINGS (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureChangesInAccumulatedOtherComprehensiveIncomeByComponentDetails" id="DisclosureChangesInAccumulatedOtherComprehensiveIncomeByComponentDetails">
+        <link:definition>41001 - Disclosure - CHANGES IN ACCUMULATED OTHER COMPREHENSIVE INCOME BY COMPONENT (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureChangesInAccumulatedOtherComprehensiveIncomeByComponentReclassifiedDetails" id="DisclosureChangesInAccumulatedOtherComprehensiveIncomeByComponentReclassifiedDetails">
+        <link:definition>41002 - Disclosure - CHANGES IN ACCUMULATED OTHER COMPREHENSIVE INCOME BY COMPONENT - RECLASSIFIED (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DocumentDocumentAndEntityInformation" id="DocumentDocumentAndEntityInformation">
+        <link:definition>00090 - Document - Document and Entity Information</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/StatementConsolidatedBalanceSheetsParenthetical" id="StatementConsolidatedBalanceSheetsParenthetical">
+        <link:definition>00105 - Statement - CONSOLIDATED BALANCE SHEETS (Parenthetical)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/StatementConsolidatedStatementsOfChangesInStockholdersEquity" id="StatementConsolidatedStatementsOfChangesInStockholdersEquity">
+        <link:definition>00300 - Statement - CONSOLIDATED STATEMENTS OF CHANGES IN STOCKHOLDERS' EQUITY</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/StatementConsolidatedStatementsOfChangesInStockholdersEquityParenthetical" id="StatementConsolidatedStatementsOfChangesInStockholdersEquityParenthetical">
+        <link:definition>00305 - Statement - CONSOLIDATED STATEMENTS OF CHANGES IN STOCKHOLDERS' EQUITY (Parenthetical)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureSummaryOfSignificantAccountingPolicies" id="DisclosureSummaryOfSignificantAccountingPolicies">
+        <link:definition>10101 - Disclosure - SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureSecurities" id="DisclosureSecurities">
+        <link:definition>10201 - Disclosure - SECURITIES</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureLoans" id="DisclosureLoans">
+        <link:definition>10301 - Disclosure - LOANS</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureRealEstateOwned" id="DisclosureRealEstateOwned">
+        <link:definition>10401 - Disclosure - REAL ESTATE OWNED</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureEarningsPerShare" id="DisclosureEarningsPerShare">
+        <link:definition>10501 - Disclosure - EARNINGS PER SHARE</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureStockBasedCompensation" id="DisclosureStockBasedCompensation">
+        <link:definition>10601 - Disclosure - STOCK BASED COMPENSATION</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureRepurchaseAgreements" id="DisclosureRepurchaseAgreements">
+        <link:definition>10701 - Disclosure - REPURCHASE AGREEMENTS</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureOtherBorrowings" id="DisclosureOtherBorrowings">
+        <link:definition>10801 - Disclosure - OTHER BORROWINGS</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureFairValueMeasurements" id="DisclosureFairValueMeasurements">
+        <link:definition>10901 - Disclosure - FAIR VALUE MEASUREMENTS</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureChangesInAccumulatedOtherComprehensiveIncomeByComponentLoss" id="DisclosureChangesInAccumulatedOtherComprehensiveIncomeByComponentLoss">
+        <link:definition>11001 - Disclosure - CHANGES IN ACCUMULATED OTHER COMPREHENSIVE INCOME BY COMPONENT (LOSS)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureSummaryOfSignificantAccountingPoliciesPolicies" id="DisclosureSummaryOfSignificantAccountingPoliciesPolicies">
+        <link:definition>20102 - Disclosure - SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES (Policies)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureSecuritiesTables" id="DisclosureSecuritiesTables">
+        <link:definition>30203 - Disclosure - SECURITIES (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureLoansTables" id="DisclosureLoansTables">
+        <link:definition>30303 - Disclosure - LOANS (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureRealEstateOwnedTables" id="DisclosureRealEstateOwnedTables">
+        <link:definition>30403 - Disclosure - REAL ESTATE OWNED (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureEarningsPerShareTables" id="DisclosureEarningsPerShareTables">
+        <link:definition>30503 - Disclosure - EARNINGS PER SHARE (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureStockBasedCompensationTables" id="DisclosureStockBasedCompensationTables">
+        <link:definition>30603 - Disclosure - STOCK BASED COMPENSATION (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureOtherBorrowingsTables" id="DisclosureOtherBorrowingsTables">
+        <link:definition>30803 - Disclosure - OTHER BORROWINGS (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureFairValueMeasurementsTables" id="DisclosureFairValueMeasurementsTables">
+        <link:definition>30903 - Disclosure - FAIR VALUE MEASUREMENTS (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureChangesInAccumulatedOtherComprehensiveIncomeByComponentTables" id="DisclosureChangesInAccumulatedOtherComprehensiveIncomeByComponentTables">
+        <link:definition>31003 - Disclosure - CHANGES IN ACCUMULATED OTHER COMPREHENSIVE INCOME BY COMPONENT (Tables)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureLoansDetails" id="DisclosureLoansDetails">
+        <link:definition>40301 - Disclosure - LOANS (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureLoansActivityInAllowanceDetails" id="DisclosureLoansActivityInAllowanceDetails">
+        <link:definition>40302 - Disclosure - LOANS - ACTIVITY IN ALLOWANCE (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureLoansNonaccrualLoansPastDueOver90DaysStillAccruingAndTdrDetails" id="DisclosureLoansNonaccrualLoansPastDueOver90DaysStillAccruingAndTdrDetails">
+        <link:definition>40305 - Disclosure - LOANS - NONACCRUAL, LOANS PAST DUE OVER 90 DAYS STILL ACCRUING AND TDR (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureLoansAgingOfRecordedInvestmentInPastDueAndNonAccrualLoansDetails" id="DisclosureLoansAgingOfRecordedInvestmentInPastDueAndNonAccrualLoansDetails">
+        <link:definition>40306 - Disclosure - LOANS - AGING OF RECORDED INVESTMENT IN PAST DUE AND NON-ACCRUAL LOANS (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureLoansTroubledDebtRestructuringsDetails" id="DisclosureLoansTroubledDebtRestructuringsDetails">
+        <link:definition>40307 - Disclosure - LOANS - TROUBLED DEBT RESTRUCTURINGS (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureLoansRiskCategoryOfLoansDetails" id="DisclosureLoansRiskCategoryOfLoansDetails">
+        <link:definition>40308 - Disclosure - LOANS - RISK CATEGORY OF LOANS (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureEarningsPerShareAntidilutiveSecuritiesDetails" id="DisclosureEarningsPerShareAntidilutiveSecuritiesDetails">
+        <link:definition>40502 - Disclosure - EARNINGS PER SHARE - ANTIDILUTIVE SECURITIES (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureStockBasedCompensationVestingPeriodDetails" id="DisclosureStockBasedCompensationVestingPeriodDetails">
+        <link:definition>40601 - Disclosure - STOCK BASED COMPENSATION - VESTING PERIOD (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureStockBasedCompensationActivityDetails" id="DisclosureStockBasedCompensationActivityDetails">
+        <link:definition>40602 - Disclosure - STOCK BASED COMPENSATION - ACTIVITY (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureStockBasedCompensationNonvestedSharesDetails" id="DisclosureStockBasedCompensationNonvestedSharesDetails">
+        <link:definition>40603 - Disclosure - STOCK BASED COMPENSATION - NONVESTED SHARES (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureRepurchaseAgreementsDetails" id="DisclosureRepurchaseAgreementsDetails">
+        <link:definition>40701 - Disclosure - REPURCHASE AGREEMENTS (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureFairValueMeasurementsDetails" id="DisclosureFairValueMeasurementsDetails">
+        <link:definition>40901 - Disclosure - FAIR VALUE MEASUREMENTS (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureFairValueMeasurementsFairValueOnNonRecurringDetails" id="DisclosureFairValueMeasurementsFairValueOnNonRecurringDetails">
+        <link:definition>40902 - Disclosure - FAIR VALUE MEASUREMENTS - FAIR VALUE ON NON-RECURRING (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureFairValueMeasurementsQuantitativeInformationDetails" id="DisclosureFairValueMeasurementsQuantitativeInformationDetails">
+        <link:definition>40903 - Disclosure - FAIR VALUE MEASUREMENTS - QUANTITATIVE INFORMATION (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType roleURI="http://www.kybank.com/role/DisclosureFairValueMeasurementsFairValueOfFinancialInstrumentsDetails" id="DisclosureFairValueMeasurementsFairValueOfFinancialInstrumentsDetails">
+        <link:definition>40904 - Disclosure - FAIR VALUE MEASUREMENTS - FAIR VALUE OF FINANCIAL INSTRUMENTS (Details)</link:definition>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:linkbaseRef xlink:type="simple" xlink:href="ktyb-20170630_pre.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" />
+      <link:linkbaseRef xlink:type="simple" xlink:href="ktyb-20170630_cal.xml" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" />
+      <link:linkbaseRef xlink:type="simple" xlink:href="ktyb-20170630_def.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" />
+      <link:linkbaseRef xlink:type="simple" xlink:href="ktyb-20170630_lab.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" />
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.xbrl.org/dtr/type/non-numeric" schemaLocation="http://www.xbrl.org/dtr/type/nonNumeric-2009-12-16.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/2009/role/negated" schemaLocation="http://www.xbrl.org/lrr/role/negated-2009-12-16.xsd" />
+  <xsd:import namespace="http://xbrl.sec.gov/dei/2014-01-31" schemaLocation="http://xbrl.sec.gov/dei/2014/dei-2014-01-31.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/dtr/type/numeric" schemaLocation="http://www.xbrl.org/dtr/type/numeric-2009-12-16.xsd" />
+  <xsd:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" />
+  <xsd:import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd" />
+  <import namespace="http://fasb.org/us-gaap/2016-01-31" schemaLocation="http://xbrl.fasb.org/us-gaap/2016/elts/us-gaap-2016-01-31.xsd" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <xsd:element name="OtherInterestBearingDepositLiabilities" id="ktyb_OtherInterestBearingDepositLiabilities" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant" />
+  <element id="ktyb_LoanProcessingFeeIncome" name="LoanProcessingFeeIncome" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="credit" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <xsd:element name="DebitCardExpense" id="ktyb_DebitCardExpense" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element name="IncreaseDecreaseInRealEstateOwnedNet" id="ktyb_IncreaseDecreaseInRealEstateOwnedNet" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element name="DocumentAndEntityInformationAbstract" id="ktyb_DocumentAndEntityInformationAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <xsd:element name="NatureOfOperationsPolicyTextBlock" id="ktyb_NatureOfOperationsPolicyTextBlock" type="nonnum:textBlockItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />
+  <xsd:element name="AvailableForSaleSecuritiesDebtMaturitiesSingleMaturityDateAmortizedCost" id="ktyb_AvailableForSaleSecuritiesDebtMaturitiesSingleMaturityDateAmortizedCost" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element name="AvailableForSaleSecuritiesDebtMaturitiesSingleMaturityDateFairValue" id="ktyb_AvailableForSaleSecuritiesDebtMaturitiesSingleMaturityDateFairValue" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element name="AvailableForSaleSecuritiesIncomeTaxExpenseBenefitOnGrossRealizedGainsAndLosses" id="ktyb_AvailableForSaleSecuritiesIncomeTaxExpenseBenefitOnGrossRealizedGainsAndLosses" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element name="ScheduleOfRealEstateAcquiredThroughForeclosureValuationAllowanceRollForwardTableTextBlock" id="ktyb_ScheduleOfRealEstateAcquiredThroughForeclosureValuationAllowanceRollForwardTableTextBlock" type="nonnum:textBlockItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />
+  <xsd:element name="ScheduleOfForeclosedRealEstateExpenseTableTextBlock" id="ktyb_ScheduleOfForeclosedRealEstateExpenseTableTextBlock" type="nonnum:textBlockItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />
+  <xsd:element name="EmployeeStockOptionPlan1999Member" id="ktyb_EmployeeStockOptionPlan1999Member" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <xsd:element name="NonEmployeeDirectorsStockOwnershipIncentivePlan1993Member" id="ktyb_NonEmployeeDirectorsStockOwnershipIncentivePlan1993Member" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <xsd:element name="RestrictedStockGrantPlan2005Member" id="ktyb_RestrictedStockGrantPlan2005Member" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <xsd:element name="StockAwardPlan2009Member" id="ktyb_StockAwardPlan2009Member" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <xsd:element name="ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedAggregateWeightedAverageGrantDateFairValueRollForward" id="ktyb_ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedAggregateWeightedAverageGrantDateFairValueRollForward" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <xsd:element name="ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedAggregateWeightedAverageGrantDateFairValue" id="ktyb_ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedAggregateWeightedAverageGrantDateFairValue" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element name="ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsGrantsInPeriodAggregateWeightedAverageGrantDateFairValue" id="ktyb_ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsGrantsInPeriodAggregateWeightedAverageGrantDateFairValue" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element name="ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriodAggregateWeightedAverageGrantDateFairValue" id="ktyb_ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriodAggregateWeightedAverageGrantDateFairValue" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element name="RealEstateConstructionLoansMember" id="ktyb_RealEstateConstructionLoansMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <xsd:element name="MultiFamilyResidentialMortgageLoansMember" id="ktyb_MultiFamilyResidentialMortgageLoansMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <xsd:element name="NonFarmAndNonResidentialMortgageLoansMember" id="ktyb_NonFarmAndNonResidentialMortgageLoansMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <xsd:element name="AgriculturalLoansMember" id="ktyb_AgriculturalLoansMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <xsd:element name="OtherLoansMember" id="ktyb_OtherLoansMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <xsd:element name="FinancingReceivableAccruedInterestReceivable" id="ktyb_FinancingReceivableAccruedInterestReceivable" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="instant" />
+  <xsd:element name="FinancingReceivablePercentageOfNonaccrualInvestmentSecuredByRealEstate" id="ktyb_FinancingReceivablePercentageOfNonaccrualInvestmentSecuredByRealEstate" type="num:percentItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant" />
+  <xsd:element
+          name="FinancingReceivableMinimumPeriodForWhichPrincipalOrInterestInDefaultForLoansToBeConsideredAsNonaccrual"
+          id="ktyb_FinancingReceivableMinimumPeriodForWhichPrincipalOrInterestInDefaultForLoansToBeConsideredAsNonaccrual"
+          type="xbrli:durationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration"/>
+  <xsd:element name="FinancingReceivableMaximumPeriodPastDueForLoansToBeConsideredImpaired" id="ktyb_FinancingReceivableMaximumPeriodPastDueForLoansToBeConsideredImpaired" type="xbrli:durationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />
+  <element id="ktyb_FinancingReceivableRecordedInvestmentPastDueAndNonAccrualStatus" name="FinancingReceivableRecordedInvestmentPastDueAndNonAccrualStatus" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" xbrli:balance="debit" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <xsd:element name="FinancingReceivableMinimumPeriodPastDueForLoansToBeConsideredAsNonPerforming" id="ktyb_FinancingReceivableMinimumPeriodPastDueForLoansToBeConsideredAsNonPerforming" type="xbrli:durationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />
+  <element id="ktyb_ImpairedFinancingReceivableFairValueDisclosure" name="ImpairedFinancingReceivableFairValueDisclosure" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" xbrli:balance="debit" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <element id="ktyb_RealEstateAcquiredThroughForeclosureFairValueDisclosure" name="RealEstateAcquiredThroughForeclosureFairValueDisclosure" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" xbrli:balance="debit" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <xsd:element name="SalesComparisonValuationTechniqueMember" id="ktyb_SalesComparisonValuationTechniqueMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <xsd:element name="DiscountedCashFlowValuationTechniqueMember" id="ktyb_DiscountedCashFlowValuationTechniqueMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <element id="ktyb_ForeclosedRealEstateExpenseIncludingGainsLossesOnSale" name="ForeclosedRealEstateExpenseIncludingGainsLossesOnSale" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="debit" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <xsd:element name="StockOptionPlansMember" id="ktyb_StockOptionPlansMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <xsd:element name="NoninterestServiceCharges" id="ktyb_NoninterestServiceCharges" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element name="ScheduleOfRealEstateAcquiredThroughForeclosureRollForwardTableTextBlock" id="ktyb_ScheduleOfRealEstateAcquiredThroughForeclosureRollForwardTableTextBlock" type="nonnum:textBlockItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />
+  <element id="ktyb_RealEstateOwnedValuationAllowanceProvisionChargedToExpense" name="RealEstateOwnedValuationAllowanceProvisionChargedToExpense" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="debit" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <xsd:element name="RealEstateAcquisitionsThroughForeclosuresIncludingCapitalImprovements" id="ktyb_RealEstateAcquisitionsThroughForeclosuresIncludingCapitalImprovements" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="debit" xbrli:periodType="duration" />
+  <xsd:element name="EmployeeAndNonEmployeeStockOptionMember" id="ktyb_EmployeeAndNonEmployeeStockOptionMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <xsd:element name="ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsWeightedAverageRemainingContractualTermAbstract" id="ktyb_ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsWeightedAverageRemainingContractualTermAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <xsd:element name="OneToFourFamilyResidentialMortgageLoansMember" id="ktyb_OneToFourFamilyResidentialMortgageLoansMember" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" nillable="true" xbrli:periodType="duration" />
+  <xsd:element name="NumberOfImpairedFinancingReceivableRelatedLoans" id="ktyb_NumberOfImpairedFinancingReceivableRelatedLoans" type="xbrli:integerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />
+  <element id="ktyb_PaymentsForFederalHomeLoanBankAdvancesLongTerm" name="PaymentsForFederalHomeLoanBankAdvancesLongTerm" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="credit" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <xsd:element name="ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsForfeituresAggregateWeightedAverageGrantDateFairValue" id="ktyb_ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsForfeituresAggregateWeightedAverageGrantDateFairValue" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="duration" />
+  <xsd:element name="TimeDeposits250000OrMore" id="ktyb_TimeDeposits250000OrMore" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:balance="credit" xbrli:periodType="instant" />
+  <element id="ktyb_NetChangeInterestBearingDeposits" name="NetChangeInterestBearingDeposits" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="credit" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <element id="ktyb_WriteDownsOfOtherRealEstateNet" name="WriteDownsOfOtherRealEstateNet" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="debit" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <element id="ktyb_SecuritiesSoldUnderAgreementsToRepurchaseAverageWeightedLife" name="SecuritiesSoldUnderAgreementsToRepurchaseAverageWeightedLife" nillable="true" type="xbrli:durationItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <element id="ktyb_AgencyBackedSecuritiesPledgedAsCollateral" name="AgencyBackedSecuritiesPledgedAsCollateral" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" xbrli:balance="debit" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <element id="ktyb_InterestExpenseNotePayable" name="InterestExpenseNotePayable" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="debit" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <element id="ktyb_FairValueInputsAdjustmentsForDifferencesBetweenComparableSalesAndIncomeDataAvailable" name="FairValueInputsAdjustmentsForDifferencesBetweenComparableSalesAndIncomeDataAvailable" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="debit" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <element id="ktyb_ImpairedFinancingReceivableProvisionForLoanLosses" name="ImpairedFinancingReceivableProvisionForLoanLosses" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="debit" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <element id="ktyb_ImpairedLoansMember" name="ImpairedLoansMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <element id="ktyb_OtherRealEstateOwnedMember" name="OtherRealEstateOwnedMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <element id="ktyb_NumberOfStockBasedCompensationPlans" name="NumberOfStockBasedCompensationPlans" nillable="true" type="xbrli:integerItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <element id="ktyb_MaturityTermsExtendingMember" name="MaturityTermsExtendingMember" nillable="true" type="nonnum:domainItemType" substitutionGroup="xbrli:item" abstract="true" xbrli:periodType="duration" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <element id="ktyb_ProceedsFromLongTermFederalHomeLoanBankAdvances" name="ProceedsFromLongTermFederalHomeLoanBankAdvances" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="debit" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <element id="ktyb_SecuritiesTransactionsInProcessPayable" name="SecuritiesTransactionsInProcessPayable" nillable="true" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="credit" xmlns="http://www.w3.org/2001/XMLSchema" />
+</xsd:schema>

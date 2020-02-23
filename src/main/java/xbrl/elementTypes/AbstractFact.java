@@ -2,6 +2,7 @@ package xbrl.elementTypes;
 
 import xbrl.elementTypes.subTypes.Period;
 import xbrl.elementTypes.subTypes.Segment;
+import xbrl.schemaElementTypes.SchemaElement;
 
 import java.util.ArrayList;
 import java.util.HashMap;

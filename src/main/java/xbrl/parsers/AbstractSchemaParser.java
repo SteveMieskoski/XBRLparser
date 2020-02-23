@@ -2,7 +2,7 @@ package xbrl.parsers;
 
 import org.apache.commons.lang3.NotImplementedException;
 import org.dom4j.Document;
-import xbrl.elementTypes.SchemaContent;
+import xbrl.schemaElementTypes.SchemaContent;
 import xbrl.util.UniversalNamespaceCache;
 
 import java.util.List;

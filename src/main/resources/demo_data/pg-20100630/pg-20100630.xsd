@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="no" ?>
+<!--  EDGAR Online I-Metrix Xcelerate Taxonomy Schema, based on XBRL 2.1  http://www.edgar-online.com/  -->
+<!--  Version: 6.6.4 -->
+<!--  Round: 81a808b0-bf8e-4e51-bf2f-3295382ed0e2 -->
+<!--  Creation date: 2010-08-12T18:59:32Z -->
+<!--  Copyright (c) 2005-2010 EDGAR Online, Inc. All Rights Reserved. -->
+<schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.pg.com/20100630" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:pg="http://www.pg.com/20100630" xmlns:us-types="http://xbrl.us/us-types/2009-01-31" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <annotation>
+    <appinfo>
+      <link:roleType id="DocumentDocumentandEntityInformation" roleURI="http://www.pg.com/taxonomy/role/DocumentDocumentandEntityInformation">
+        <link:definition>101 - Document - Document and Entity Information</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_StatementOfIncomeAlternative" roleURI="http://www.pg.com/taxonomy/role/StatementOfIncomeAlternative">
+        <link:definition>103 - Statement - CONSOLIDATED STATEMENTS OF EARNINGS</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_StatementOfFinancialPositionClassified" roleURI="http://www.pg.com/taxonomy/role/StatementOfFinancialPositionClassified">
+        <link:definition>104 - Statement - CONSOLIDATED BALANCE SHEETS</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_StatementOfFinancialPositionClassifiedParen" roleURI="http://www.pg.com/taxonomy/role/StatementOfFinancialPositionClassifiedParenthetical">
+        <link:definition>105 - Statement - CONSOLIDATED BALANCE SHEETS (Parenthetical)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="Imetrix_ci-StatementOfShareholdersEquityAndOtherComprehensiveIncome" roleURI="http://www.pg.com/taxonomy/role/StatementOfShareholdersEquityAndOtherComprehensiveIncome">
+        <link:definition>106 - Statement - CONSOLIDATED STATEMENTS OF SHAREHOLDERS' EQUITY</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="Imetrix_ci-StatementOfShareholdersEquityAndOtherComprehensiveIncomeParen" roleURI="http://www.pg.com/taxonomy/role/StatementOfShareholdersEquityAndOtherComprehensiveIncomeParenthetical">
+        <link:definition>107 - Statement - CONSOLIDATED STATEMENTS OF SHAREHOLDERS' EQUITY (Parenthetical)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_StatementOfCashFlowsIndirect" roleURI="http://www.pg.com/taxonomy/role/StatementOfCashFlowsIndirect">
+        <link:definition>108 - Statement - CONSOLIDATED STATEMENTS OF CASH FLOWS</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsOrganizationConsolidationPresentationOfFinancialStatementsAndSignificantAccountingPoliciesDisclosureTextBlock" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsOrganizationConsolidationPresentationOfFinancialStatementsAndSignificantAccountingPoliciesDisclosureTextBlock">
+        <link:definition>109 - Disclosure - SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsGoodwillAndIntangibleAssetsDisclosureTextBlock" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsGoodwillAndIntangibleAssetsDisclosureTextBlock">
+        <link:definition>110 - Disclosure - GOODWILL AND INTANGIBLE ASSETS</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsSupplementalFinancialInformationDisclosureTextBlock" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsSupplementalFinancialInformationDisclosureTextBlock">
+        <link:definition>111 - Disclosure - SUPPLEMENTAL FINANCIAL INFORMATION</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsDebtDisclosureTextBlock" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsDebtDisclosureTextBlock">
+        <link:definition>112 - Disclosure - SHORT-TERM AND LONG-TERM DEBT</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsRiskManagementAndFairValueTextBlock" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsRiskManagementAndFairValueTextBlock">
+        <link:definition>113 - Disclosure - RISK MANAGEMENT ACTIVITIES AND FAIR VALUE MEASUREMENTS</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsEarningsPerShareTextBlock" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsEarningsPerShareTextBlock">
+        <link:definition>114 - Disclosure - EARNINGS PER SHARE</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsDisclosureOfCompensationRelatedCostsShareBasedPaymentsTextBlock" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsDisclosureOfCompensationRelatedCostsShareBasedPaymentsTextBlock">
+        <link:definition>115 - Disclosure - STOCK-BASED COMPENSATION</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsPensionAndOtherPostretirementBenefitsDisclosureTextBlock" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsPensionAndOtherPostretirementBenefitsDisclosureTextBlock">
+        <link:definition>116 - Disclosure - POSTRETIREMENT BENEFITS AND EMPLOYEE STOCK OWNERSHIP PLAN</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsIncomeTaxDisclosureTextBlock" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsIncomeTaxDisclosureTextBlock">
+        <link:definition>117 - Disclosure - INCOME TAXES</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsCommitmentsAndContingenciesDisclosureTextBlock" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsCommitmentsAndContingenciesDisclosureTextBlock">
+        <link:definition>118 - Disclosure - COMMITMENTS AND CONTINGENCIES</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsSegmentReportingDisclosureTextBlock" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsSegmentReportingDisclosureTextBlock">
+        <link:definition>119 - Disclosure - SEGMENT INFORMATION</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsDisposalGroupsIncludingDiscontinuedOperationsDisclosureTextBlock" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsDisposalGroupsIncludingDiscontinuedOperationsDisclosureTextBlock">
+        <link:definition>120 - Disclosure - DISCONTINUED OPERATIONS</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsQuarterlyFinancialInformationTextBlock" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsQuarterlyFinancialInformationTextBlock">
+        <link:definition>121 - Disclosure - QUARTERLY RESULTS (UNAUDITED)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsOrganizationConsolidationPresentationOfFinancialStatementsAndSignificantAccountingPoliciesDisclosureTextBlockPolicies" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsOrganizationConsolidationPresentationOfFinancialStatementsAndSignificantAccountingPoliciesDisclosureTextBlockPolicies">
+        <link:definition>122 - Disclosure - SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES (Policies)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsGoodwillAndIntangibleAssetsDisclosureTextBlockTables" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsGoodwillAndIntangibleAssetsDisclosureTextBlockTables">
+        <link:definition>123 - Disclosure - GOODWILL AND INTANGIBLE ASSETS (Tables)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsSupplementalFinancialInformationDisclosureTextBlockTables" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsSupplementalFinancialInformationDisclosureTextBlockTables">
+        <link:definition>124 - Disclosure - SUPPLEMENTAL FINANCIAL INFORMATION (Tables)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsDebtDisclosureTextBlockTables" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsDebtDisclosureTextBlockTables">
+        <link:definition>125 - Disclosure - SHORT-TERM AND LONG-TERM DEBT (Tables)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsRiskManagementAndFairValueTextBlockTables" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsRiskManagementAndFairValueTextBlockTables">
+        <link:definition>126 - Disclosure - RISK MANAGEMENT ACTIVITIES AND FAIR VALUE MEASUREMENTS (Tables)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsEarningsPerShareTextBlockTables" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsEarningsPerShareTextBlockTables">
+        <link:definition>127 - Disclosure - EARNINGS PER SHARE (Tables)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsDisclosureOfCompensationRelatedCostsShareBasedPaymentsTextBlockTables" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsDisclosureOfCompensationRelatedCostsShareBasedPaymentsTextBlockTables">
+        <link:definition>128 - Disclosure - STOCK-BASED COMPENSATION (Tables)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsPensionAndOtherPostretirementBenefitsDisclosureTextBlockTables" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsPensionAndOtherPostretirementBenefitsDisclosureTextBlockTables">
+        <link:definition>129 - Disclosure - POSTRETIREMENT BENEFITS AND EMPLOYEE STOCK OWNERSHIP PLAN (Tables)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsIncomeTaxDisclosureTextBlockTables" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsIncomeTaxDisclosureTextBlockTables">
+        <link:definition>130 - Disclosure - INCOME TAXES (Tables)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsCommitmentsAndContingenciesDisclosureTextBlockTables" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsCommitmentsAndContingenciesDisclosureTextBlockTables">
+        <link:definition>131 - Disclosure - COMMITMENTS AND CONTINGENCIES (Tables)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsSegmentReportingDisclosureTextBlockTables" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsSegmentReportingDisclosureTextBlockTables">
+        <link:definition>132 - Disclosure - SEGMENT INFORMATION (Tables)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsDisposalGroupsIncludingDiscontinuedOperationsDisclosureTextBlockTables" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsDisposalGroupsIncludingDiscontinuedOperationsDisclosureTextBlockTables">
+        <link:definition>133 - Disclosure - DISCONTINUED OPERATIONS (Tables)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="IMetrix_NotesToFinancialStatementsQuarterlyFinancialInformationTextBlockTables" roleURI="http://www.pg.com/taxonomy/role/NotesToFinancialStatementsQuarterlyFinancialInformationTextBlockTables">
+        <link:definition>134 - Disclosure - QUARTERLY RESULTS (UNAUDITED) (Tables)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureSUMMARYOFSIGNIFICANTACCOUNTINGPOLICIESAdditionalInformation" roleURI="http://www.pg.com/taxonomy/role/DisclosureSUMMARYOFSIGNIFICANTACCOUNTINGPOLICIESAdditionalInformation">
+        <link:definition>135 - Disclosure - SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureChangeInTheNetCarryingAmountOfGoodwillByGlobalBusinessUnit" roleURI="http://www.pg.com/taxonomy/role/DisclosureChangeInTheNetCarryingAmountOfGoodwillByGlobalBusinessUnit">
+        <link:definition>136 - Disclosure - Change in the Net Carrying Amount of Goodwill by Global Business Unit (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureIdentifiableIntangibleAssets" roleURI="http://www.pg.com/taxonomy/role/DisclosureIdentifiableIntangibleAssets">
+        <link:definition>137 - Disclosure - Identifiable Intangible Assets (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureAmortizationOfIntangibleAssets" roleURI="http://www.pg.com/taxonomy/role/DisclosureAmortizationOfIntangibleAssets">
+        <link:definition>138 - Disclosure - Amortization of Intangible Assets (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureEstimatedAmortizationExpense" roleURI="http://www.pg.com/taxonomy/role/DisclosureEstimatedAmortizationExpense">
+        <link:definition>139 - Disclosure - Estimated Amortization Expense (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureSelectedComponentsOfCurrentAndNoncurrentLiabilities" roleURI="http://www.pg.com/taxonomy/role/DisclosureSelectedComponentsOfCurrentAndNoncurrentLiabilities">
+        <link:definition>140 - Disclosure - Selected Components of Current and Noncurrent Liabilities (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureDebtDueWithinOneYear" roleURI="http://www.pg.com/taxonomy/role/DisclosureDebtDueWithinOneYear">
+        <link:definition>141 - Disclosure - Debt Due Within One Year (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureLongTermDebt" roleURI="http://www.pg.com/taxonomy/role/DisclosureLongTermDebt">
+        <link:definition>142 - Disclosure - Long-Term Debt (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureLongTermDebtMaturities" roleURI="http://www.pg.com/taxonomy/role/DisclosureLongTermDebtMaturities">
+        <link:definition>143 - Disclosure - Long-Term Debt Maturities (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureRISKMANAGEMENTACTIVITIESANDFAIRVALUEMEASUREMENTSAdditionalInformation" roleURI="http://www.pg.com/taxonomy/role/DisclosureRISKMANAGEMENTACTIVITIESANDFAIRVALUEMEASUREMENTSAdditionalInformation">
+        <link:definition>144 - Disclosure - RISK MANAGEMENT ACTIVITIES AND FAIR VALUE MEASUREMENTS - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureFinancialAssetsAndLiabilitiesThatAreMeasuredAtFairValueOnARecurringBasis" roleURI="http://www.pg.com/taxonomy/role/DisclosureFinancialAssetsAndLiabilitiesThatAreMeasuredAtFairValueOnARecurringBasis">
+        <link:definition>145 - Disclosure - Financial Assets and Liabilities that are Measured at Fair Value on a Recurring Basis (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureFairValuesAndAmountsOfGainsAndLossesOnQualifyingAndNonQualifyingFinancialInstrumentsUsedInHedgingTransactions" roleURI="http://www.pg.com/taxonomy/role/DisclosureFairValuesAndAmountsOfGainsAndLossesOnQualifyingAndNonQualifyingFinancialInstrumentsUsedInHedgingTransactions">
+        <link:definition>146 - Disclosure - Fair Values and Amounts of Gains and Losses on Qualifying and Non-Qualifying Financial Instruments used in Hedging Transactions (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureNetEarningsAndCommonSharesUsedToCalculateBasicAndDilutedNetEarningsPerShare" roleURI="http://www.pg.com/taxonomy/role/DisclosureNetEarningsAndCommonSharesUsedToCalculateBasicAndDilutedNetEarningsPerShare">
+        <link:definition>147 - Disclosure - Net Earnings and Common Shares Used to Calculate Basic and Diluted Net Earnings per Share (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureNetEarningsAndCommonSharesUsedToCalculateBasicAndDilutedNetEarningsPerShareParenthetical" roleURI="http://www.pg.com/taxonomy/role/DisclosureNetEarningsAndCommonSharesUsedToCalculateBasicAndDilutedNetEarningsPerShareParenthetical">
+        <link:definition>148 - Disclosure - Net Earnings and Common Shares Used to Calculate Basic and Diluted Net Earnings per Share (Parenthetical) (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureSTOCKBASEDCOMPENSATIONAdditionalInformation" roleURI="http://www.pg.com/taxonomy/role/DisclosureSTOCKBASEDCOMPENSATIONAdditionalInformation">
+        <link:definition>149 - Disclosure - STOCK-BASED COMPENSATION - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureAssumptionsUtilizedInTheBinomialLatticeBasedValuationModelInCalculatingTheCompensationExpenseForStockOptionsGranted" roleURI="http://www.pg.com/taxonomy/role/DisclosureAssumptionsUtilizedInTheBinomialLatticeBasedValuationModelInCalculatingTheCompensationExpenseForStockOptionsGranted">
+        <link:definition>150 - Disclosure - Assumptions Utilized in the Binomial Lattice-Based Valuation Model in Calculating the Compensation Expense for Stock Options Granted (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureSummaryOfOptionsOutstandingUnderThePlansAndActivityDuringTheYear" roleURI="http://www.pg.com/taxonomy/role/DisclosureSummaryOfOptionsOutstandingUnderThePlansAndActivityDuringTheYear">
+        <link:definition>151 - Disclosure - Summary of Options Outstanding Under the Plans and Activity During the Year (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosurePOSTRETIREMENTBENEFITSANDEMPLOYEESTOCKOWNERSHIPPLANAdditionalInformation" roleURI="http://www.pg.com/taxonomy/role/DisclosurePOSTRETIREMENTBENEFITSANDEMPLOYEESTOCKOWNERSHIPPLANAdditionalInformation">
+        <link:definition>152 - Disclosure - POSTRETIREMENT BENEFITS AND EMPLOYEE STOCK OWNERSHIP PLAN - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureReconciliationOfBenefitObligationsAndPlanAssetsOfDefinedBenefitRetirementPlansAndOtherRetireeBenefitPlans" roleURI="http://www.pg.com/taxonomy/role/DisclosureReconciliationOfBenefitObligationsAndPlanAssetsOfDefinedBenefitRetirementPlansAndOtherRetireeBenefitPlans">
+        <link:definition>153 - Disclosure - Reconciliation of Benefit Obligations and Plan Assets of Defined Benefit Retirement Plans and Other Retiree Benefit Plans (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureReconciliationOfDefinedBenefitRetirementPlansAndOtherRetireeBenefitPlansRecognizedInAssetLiabilityAndAccumulatedOtherComprehensiveIncome" roleURI="http://www.pg.com/taxonomy/role/DisclosureReconciliationOfDefinedBenefitRetirementPlansAndOtherRetireeBenefitPlansRecognizedInAssetLiabilityAndAccumulatedOtherComprehensiveIncome">
+        <link:definition>154 - Disclosure - Reconciliation of Defined Benefit Retirement Plans and Other Retiree Benefit Plans Recognized in Asset, Liability and Accumulated Other Comprehensive Income (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosurePensionPlansWithAccumulatedAndProjectedBenefitObligationsInExcessOfPlanAssets" roleURI="http://www.pg.com/taxonomy/role/DisclosurePensionPlansWithAccumulatedAndProjectedBenefitObligationsInExcessOfPlanAssets">
+        <link:definition>155 - Disclosure - Pension Plans with Accumulated and Projected Benefit Obligations in Excess of Plan Assets (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureComponentsOfTheNetPeriodicBenefitCost" roleURI="http://www.pg.com/taxonomy/role/DisclosureComponentsOfTheNetPeriodicBenefitCost">
+        <link:definition>156 - Disclosure - Components of the Net Periodic Benefit Cost (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureAmountsExpectedToBeAmortizedFromAccumulatedOtherComprehensiveIncomeIntoNetPeriodBenefitCost" roleURI="http://www.pg.com/taxonomy/role/DisclosureAmountsExpectedToBeAmortizedFromAccumulatedOtherComprehensiveIncomeIntoNetPeriodBenefitCost">
+        <link:definition>157 - Disclosure - Amounts Expected to be Amortized from Accumulated Other Comprehensive Income into Net Period Benefit Cost (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureWeightedAverageAssumptionsForTheDefinedBenefitAndOtherRetireeBenefitCalculationsAsWellAsAssumedHealthCareTrendRates" roleURI="http://www.pg.com/taxonomy/role/DisclosureWeightedAverageAssumptionsForTheDefinedBenefitAndOtherRetireeBenefitCalculationsAsWellAsAssumedHealthCareTrendRates">
+        <link:definition>158 - Disclosure - Weighted Average Assumptions for the Defined Benefit and Other Retiree Benefit Calculations, as well as Assumed Health Care Trend Rates (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureOnePercentagePointChangeInAssumedHealthCareCostTrendRates" roleURI="http://www.pg.com/taxonomy/role/DisclosureOnePercentagePointChangeInAssumedHealthCareCostTrendRates">
+        <link:definition>159 - Disclosure - One-Percentage Point Change in Assumed Health Care Cost Trend Rates (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureTargetAssetAllocationAndActualAssetAllocation" roleURI="http://www.pg.com/taxonomy/role/DisclosureTargetAssetAllocationAndActualAssetAllocation">
+        <link:definition>160 - Disclosure - Target Asset Allocation and Actual Asset Allocation (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureTargetAssetAllocationAndActualAssetAllocationParenthetical" roleURI="http://www.pg.com/taxonomy/role/DisclosureTargetAssetAllocationAndActualAssetAllocationParenthetical">
+        <link:definition>161 - Disclosure - Target Asset Allocation and Actual Asset Allocation (Parenthetical) (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureFairValueOfTheCompanysPlanAssetsSegregatedByLevelWithinTheFairValueHierarchy" roleURI="http://www.pg.com/taxonomy/role/DisclosureFairValueOfTheCompanysPlanAssetsSegregatedByLevelWithinTheFairValueHierarchy">
+        <link:definition>162 - Disclosure - Fair Value of the Company&#x2019;s Plan Assets Segregated by Level within the Fair Value Hierarchy (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureTotalBenefitPaymentsExpectedToBePaidToParticipants" roleURI="http://www.pg.com/taxonomy/role/DisclosureTotalBenefitPaymentsExpectedToBePaidToParticipants">
+        <link:definition>163 - Disclosure - Total Benefit Payments Expected to be Paid to Participants (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureSeriesAAndBPreferredSharesOfTheESOPNumberOfSharesOutstanding" roleURI="http://www.pg.com/taxonomy/role/DisclosureSeriesAAndBPreferredSharesOfTheESOPNumberOfSharesOutstanding">
+        <link:definition>164 - Disclosure - Series A and B Preferred Shares of the ESOP Number of Shares Outstanding (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureEarningsFromContinuingOperationsBeforeIncomeTaxes" roleURI="http://www.pg.com/taxonomy/role/DisclosureEarningsFromContinuingOperationsBeforeIncomeTaxes">
+        <link:definition>165 - Disclosure - Earnings from Continuing Operations Before Income Taxes (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureProvisionForIncomeTaxesOnContinuingOperations" roleURI="http://www.pg.com/taxonomy/role/DisclosureProvisionForIncomeTaxesOnContinuingOperations">
+        <link:definition>166 - Disclosure - Provision for Income Taxes on Continuing Operations (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureReconciliationOfTheUSFederalStatutoryIncomeTaxRateToOurActualIncomeTaxRateOnContinuingOperations" roleURI="http://www.pg.com/taxonomy/role/DisclosureReconciliationOfTheUSFederalStatutoryIncomeTaxRateToOurActualIncomeTaxRateOnContinuingOperations">
+        <link:definition>167 - Disclosure - Reconciliation of the U.S. Federal Statutory Income Tax Rate to our Actual Income Tax Rate on Continuing Operations (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureINCOMETAXESAdditionalInformation" roleURI="http://www.pg.com/taxonomy/role/DisclosureINCOMETAXESAdditionalInformation">
+        <link:definition>168 - Disclosure - INCOME TAXES - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureReconciliationOfTheBeginningAndEndingLiabilityForUnrecognizedTaxBenefits" roleURI="http://www.pg.com/taxonomy/role/DisclosureReconciliationOfTheBeginningAndEndingLiabilityForUnrecognizedTaxBenefits">
+        <link:definition>169 - Disclosure - Reconciliation of the Beginning and Ending Liability for Unrecognized Tax Benefits (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureDeferredIncomeTaxAssetsAndLiabilities" roleURI="http://www.pg.com/taxonomy/role/DisclosureDeferredIncomeTaxAssetsAndLiabilities">
+        <link:definition>170 - Disclosure - Deferred Income Tax Assets and Liabilities (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosurePurchaseObligations" roleURI="http://www.pg.com/taxonomy/role/DisclosurePurchaseObligations">
+        <link:definition>171 - Disclosure - Purchase Obligations (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureCOMMITMENTSANDCONTINGENCIESAdditionalInformation" roleURI="http://www.pg.com/taxonomy/role/DisclosureCOMMITMENTSANDCONTINGENCIESAdditionalInformation">
+        <link:definition>172 - Disclosure - COMMITMENTS AND CONTINGENCIES - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureOperatingLeasePaymentsNet" roleURI="http://www.pg.com/taxonomy/role/DisclosureOperatingLeasePaymentsNet">
+        <link:definition>173 - Disclosure - Operating Lease Payments, Net (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureSEGMENTINFORMATIONAdditionalInformation" roleURI="http://www.pg.com/taxonomy/role/DisclosureSEGMENTINFORMATIONAdditionalInformation">
+        <link:definition>174 - Disclosure - SEGMENT INFORMATION - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureGlobalSegmentResults" roleURI="http://www.pg.com/taxonomy/role/DisclosureGlobalSegmentResults">
+        <link:definition>175 - Disclosure - Global Segment Results (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureDISCONTINUEDOPERATIONSAdditionalInformation" roleURI="http://www.pg.com/taxonomy/role/DisclosureDISCONTINUEDOPERATIONSAdditionalInformation">
+        <link:definition>176 - Disclosure - DISCONTINUED OPERATIONS - Additional Information (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureNetEarningsFromDiscontinuedOperationsForThePharmaceuticalsAndCoffeeBusinesses" roleURI="http://www.pg.com/taxonomy/role/DisclosureNetEarningsFromDiscontinuedOperationsForThePharmaceuticalsAndCoffeeBusinesses">
+        <link:definition>177 - Disclosure - Net Earnings from Discontinued Operations for the Pharmaceuticals and Coffee Businesses (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="DisclosureQuarterlyResultsUnaudited" roleURI="http://www.pg.com/taxonomy/role/DisclosureQuarterlyResultsUnaudited">
+        <link:definition>178 - Disclosure - Quarterly Results (Unaudited) (Detail)</link:definition>
+        <link:usedOn>link:calculationLink</link:usedOn>
+        <link:usedOn>link:presentationLink</link:usedOn>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="pg-20100630_cal.xml" xlink:role="http://www.xbrl.org/2003/role/calculationLinkbaseRef" xlink:title="Calculation Links, all" xlink:type="simple"/>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="pg-20100630_def.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:title="Definition Links, all" xlink:type="simple"/>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="pg-20100630_lab.xml" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:title="Label Links, all" xlink:type="simple"/>
+      <link:linkbaseRef xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="pg-20100630_pre.xml" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:title="Presentation Links, all" xlink:type="simple"/>
+    </appinfo>
+  </annotation>
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+  <import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <import namespace="http://xbrl.us/us-types/2009-01-31" schemaLocation="http://taxonomies.xbrl.us/us-gaap/2009/elts/us-types-2009-01-31.xsd"/>
+  <import namespace="http://xbrl.us/us-gaap/2009-01-31" schemaLocation="http://taxonomies.xbrl.us/us-gaap/2009/elts/us-gaap-2009-01-31.xsd"/>
+  <import namespace="http://xbrl.us/dei/2009-01-31" schemaLocation="http://taxonomies.xbrl.us/us-gaap/2009/non-gaap/dei-2009-01-31.xsd"/>
+  <element abstract="false" id="pg_AccruedAdvertisingAndMarketingCurrent" name="AccruedAdvertisingAndMarketingCurrent" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_AdjustmentForTheCumulativeEffectOfInitialAdoptionOfNewAccountingPrinciple" name="AdjustmentForTheCumulativeEffectOfInitialAdoptionOfNewAccountingPrinciple" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_BabyCareAndFamilyCareSegmentMember" name="BabyCareAndFamilyCareSegmentMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_BasisOfPresentationDisclosureTextBlock" name="BasisOfPresentationDisclosureTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_BeautyAndGroomingGlobalBusinessUnitMember" name="BeautyAndGroomingGlobalBusinessUnitMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_BeautySegmentMember" name="BeautySegmentMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_BrandsMember" name="BrandsMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_CashFlowPresentationPolicyTextBlock" name="CashFlowPresentationPolicyTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_CashPaidDuringPeriodForAbstract" name="CashPaidDuringPeriodForAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_CoffeeSegmentMember" name="CoffeeSegmentMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_CommonStockHeldInTreasury" name="CommonStockHeldInTreasury" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_CommonStockSharesHeldInTreasury" name="CommonStockSharesHeldInTreasury" nillable="true" substitutionGroup="xbrli:item" type="xbrli:sharesItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_CompanyStockMember" name="CompanyStockMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_ComputerEquipmentAndCapitalizedSoftwareMember" name="ComputerEquipmentAndCapitalizedSoftwareMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_ContributionsToPostretirementPlan" name="ContributionsToPostretirementPlan" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_CorporateMember" name="CorporateMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_DebtDueWithinOneYearTextBlock" name="DebtDueWithinOneYearTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_DeferredTaxAssetsAccruedInterestAndTaxes" name="DeferredTaxAssetsAccruedInterestAndTaxes" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_DeferredTaxAssetsAccruedMarketingAndPromotionExpense" name="DeferredTaxAssetsAccruedMarketingAndPromotionExpense" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_DeferredTaxAssetsAndLiabilitiesTextBlock" name="DeferredTaxAssetsAndLiabilitiesTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_DeferredTaxAssetsGoodwillAndIntangibleAssets" name="DeferredTaxAssetsGoodwillAndIntangibleAssets" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_DeferredTaxAssetsPensionAndPostretirementBenefits" name="DeferredTaxAssetsPensionAndPostretirementBenefits" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_DeferredTaxAssetsPropertyPlantAndEquipment" name="DeferredTaxAssetsPropertyPlantAndEquipment" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_DefinedBenefitPlanAcquisitionsDivestituresBenefitObligation" name="DefinedBenefitPlanAcquisitionsDivestituresBenefitObligation" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_DefinedBenefitPlanAcquisitionsDivestituresPlanAssets" name="DefinedBenefitPlanAcquisitionsDivestituresPlanAssets" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_DefinedBenefitPlanAnitcipatedEmployerContributionsBenefitPayments" name="DefinedBenefitPlanAnitcipatedEmployerContributionsBenefitPayments" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_DefinedBenefitPlanAssetsTargetAllocationsTotal" name="DefinedBenefitPlanAssetsTargetAllocationsTotal" nillable="true" substitutionGroup="xbrli:item" type="us-types:percentItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_DefinedBenefitPlanAssumptionsUsedCalculatingNetPeriodicBenefitCostExpectedLongTermReturnOnAssetsRangeMaximum" name="DefinedBenefitPlanAssumptionsUsedCalculatingNetPeriodicBenefitCostExpectedLongTermReturnOnAssetsRangeMaximum" nillable="true" substitutionGroup="xbrli:item" type="us-types:percentItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_DefinedBenefitPlanAssumptionsUsedCalculatingNetPeriodicBenefitCostExpectedLongTermReturnOnAssetsRangeMinimum" name="DefinedBenefitPlanAssumptionsUsedCalculatingNetPeriodicBenefitCostExpectedLongTermReturnOnAssetsRangeMinimum" nillable="true" substitutionGroup="xbrli:item" type="us-types:percentItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_DefinedBenefitPlanCurtailmentsAndSettlements" name="DefinedBenefitPlanCurtailmentsAndSettlements" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_DefinedBenefitPlanEquitySecuritiesAmount" name="DefinedBenefitPlanEquitySecuritiesAmount" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_DefinedBenefitPlanESOPDebtServicing" name="DefinedBenefitPlanESOPDebtServicing" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_DefinedBenefitPlanGrossPeriodicBenefitCost" name="DefinedBenefitPlanGrossPeriodicBenefitCost" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DefinedBenefitPlanPensionPlansWithProjectedBenefitObligationsInExcessOfPlanAssetsAbstract" name="DefinedBenefitPlanPensionPlansWithProjectedBenefitObligationsInExcessOfPlanAssetsAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_DefinedBenefitPlanPensionPlansWithProjectedBenefitObligationsInExcessOfPlanAssetsAggregateAccumulatedBenefitObligation" name="DefinedBenefitPlanPensionPlansWithProjectedBenefitObligationsInExcessOfPlanAssetsAggregateAccumulatedBenefitObligation" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_DefinedBenefitPlanPensionPlansWithProjectedBenefitObligationsInExcessOfPlanAssetsAggregateFairValueOfPlanAssets" name="DefinedBenefitPlanPensionPlansWithProjectedBenefitObligationsInExcessOfPlanAssetsAggregateFairValueOfPlanAssets" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_DefinedBenefitPlanPensionPlansWithProjectedBenefitObligationsInExcessOfPlanAssetsAggregateProjectedBenefitObligation" name="DefinedBenefitPlanPensionPlansWithProjectedBenefitObligationsInExcessOfPlanAssetsAggregateProjectedBenefitObligation" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_DefinedBenefitPlansAmountRecognizedInPeriodicBenefitCostAndAccumulatedOtherComprehensiveIncome" name="DefinedBenefitPlansAmountRecognizedInPeriodicBenefitCostAndAccumulatedOtherComprehensiveIncome" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_DefinedContributionPlanContributionRate" name="DefinedContributionPlanContributionRate" nillable="true" substitutionGroup="xbrli:item" type="us-types:percentItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DerivativesByDerivativeInstrumentContractAxis" name="DerivativesByDerivativeInstrumentContractAxis" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_DerivativesByDerivativeInstrumentContractDomain" name="DerivativesByDerivativeInstrumentContractDomain" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureAmortizationOfIntangibleAssetsAbstract" name="DisclosureAmortizationOfIntangibleAssetsAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureAmountsExpectedToBeAmortizedFromAccumulatedOtherComprehensiveIncomeIntoNetPeriodBenefitCostAbstract" name="DisclosureAmountsExpectedToBeAmortizedFromAccumulatedOtherComprehensiveIncomeIntoNetPeriodBenefitCostAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureAssumptionsUtilizedInTheBinomialLatticeBasedValuationModelInCalculatingTheCompensationExpenseForStockOptionsGrantedAbstract" name="DisclosureAssumptionsUtilizedInTheBinomialLatticeBasedValuationModelInCalculatingTheCompensationExpenseForStockOptionsGrantedAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureChangeInTheNetCarryingAmountOfGoodwillByGlobalBusinessUnitAbstract" name="DisclosureChangeInTheNetCarryingAmountOfGoodwillByGlobalBusinessUnitAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureCOMMITMENTSANDCONTINGENCIESAdditionalInformationAbstract" name="DisclosureCOMMITMENTSANDCONTINGENCIESAdditionalInformationAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureComponentsOfTheNetPeriodicBenefitCostAbstract" name="DisclosureComponentsOfTheNetPeriodicBenefitCostAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureDebtDueWithinOneYearAbstract" name="DisclosureDebtDueWithinOneYearAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureDeferredIncomeTaxAssetsAndLiabilitiesAbstract" name="DisclosureDeferredIncomeTaxAssetsAndLiabilitiesAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureDISCONTINUEDOPERATIONSAdditionalInformationAbstract" name="DisclosureDISCONTINUEDOPERATIONSAdditionalInformationAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureEarningsFromContinuingOperationsBeforeIncomeTaxesAbstract" name="DisclosureEarningsFromContinuingOperationsBeforeIncomeTaxesAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureEstimatedAmortizationExpenseAbstract" name="DisclosureEstimatedAmortizationExpenseAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureFairValueOfTheCompanysPlanAssetsSegregatedByLevelWithinTheFairValueHierarchyAbstract" name="DisclosureFairValueOfTheCompanysPlanAssetsSegregatedByLevelWithinTheFairValueHierarchyAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureFairValuesAndAmountsOfGainsAndLossesOnQualifyingAndNonQualifyingFinancialInstrumentsUsedInHedgingTransactionsAbstract" name="DisclosureFairValuesAndAmountsOfGainsAndLossesOnQualifyingAndNonQualifyingFinancialInstrumentsUsedInHedgingTransactionsAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureFinancialAssetsAndLiabilitiesThatAreMeasuredAtFairValueOnARecurringBasisAbstract" name="DisclosureFinancialAssetsAndLiabilitiesThatAreMeasuredAtFairValueOnARecurringBasisAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureGlobalSegmentResultsAbstract" name="DisclosureGlobalSegmentResultsAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureIdentifiableIntangibleAssetsAbstract" name="DisclosureIdentifiableIntangibleAssetsAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureINCOMETAXESAdditionalInformationAbstract" name="DisclosureINCOMETAXESAdditionalInformationAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureLongTermDebtAbstract" name="DisclosureLongTermDebtAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureLongTermDebtMaturitiesAbstract" name="DisclosureLongTermDebtMaturitiesAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureNetEarningsAndCommonSharesUsedToCalculateBasicAndDilutedNetEarningsPerShareAbstract" name="DisclosureNetEarningsAndCommonSharesUsedToCalculateBasicAndDilutedNetEarningsPerShareAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureNetEarningsFromDiscontinuedOperationsForThePharmaceuticalsAndCoffeeBusinessesAbstract" name="DisclosureNetEarningsFromDiscontinuedOperationsForThePharmaceuticalsAndCoffeeBusinessesAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureOnePercentagePointChangeInAssumedHealthCareCostTrendRatesAbstract" name="DisclosureOnePercentagePointChangeInAssumedHealthCareCostTrendRatesAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureOperatingLeasePaymentsNetAbstract" name="DisclosureOperatingLeasePaymentsNetAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosurePensionPlansWithAccumulatedAndProjectedBenefitObligationsInExcessOfPlanAssetsAbstract" name="DisclosurePensionPlansWithAccumulatedAndProjectedBenefitObligationsInExcessOfPlanAssetsAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosurePOSTRETIREMENTBENEFITSANDEMPLOYEESTOCKOWNERSHIPPLANAdditionalInformationAbstract" name="DisclosurePOSTRETIREMENTBENEFITSANDEMPLOYEESTOCKOWNERSHIPPLANAdditionalInformationAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureProvisionForIncomeTaxesOnContinuingOperationsAbstract" name="DisclosureProvisionForIncomeTaxesOnContinuingOperationsAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosurePurchaseObligationsAbstract" name="DisclosurePurchaseObligationsAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureQuarterlyResultsUnauditedAbstract" name="DisclosureQuarterlyResultsUnauditedAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureReconciliationOfBenefitObligationsAndPlanAssetsOfDefinedBenefitRetirementPlansAndOtherRetireeBenefitPlansAbstract" name="DisclosureReconciliationOfBenefitObligationsAndPlanAssetsOfDefinedBenefitRetirementPlansAndOtherRetireeBenefitPlansAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureReconciliationOfDefinedBenefitRetirementPlansAndOtherRetireeBenefitPlansRecognizedInAssetLiabilityAndAccumulatedOtherComprehensiveIncomeAbstract" name="DisclosureReconciliationOfDefinedBenefitRetirementPlansAndOtherRetireeBenefitPlansRecognizedInAssetLiabilityAndAccumulatedOtherComprehensiveIncomeAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureReconciliationOfTheBeginningAndEndingLiabilityForUnrecognizedTaxBenefitsAbstract" name="DisclosureReconciliationOfTheBeginningAndEndingLiabilityForUnrecognizedTaxBenefitsAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureReconciliationOfTheUSFederalStatutoryIncomeTaxRateToOurActualIncomeTaxRateOnContinuingOperationsAbstract" name="DisclosureReconciliationOfTheUSFederalStatutoryIncomeTaxRateToOurActualIncomeTaxRateOnContinuingOperationsAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureRISKMANAGEMENTACTIVITIESANDFAIRVALUEMEASUREMENTSAdditionalInformationAbstract" name="DisclosureRISKMANAGEMENTACTIVITIESANDFAIRVALUEMEASUREMENTSAdditionalInformationAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureSEGMENTINFORMATIONAdditionalInformationAbstract" name="DisclosureSEGMENTINFORMATIONAdditionalInformationAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureSelectedComponentsOfCurrentAndNoncurrentLiabilitiesAbstract" name="DisclosureSelectedComponentsOfCurrentAndNoncurrentLiabilitiesAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureSeriesAAndBPreferredSharesOfTheESOPNumberOfSharesOutstandingAbstract" name="DisclosureSeriesAAndBPreferredSharesOfTheESOPNumberOfSharesOutstandingAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureSTOCKBASEDCOMPENSATIONAdditionalInformationAbstract" name="DisclosureSTOCKBASEDCOMPENSATIONAdditionalInformationAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureSummaryOfOptionsOutstandingUnderThePlansAndActivityDuringTheYearAbstract" name="DisclosureSummaryOfOptionsOutstandingUnderThePlansAndActivityDuringTheYearAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureSUMMARYOFSIGNIFICANTACCOUNTINGPOLICIESAdditionalInformationAbstract" name="DisclosureSUMMARYOFSIGNIFICANTACCOUNTINGPOLICIESAdditionalInformationAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureTargetAssetAllocationAndActualAssetAllocationAbstract" name="DisclosureTargetAssetAllocationAndActualAssetAllocationAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureTotalBenefitPaymentsExpectedToBePaidToParticipantsAbstract" name="DisclosureTotalBenefitPaymentsExpectedToBePaidToParticipantsAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DisclosureWeightedAverageAssumptionsForTheDefinedBenefitAndOtherRetireeBenefitCalculationsAsWellAsAssumedHealthCareTrendRatesAbstract" name="DisclosureWeightedAverageAssumptionsForTheDefinedBenefitAndOtherRetireeBenefitCalculationsAsWellAsAssumedHealthCareTrendRatesAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_DocumentDocumentandEntityInformationAbstract" name="DocumentDocumentandEntityInformationAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_EffectOfAOnePercentagePointChangeInAssumedHealthCareCostTrendRatesDisclosureTextBlock" name="EffectOfAOnePercentagePointChangeInAssumedHealthCareCostTrendRatesDisclosureTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_EmployeeServiceShareBasedCompensationUnrecognizedCompensationCostsNonvestedAwardsWeightedAveragePeriodOfRecognition" name="EmployeeServiceShareBasedCompensationUnrecognizedCompensationCostsNonvestedAwardsWeightedAveragePeriodOfRecognition" nillable="true" substitutionGroup="xbrli:item" type="xbrli:decimalItemType" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_EmployeeStockOwnershipPlanESOPDebtOutstanding" name="EmployeeStockOwnershipPlanESOPDebtOutstanding" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_EntityWideDisclosureOnGeographicAreasTotalAssetsInEntitySCountryOfDomicile" name="EntityWideDisclosureOnGeographicAreasTotalAssetsInEntitySCountryOfDomicile" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_ESOPDebentures9.36PercentDue2010To2021Member" name="ESOPDebentures9.36PercentDue2010To2021Member" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_ESOPDebtImpacts" name="ESOPDebtImpacts" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_EstimatesAndAssumptionsPolicyTextBlock" name="EstimatesAndAssumptionsPolicyTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_EURNote3.38PercentDueDecember2012Member" name="EURNote3.38PercentDueDecember2012Member" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_EURNote4.13PercentDueDecember2020Member" name="EURNote4.13PercentDueDecember2020Member" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_EURNote4.50PercentDueMay2014Member" name="EURNote4.50PercentDueMay2014Member" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_EURNote4.88PercentDueMay2027Member" name="EURNote4.88PercentDueMay2027Member" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_EURNote4.88PercentDueOctober2011Member" name="EURNote4.88PercentDueOctober2011Member" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_EURNote5.13PercentDueOctober2017Member" name="EURNote5.13PercentDueOctober2017Member" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_ExpectedAmortizationExpenseTextBlock" name="ExpectedAmortizationExpenseTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_ExpectedContributionsToFundedPensionPlans" name="ExpectedContributionsToFundedPensionPlans" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_ExpectedContributionsToUnfundedPensionPlans" name="ExpectedContributionsToUnfundedPensionPlans" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_FabricCareAndHomeCareSegmentMember" name="FabricCareAndHomeCareSegmentMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_FairValueAssetsAndLiabilitiesComponentDomain" name="FairValueAssetsAndLiabilitiesComponentDomain" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_FairValueAssetsAndLiabilitiesComponentsAxis" name="FairValueAssetsAndLiabilitiesComponentsAxis" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_FairValueAssetsAndLiabilitiesMeasuredOnRecurringBasisTextBlock" name="FairValueAssetsAndLiabilitiesMeasuredOnRecurringBasisTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_FairValueAssetsMeasuredOnRecurringBasis" name="FairValueAssetsMeasuredOnRecurringBasis" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element abstract="true" id="pg_FairValueAssetsMeasuredOnRecurringBasisAbstract" name="FairValueAssetsMeasuredOnRecurringBasisAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_FairValueLiabilitiesMeasuredOnRecurringBasis" name="FairValueLiabilitiesMeasuredOnRecurringBasis" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element abstract="true" id="pg_FairValueLiabilitiesMeasuredOnRecurringBasisAbstract" name="FairValueLiabilitiesMeasuredOnRecurringBasisAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_FairValueMeasurementsAndDisclosuresPolicyTextBlock" name="FairValueMeasurementsAndDisclosuresPolicyTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_FiniteLivedIntangibleAssetsMember" name="FiniteLivedIntangibleAssetsMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_GainLossOnSaleOfBusiness" name="GainLossOnSaleOfBusiness" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_GBPNote6.25PercentDueJanuary2030Member" name="GBPNote6.25PercentDueJanuary2030Member" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_GoodwillAcquisitionsAndDivestitures" name="GoodwillAcquisitionsAndDivestitures" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_GoodwillAndIntangibleAssetsNet" name="GoodwillAndIntangibleAssetsNet" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element abstract="true" id="pg_GoodwillAndOtherIntangibleAssetsAbstract" name="GoodwillAndOtherIntangibleAssetsAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_GroomingSegmentMember" name="GroomingSegmentMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_GrossMarginPercentOfNetSales" name="GrossMarginPercentOfNetSales" nillable="true" substitutionGroup="xbrli:item" type="us-types:percentItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_HealthAndWellBeingGlobalBusinessUnitMember" name="HealthAndWellBeingGlobalBusinessUnitMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_HealthCareSegmentMember" name="HealthCareSegmentMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_HouseholdCareGlobalBusinessUnitMember" name="HouseholdCareGlobalBusinessUnitMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_IncomeLossFromContinuingOperationsBeforeIncomeTaxes" name="IncomeLossFromContinuingOperationsBeforeIncomeTaxes" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_IncomeTaxDisclosureTableTextBlock" name="IncomeTaxDisclosureTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_IncomeTaxEffectsDeductionsMedicarePrescriptionDrugBenefit" name="IncomeTaxEffectsDeductionsMedicarePrescriptionDrugBenefit" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_IndefiniteLivedIntangibleAssetsMember" name="IndefiniteLivedIntangibleAssetsMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_IntangibleAssetsByAmortizationAxis" name="IntangibleAssetsByAmortizationAxis" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_IntangibleAssetsByAmortizationDomain" name="IntangibleAssetsByAmortizationDomain" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_IntangibleAssetsByMajorClassAxis" name="IntangibleAssetsByMajorClassAxis" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_IntangibleAssetsGrossExcludingGoodwill" name="IntangibleAssetsGrossExcludingGoodwill" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_IntangibleAssetsMajorClassNameDomain" name="IntangibleAssetsMajorClassNameDomain" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_JPYNote0.95PercentDueMay2015Member" name="JPYNote0.95PercentDueMay2015Member" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_KeyManagerStockOptionOfAwardsGrantedFromJuly1998ThroughAugust2002Life" name="KeyManagerStockOptionOfAwardsGrantedFromJuly1998ThroughAugust2002Life" nillable="true" substitutionGroup="xbrli:item" type="xbrli:decimalItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_KeyManagerStockOptionOfAwardsGrantedSinceSeptember2002Life" name="KeyManagerStockOptionOfAwardsGrantedSinceSeptember2002Life" nillable="true" substitutionGroup="xbrli:item" type="xbrli:decimalItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_LongTermDebtFairValueDisclosure" name="LongTermDebtFairValueDisclosure" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_LongTermDebtWeightedAverageInterestRate" name="LongTermDebtWeightedAverageInterestRate" nillable="true" substitutionGroup="xbrli:item" type="us-types:percentItemType" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_LowerLimitMember" name="LowerLimitMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_MaturitiesOfLongTermDebtDisclosuresTextBlock" name="MaturitiesOfLongTermDebtDisclosuresTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_NetOperatingLossExpiringWithin20YearsMember" name="NetOperatingLossExpiringWithin20YearsMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_NetOperatingLossIndefiniteLifeMember" name="NetOperatingLossIndefiniteLifeMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_NotesToFinancialStatementsAbstract" name="NotesToFinancialStatementsAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_NumberOfCountriesInWhichProductIsSold" name="NumberOfCountriesInWhichProductIsSold" nillable="true" substitutionGroup="xbrli:item" type="xbrli:integerItemType" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_NumberOfCountriesWithOnTheGroundOperations" name="NumberOfCountriesWithOnTheGroundOperations" nillable="true" substitutionGroup="xbrli:item" type="xbrli:integerItemType" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_OrganizationConsolidationPresentationOfFinancialStatementsAndSignificantAccountingPoliciesDisclosureTextBlock" name="OrganizationConsolidationPresentationOfFinancialStatementsAndSignificantAccountingPoliciesDisclosureTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_OtherComprehensiveIncomeDefinedBenefitPlanCurrencyTranslationAndOtherBeforeTax" name="OtherComprehensiveIncomeDefinedBenefitPlanCurrencyTranslationAndOtherBeforeTax" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_OtherComprehensiveIncomeDefinedBenefitPlanSettlementAndCurtailmentCostBeforeTax" name="OtherComprehensiveIncomeDefinedBenefitPlanSettlementAndCurtailmentCostBeforeTax" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_OtherComprehensiveIncomeQualifyingDerivativeInstrumentsAndInvestmentSecuritiesNetOfTaxPeriodIncreaseDecrease" name="OtherComprehensiveIncomeQualifyingDerivativeInstrumentsAndInvestmentSecuritiesNetOfTaxPeriodIncreaseDecrease" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_OtherComprehensiveIncomeQualifyingDerivativeInstrumentsAndInvestmentSecuritiesTaxEffectPeriodIncreaseDecrease" name="OtherComprehensiveIncomeQualifyingDerivativeInstrumentsAndInvestmentSecuritiesTaxEffectPeriodIncreaseDecrease" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_OtherForeignCurrencyInstrumentsMember" name="OtherForeignCurrencyInstrumentsMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_OtherIntangibleAssetsMember" name="OtherIntangibleAssetsMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_OtherStockBasedCompensationExpense" name="OtherStockBasedCompensationExpense" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_PatentsAndDevelopedTechnologyMember" name="PatentsAndDevelopedTechnologyMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_PensionAndOtherPostretirementBenefitsChangesInBenefitObligationAndFairValueOfPlanAssetsDisclosureTextBlock" name="PensionAndOtherPostretirementBenefitsChangesInBenefitObligationAndFairValueOfPlanAssetsDisclosureTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_PensionAndOtherPostretirementBenefitsExpectedAmortizationOfAccumulatedOtherComprehensiveIncomeDisclosureTextBlock" name="PensionAndOtherPostretirementBenefitsExpectedAmortizationOfAccumulatedOtherComprehensiveIncomeDisclosureTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_PensionAndOtherPostretirementBenefitsExpectedBenefitPaymentsDisclosureTextBlock" name="PensionAndOtherPostretirementBenefitsExpectedBenefitPaymentsDisclosureTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_PensionAndOtherPostretirementBenefitsNetPeriodicBenefitCostsDisclosureTextBlock" name="PensionAndOtherPostretirementBenefitsNetPeriodicBenefitCostsDisclosureTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_PensionAndOtherPostretirementBenefitsOtherDisclosureTableTextblock" name="PensionAndOtherPostretirementBenefitsOtherDisclosureTableTextblock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_PensionAndOtherPostretirementBenefitsWeightedAverageAssumptionsDisclosureTextBlock" name="PensionAndOtherPostretirementBenefitsWeightedAverageAssumptionsDisclosureTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_PensionAndPostretirementPlanAssetAllocationDisclosureTextBlock" name="PensionAndPostretirementPlanAssetAllocationDisclosureTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_PensionAndPostretirementPlanAssetsByFairValueHierarchyTextBlock" name="PensionAndPostretirementPlanAssetsByFairValueHierarchyTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_PercentageOfTotalRevenuesByCustomer" name="PercentageOfTotalRevenuesByCustomer" nillable="true" substitutionGroup="xbrli:item" type="us-types:percentItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_PharmaceuticalsMember" name="PharmaceuticalsMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_PlansWithAccumulatedAndProjectedBenefitObligationsInExcessOfTheFairValueOfPlanAssetsDisclosureTextBlock" name="PlansWithAccumulatedAndProjectedBenefitObligationsInExcessOfTheFairValueOfPlanAssetsDisclosureTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_PreferredStockDividendsPerSharePaid" name="PreferredStockDividendsPerSharePaid" nillable="true" substitutionGroup="xbrli:item" type="us-types:perShareItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_PreferredStockLiquidationDepositaryPerShares" name="PreferredStockLiquidationDepositaryPerShares" nillable="true" substitutionGroup="xbrli:item" type="us-types:perShareItemType" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_PrepaidExpenseAndOtherAssetsCurrent" name="PrepaidExpenseAndOtherAssetsCurrent" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_ProceedsFromSaleOfDiscontinuedOperations" name="ProceedsFromSaleOfDiscontinuedOperations" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_ProceedsFromStockOptionsExercisedAndOtherFinancingActivities" name="ProceedsFromStockOptionsExercisedAndOtherFinancingActivities" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_PurchaseObligationPercentage" name="PurchaseObligationPercentage" nillable="true" substitutionGroup="xbrli:item" type="us-types:percentItemType" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_QuarterlyFinancialInformationTableTextBlock" name="QuarterlyFinancialInformationTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_RangeAxis" name="RangeAxis" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_RangeDomain" name="RangeDomain" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_ReconciliationOfEarningsPerShareTextBlock" name="ReconciliationOfEarningsPerShareTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_ReconciliationOfOperatingIncomeByGeographyTextBlock" name="ReconciliationOfOperatingIncomeByGeographyTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_ReconciliationOfUnitedStatesStatutoryFederalTaxRateTextBlock" name="ReconciliationOfUnitedStatesStatutoryFederalTaxRateTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_ResearchAndDevelopmentCosts" name="ResearchAndDevelopmentCosts" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_ReserveForESOPDebtRetirement" name="ReserveForESOPDebtRetirement" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_ReserveForESOPDebtRetirementMember" name="ReserveForESOPDebtRetirementMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_RiskManagementAndFairValueTextBlock" name="RiskManagementAndFairValueTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_ScheduleOfAmortizationExpenseTextBlock" name="ScheduleOfAmortizationExpenseTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_ScheduleOfDisposalGroupsIncludingDiscontinuedOperationsIncomeStatementDisclosuresTextBlock" name="ScheduleOfDisposalGroupsIncludingDiscontinuedOperationsIncomeStatementDisclosuresTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_ScheduleOfOperatingLeaseObligationsTextBlock" name="ScheduleOfOperatingLeaseObligationsTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_ScheduleOfPurchaseObligationsTextBlock" name="ScheduleOfPurchaseObligationsTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_ScheduleOfShareBasedCompensationOptionsActivityTextBlock" name="ScheduleOfShareBasedCompensationOptionsActivityTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_SegmentInformationByServicesAxis" name="SegmentInformationByServicesAxis" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_SegmentInformationByServicesDomain" name="SegmentInformationByServicesDomain" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_SegmentReportingInformationBySegmentSecondaryAxis" name="SegmentReportingInformationBySegmentSecondaryAxis" nillable="true" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_SegmentReportingInformationBySegmentSecondaryDomain" name="SegmentReportingInformationBySegmentSecondaryDomain" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_ShareBasedCompensationArrangementByShareBasedPaymentAwardGrantDateFairValueOfOptionsVested" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardGrantDateFairValueOfOptionsVested" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsAggregateIntrinsicValueAbstract" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsAggregateIntrinsicValueAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsWeightedAverageExercisePriceAbstract" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsWeightedAverageExercisePriceAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="true" id="pg_ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsWeightedAverageRemainingContractualTermAbstract" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsWeightedAverageRemainingContractualTermAbstract" nillable="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_ShareBasedCompensationArrangementByShareBasedPaymentAwardValuationAssumptionsForStockOptionsGrantedTextBlock" name="ShareBasedCompensationArrangementByShareBasedPaymentAwardValuationAssumptionsForStockOptionsGrantedTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_SnacksAndPetCareSegmentMember" name="SnacksAndPetCareSegmentMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_StockIssuedDuringPeriodEmployeeBenefitPlans" name="StockIssuedDuringPeriodEmployeeBenefitPlans" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_StockIssuedDuringPeriodSharesEmployeeBenefitPlans" name="StockIssuedDuringPeriodSharesEmployeeBenefitPlans" nillable="true" substitutionGroup="xbrli:item" type="xbrli:sharesItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_StockTenderedDuringPeriodShares" name="StockTenderedDuringPeriodShares" nillable="true" substitutionGroup="xbrli:item" type="xbrli:sharesItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_StockTenderedDuringPeriodValue" name="StockTenderedDuringPeriodValue" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_SupplementalAssetsAcquiredUnderCapitalLeases" name="SupplementalAssetsAcquiredUnderCapitalLeases" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_SupplementalFinancialInformationDisclosureTextBlock" name="SupplementalFinancialInformationDisclosureTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_SupplementalStockTenderedInExchangeForBusiness" name="SupplementalStockTenderedInExchangeForBusiness" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_TotalDeferredIncomeTaxExpenseBenefit" name="TotalDeferredIncomeTaxExpenseBenefit" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="debit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_UnrecognizedTaxBenefitsIncreasesDecreasesResultingFromCurrencyTranslation" name="UnrecognizedTaxBenefitsIncreasesDecreasesResultingFromCurrencyTranslation" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_UnrecognizedTaxBenefitsReconciliationTableTextBlock" name="UnrecognizedTaxBenefitsReconciliationTableTextBlock" nillable="true" substitutionGroup="xbrli:item" type="us-types:textBlockItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_UnrecordedUnconditionalPurchaseObligationBalanceAfterFifthAnniversary" name="UnrecordedUnconditionalPurchaseObligationBalanceAfterFifthAnniversary" nillable="true" substitutionGroup="xbrli:item" type="xbrli:monetaryItemType" xbrli:balance="credit" xbrli:periodType="instant"/>
+  <element abstract="false" id="pg_UpperLimitMember" name="UpperLimitMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_USDNote1.35PercentDueAugust2011Member" name="USDNote1.35PercentDueAugust2011Member" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_USDNote1.38PercentDueAugust2012Member" name="USDNote1.38PercentDueAugust2012Member" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_USDNote3.15PercentDueSeptember2015Member" name="USDNote3.15PercentDueSeptember2015Member" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_USDNote3.50PercentDueFebruary2015Member" name="USDNote3.50PercentDueFebruary2015Member" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_USDNote4.70PercentDueFebruary2019Member" name="USDNote4.70PercentDueFebruary2019Member" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_USDNote4.85PercentDueDecember2015Member" name="USDNote4.85PercentDueDecember2015Member" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_USDNote4.95PercentDueAugust2014Member" name="USDNote4.95PercentDueAugust2014Member" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_USDNote5.50PercentDueFebruary2034Member" name="USDNote5.50PercentDueFebruary2034Member" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_USDNote5.55PercentNoteDueMarch2037Member" name="USDNote5.55PercentNoteDueMarch2037Member" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_USDNote5.80PercentNoteDueAugust2034Member" name="USDNote5.80PercentNoteDueAugust2034Member" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+  <element abstract="false" id="pg_WalmartStoresIncAndAffiliatesMember" name="WalmartStoresIncAndAffiliatesMember" nillable="true" substitutionGroup="xbrli:item" type="us-types:domainItemType" xbrli:periodType="duration"/>
+</schema>

@@ -11,15 +11,9 @@ public class ResultSet {
   String cik;
   String periodFocus;
   String name;
-  Map<String, String> companyDetails;
   Map<String, Double> balanceSheet;
   Map<String, Double> cashFlow;
   Map<String, Double> incomeStatement;
-
-  public ResultSet(Period period, Map<String, String> details) {
-    this.period = period;
-    setCompanyDetails(details);
-  }
 
   public ResultSet(
       Period period,
@@ -42,7 +36,27 @@ public class ResultSet {
     this.balanceSheet = balanceSheet;
     this.cashFlow = cashFlow;
     this.incomeStatement = incomeStatement;
-    setCompanyDetails(details);
+    if(details != null){
+        for(String s: details.keySet()){
+            System.out.println(details.get(s));
+            switch (s){
+                case "EntityCentralIndexKey":
+                    setCik(details.get(s));
+                    break;
+                case "EntityRegistrantName":
+                    setName(details.get(s));
+                    break;
+                case "FiscalPeriodFocus":
+                    setPeriodFocus(details.get(s));
+                    break;
+                case "TradingSymbol":
+                    setTicker(details.get(s));
+                    break;
+
+            }
+        }
+    }
+
   }
 
   public static ResultSet create(
@@ -53,45 +67,14 @@ public class ResultSet {
     return new ResultSet(period, balanceSheet, cashFlow, incomeStatement);
   }
 
-  public static ResultSet create(
-      Period period,
-      Map<String, String> details,
-      Map<String, Double> balanceSheet,
-      Map<String, Double> cashFlow,
-      Map<String, Double> incomeStatement) {
-    return new ResultSet(period, details, balanceSheet, cashFlow, incomeStatement);
-  }
-
-  public static ResultSet create(Period period, Map<String, String> details) {
-    return new ResultSet(period, details);
-  }
-
-  public Map<String, String> getCompanyDetails() {
-    return companyDetails;
-  }
-
-  public void setCompanyDetails(Map<String, String> companyDetails) {
-    if (companyDetails != null) {
-      for (String s : companyDetails.keySet()) {
-        System.out.println(companyDetails.get(s));
-        switch (s) {
-          case "EntityCentralIndexKey":
-            setCik(companyDetails.get(s));
-            break;
-          case "EntityRegistrantName":
-            setName(companyDetails.get(s));
-            break;
-          case "FiscalPeriodFocus":
-            setPeriodFocus(companyDetails.get(s));
-            break;
-          case "TradingSymbol":
-            setTicker(companyDetails.get(s));
-            break;
-        }
-      }
+    public static ResultSet create(
+            Period period,
+            Map<String, String> details,
+            Map<String, Double> balanceSheet,
+            Map<String, Double> cashFlow,
+            Map<String, Double> incomeStatement) {
+        return new ResultSet(period, details, balanceSheet, cashFlow, incomeStatement);
     }
-    this.companyDetails = companyDetails;
-  }
 
   public Period getPeriod() {
     return period;
@@ -157,27 +140,17 @@ public class ResultSet {
     this.incomeStatement = incomeStatement;
   }
 
-  @Override
-  public String toString() {
-    return "ResultSet{"
-        +
-        //                "period=" + period +
-        ", ticker='"
-        + ticker
-        + '\''
-        + ", cik='"
-        + cik
-        + '\''
-        + ", periodFocus='"
-        + periodFocus
-        + '\''
-        + ", name='"
-        + name
-        + '\''
-        +
-        //                ", balanceSheet=" + balanceSheet +
-        //                ", cashFlow=" + cashFlow +
-        //                ", incomeStatement=" + incomeStatement +
-        '}';
-  }
+    @Override
+    public String toString() {
+        return "ResultSet{" +
+//                "period=" + period +
+                ", ticker='" + ticker + '\'' +
+                ", cik='" + cik + '\'' +
+                ", periodFocus='" + periodFocus + '\'' +
+                ", name='" + name + '\'' +
+//                ", balanceSheet=" + balanceSheet +
+//                ", cashFlow=" + cashFlow +
+//                ", incomeStatement=" + incomeStatement +
+                '}';
+    }
 }

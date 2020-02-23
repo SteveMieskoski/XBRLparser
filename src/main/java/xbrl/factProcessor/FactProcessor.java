@@ -1,197 +1,292 @@
 package xbrl.factProcessor;
 
-import org.dom4j.Document;
-import org.dom4j.io.SAXReader;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import xbrl.elementTypes.*;
+import xbrl.elementTypes.ContextContent;
+import xbrl.elementTypes.FactElement;
 import xbrl.elementTypes.subTypes.Period;
 import xbrl.export.ToExcel;
-import xbrl.factProcessor.extractFundamentals.FundamentalAccountingConcepts;
-import xbrl.factProcessor.extractFundamentals.ReportContent;
+import xbrl.factProcessor.extractFundamentals.*;
 import xbrl.parsers.SchemaCache;
-import xbrl.parsers.SchemaParser;
-import xbrl.parsers.concepts.ContextParser;
-import xbrl.parsers.concepts.FactParser;
-import xbrl.parsers.concepts.OrganizationParser;
-import xbrl.parsers.concepts.ResourceParser;
+import xbrl.schemaElementTypes.SchemaContent;
 import xbrl.util.CommLine;
+import xbrl.util.UniversalNamespaceCache;
 
-import java.io.File;
-import java.time.LocalDate;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-public class FactProcessor {
-    private final Logger logger = LoggerFactory.getLogger(FactProcessor.class);
-    private HoldStuff holdStuff;
+// TODO: need to update gradle to handle dependancies
+public class FactProcessor implements CommLine {
 
-    public FactProcessor() {}
+  private List<String> additionalSchemas;
+  private UniversalNamespaceCache namespaceCache;
+  private SchemaCache schemaCache;
+  private ContextContent contextContent;
+  private List<ResultSet> resultSets;
 
-    public FactProcessor(String xbrlFile) {
-        holdStuff = new HoldStuff();
-        ContextContent contextContent = factParser(xbrlFile);
-        Period period = getDocumentPrimaryReportingPeriod(contextContent.getOrganizationElements());
-        Map<Period, Map<String, FactElement>> facts =
-                mapFactsByPeriodAndSchemaName(contextContent.getAllFacts());
-        FundamentalAccountingConcepts accountingConcepts =
-                new FundamentalAccountingConcepts(facts, period);
-        FundamentalAccountingFacts accountingFacts =
-                new FundamentalAccountingFacts(
-                        holdStuff, period, accountingConcepts, contextContent.getOrganizationElements());
-        accountingFacts.process();
+  private FactProcessor() {}
+
+  public FactProcessor(String xsdFileDir, String[] additionalSchemas) {
+
+    String xsdFile = SetupProcessor.checkFilePresence(xsdFileDir);
+    if (xsdFile != null) {
+      startProcessor(xsdFile, additionalSchemas);
+    }
+  }
+
+  public FactProcessor(String xsdFileDir) {
+
+    String xsdFile = SetupProcessor.checkFilePresence(xsdFileDir);
+    if (xsdFile != null) {
+      startProcessor(xsdFile, null);
+    }
+  }
+
+  public static FactProcessor build() {
+    return new FactProcessor();
+  }
+
+  public static FactProcessor build(String xsdFileDir) {
+    return new FactProcessor(xsdFileDir);
+  }
+
+  public static FactProcessor build(String xsdFileDir, String[] additionalSchemas) {
+    return new FactProcessor(xsdFileDir, additionalSchemas);
+  }
+
+  private void startProcessor(String xsdFile, String[] additionalSchemas) {
+    String defaultPrefix = "us-gaap";
+    String customPrefix = defaultPrefix;
+    System.out.println(xsdFile);
+    if (xsdFile.contains(".xsd")) addAdditionalSchemas(xsdFile);
+    namespaceCache = SetupProcessor.namespaceParser(xsdFile);
+    if (namespaceCache != null) {
+      for (String s : namespaceCache.getUri2Prefix().keySet()) {
+        Pattern pat =
+            Pattern.compile(
+                "http://xbrl\\.org|http://www\\.xbrl\\.org|http://www\\.w3\\.org|http://xbrl\\.sec\\.gov|http://fasb\\.org|http://www\\.fasb\\.org");
+        Matcher mat = pat.matcher(s);
+        if (!mat.find()) {
+          customPrefix = namespaceCache.getUri2Prefix().get(s);
+        }
+      }
     }
 
-    public static FactProcessor build() {
-        return new FactProcessor();
+    if (additionalSchemas != null) {
+      for (String s : additionalSchemas) {
+        addAdditionalSchemas(s);
+      }
     }
 
-    public static FactProcessor parse(String xbrlFile) {
-        return new FactProcessor(xbrlFile);
+    // Temporary Hard code
+    addAdditionalSchemas(
+        "/media/sysadmin/projects/Fin/xbrl-parsers_scraps/XBRLparser/demo_data/us-gaap-2016-01-31.xsd");
+    addAdditionalSchemas(
+        "/media/sysadmin/projects/Fin/xbrl-parsers_scraps/XBRLparser/demo_data/dei-2014-01-31.xsd");
+
+    if (this.schemaCache == null) {
+      SchemaContent sc = SetupProcessor.parseSchemas(this.additionalSchemas);
+      this.schemaCache = new SchemaCache(sc);
+      this.contextContent = SetupProcessor.factParser(xsdFile, customPrefix, defaultPrefix);
+      System.out.println(this.contextContent);
+    } else {
+      List<String> toParse = this.schemaCache.filterAndUpdateCache(this.additionalSchemas);
+      SchemaContent sc = SetupProcessor.parseSchemas(toParse);
+      this.schemaCache.addManySchemaElements(sc);
+      this.contextContent = SetupProcessor.factParser(xsdFile, customPrefix, defaultPrefix);
+      System.out.println(this.contextContent);
     }
+  }
 
-    public void createExcel() {
-        if (this.holdStuff.getResultSets() != null) {
-            ToExcel.createWorkbook(this.holdStuff.getReportContent());
+  // todo: configure to accept custom mappings
+  public FundamentalAccountingFacts processAdditional(
+      String additionalXsdFile, String[] additionalSchemas) {
+    String xsdFile = SetupProcessor.checkFilePresence(additionalXsdFile);
+    if (xsdFile != null) {
+      String defaultPrefix = "us-gaap";
+      String customPrefix = defaultPrefix;
+      //      System.out.println(xsdFile);
+      if (xsdFile.contains(".xsd")) addAdditionalSchemas(xsdFile);
+      namespaceCache = SetupProcessor.namespaceParser(xsdFile);
+      if (namespaceCache != null) {
+        for (String s : namespaceCache.getUri2Prefix().keySet()) {
+          Pattern pat =
+              Pattern.compile(
+                  "http://xbrl\\.org|http://www\\.xbrl\\.org|http://www\\.w3\\.org|http://xbrl\\.sec\\.gov|http://fasb\\.org|http://www\\.fasb\\.org");
+          Matcher mat = pat.matcher(s);
+          if (!mat.find()) {
+            customPrefix = namespaceCache.getUri2Prefix().get(s);
+          }
         }
+      }
+
+      if (additionalSchemas != null) {
+        for (String s : additionalSchemas) {
+          addAdditionalSchemas(s);
+        }
+      }
+
+      // Temporary Hard code
+      addAdditionalSchemas(
+          "/media/sysadmin/projects/Fin/xbrl-parsers_scraps/XBRLparser/demo_data/us-gaap-2016-01-31.xsd");
+      addAdditionalSchemas(
+          "/media/sysadmin/projects/Fin/xbrl-parsers_scraps/XBRLparser/demo_data/dei-2014-01-31.xsd");
+
+      if (this.schemaCache == null) {
+        SchemaContent sc = SetupProcessor.parseSchemas(this.additionalSchemas);
+        this.schemaCache = new SchemaCache(sc);
+//        this.schemaCache.check();
+        this.contextContent = SetupProcessor.factParser(xsdFile, customPrefix, defaultPrefix);
+        System.out.println(this.contextContent);
+        return getFundamentalsProcessor(customPrefix);
+      } else {
+        List<String> toParse = this.schemaCache.filterAndUpdateCache(this.additionalSchemas);
+        SchemaContent sc = SetupProcessor.parseSchemas(toParse);
+        this.schemaCache.addManySchemaElements(sc);
+
+        this.contextContent = SetupProcessor.factParser(xsdFile, customPrefix, defaultPrefix);
+        System.out.println(this.contextContent);
+//        this.schemaCache.check();
+        return getFundamentalsProcessor(customPrefix);
+      }
+    } else {
+      return null; // todo: replace this with an exception
     }
+  }
 
-    private Map<Period, Map<String, FactElement>> mapFactsByPeriodAndSchemaName(
-            List<FactElement> facts) {
-        Map<Period, Map<String, FactElement>> periodFactsByName = new HashMap<>();
-        for (FactElement fe : facts) {
-
-            if (periodFactsByName.containsKey(fe.getPeriod())) {
-                periodFactsByName.get(fe.getPeriod()).put(fe.getTag(), fe);
-            } else {
-                HashMap<String, FactElement> tmp = new HashMap<>();
-                tmp.put(fe.getTag(), fe);
-                periodFactsByName.put(fe.getPeriod(), tmp);
-            }
-        }
-        return periodFactsByName;
+  private void addAdditionalSchemas(String schemas) {
+    if (this.additionalSchemas == null) {
+      this.additionalSchemas = new ArrayList<>();
     }
+    this.additionalSchemas.add(schemas);
+  }
 
-    protected ContextContent factParser(String filename) {
-
-        try {
-
-            SAXReader reader = new SAXReader();
-            Document document = reader.read(new File(filename));
-
-            List<ContextElement> contextElements = new ContextParser().parse(document);
-            List<OrganizationElement> organizationElements = new OrganizationParser().parse(document);
-
-            ContextContent contextContent = new ContextContent();
-            contextContent.addAllContextElements((LinkedList<ContextElement>) contextElements);
-            contextContent.addAllOrganizationElements(
-                    (LinkedList<OrganizationElement>) organizationElements);
-            contextContent = new FactParser().parse(document, contextContent);
-            logger.info("SETUP FACT AND CONTEXT PARSER COMPLETE");
-            return contextContent;
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            return null;
-        }
+  private FundamentalAccountingFacts getFundamentalsProcessor(String customPrefix) {
+    if (this.contextContent != null) {
+      Period period =
+              SetupProcessor.getDocumentPrimaryReportingPeriod(
+                      this.contextContent.getOrganizationElements());
+      FundamentalAccountingConcepts accountingConcepts =
+              new FundamentalAccountingConcepts(getFactsGroupedByPeriodAndName(), period);
+      System.out.println(accountingConcepts);
+      return new FundamentalAccountingFacts(
+              this, period, accountingConcepts, this.contextContent.getOrganizationElements());
+    } else {
+      return null; // todo: replace this with an exception
     }
+  }
 
-    protected Period getDocumentPrimaryReportingPeriod(
-            List<OrganizationElement> organizationElements) {
-        String yearOrQuartyer = "n";
-        String docDate = null;
-        for (OrganizationElement oe : organizationElements) {
-            if (oe.getFieldName().equals("DocumentFiscalPeriodFocus")) {
-                switch (oe.getValue()) {
-                    case "Q1":
-                        yearOrQuartyer = "q";
-                        break;
-                    case "Q2":
-                        yearOrQuartyer = "q";
-                        break;
-                    case "Q3":
-                        yearOrQuartyer = "q";
-                        break;
-                    case "Q4":
-                        yearOrQuartyer = "q";
-                        break;
-                    case "FY":
-                        yearOrQuartyer = "y";
-                        break;
-                    default:
-                        break;
-                }
-
-            } else if (oe.getFieldName().equals("DocumentPeriodEndDate")) {
-                docDate = oe.getValue();
-            }
-        }
-
-        if (docDate != null) {
-            LocalDate start = null;
-            LocalDate date = LocalDate.parse(docDate);
-            if (yearOrQuartyer.equals("q")) {
-
-                start = date.minusMonths(3);
-
-            } else if (yearOrQuartyer.equals("y")) {
-                start = date.minusMonths(12);
-                if (start.getMonthValue() == date.getMonthValue()) {
-                    start = start.plusDays(1);
-                }
-            }
-
-            Period period = new Period();
-            period.setEndDate(date);
-            period.setStartDate(start);
-            return period;
-        } else {
-            return null;
-        }
+  public FundamentalAccountingFacts getFundamentalsProcessor() {
+    if (this.contextContent != null) {
+      Period period =
+          SetupProcessor.getDocumentPrimaryReportingPeriod(
+              this.contextContent.getOrganizationElements());
+      FundamentalAccountingConcepts accountingConcepts =
+          new FundamentalAccountingConcepts(getFactsGroupedByPeriodAndName(), period);
+      System.out.println(accountingConcepts);
+      return new FundamentalAccountingFacts(
+          this, period, accountingConcepts, this.contextContent.getOrganizationElements());
+    } else {
+      return null; // todo: replace this with an exception
     }
+  }
 
-    // NOTE: An Idea Regarding another way to pass values around
-    class HoldStuff implements CommLine {
-        List<ResultSet> resultSets;
-        ReportContent reportContent;
-        Map<String, String> linkbases;
-        List<String> schemaRefs;
+  public FundamentalAccountingFacts getFundamentalsProcessor(Map<String, String[]> mappings) {
+    if (this.contextContent != null) {
+      Period period =
+          SetupProcessor.getDocumentPrimaryReportingPeriod(
+              this.contextContent.getOrganizationElements());
+      FundamentalAccountingConcepts accountingConcepts =
+          new FundamentalAccountingConcepts(getFactsGroupedByPeriodAndName(), period);
+      //    accountingConcepts.set(mappings);
 
-        @Override
-        public void transmitResults(ResultSet resultSet) {
-            if (this.resultSets == null) {
-                this.resultSets = new ArrayList<>();
-            }
-            if (this.reportContent == null) this.reportContent = new ReportContent();
-            this.reportContent.addProcessedResults(resultSet);
-            this.resultSets.add(resultSet);
-        }
-
-        @Override
-        public void transmitFileMap(Map<String, String> componentFiles) {
-            //       if (componentFiles.containsKey("fact")) {
-            ////         factFileFallback = componentFiles.get("fact");
-            //       }
-        }
-
-        @Override
-        public void transmitFileResource(Map<String, String> linkbases, List<String> schemaRefs) {
-            this.linkbases = linkbases;
-            this.schemaRefs = schemaRefs;
-        }
-
-        public List<ResultSet> getResultSets() {
-            return resultSets;
-        }
-
-        public void setResultSets(List<ResultSet> resultSets) {
-            this.resultSets = resultSets;
-        }
-
-        public ReportContent getReportContent() {
-            return reportContent;
-        }
-
-        public void setReportContent(ReportContent reportContent) {
-            this.reportContent = reportContent;
-        }
+      return new FundamentalAccountingFacts(
+          this, period, accountingConcepts, this.contextContent.getOrganizationElements());
+    } else {
+      return null; // todo: replace this with an exception
     }
+  }
+
+  @Override
+  public void transmitResults(ResultSet resultSet) {
+    if (this.resultSets == null) {
+      this.resultSets = new ArrayList<>();
+    }
+    System.out.println(resultSet);
+    System.out.println("====================================================");
+
+    this.resultSets.add(resultSet);
+  }
+
+  public void createExcel() {
+    if (this.resultSets != null) {
+      ToExcel.createWorkbook(this.resultSets);
+    }
+  }
+
+  public void process(Map<String, String[]> mappings) {
+    if (this.contextContent != null) {
+      fundamentals(mappings);
+    } else {
+      return; // todo: replace this with an exception
+    }
+  }
+
+  public void fundamentals(Map<String, String[]> mappings) {
+    if (this.contextContent != null) {
+      Period period =
+          SetupProcessor.getDocumentPrimaryReportingPeriod(
+              this.contextContent.getOrganizationElements());
+
+      FundamentalAccountingConcepts accountingConcepts =
+          new FundamentalAccountingConcepts(getFactsGroupedByPeriodAndName(), period);
+
+      accountingConcepts.setFocusPeriod(period);
+
+      if (this.contextContent.getOrganizationElements() != null) {
+        accountingConcepts.setOrganizationElementsList(
+            this.contextContent.getOrganizationElements());
+      }
+
+      accountingConcepts.process(mappings);
+    } else {
+      return; // todo: replace this with an exception
+    }
+  }
+
+  public Map<String, List<FactElement>> getFactsGroupedById() {
+    if (this.contextContent != null) {
+      return SetupProcessor.mapFactsBySchemaName(
+          this.contextContent.getAllFacts(), this.schemaCache);
+    } else {
+      return null; // todo: replace this with an exception
+    }
+  }
+
+  public Map<String, List<FactElement>> getFactsGroupedByName() {
+    if (this.contextContent != null) {
+      return SetupProcessor.mapFactsBySchemaId(this.contextContent.getAllFacts(), this.schemaCache);
+    } else {
+      return null; // todo: replace this with an exception
+    }
+  }
+
+  public Map<Period, Map<String, FactElement>> getFactsGroupedByPeriodAndId() {
+    if (this.contextContent != null) {
+      return SetupProcessor.mapFactsByPeriodAndSchemaId(
+          this.contextContent.getAllFacts(), this.schemaCache);
+    } else {
+      return null; // todo: replace this with an exception
+    }
+  }
+
+  public Map<Period, Map<String, FactElement>> getFactsGroupedByPeriodAndName() {
+    if (this.contextContent != null) {
+      return SetupProcessor.mapFactsByPeriodAndSchemaName(
+          this.contextContent.getAllFacts(), this.schemaCache);
+    } else {
+      return null; // todo: replace this with an exception
+    }
+  }
 }

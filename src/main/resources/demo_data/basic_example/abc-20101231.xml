@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<xbrl 
+	xmlns="http://www.xbrl.org/2003/instance" 
+	xmlns:xbrll="http://www.xbrl.org/2003/linkbase" 
+	xmlns:xlink="http://www.w3.org/1999/xlink" 
+	xmlns:iso4217="http://www.xbrl.org/2003/iso4217" 
+	xmlns:xbrldi="http://xbrl.org/2006/xbrldi" 
+	xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dei="http://xbrl.us/dei/2009-01-31" 
+	xmlns:dei-ent="http://xbrl.us/dei-ent/2009-01-31"
+   xmlns:dei-std="http://xbrl.us/dei-std/2009-01-31"
+	xmlns:us-gaap="http://xbrl.us/us-gaap/2009-01-31" 
+   xmlns:us-gaap-ent="http://xbrl.us/us-gaap-ent/2009-01-31"
+	xmlns:us-gaap-std="http://xbrl.us/us-gaap-std/2009-01-31" 
+	xmlns:us-roles="http://xbrl.us/us-roles/2009-01-31" 
+	xmlns:us-types="http://xbrl.us/us-types/2009-01-31" 
+   xmlns:negated="http://xbrl.us/us-gaap/negated/2009-01-31"
+   xmlns:abc="http://www.abc.com/2010-12-31"
+   
+   xsi:schemaLocation="http://xbrl.org/2006/xbrldi http://www.xbrl.org/2006/xbrldi-2006.xsd"
+	>
+
+  <xbrll:schemaRef xlink:href="abc-20101231.xsd" xlink:type="simple" xlink:arcrole="http://www.xbrlOrig.org/2003/linkbase" />
+  
+  <context id="D-2010-Domain">
+    <entity>
+      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+    </entity>
+    <period>
+      <startDate>2010-01-01</startDate>
+      <endDate>2010-12-31</endDate>
+    </period>
+  </context>
+
+  <context id="D-2010">
+    <entity>
+      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+      <segment>
+      	<xbrldi:explicitMember dimension="dei:LegalEntityAxis">us-gaap:ParentCompanyMember</xbrldi:explicitMember>
+      </segment>
+    </entity>
+    <period>
+      <startDate>2010-01-01</startDate>
+      <endDate>2010-12-31</endDate>
+    </period>
+  </context>
+  <context id="D-2009">
+    <entity>
+      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+      <segment>
+      	<xbrldi:explicitMember dimension="dei:LegalEntityAxis">us-gaap:ParentCompanyMember</xbrldi:explicitMember>
+      </segment>
+    </entity>
+    <period>
+      <startDate>2009-01-01</startDate>
+      <endDate>2009-12-31</endDate>
+    </period>
+  </context>
+
+  <context id="I-2010">
+    <entity>
+      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+      <segment>
+      	<xbrldi:explicitMember dimension="dei:LegalEntityAxis">us-gaap:ParentCompanyMember</xbrldi:explicitMember>
+      </segment>
+    </entity>
+    <period>
+      <instant>2010-12-31</instant>
+    </period>
+  </context>
+  <context id="I-2010-Domain">
+    <entity>
+      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+    </entity>
+    <period>
+      <instant>2010-12-31</instant>
+    </period>
+  </context>
+  <context id="I-2009">
+    <entity>
+      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+      <segment>
+      	<xbrldi:explicitMember dimension="dei:LegalEntityAxis">us-gaap:ParentCompanyMember</xbrldi:explicitMember>
+      </segment>
+    </entity>
+    <period>
+      <instant>2009-12-31</instant>
+    </period>
+  </context>
+  <context id="I-2008">
+    <entity>
+      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+      <segment>
+      	<xbrldi:explicitMember dimension="dei:LegalEntityAxis">us-gaap:ParentCompanyMember</xbrldi:explicitMember>
+      </segment>
+    </entity>
+    <period>
+      <instant>2008-12-31</instant>
+    </period>
+  </context>
+
+  <context id="D-2010-NMT-1">
+    <entity>
+      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+      <segment>
+      	<xbrldi:explicitMember dimension="dei:LegalEntityAxis">us-gaap:ParentCompanyMember</xbrldi:explicitMember>
+      	<xbrldi:explicitMember dimension="us-gaap:NonmonetaryTransactionTypeAxis">us-gaap:ReceiptOfAssetsInSatisfactionOfDebtMember</xbrldi:explicitMember>
+      </segment>
+    </entity>
+    <period>
+      <startDate>2010-01-01</startDate>
+      <endDate>2010-12-31</endDate>
+    </period>
+  </context>
+  <context id="D-2010-NMT-2">
+    <entity>
+      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+      <segment>
+      	<xbrldi:explicitMember dimension="dei:LegalEntityAxis">us-gaap:ParentCompanyMember</xbrldi:explicitMember>
+      	<xbrldi:explicitMember dimension="us-gaap:NonmonetaryTransactionTypeAxis">us-gaap:AdvertisingBarterTransactionsMember</xbrldi:explicitMember>
+      </segment>
+    </entity>
+    <period>
+      <startDate>2010-01-01</startDate>
+      <endDate>2010-12-31</endDate>
+    </period>
+  </context>
+  <context id="D-2010-NMT-3">
+    <entity>
+      <identifier scheme="http://www.sec.gov/CIK">0000000001</identifier>
+      <segment>
+      	<xbrldi:explicitMember dimension="dei:LegalEntityAxis">us-gaap:ParentCompanyMember</xbrldi:explicitMember>
+      	<xbrldi:explicitMember dimension="us-gaap:NonmonetaryTransactionTypeAxis">us-gaap:InventoryExchangesMember</xbrldi:explicitMember>
+      </segment>
+    </entity>
+    <period>
+      <startDate>2010-01-01</startDate>
+      <endDate>2010-12-31</endDate>
+    </period>
+  </context>
+
+   <unit id="U-Monetary">
+      <measure>iso4217:USD</measure>
+   </unit>
+
+
+	<!-- Document and Entity Information -->
+	<dei:EntityRegistrantName contextRef="D-2010-Domain">ABC Company</dei:EntityRegistrantName>
+	<dei:EntityCentralIndexKey contextRef="D-2010-Domain">0000000001</dei:EntityCentralIndexKey>
+	<dei:EntityFilerCategory contextRef="D-2010-Domain">Large Accelerated Filer</dei:EntityFilerCategory>
+	<dei:EntityCurrentReportingStatus contextRef="D-2010-Domain">Yes</dei:EntityCurrentReportingStatus>
+	<dei:EntityVoluntaryFilers contextRef="D-2010-Domain">Yes</dei:EntityVoluntaryFilers>
+	<dei:EntityWellKnownSeasonedIssuer contextRef="D-2010-Domain">No</dei:EntityWellKnownSeasonedIssuer>
+	<dei:EntityPublicFloat contextRef="I-2010-Domain" unitRef="U-Monetary" decimals="0">1000000</dei:EntityPublicFloat>
+	<dei:DocumentType contextRef="D-2010-Domain">10-K</dei:DocumentType>
+	<dei:AmendmentFlag contextRef="D-2010-Domain">false</dei:AmendmentFlag>
+	<dei:DocumentFiscalPeriodFocus contextRef="D-2010-Domain">FY</dei:DocumentFiscalPeriodFocus>
+	<dei:DocumentFiscalYearFocus contextRef="D-2010-Domain">2010</dei:DocumentFiscalYearFocus>
+	<dei:DocumentPeriodEndDate contextRef="D-2010-Domain">2010-12-31</dei:DocumentPeriodEndDate>
+	<dei:CurrentFiscalYearEndDate contextRef="D-2010-Domain">--12-31</dei:CurrentFiscalYearEndDate>
+
+
+	<!-- Hierarchy -->
+	<us-gaap:CashAndCashEquivalentsPolicyTextBlock contextRef="D-2010">
+		&lt;p&gt;Proin elit sem, ornare non, ullamcorper vel, sollicitudin a, lacus. Mauris tincidunt cursus est. 
+		Nulla sit amet nibh. Sed elementum feugiat augue. Nam non tortor non leo porta bibendum. Morbi eu pede.&lt;/p&gt;
+	</us-gaap:CashAndCashEquivalentsPolicyTextBlock>
+	
+	<us-gaap:ReceivablesPolicyTextBlock contextRef="D-2010">
+		&lt;p&gt;Proin elit sem, ornare non, ullamcorper vel, sollicitudin a, lacus. Mauris tincidunt cursus est. 
+		Nulla sit amet nibh. Sed elementum feugiat augue. Nam non tortor non leo porta bibendum. Morbi eu pede. 
+		Proin elit sem, ornare non, ullamcorper vel, sollicitudin a, lacus. Mauris tincidunt cursus est. 
+		Nulla sit amet nibh. Sed elementum feugiat augue. Nam non tortor non leo porta bibendum. Morbi eu pede.&lt;/p&gt;
+	</us-gaap:ReceivablesPolicyTextBlock>
+	
+	<us-gaap:InventoryPolicyTextBlock contextRef="D-2010">
+		&lt;p&gt;Mauris tincidunt cursus est. Nulla sit amet nibh. Sed elementum feugiat augue. Nam non tortor non leo porta bibendum. Morbi eu pede.Proin elit sem, ornare non, ullamcorper vel, sollicitudin a, lacus.&lt;/p&gt;
+	</us-gaap:InventoryPolicyTextBlock>
+	
+
+
+	<!-- Roll Up -->
+	<us-gaap:InventoryFinishedGoods contextRef="I-2010" unitRef="U-Monetary" decimals="-3">5347000</us-gaap:InventoryFinishedGoods>
+	<us-gaap:InventoryFinishedGoods contextRef="I-2009" unitRef="U-Monetary" decimals="-3">1147000</us-gaap:InventoryFinishedGoods>
+	
+	<us-gaap:InventoryWorkInProcess contextRef="I-2010" unitRef="U-Monetary" decimals="-3">244508000</us-gaap:InventoryWorkInProcess>
+	<us-gaap:InventoryWorkInProcess contextRef="I-2009" unitRef="U-Monetary" decimals="-3">366375000</us-gaap:InventoryWorkInProcess>
+	
+	<us-gaap:InventoryRawMaterials contextRef="I-2010" unitRef="U-Monetary" decimals="-3">37159000</us-gaap:InventoryRawMaterials>
+	<us-gaap:InventoryRawMaterials contextRef="I-2009" unitRef="U-Monetary" decimals="-3">40606000</us-gaap:InventoryRawMaterials>
+	
+	<us-gaap:OtherInventorySupplies contextRef="I-2010" unitRef="U-Monetary" decimals="-3">4169000</us-gaap:OtherInventorySupplies>
+	<us-gaap:OtherInventorySupplies contextRef="I-2009" unitRef="U-Monetary" decimals="-3">5313000</us-gaap:OtherInventorySupplies>
+	
+	<us-gaap:InventoryNet contextRef="I-2010" unitRef="U-Monetary" decimals="-3">291183000</us-gaap:InventoryNet>
+	<us-gaap:InventoryNet contextRef="I-2009" unitRef="U-Monetary" decimals="-3">413441000</us-gaap:InventoryNet>
+
+
+	<!-- Roll Forward -->
+   <us-gaap:LossContingencyAccrualAtCarryingValue contextRef="I-2008" unitRef="U-Monetary" decimals="-3">1148000</us-gaap:LossContingencyAccrualAtCarryingValue>
+
+   <us-gaap:LossContingencyAccrualCarryingValueProvision contextRef="D-2009" unitRef="U-Monetary" decimals="-3">400000</us-gaap:LossContingencyAccrualCarryingValueProvision>
+   <us-gaap:LossContingencyAccrualCarryingValuePayments contextRef="D-2009" unitRef="U-Monetary" decimals="-3">401000</us-gaap:LossContingencyAccrualCarryingValuePayments>
+   <us-gaap:LossContingencyAccrualCarryingValuePeriodIncreaseDecrease contextRef="D-2009" unitRef="U-Monetary" decimals="-3">-1000</us-gaap:LossContingencyAccrualCarryingValuePeriodIncreaseDecrease>
+
+   <us-gaap:LossContingencyAccrualAtCarryingValue contextRef="I-2009" unitRef="U-Monetary" decimals="-3">1147000</us-gaap:LossContingencyAccrualAtCarryingValue>
+
+   <us-gaap:LossContingencyAccrualCarryingValueProvision contextRef="D-2010" unitRef="U-Monetary" decimals="-3">6408000</us-gaap:LossContingencyAccrualCarryingValueProvision>
+   <us-gaap:LossContingencyAccrualCarryingValuePayments contextRef="D-2010" unitRef="U-Monetary" decimals="-3">2208000</us-gaap:LossContingencyAccrualCarryingValuePayments>
+   <us-gaap:LossContingencyAccrualCarryingValuePeriodIncreaseDecrease contextRef="D-2010" unitRef="U-Monetary" decimals="-3">4200000</us-gaap:LossContingencyAccrualCarryingValuePeriodIncreaseDecrease>
+
+   <us-gaap:LossContingencyAccrualAtCarryingValue contextRef="I-2010" unitRef="U-Monetary" decimals="-3">5347000</us-gaap:LossContingencyAccrualAtCarryingValue>
+
+
+	<!-- Compound Fact -->
+	<us-gaap:NonmonetaryTransactionBasisOfAccountingForAssetsTransferred contextRef="D-2010-NMT-1">Mauris tincidunt cursus est</us-gaap:NonmonetaryTransactionBasisOfAccountingForAssetsTransferred>
+	<us-gaap:NonmonetaryTransactionNameOfCounterparty contextRef="D-2010-NMT-1">Proin elit sem</us-gaap:NonmonetaryTransactionNameOfCounterparty>
+   <us-gaap:NonmonetaryTransactionGainLossRecognizedOnTransfer contextRef="D-2010-NMT-1" unitRef="U-Monetary" decimals="0">100000</us-gaap:NonmonetaryTransactionGainLossRecognizedOnTransfer>
+   <us-gaap:NonmonetaryTransactionAmountOfBarterTransaction contextRef="D-2010-NMT-1" unitRef="U-Monetary" decimals="0">200000</us-gaap:NonmonetaryTransactionAmountOfBarterTransaction>
+
+	<us-gaap:NonmonetaryTransactionBasisOfAccountingForAssetsTransferred contextRef="D-2010-NMT-2">Nulla sit amet nibh</us-gaap:NonmonetaryTransactionBasisOfAccountingForAssetsTransferred>
+	<us-gaap:NonmonetaryTransactionNameOfCounterparty contextRef="D-2010-NMT-2">Nulla sit amet</us-gaap:NonmonetaryTransactionNameOfCounterparty>
+   <us-gaap:NonmonetaryTransactionGainLossRecognizedOnTransfer contextRef="D-2010-NMT-2" unitRef="U-Monetary" decimals="0">100000</us-gaap:NonmonetaryTransactionGainLossRecognizedOnTransfer>
+   <us-gaap:NonmonetaryTransactionAmountOfBarterTransaction contextRef="D-2010-NMT-2" unitRef="U-Monetary" decimals="0">200000</us-gaap:NonmonetaryTransactionAmountOfBarterTransaction>
+
+	<us-gaap:NonmonetaryTransactionBasisOfAccountingForAssetsTransferred contextRef="D-2010-NMT-3">Nam non tortor non leo</us-gaap:NonmonetaryTransactionBasisOfAccountingForAssetsTransferred>
+	<us-gaap:NonmonetaryTransactionNameOfCounterparty contextRef="D-2010-NMT-3">Proin sit amet sem</us-gaap:NonmonetaryTransactionNameOfCounterparty>
+   <us-gaap:NonmonetaryTransactionGainLossRecognizedOnTransfer contextRef="D-2010-NMT-3" unitRef="U-Monetary" decimals="0">100000</us-gaap:NonmonetaryTransactionGainLossRecognizedOnTransfer>
+   <us-gaap:NonmonetaryTransactionAmountOfBarterTransaction contextRef="D-2010-NMT-3" unitRef="U-Monetary" decimals="0">200000</us-gaap:NonmonetaryTransactionAmountOfBarterTransaction>
+
+   <us-gaap:NonmonetaryTransactionGainLossRecognizedOnTransfer contextRef="D-2010" unitRef="U-Monetary" decimals="0">300000</us-gaap:NonmonetaryTransactionGainLossRecognizedOnTransfer>
+   <us-gaap:NonmonetaryTransactionAmountOfBarterTransaction contextRef="D-2010" unitRef="U-Monetary" decimals="0">600000</us-gaap:NonmonetaryTransactionAmountOfBarterTransaction>
+
+</xbrl>
