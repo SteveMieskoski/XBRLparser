@@ -52,7 +52,7 @@ public class ItemConceptArc {
 
   @Override
   public String toString() {
-    return "\n\nItemConceptArc{" +
+    return "\nItemConceptArc{" +
             "fromLocator=" + fromLocator +
             ", fromFact=" + fromFact +
             ", arc=" + arc +

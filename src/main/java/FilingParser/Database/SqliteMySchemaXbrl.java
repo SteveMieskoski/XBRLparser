@@ -8,6 +8,7 @@ public interface SqliteMySchemaXbrl {
           + "DROP TABLE IF EXISTS arcs;\n"
           + "DROP TABLE IF EXISTS facts;\n"
           + "DROP TABLE IF EXISTS roleRefs;\n"
+          + "DROP TABLE IF EXISTS segments;\n"
           + "DROP TABLE IF EXISTS contexts;";
 
   static String linkBases =
@@ -84,6 +85,16 @@ public interface SqliteMySchemaXbrl {
           + "    segment_value     TEXT,\n"
           + "    doc_id            TEXT\n"
           + ")";
+
+  static String segments =
+      "CREATE TABLE segments\n"
+          + "(\n"
+          + "    segment_key   INTEGER PRIMARY KEY AUTOINCREMENT,\n"
+          + "    context_id    TEXT,\n"
+          + "    segment_dim   TEXT,\n"
+          + "    segment_value TEXT,\n"
+          + "    doc_id        TEXT\n"
+          + ");";
 
   static String roleRefs =
       "CREATE TABLE roleRefs\n"

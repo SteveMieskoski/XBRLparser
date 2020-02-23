@@ -24,8 +24,8 @@ public class ParserEntry {
         String file5 =
                 "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/demo_data/0001558370-17-006547-xbrl/ktyb-20170630_cal.xml";
         String fileRelative = "../elts/us-gaap-dep-pre-2017-01-31.xml";
-        retrieve();
-//        parse();
+//        retrieve();
+        parse(true);
 //        new FilingEntry(databaseHandler);
 //        new AltEntry().parse(file5);
     }

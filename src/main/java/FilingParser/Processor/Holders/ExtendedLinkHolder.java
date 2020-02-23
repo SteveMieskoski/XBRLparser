@@ -135,4 +135,19 @@ public class ExtendedLinkHolder {
   public void setItemConceptArcs(List<ItemConceptArc> itemConceptArcs) {
     this.itemConceptArcs = itemConceptArcs;
   }
+
+  @Override
+  public String toString() {
+    return "\n\nExtendedLinkHolder{" +
+            "extendedLink_key=" + extendedLink_key +
+            ", ref_id='" + ref_id + '\'' +
+            ", tag='" + tag + '\'' +
+            ", type='" + type + '\'' +
+            ", role='" + role + '\'' +
+            ", title='" + title + '\'' +
+            ", schema='" + schema + '\'' +
+            ", doc_id='" + doc_id + '\'' +
+            ", itemConceptArcs=" + itemConceptArcs +
+            '}';
+  }
 }

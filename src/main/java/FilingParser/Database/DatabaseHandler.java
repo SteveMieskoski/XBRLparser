@@ -52,7 +52,7 @@ public class DatabaseHandler {
       statement.executeUpdate(SqliteMySchemaXbrl.facts);
       statement.executeUpdate(SqliteMySchemaXbrl.contexts);
       statement.executeUpdate(SqliteMySchemaXbrl.roleRefs);
-
+      statement.executeUpdate(SqliteMySchemaXbrl.segments);
     } catch (Exception e) {
       // if the error message is "out of memory",
       // it probably means no database file is found
