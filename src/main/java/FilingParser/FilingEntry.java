@@ -124,6 +124,11 @@ public class FilingEntry {
   }
 
   public void parse(String filename) {
+    if(this.extendedPrefixes.isEmpty()){
+      extendedPrefixes.add(
+              "us-gaap"); // <- need to remove this hard coding and get this via parsing (i.e.
+      // programmatically)
+    }
     System.out.println("filename: " + filename);
     this.currentFile = filename;
     try {
@@ -146,7 +151,7 @@ public class FilingEntry {
     ParserTwo parserTwo = new ParserTwo(this);
     persist(parserTwo);
     //        System.out.println(parserTwo.getContexts()); // todo remove dev item
-        System.out.println(parserTwo.getItemConcepts()); // todo remove dev item
+//        System.out.println(parserTwo.getItemConcepts()); // todo remove dev item
     //    System.out.println(parserTwo.getCalculations()); // todo remove dev item
 //        System.out.println(parserTwo.getRoleRefs()); // todo remove dev item
 

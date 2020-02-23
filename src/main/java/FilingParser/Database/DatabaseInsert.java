@@ -18,7 +18,6 @@ public class DatabaseInsert {
   public void insertFacts(ParserTwo parserTwo) {
     System.out.println("Insert Facts"); // todo remove dev item
     for (ItemConcept itemConcept : parserTwo.getItemConcepts()) {
-      System.out.println(itemConcept); // todo remove dev item
       insertFacts(
           itemConcept.prefix,
           itemConcept.tag,
@@ -40,12 +39,9 @@ public class DatabaseInsert {
     try {
       // load the sqlite-JDBC driver using the current class loader
       Class.forName("org.sqlite.JDBC");
-System.out.println("INSERTING FACT"); // todo remove dev item
       // create a database connection
       connection = DriverManager.getConnection(databaseHandler.connectionURI);
-      //      Statement statement = connection.createStatement();
-      //      statement.setQueryTimeout(30); // set timeout to 30 sec.
-//      System.out.println(prefix + " : " + concept_ref + " : " + context_ref + " : " + unit_ref + " : " + decimals); // todo remove dev item
+
       PreparedStatement preparedStatement =
               connection.prepareStatement(
                       "insert into facts (prefix, concept_ref, context_ref, unit_ref, decimals, value, doc_id)  values(?, ?,?,?,?,?,?)");

@@ -2,11 +2,12 @@ package FilingParser;
 
 import FilingParser.Database.DatabaseHandler;
 import FilingParser.Database.DatabaseQueries;
+import FilingParser.Processor.ProcessorEntry;
 
 public class ParserEntry {
     DatabaseHandler databaseHandler;
     public ParserEntry() {
-        databaseHandler = new DatabaseHandler(true);; //new DatabaseHandler(false);
+        databaseHandler = new DatabaseHandler();; //new DatabaseHandler(false);
 
         String allEntryPoint =
                 "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/schemas/us-gaap/entire/us-gaap-entryPoint-all-2017-01-31.xsd";
@@ -23,21 +24,22 @@ public class ParserEntry {
         String file5 =
                 "/home/steve/projects/2_XBRL/XBRLparser/src/main/resources/demo_data/0001558370-17-006547-xbrl/ktyb-20170630_cal.xml";
         String fileRelative = "../elts/us-gaap-dep-pre-2017-01-31.xml";
-//        retrieve();
+        retrieve();
 //        parse();
-        new FilingEntry(databaseHandler);
+//        new FilingEntry(databaseHandler);
 //        new AltEntry().parse(file5);
     }
 
 
-    public void parse(){
-        databaseHandler.reset();
+    public void parse(Boolean reset){
+        if(reset){
+            databaseHandler.reset();
+        }
         new FilingEntry(databaseHandler);
     }
 
 
     public void retrieve(){
-        DatabaseQueries databaseQueries = databaseHandler.getDatabaseQueries();
-        databaseQueries.getCalculationLinkBases();
+        new ProcessorEntry();
     }
 }

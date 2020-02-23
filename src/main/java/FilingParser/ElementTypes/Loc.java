@@ -47,8 +47,8 @@ public class Loc {
                             List<String> conceptPartsList = Arrays.asList(conceptParts);
                             if(conceptPartsList.size() > 1){
 //                                System.out.println(conceptPartsList); // todo remove dev item
-                                this.prefix = partList.get(0);
-                                this.concept = partList.get(1);
+                                this.prefix = conceptPartsList.get(0);
+                                this.concept = conceptPartsList.get(1);
                             } else {
                                 System.out.println("SHOULD HAVE TAXONOMY PREFIX AND CONCEPT LABEL: " + this.href); // todo remove dev item
                             }

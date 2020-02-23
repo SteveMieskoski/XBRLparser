@@ -35,7 +35,9 @@ public interface SqliteMySchemaXbrl {
           + "    concept     TEXT,\n"
           + "    prefix   TEXT,\n"
           + "    label      TEXT,\n"
-          + "    doc_id      TEXT\n"
+          + "    doc_id      TEXT,\n"
+          + "    role      TEXT,\n"
+          + "    title      TEXT\n"
           + ")";
 
   static String arcs =

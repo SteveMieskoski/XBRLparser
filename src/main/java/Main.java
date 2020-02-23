@@ -12,6 +12,8 @@ import xbrl.factProcessor.FundamentalAccountingFacts;
 import xbrlSchemas.ExpEntry;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
